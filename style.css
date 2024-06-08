@@ -1,38 +1,22 @@
-.container {
-    display: flex; /* Enable flexbox for layout */
+/* Basic Styling for the developer theme */
+body {
+  font-family: monospace; /* Developer-friendly font */
+  background-color: #222; /* Dark background */
+  color: #f0f0f0; /* Light text */
 }
 
-.sidebar {
-    width: 20%; /* 20% width for the sidebar */
-    background-color: #f0f0f0; /* Light gray background */
-    padding: 20px;
+header {
+  position: fixed; /* Keep navbar at the top */
+  top: 0;
+  width: 100%; 
+  /* ... other header styling ... */
 }
 
-.content {
-    width: 80%; /* 80% width for the main content */
-    padding: 20px;
+.logo, nav, .search-bar {
+  /* ... styling for logo, nav links, search bar, ensuring equal spacing ... */
 }
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
+/* Dropdown styling */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
-
-.dropdown .submenu {
-    display: none; /* Hide submenu by default */
-}
-
-.dropdown:hover .submenu {
-    display: block; /* Show submenu on hover */
-}
-
-.green { background-color: lightgreen; }
-.black { background-color: black; color: white; }
-.white { background-color: white; }
-
-footer {
-    background-color: #333; /* Dark gray footer */
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
+/* ... Styling for sections, hero, footer, responsiveness ... */
