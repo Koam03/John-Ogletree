@@ -1,0 +1,38 @@
+.container {
+    display: flex; /* Enable flexbox for layout */
+}
+
+.sidebar {
+    width: 20%; /* 20% width for the sidebar */
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 20px;
+}
+
+.content {
+    width: 80%; /* 80% width for the main content */
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown .submenu {
+    display: none; /* Hide submenu by default */
+}
+
+.dropdown:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.green { background-color: lightgreen; }
+.black { background-color: black; color: white; }
+.white { background-color: white; }
+
+footer {
+    background-color: #333; /* Dark gray footer */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
