@@ -1,0 +1,6 @@
+const searchBar = document.getElementById("search-bar");
+const searchResults = []; // Fetch search results dynamically
+
+searchBar.addEventListener("input", () => {
+    // Filter and display searchResults
+});

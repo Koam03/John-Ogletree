@@ -1,0 +1,70 @@
+{
+    "Books": [
+      {
+        "id": 1,
+        "title": "The Lord of the Rings",
+        "book-series": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "year_published": 1954,
+        "available": true
+      },
+      {
+        "id": 2,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre": "Classic Literature",
+        "year_published": 1813,
+        "available": false
+      }
+    ],
+  
+    "Photos": [
+      {
+        "id": 101,
+        "filename": "sunset.jpg",
+        "description": "Beautiful sunset over the ocean",
+        "photographer": "John Doe",
+        "date_taken": "2023-12-25",
+        "location": "Hawaii",
+        "file type": "jpg",
+        "size": "2.5MB",
+        "resolution": "1920x1080",
+        "url": "https://www.example.com/sunset.jpg"
+    }
+    ],
+  
+    "Services": [
+      {
+        "id": 201,
+        "name": "House Cleaning",
+        "description": "Thorough cleaning of your home",
+        "provider": "Clean Sweep Services",
+        "price": 120.00,
+        "rating": 4.8
+      },
+      {
+        "id": 202,
+        "name": "Lawn Mowing",
+        "description": "Mowing and edging of your lawn",
+        "provider": "Green Thumb Landscaping",
+        "price": 50.00,
+        "rating": 4.5
+      }
+    ],
+    "videos" : [
+      {
+        "id": 301,
+        "filename": "sunset.mp4",
+        "description": "Beautiful sunset over the ocean",
+        "videographer": "John Doe",
+        "date_taken": "2023-12-25",
+        "location": "Hawaii",
+        "file type": "mp4",
+        "size": "25MB",
+        "resolution": "1920x1080",
+        "url": "https://www.example.com/sunset.mp4",
+        "duration": "00:02:30"
+    }
+]
+}

@@ -1,0 +1,27 @@
+body {
+    font-family: monospace; /* Code-like font */
+    background-color: #282c34; /* Dark background */
+    color: #abb2bf;  /* Light text */
+}
+
+nav { /* Style the navigation bar */
+    /* ... responsive styles for mobile/desktop, search bar styling ... */
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #21252b; /* Slightly darker footer */
+}
+
+/* Mobile Navigation (under a certain screen width) */
+@media (max-width: 768px) { 
+    nav ul {
+        display: none; /* Hide the navigation links */
+    }
+    /* ... styles for hamburger menu icon, etc. ... */
+}
