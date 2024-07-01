@@ -1,0 +1,224 @@
+body { /* Set default styles for body */
+	font-family: sans-serif; /* Use a generic font family */
+	margin: 0; /* Remove default margin */
+}
+nav { /* Set default styles for nav */
+ background-color: #333; /* Set background color */
+ color: white; /* Set text color */
+ position: fixed; /* Fix the nav to the viewport */
+ top: 0; /* Align nav to the top */
+ left: 0; /* Align nav to the left */
+ height: 100%; /* Set full height */
+ width: 250px; /* Set fixed width */
+ overflow-y: auto; /* Add scroll if needed */
+}
+nav a { /* Set default styles for nav links */
+ color: white; /* Set text color */
+ text-decoration: none; /* Remove underline */
+ padding: 15px 20px; /* Add padding */
+ display: block; /* Display links as block elements */
+}
+nav a:hover { /* Set hover state for nav links */
+ background-color: #555; /* Change background color on hover */
+ color: white; /* Change text color on hover */
+}
+.logo { /* new class */
+ padding: 20px; /* add padding around logo */
+ text-align: center; /* center logo */
+ background-color: #333; /* set background color */
+ color: white; /* set text color */
+}
+.logo img { /* logo image styles */
+ height: 99px; /* set height */
+ background-color: rgba(255, 255, 255, 0.5); /* add background color with opacity */
+ padding: 3px; /* add padding around image */
+}
+.dropdown { /* new class */
+ position: relative; /* set position to relative */
+}
+.dropdown-content { /* new class */
+ display: none; /* hide dropdown content by default */
+ position: static; /* set position to static */
+ background-color: black; /* set background color */
+ width: calc(100% - 20px); /* set width */
+ box-shadow: none; /* remove box shadow */
+ padding: 10px; /* add padding */
+}
+.dropdown:hover .dropdown-content { /* show dropdown content on hover */
+ display: block; /* show dropdown content */
+}
+.introduction { /* new class */
+  background-color: gray; /* set background color */
+  padding: 20px; /* add padding around content */
+  margin-top: 20px; /* add space above content */
+  margin-left: 250px; /* align content with nav */
+  color: white; /* set text color */
+}
+.introduction button { /* button styles */
+ background-color: #333; /* set button background color */
+ color: white; /* set button text color */
+ padding: 10px 20px; /* add padding to button */
+ border: none; /* remove button border */
+ cursor: pointer; /* add cursor pointer on hover */
+}
+.introduction button:hover { /* button hover state */
+ background-color: #555; /* darker background color on hover */
+}
+.about { /* new class */
+  background-color: gray; /* set background color */
+  padding: 20px; /* add padding around content */
+  margin-top: 20px; /* add space above content */
+  margin-left: 250px; /* align content with nav */
+  color: white; /* set text color */
+}
+
+.services { /* new class */
+  background-color: gray; /* set background color */
+  padding: 20px; /* add padding around content */
+  margin-top: 20px; /* add space above content */
+  margin-left: 250px; /* align content with nav */
+  color: white; /* set text color */
+}
+.services button { /* button styles */
+ background-color: #333; /* set button background color */
+ color: white; /* set button text color */
+ padding: 10px 20px; /* add padding to button */
+ border: none; /* remove button border */
+ cursor: pointer; /* add cursor pointer on hover */
+}
+.services button:hover { /* button hover state */
+ background-color: #555; /* darker background color on hover */
+}
+.projects { /* new class */
+  background-color: gray; /* set background color */
+  padding: 20px; /* add padding around content */
+  margin-top: 20px; /* add space above content */
+  margin-left: 250px; /* align content with nav */
+  color: white; /* set text color */
+}
+.projects button { /* button styles */
+ background-color: #333; /* set button background color */
+ color: white; /* set button text color */
+ padding: 10px 20px; /* add padding to button */
+ border: none; /* remove button border */
+ cursor: pointer; /* add cursor pointer on hover */
+}
+.projects button:hover { /* button hover state */
+ background-color: #555; /* darker background color on hover */
+}
+.projects img { /* project image styles */
+ width: 100%; /* set width to 100% */
+ height: auto; /* set height to auto */
+}
+.contact { /* new class */
+  background-color: gray; /* set background color */
+  padding: 20px; /* add padding around content */
+  margin-top: 20px; /* add space above content */
+  margin-left: 250px; /* align content with nav */
+  color: white; /* set text color */
+}
+.contact button { /* button styles */
+ background-color: #333; /* set button background color */
+ color: white; /* set button text color */
+ padding: 10px 20px; /* add padding to button */
+ border: none; /* remove button border */
+ cursor: pointer; /* add cursor pointer on hover */
+}
+.contact button:hover { /* button hover state */
+ background-color: #555; /* darker background color on hover */
+}
+.contact form { /* form styles */
+ margin-top: 20px; /* add space above form */
+}
+.contact input, .contact textarea { /* input and textarea styles */
+ width: calc(100% - 20px); /* set width */
+ padding: 10px; /* add padding */
+ margin-bottom: 10px; /* add space below input */
+}
+.footer { /* new class */
+  background-color: gray; /* set background color */
+  padding: 20px; /* add padding around content */
+  margin-top: 20px; /* add space above content */
+  margin-left: 250px; /* align content with nav */
+  color: white; /* set text color */
+}
+.footer a { /* footer link styles */
+ color: white; /* set text color */
+ text-decoration: none; /* remove underline */
+}
+.footer a:hover { /* footer link hover state */
+ color: #333; /* change text color on hover */
+}
+.footer img {
+  height: 25px; /* set height */
+  margin: 0 auto; /* center horizontally and vertically */
+}
+.music { /* new class */
+  background-color: gray; /* set background color */
+  padding: 20px; /* add padding around content */
+  margin-top: 20px; /* add space above content */
+  margin-left: 250px; /* align content with nav */
+  color: white; /* set text color */
+}
+.music button { /* button styles */
+ background-color: #333; /* set button background color */
+ color: white; /* set button text color */
+ padding: 10px 20px; /* add padding to button */
+ border: none; /* remove button border */
+ cursor: pointer; /* add cursor pointer on hover */
+}
+.music button:hover { /* button hover state */
+ background-color: #555; /* darker background color on hover */
+}
+.music img { /* music image styles */
+ width: 100%; /* set width to 100% */
+ height: auto; /* set height to auto */
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.service-grid a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+.service-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  opacity: 0; /* Hide overlay initially */
+  transition: opacity 0.3s ease-in-out; /* Add transition effect */
+}
+
+.service-grid a:hover .service-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.service-overlay h3 {
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+
+.service-overlay h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
