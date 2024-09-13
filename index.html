@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Style Layout</title>
+    <title>GitHub Style Layout with Breadcrumb</title>
     <style>
         body {
             margin: 0;
@@ -18,32 +18,53 @@
             top: 0;
             width: 100%;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
             z-index: 1000;
         }
 
-        .header h1 {
+        .header .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header .navbar h1 {
             margin: 0;
             font-size: 20px;
         }
 
-        .header .search {
+        .header .navbar .search {
             flex: 1;
             margin-left: 20px;
         }
 
-        .header input {
+        .header .navbar input {
             width: 100%;
             padding: 8px;
             border-radius: 4px;
             border: none;
         }
 
+        .header .breadcrumb {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #c0c0c0;
+        }
+
+        .header .breadcrumb a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .header .breadcrumb a:hover {
+            color: #e1e4e8;
+        }
+
         .container {
             display: flex;
-            margin-top: 60px; /* Space for fixed header */
-            height: calc(100vh - 60px); /* Adjust height for header */
+            margin-top: 80px; /* Space for fixed header */
+            height: calc(100vh - 80px); /* Adjust height for header */
         }
 
         .sidebar {
@@ -96,9 +117,14 @@
 </head>
 <body>
     <div class="header">
-        <h1>My GitHub Style Layout</h1>
-        <div class="search">
-            <input type="text" placeholder="Search...">
+        <div class="navbar">
+            <h1>My GitHub Style Layout</h1>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <a href="#">Home</a> &gt; <a href="#">Section</a> &gt; <a href="#">Subsection</a>
         </div>
     </div>
     <div class="container">
