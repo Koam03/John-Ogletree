@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Ogletree Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="index.html">
+                <img src="/assets/images/John_Ogletree_Logo.png" alt="John Ogletree Logo" class="logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li>
+                        <a href="#">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Design and Print</a></li>
+                            <li><a href="#">Digital Media</a></li>
+                            <li><a href="#">Video and Animations</a></li>
+                            <li><a href="#">Audio</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Project Vault</a></li>
+                    <li><a href="#">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <section class="main">
+                <h1>Your Vision, My Pixels</h1>
+                <p>Craftsmanship in Every Pixel.</p>
+                <a href="#"><button>View My Projects</button></a>
+            </section>
+            
+            <hr>
+
+            <section class="about">
+                <h1>A Bit About Me</h1>
+                <p>I invite you to explore my portfolio and witness the blend of ideas, skills, and creativity that defines my artistic journey. If you resonate with my work and have a project in mind, feel free to reach out.</p>
+                <a href="#"><button>Learn More About Me</button></a>
+            </section>
+
+            <hr>
+
+            <section class="services">
+                <h1>Service Categories</h1>
+                <p>Click on an image below to see all the services I offer in that category.</p>
+                <div class="polaroid-grid">
+                    <div class="polaroid">
+                        <a href="#">
+                            <img src="/assets/media/ServiceCatagoryImages/Audio.png" alt="Audio Services">
+                            <div class="caption">Audio</div>
+                        </a>
+                    </div>
+                    <div class="polaroid">
+                        <a href="#">
+                            <img src="/assets/media/ServiceCatagoryImages/DigitalMedia.png" alt="Digital Media Services">
+                            <div class="caption">Digital Media</div>
+                        </a>
+                    </div>
+                    <div class="polaroid">
+                        <a href="#">
+                            <img src="/assets/media/ServiceCatagoryImages/VideoAnimations.png" alt="Video and Animations Services">
+                            <div class="caption">Video & Animations</div>
+                        </a>
+                    </div>
+                    <div class="polaroid">
+                        <a href="#">
+                            <img src="/assets/media/ServiceCatagoryImages/DesignPrint.png" alt="Design and Print Services">
+                            <div class="caption">Design & Print</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="projects">
+                <h1>Featured Projects</h1>
+                <div class="polaroid-grid" id="featuredProjectsContainer">
+                    <!-- Projects will be dynamically added here -->
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
