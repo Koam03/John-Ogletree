@@ -3,37 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Studio</title>
+    <title>GitHub Style Layout</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #24292e;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .header .search {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .header input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
         }
 
         .container {
             display: flex;
-            height: 100vh;
+            margin-top: 60px; /* Space for fixed header */
+            height: calc(100vh - 60px); /* Adjust height for header */
         }
 
         .sidebar {
             width: 250px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            background-color: #f6f8fa;
             padding: 20px;
+            border-right: 1px solid #e1e4e8;
             overflow-y: auto;
-            position: fixed;
-            height: 100%;
-        }
-
-        .sidebar h2 {
-            font-size: 1.5em;
-            margin-top: 0;
         }
 
         .sidebar ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .sidebar ul li {
@@ -43,139 +67,61 @@
 
         .sidebar ul li a {
             text-decoration: none;
-            color: #ecf0f1;
+            color: #0366d6;
             display: block;
-            padding: 10px;
+            padding: 8px;
             border-radius: 4px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .sidebar ul li a:hover {
-            background-color: #34495e;
-            color: #f39c12;
+            background-color: #e1e4e8;
         }
 
         .sidebar ul ul {
             display: none;
             padding-left: 20px;
-            background-color: #34495e;
         }
 
         .sidebar ul li:hover > ul {
             display: block;
         }
 
-        .sidebar ul ul li a {
-            padding-left: 20px;
-        }
-
-        .sidebar ul ul ul {
-            background-color: #1c2833;
-        }
-
         .content {
             flex: 1;
             padding: 20px;
-            margin-left: 250px;
             background-color: #fff;
-        }
-
-        .content h1 {
-            color: #2c3e50;
-        }
-
-        .content p {
-            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>My GitHub Style Layout</h1>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
     <div class="container">
         <div class="sidebar">
-            <h2>Creative Studio</h2>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Me</a></li>
                 <li><a href="#">Services</a>
                     <ul>
-                        <li><a href="#">Design and Print</a>
-                            <ul>
-                                <li><a href="#">Logo Design</a></li>
-                                <li><a href="#">Brand Style Guides</a></li>
-                                <li><a href="#">Business Cards</a></li>
-                                <li><a href="#">Typography</a></li>
-                                <!-- Other items here -->
-                            </ul>
-                        </li>
-                        <li><a href="#">Digital Media</a>
-                            <ul>
-                                <li><a href="#">Website Design</a></li>
-                                <li><a href="#">Presentation Design</a></li>
-                                <!-- Other items here -->
-                            </ul>
-                        </li>
-                        <li><a href="#">Video and Animations</a>
-                            <ul>
-                                <li><a href="#">Video Editing</a></li>
-                                <li><a href="#">Video Ads</a></li>
-                                <!-- Other items here -->
-                            </ul>
-                        </li>
-                        <li><a href="#">Audio</a>
-                            <ul>
-                                <li><a href="#">Beat Making</a></li>
-                                <li><a href="#">Intro Songs</a></li>
-                                <!-- Other items here -->
-                            </ul>
-                        </li>
+                        <li><a href="#">Design and Print</a></li>
+                        <li><a href="#">Digital Media</a></li>
+                        <li><a href="#">Video and Animations</a></li>
+                        <li><a href="#">Audio</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Pricing</a>
-                    <ul>
-                        <li><a href="#">Logo Design</a></li>
-                        <li><a href="#">Brand Style Guides</a></li>
-                        <!-- Other items here -->
-                    </ul>
-                </li>
-                <li><a href="#">Project Vault</a>
-                    <ul>
-                        <li><a href="#">Graphics</a>
-                            <ul>
-                                <li><a href="#">Logoverse</a>
-                                    <ul>
-                                        <li><a href="#">Burst Through</a></li>
-                                        <li><a href="#">Vust Reservations</a></li>
-                                        <!-- Other items here -->
-                                    </ul>
-                                </li>
-                                <!-- Other categories here -->
-                            </ul>
-                        </li>
-                        <li><a href="#">Videos</a>
-                            <ul>
-                                <li><a href="#">Movie Trailers</a></li>
-                                <!-- Other items here -->
-                            </ul>
-                        </li>
-                        <li><a href="#">Books</a>
-                            <ul>
-                                <li><a href="#">Inside the Storm</a></li>
-                                <!-- Other items here -->
-                            </ul>
-                        </li>
-                        <li><a href="#">Music</a>
-                            <ul>
-                                <li><a href="#">Pink Moon</a></li>
-                                <!-- Other items here -->
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Project Vault</a></li>
                 <li><a href="#">Contact Me</a></li>
             </ul>
         </div>
         <div class="content">
-            <h1>Welcome to Creative Studio</h1>
+            <!-- Main content goes here -->
+            <h1>Welcome to the Main Content Area</h1>
             <p>This is where the main content will be displayed.</p>
         </div>
     </div>
