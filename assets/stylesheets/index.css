@@ -25,6 +25,7 @@ body {
 .file-tree ul {
     list-style: none;
     padding-left: 20px;
+    display: none; /* Hide submenus initially */
 }
 
 .file-tree li {
@@ -33,12 +34,7 @@ body {
 
 .file-tree .folder {
     font-weight: bold;
-    color: #333;
     cursor: pointer;
-}
-
-.file-tree .file {
-    color: #555;
 }
 
 .file-tree .folder::before {
