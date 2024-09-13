@@ -23,15 +23,15 @@
         }
 
         .sidebar ul li {
-            margin-bottom: 5px;
-            position: relative;
+            margin: 0;
+            padding: 0;
         }
 
         .sidebar ul li a {
             text-decoration: none;
             color: #333;
             display: block;
-            padding: 5px 10px;
+            padding: 8px 10px;
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
@@ -40,44 +40,34 @@
             background-color: #ddd;
         }
 
-        /* Nested Dropdown Styling */
-        .sidebar ul ul {
+        .nested {
             display: none;
-            margin-left: 20px; /* Indentation for nested items */
+            padding-left: 20px;
         }
 
-        .sidebar ul li:hover > ul {
+        .nested.active {
             display: block;
         }
 
-        /* Optional styling for scrollbars */
-        .sidebar {
-            max-height: 100vh;
-            overflow-y: auto;
+        .caret {
+            cursor: pointer;
+            user-select: none;
         }
 
-        .sidebar::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background-color: #bbb;
-            border-radius: 4px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb:hover {
-            background-color: #888;
-        }
-
-        /* Optional styling for icons */
-        .folder::before {
-            content: "📁"; /* Folder icon */
+        .caret::before {
+            content: "▶";
+            display: inline-block;
             margin-right: 5px;
         }
 
-        .file::before {
-            content: "📄"; /* File icon */
-            margin-right: 5px;
+        .caret-down::before {
+            content: "▼";
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
         }
     </style>
 </head>
@@ -85,28 +75,43 @@
     <div class="container">
         <div class="sidebar">
             <ul>
-                <li class="folder"><a href="#">Root</a>
-                    <ul>
-                        <li class="folder"><a href="#">Folder 1</a>
-                            <ul>
-                                <li class="file"><a href="#">File 1-1</a></li>
-                                <li class="file"><a href="#">File 1-2</a></li>
+                <li><span class="caret">Home</span></li>
+                <li><span class="caret">About Me</span></li>
+                <li><span class="caret">Services</span>
+                    <ul class="nested">
+                        <li><span class="caret">Design and Print</span>
+                            <ul class="nested">
+                                <li><a href="#">Logo Design</a></li>
+                                <li><a href="#">Business Cards</a></li>
+                                <li><a href="#">Flyer Design</a></li>
                             </ul>
                         </li>
-                        <li class="folder"><a href="#">Folder 2</a>
-                            <ul>
-                                <li class="folder"><a href="#">Subfolder 2-1</a>
-                                    <ul>
-                                        <li class="file"><a href="#">File 2-1-1</a></li>
-                                        <li class="file"><a href="#">File 2-1-2</a></li>
-                                    </ul>
-                                </li>
-                                <li class="file"><a href="#">File 2-2</a></li>
+                        <li><span class="caret">Digital Media</span>
+                            <ul class="nested">
+                                <li><a href="#">Website Design</a></li>
+                                <li><a href="#">Infographic Design</a></li>
                             </ul>
                         </li>
-                        <li class="file"><a href="#">File 3</a></li>
                     </ul>
                 </li>
+                <li><span class="caret">Pricing</span></li>
+                <li><span class="caret">Project Vault</span>
+                    <ul class="nested">
+                        <li><span class="caret">Graphics</span>
+                            <ul class="nested">
+                                <li><a href="#">Logoverse</a></li>
+                                <li><a href="#">Visions Unveiled</a></li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Videos</span>
+                            <ul class="nested">
+                                <li><a href="#">Movie Trailers</a></li>
+                                <li><a href="#">Music Videos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="caret">Contact Me</span></li>
             </ul>
         </div>
         <div class="content">
@@ -115,5 +120,17 @@
             <p>This is where the main content will be displayed.</p>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.caret').forEach(caret => {
+            caret.addEventListener('click', function() {
+                this.classList.toggle('caret-down');
+                const nested = this.nextElementSibling;
+                if (nested && nested.classList.contains('nested')) {
+                    nested.classList.toggle('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
