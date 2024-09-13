@@ -1,75 +1,75 @@
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-.sidebar {
-    width: 20%;
-    background-color: #f0f0f0;
-    padding: 20px;
-    overflow-y: auto; /* Allows scrolling for large menus */
-}
-
-.sidebar ul {
-    list-style: none;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
     padding: 0;
 }
 
-.sidebar ul li {
-    margin-bottom: 10px;
-    position: relative; /* Needed for dropdown positioning */
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
 }
 
-.sidebar ul li a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 8px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-    background-color: #ddd;
-}
-
-/* Nested Dropdown Styling */
-.sidebar ul ul {
-    display: none;
-    position: relative;
-    padding-left: 20px; /* Indentation for dropdown items */
-}
-
-.sidebar ul li:hover > ul {
-    display: block;
-}
-
-.sidebar ul ul ul {
-    padding-left: 20px; /* Additional indentation for deeper nested lists */
-}
-
-/* Sidebar Scrollbars */
-.sidebar {
-    max-height: 100vh;
+.file-tree {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    width: 300px;
+    max-height: calc(100vh - 40px); /* Ensure the nav doesn't overflow the viewport */
     overflow-y: auto;
 }
 
-.content {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
+.file-tree ul {
+    list-style: none;
+    padding-left: 20px; /* Indentation for subfolders/files */
 }
 
-/* Optional styling for scrollbar */
-.sidebar::-webkit-scrollbar {
+.file-tree li {
+    margin: 5px 0;
+}
+
+.file-tree .folder {
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.file-tree .file {
+    color: #555;
+}
+
+.file-tree a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.file-tree a:hover {
+    text-decoration: underline;
+}
+
+.file-tree .folder::before {
+    content: "📁 "; /* Folder icon */
+    margin-right: 5px;
+}
+
+.file-tree .file::before {
+    content: "📄 "; /* File icon */
+    margin-right: 5px;
+}
+
+/* Optional styling for scrollbars */
+.file-tree::-webkit-scrollbar {
     width: 8px;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+.file-tree::-webkit-scrollbar-thumb {
     background-color: #bbb;
     border-radius: 4px;
 }
 
-.sidebar::-webkit-scrollbar-thumb:hover {
+.file-tree::-webkit-scrollbar-thumb:hover {
     background-color: #888;
 }

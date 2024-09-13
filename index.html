@@ -4,179 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Tree Navigation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            width: 20%;
-            background-color: #f0f0f0;
-            padding: 10px;
-            overflow-y: auto;
-            border-right: 1px solid #ccc;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar ul li {
-            margin: 5px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .sidebar ul li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 100%;
-            border-left: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            z-index: -1;
-        }
-
-        .sidebar ul li:last-child::before {
-            border-left: 0;
-        }
-
-        .sidebar ul li > a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        .sidebar ul li > a:hover {
-            background-color: #ddd;
-        }
-
-        .sidebar ul ul {
-            padding-left: 20px;
-            display: none;
-        }
-
-        .sidebar ul li.open > ul {
-            display: block;
-        }
-
-        .sidebar ul ul li {
-            padding-left: 20px;
-        }
-
-        .sidebar ul ul li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 100%;
-            border-left: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            z-index: -1;
-        }
-
-        .sidebar ul ul li:last-child::before {
-            border-left: 0;
-        }
-
-        .sidebar ul ul ul li::before {
-            border-left: 1px solid #ddd;
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-            background-color: #fff;
-        }
-
-        .sidebar::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background-color: #bbb;
-            border-radius: 4px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb:hover {
-            background-color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/stylesheets/index.css">
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
+        <nav class="file-tree">
             <ul>
-                <li><a href="#">Home</a></li>
                 <li>
-                    <a href="#" onclick="toggleMenu(event)">About Me</a>
-                    <ul>
-                        <li><a href="#">Biography</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                    </ul>
+                    <span class="folder">Home</span>
                 </li>
                 <li>
-                    <a href="#" onclick="toggleMenu(event)">Services</a>
+                    <span class="folder">About Me</span>
+                </li>
+                <li>
+                    <span class="folder">Services</span>
                     <ul>
                         <li>
-                            <a href="#" onclick="toggleMenu(event)">Design and Print</a>
+                            <span class="folder">Design and Print</span>
                             <ul>
                                 <li><a href="#">Logo Design</a></li>
+                                <li><a href="#">Brand Style Guides</a></li>
                                 <li><a href="#">Business Cards</a></li>
-                                <!-- Add more items here -->
+                                <li><a href="#">Typography</a></li>
+                                <li><a href="#">Icon Design</a></li>
+                                <li><a href="#">Illustration</a></li>
+                                <li><a href="#">Pattern Design</a></li>
+                                <li><a href="#">Tattoo Design</a></li>
+                                <li><a href="#">Flyer Design</a></li>
+                                <li><a href="#">Brochure Design</a></li>
+                                <li><a href="#">Poster Design</a></li>
+                                <li><a href="#">Catalog Design</a></li>
+                                <li><a href="#">Menu Design</a></li>
+                                <li><a href="#">Invitation Design</a></li>
+                                <li><a href="#">Label Design</a></li>
+                                <li><a href="#">Book Covers</a></li>
+                                <li><a href="#">Album Cover Design</a></li>
+                                <li><a href="#">Podcast Cover Art</a></li>
+                                <li><a href="#">Social Media Kit Design</a></li>
+                                <li><a href="#">Email Design</a></li>
+                                <li><a href="#">Web Banners</a></li>
+                                <li><a href="#">Signage Design</a></li>
+                                <li><a href="#">Graphics for Streamers</a></li>
+                                <li><a href="#">Merchandise Design</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#" onclick="toggleMenu(event)">Digital Media</a>
+                            <span class="folder">Digital Media</span>
                             <ul>
                                 <li><a href="#">Website Design</a></li>
-                                <li><a href="#">Infographics</a></li>
-                                <!-- Add more items here -->
+                                <li><a href="#">Presentation Design</a></li>
+                                <li><a href="#">Infographic Design</a></li>
+                                <li><a href="#">Vector Tracing</a></li>
+                                <li><a href="#">Resume Design</a></li>
+                                <li><a href="#">Social Media Videos</a></li>
+                                <li><a href="#">Lottie Animation</a></li>
+                                <li><a href="#">Text Animation</a></li>
+                                <li><a href="#">Music Videos</a></li>
+                                <li><a href="#">Slideshow Videos</a></li>
+                                <li><a href="#">Product Videos</a></li>
+                                <li><a href="#">Ecommerce Product Videos</a></li>
                             </ul>
                         </li>
-                        <!-- Add more services here -->
+                        <li>
+                            <span class="folder">Video and Animations</span>
+                            <ul>
+                                <li><a href="#">Video Editing</a></li>
+                                <li><a href="#">Video Ads</a></li>
+                                <li><a href="#">Character Animations</a></li>
+                                <li><a href="#">Logo Animation</a></li>
+                                <li><a href="#">Web Animation</a></li>
+                                <li><a href="#">Visual Effects</a></li>
+                                <li><a href="#">3D Product Animation</a></li>
+                                <li><a href="#">Intro Videos</a></li>
+                                <li><a href="#">Outro Videos</a></li>
+                                <li><a href="#">Subtitles</a></li>
+                                <li><a href="#">Captions</a></li>
+                                <li><a href="#">Animations for Kids</a></li>
+                                <li><a href="#">Animations for Streamers</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="folder">Audio</span>
+                            <ul>
+                                <li><a href="#">Beat Making</a></li>
+                                <li><a href="#">Intro Songs</a></li>
+                                <li><a href="#">Outro Songs</a></li>
+                                <li><a href="#">Custom Songs</a></li>
+                                <li><a href="#">Audio Editing</a></li>
+                                <li><a href="#">Podcast Production</a></li>
+                                <li><a href="#">Audiobook Production</a></li>
+                                <li><a href="#">Audio Ads Production</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" onclick="toggleMenu(event)">Pricing</a>
+                    <span class="folder">Pricing</span>
                     <ul>
+                        <!-- Repeat items for Pricing as in previous example -->
                         <li><a href="#">Logo Design</a></li>
+                        <li><a href="#">Brand Style Guides</a></li>
                         <li><a href="#">Business Cards</a></li>
-                        <!-- Add more pricing options here -->
+                        <li><a href="#">Typography</a></li>
+                        <li><a href="#">Icon Design</a></li>
+                        <li><a href="#">Illustration</a></li>
+                        <li><a href="#">Pattern Design</a></li>
+                        <li><a href="#">Tattoo Design</a></li>
+                        <li><a href="#">Flyer Design</a></li>
+                        <li><a href="#">Brochure Design</a></li>
+                        <li><a href="#">Poster Design</a></li>
+                        <li><a href="#">Catalog Design</a></li>
+                        <li><a href="#">Menu Design</a></li>
+                        <li><a href="#">Invitation Design</a></li>
+                        <li><a href="#">Label Design</a></li>
+                        <li><a href="#">Album Cover Design</a></li>
+                        <li><a href="#">Podcast Cover Art</a></li>
+                        <li><a href="#">Social Media Kit Design</a></li>
+                        <li><a href="#">Email Design</a></li>
+                        <li><a href="#">Web Banners</a></li>
+                        <li><a href="#">Signage Design</a></li>
+                        <li><a href="#">Graphics for Streamers</a></li>
+                        <li><a href="#">Merchandise Design</a></li>
+                        <li><a href="#">Website Design</a></li>
+                        <li><a href="#">Presentation Design</a></li>
+                        <li><a href="#">Infographic Design</a></li>
+                        <li><a href="#">Vector Tracing</a></li>
+                        <li><a href="#">Resume Design</a></li>
+                        <li><a href="#">Social Media Videos</a></li>
+                        <li><a href="#">Lottie Animation</a></li>
+                        <li><a href="#">Text Animation</a></li>
+                        <li><a href="#">Music Videos</a></li>
+                        <li><a href="#">Slideshow Videos</a></li>
+                        <li><a href="#">Product Videos</a></li>
+                        <li><a href="#">Ecommerce Product Videos</a></li>
+                        <li><a href="#">Video Editing</a></li>
+                        <li><a href="#">Video Ads</a></li>
+                        <li><a href="#">Character Animations</a></li>
+                        <li><a href="#">Logo Animation</a></li>
+                        <li><a href="#">Web Animation</a></li>
+                        <li><a href="#">Visual Effects</a></li>
+                        <li><a href="#">3D Product Animation</a></li>
+                        <li><a href="#">Intro Videos</a></li>
+                        <li><a href="#">Outro Videos</a></li>
+                        <li><a href="#">Subtitles</a></li>
+                        <li><a href="#">Captions</a></li>
+                        <li><a href="#">Animations for Kids</a></li>
+                        <li><a href="#">Animations for Streamers</a></li>
+                        <li><a href="#">Beat Making</a></li>
+                        <li><a href="#">Intro Songs</a></li>
+                        <li><a href="#">Outro Songs</a></li>
+                        <li><a href="#">Custom Songs</a></li>
+                        <li><a href="#">Audio Editing</a></li>
+                        <li><a href="#">Podcast Production</a></li>
+                        <li><a href="#">Audiobook Production</a></li>
+                        <li><a href="#">Audio Ads Production</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contact Me</a></li>
+                <li>
+                    <span class="folder">Project Vault</span>
+                    <ul>
+                        <li>
+                            <span class="folder">Graphics</span>
+                            <ul>
+                                <li>
+                                    <span class="folder">Logoverse</span>
+                                    <ul>
+                                        <li><a href="#">Logo Design</a></li>
+                                        <li><a href="#">Brand Style Guides</a></li>
+                                        <li><a href="#">Business Cards</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder">Print Works</span>
+                                    <ul>
+                                        <li><a href="#">Flyer Design</a></li>
+                                        <li><a href="#">Brochure Design</a></li>
+                                        <li><a href="#">Poster Design</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder">Web Graphics</span>
+                                    <ul>
+                                        <li><a href="#">Web Banners</a></li>
+                                        <li><a href="#">Email Design</a></li>
+                                        <li><a href="#">Social Media Kit Design</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="folder">Digital Media</span>
+                            <ul>
+                                <li><a href="#">Website Design</a></li>
+                                <li><a href="#">Infographic Design</a></li>
+                                <li><a href="#">Resume Design</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="folder">Video Projects</span>
+                            <ul>
+                                <li><a href="#">Video Editing</a></li>
+                                <li><a href="#">Character Animations</a></li>
+                                <li><a href="#">Logo Animation</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="folder">Contact</span>
+                </li>
             </ul>
-        </div>
-        <div class="content">
-            <!-- Main content goes here -->
-            <h1>Welcome to the Main Content Area</h1>
-            <p>This is where the main content will be displayed.</p>
-        </div>
+        </nav>
     </div>
-
-    <script>
-        function toggleMenu(event) {
-            event.preventDefault();
-            const li = event.target.parentElement;
-            li.classList.toggle('open');
-        }
-    </script>
 </body>
 </html>
