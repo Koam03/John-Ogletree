@@ -5,99 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Menu as File Tree</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-        }
-
-        .sidebar {
-            background-color: #f7f7f7;
-            padding: 10px;
-            width: 300px;
-            height: 100vh;
-            overflow-y: auto;
-            border-right: 1px solid #ddd;
-        }
-
-        .sidebar ul {
-            list-style: none;
-        }
-
-        .sidebar ul li {
-            margin: 5px 0;
-        }
-
-        .sidebar ul ul {
-            margin-left: 20px;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 5px 10px;
-            position: relative;
-            font-size: 14px;
-        }
-
-        .sidebar ul li a:before {
-            content: '\f07c'; /* FontAwesome folder icon */
-            font-family: FontAwesome;
-            margin-right: 8px;
-        }
-
-        .sidebar ul li ul li a:before {
-            content: '\f07b'; /* FontAwesome file icon */
-            font-family: FontAwesome;
-        }
-
-        .sidebar ul li ul {
-            display: none;
-        }
-
-        .sidebar ul li.open > ul {
-            display: block;
-        }
-
-        .sidebar ul li a.toggle:after {
-            content: '\f078'; /* FontAwesome caret icon */
-            font-family: FontAwesome;
-            position: absolute;
-            right: 10px;
-        }
-
-        .sidebar ul li.open > a.toggle:after {
-            content: '\f077'; /* FontAwesome caret-down icon */
-        }
-
-        .content {
-            padding: 20px;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        p {
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/stylesheets/index.css">
 </head>
 <body>
     <div class="container">
@@ -147,14 +55,6 @@
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.sidebar ul li a.toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                parent.classList.toggle('open');
-            });
-        });
-    </script>
+    <script src="/assets/scripts/javascript/navigationtoggle.js"></script>
 </body>
 </html>

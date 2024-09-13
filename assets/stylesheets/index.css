@@ -1,87 +1,90 @@
-/* Basic styling for the entire layout */
-body, html {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height: 100%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container {
     display: flex;
-    height: 100vh;
+    width: 100%;
 }
 
-/* Styling for the sidebar */
 .sidebar {
-    width: 250px;
-    background-color: #2c3e50;
-    padding-top: 20px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    width: 300px;
+    height: 100vh;
     overflow-y: auto;
-    position: relative;
+    border-right: 1px solid #ddd;
 }
 
 .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar ul ul {
-    display: none; /* Hide submenus initially */
+    list-style: none;
 }
 
 .sidebar ul li {
-    position: relative;
+    margin: 5px 0;
+}
+
+.sidebar ul ul {
+    margin-left: 20px;
 }
 
 .sidebar a {
-    display: block;
-    padding: 15px;
-    color: #ecf0f1;
     text-decoration: none;
-    font-size: 16px;
-    border-bottom: 1px solid #34495e;
-    transition: background 0.3s;
+    color: #333;
+    display: block;
+    padding: 5px 10px;
+    position: relative;
+    font-size: 14px;
 }
 
-.sidebar a:hover {
-    background-color: #34495e;
+.sidebar ul li a:before {
+    content: '\f07c'; /* FontAwesome folder icon */
+    font-family: FontAwesome;
+    margin-right: 8px;
 }
 
-/* Indentation for nested lists */
-.sidebar ul ul a {
-    padding-left: 30px;
+.sidebar ul li ul li a:before {
+    content: '\f07b'; /* FontAwesome file icon */
+    font-family: FontAwesome;
 }
 
-.sidebar ul ul ul a {
-    padding-left: 45px;
+.sidebar ul li ul {
+    display: none;
 }
 
-/* Show submenu on hover */
-.sidebar ul li:hover > ul {
+.sidebar ul li.open > ul {
     display: block;
 }
 
-/* Content area styling */
-.content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #ecf0f1;
+.sidebar ul li a.toggle:after {
+    content: '\f078'; /* FontAwesome caret-right icon */
+    font-family: FontAwesome;
+    position: absolute;
+    right: 10px;
 }
 
-/* Responsive sidebar for smaller screens */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    
-    .container {
-        flex-direction: column;
-    }
+.sidebar ul li.open > a.toggle:after {
+    content: '\f077'; /* FontAwesome caret-down icon */
+}
 
-    .content {
-        padding: 10px;
-    }
+.content {
+    padding: 20px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
 }
