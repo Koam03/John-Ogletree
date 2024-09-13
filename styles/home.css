@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow-y: auto; /* Allows scrolling for large menus */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    position: relative; /* Needed for dropdown positioning */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Nested Dropdown Styling */
+.sidebar ul ul {
+    display: none;
+    position: relative;
+    padding-left: 20px; /* Indentation for dropdown items */
+}
+
+.sidebar ul li:hover > ul {
+    display: block;
+}
+
+.sidebar ul ul ul {
+    padding-left: 20px; /* Additional indentation for deeper nested lists */
+}
+
+/* Sidebar Scrollbars */
+.sidebar {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Optional styling for scrollbar */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
