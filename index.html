@@ -3,185 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Tree Navigation with Content</title>
-    <link rel="stylesheet" href="/assets/stylesheets/index.css">
+    <title>GitHub Profile Navigation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f6f8fa;
+            padding: 16px;
+            overflow-y: auto;
+            border-right: 1px solid #e1e4e8;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #0366d6;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #f1f8ff;
+        }
+        .sidebar ul ul {
+            display: none;
+            padding-left: 20px;
+            background-color: #e1e4e8;
+        }
+        .sidebar ul li:hover > ul {
+            display: block;
+        }
+        .sidebar ul ul ul {
+            padding-left: 20px;
+            background-color: #d1d5da;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .content h1 {
+            margin-top: 0;
+        }
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: #b0b0b0;
+            border-radius: 4px;
+        }
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background-color: #888;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <nav class="file-tree">
+        <div class="sidebar">
             <ul>
-                <li>
-                    <span class="folder">Home</span>
-                </li>
-                <li>
-                    <span class="folder">About Me</span>
-                </li>
-                <li>
-                    <span class="folder">Services</span>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Services</a>
                     <ul>
-                        <li>
-                            <span class="folder">Design and Print</span>
+                        <li><a href="#">Design and Print</a>
                             <ul>
                                 <li><a href="#">Logo Design</a></li>
                                 <li><a href="#">Brand Style Guides</a></li>
-                                <li><a href="#">Business Cards</a></li>
-                                <li><a href="#">Typography</a></li>
-                                <li><a href="#">Icon Design</a></li>
-                                <li><a href="#">Illustration</a></li>
-                                <li><a href="#">Pattern Design</a></li>
-                                <li><a href="#">Tattoo Design</a></li>
-                                <li><a href="#">Flyer Design</a></li>
-                                <li><a href="#">Brochure Design</a></li>
-                                <li><a href="#">Poster Design</a></li>
-                                <li><a href="#">Catalog Design</a></li>
-                                <li><a href="#">Menu Design</a></li>
-                                <li><a href="#">Invitation Design</a></li>
-                                <li><a href="#">Label Design</a></li>
-                                <li><a href="#">Book Covers</a></li>
-                                <li><a href="#">Album Cover Design</a></li>
-                                <li><a href="#">Podcast Cover Art</a></li>
-                                <li><a href="#">Social Media Kit Design</a></li>
-                                <li><a href="#">Email Design</a></li>
-                                <li><a href="#">Web Banners</a></li>
-                                <li><a href="#">Signage Design</a></li>
-                                <li><a href="#">Graphics for Streamers</a></li>
-                                <li><a href="#">Merchandise Design</a></li>
+                                <!-- Add more items as needed -->
                             </ul>
                         </li>
-                        <li>
-                            <span class="folder">Digital Media</span>
+                        <li><a href="#">Digital Media</a>
                             <ul>
                                 <li><a href="#">Website Design</a></li>
                                 <li><a href="#">Presentation Design</a></li>
-                                <li><a href="#">Infographic Design</a></li>
-                                <li><a href="#">Vector Tracing</a></li>
-                                <li><a href="#">Resume Design</a></li>
-                                <li><a href="#">Social Media Videos</a></li>
-                                <li><a href="#">Lottie Animation</a></li>
-                                <li><a href="#">Text Animation</a></li>
-                                <li><a href="#">Music Videos</a></li>
-                                <li><a href="#">Slideshow Videos</a></li>
-                                <li><a href="#">Product Videos</a></li>
-                                <li><a href="#">Ecommerce Product Videos</a></li>
+                                <!-- Add more items as needed -->
                             </ul>
                         </li>
-                        <li>
-                            <span class="folder">Video and Animations</span>
+                        <li><a href="#">Video and Animations</a>
                             <ul>
                                 <li><a href="#">Video Editing</a></li>
                                 <li><a href="#">Video Ads</a></li>
-                                <li><a href="#">Character Animations</a></li>
-                                <li><a href="#">Logo Animation</a></li>
-                                <li><a href="#">Web Animation</a></li>
-                                <li><a href="#">Visual Effects</a></li>
-                                <li><a href="#">3D Product Animation</a></li>
-                                <li><a href="#">Intro Videos</a></li>
-                                <li><a href="#">Outro Videos</a></li>
-                                <li><a href="#">Subtitles</a></li>
-                                <li><a href="#">Captions</a></li>
-                                <li><a href="#">Animations for Kids</a></li>
-                                <li><a href="#">Animations for Streamers</a></li>
+                                <!-- Add more items as needed -->
                             </ul>
                         </li>
-                        <li>
-                            <span class="folder">Audio</span>
+                        <li><a href="#">Audio</a>
                             <ul>
                                 <li><a href="#">Beat Making</a></li>
                                 <li><a href="#">Intro Songs</a></li>
-                                <li><a href="#">Outro Songs</a></li>
-                                <li><a href="#">Custom Songs</a></li>
-                                <li><a href="#">Audio Editing</a></li>
-                                <li><a href="#">Podcast Production</a></li>
-                                <li><a href="#">Audiobook Production</a></li>
-                                <li><a href="#">Audio Ads Production</a></li>
+                                <!-- Add more items as needed -->
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <span class="folder">Pricing</span>
+                <li><a href="#">Pricing</a>
                     <ul>
-                        <!-- Pricing links -->
-                        <li><a href="#">Logo Design</a></li>
-                        <!-- Add all other pricing links similarly -->
+                        <!-- List pricing items -->
                     </ul>
                 </li>
-                <li>
-                    <span class="folder">Project Vault</span>
+                <li><a href="#">Project Vault</a>
                     <ul>
-                        <li>
-                            <span class="folder">Graphics</span>
+                        <li><a href="#">Graphics</a>
                             <ul>
-                                <li>
-                                    <span class="folder">Logoverse</span>
-                                    <ul>
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Branding</a></li>
-                                        <li><a href="#">Marketing</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <span class="folder">Sermon Graphics</span>
-                                    <ul>
-                                        <li><a href="#">Presentation Slides</a></li>
-                                        <li><a href="#">Social Media Posts</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <span class="folder">Publications</span>
-                                    <ul>
-                                        <li><a href="#">Annual Reports</a></li>
-                                        <li><a href="#">Magazines</a></li>
-                                        <li><a href="#">Brochures</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="#">Logoverse</a></li>
+                                <li><a href="#">Visions Unveiled</a></li>
+                                <!-- Add more items as needed -->
                             </ul>
                         </li>
-                        <li>
-                            <span class="folder">Videos</span>
+                        <li><a href="#">Videos</a>
                             <ul>
-                                <li>
-                                    <span class="folder">Demo Reels</span>
-                                    <ul>
-                                        <li><a href="#">Corporate</a></li>
-                                        <li><a href="#">Educational</a></li>
-                                        <li><a href="#">Entertainment</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <span class="folder">Event Coverage</span>
-                                    <ul>
-                                        <li><a href="#">Weddings</a></li>
-                                        <li><a href="#">Conferences</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="#">Movie Trailers</a></li>
+                                <li><a href="#">Music Videos</a></li>
+                                <!-- Add more items as needed -->
                             </ul>
                         </li>
-                        <li>
-                            <span class="folder">Audio</span>
+                        <li><a href="#">Books</a>
                             <ul>
-                                <li><a href="#">Background Music</a></li>
-                                <li><a href="#">Voiceovers</a></li>
-                                <li><a href="#">Sound Effects</a></li>
+                                <li><a href="#">Inside the Storm</a></li>
+                                <!-- Add more items as needed -->
+                            </ul>
+                        </li>
+                        <li><a href="#">Music</a>
+                            <ul>
+                                <li><a href="#">Pink Moon</a></li>
+                                <!-- Add more items as needed -->
                             </ul>
                         </li>
                     </ul>
                 </li>
+                <li><a href="#">Contact Me</a></li>
             </ul>
-        </nav>
-        <main class="content">
-            <h1>Welcome to My Website</h1>
-            <p>
-                This is a sample text for the main content area. Here you can add any content that you wish to display 
-                on your website. Use this area to provide information about your services, portfolio, or any other 
-                relevant details.
-            </p>
-            <p>
-                This section is designed to complement the file tree navigation on the left, giving you a complete 
-                layout that includes both navigation and content sections.
-            </p>
-        </main>
+        </div>
+        <div class="content">
+            <h1>Welcome to My GitHub Profile</h1>
+            <p>This is where the main content will be displayed.</p>
+        </div>
     </div>
-    <script src="/assets/scripts/javascript/navigationtoggle.js"></script>
 </body>
 </html>
