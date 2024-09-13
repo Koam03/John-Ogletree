@@ -1,94 +1,87 @@
-* {
+/* Basic styling for the entire layout */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    height: 100%;
 }
 
 .container {
     display: flex;
+    height: 100vh;
 }
 
+/* Styling for the sidebar */
 .sidebar {
     width: 250px;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    position: fixed;
-    height: 100%;
+    background-color: #2c3e50;
+    padding-top: 20px;
+    overflow-y: auto;
+    position: relative;
 }
 
-.sidebar .logo {
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul ul {
+    display: none; /* Hide submenus initially */
+}
+
+.sidebar ul li {
+    position: relative;
+}
+
+.sidebar a {
     display: block;
-    margin: 0 auto;
-}
-
-.sidebar nav ul {
-    list-style: none;
-}
-
-.sidebar nav ul li {
-    margin: 15px 0;
-}
-
-.sidebar nav ul li a {
-    color: #fff;
+    padding: 15px;
+    color: #ecf0f1;
     text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid #34495e;
+    transition: background 0.3s;
 }
 
-.sidebar nav ul .dropdown {
-    margin-left: 15px;
-    list-style: disc;
+.sidebar a:hover {
+    background-color: #34495e;
 }
 
+/* Indentation for nested lists */
+.sidebar ul ul a {
+    padding-left: 30px;
+}
+
+.sidebar ul ul ul a {
+    padding-left: 45px;
+}
+
+/* Show submenu on hover */
+.sidebar ul li:hover > ul {
+    display: block;
+}
+
+/* Content area styling */
 .content {
-    margin-left: 270px;
+    flex-grow: 1;
     padding: 20px;
+    background-color: #ecf0f1;
 }
 
-.main h1, .about h1, .services h1, .projects h1 {
-    color: #333;
-    margin-bottom: 20px;
-}
+/* Responsive sidebar for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .container {
+        flex-direction: column;
+    }
 
-.main p, .about p, .services p, .projects p {
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-.polaroid-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.polaroid {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.polaroid img {
-    width: 100%;
-}
-
-.caption {
-    text-align: center;
-    margin-top: 10px;
+    .content {
+        padding: 10px;
+    }
 }
