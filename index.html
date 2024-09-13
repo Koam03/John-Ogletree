@@ -3,95 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Ogletree Portfolio</title>
-    <link rel="stylesheet" href="/assets/stylesheets/index.css">
+    <title>Navigation Menu as File Tree</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #f7f7f7;
+            padding: 10px;
+            width: 300px;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 5px 0;
+        }
+
+        .sidebar ul ul {
+            margin-left: 20px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 5px 10px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .sidebar ul li a:before {
+            content: '\f07c'; /* FontAwesome folder icon */
+            font-family: FontAwesome;
+            margin-right: 8px;
+        }
+
+        .sidebar ul li ul li a:before {
+            content: '\f07b'; /* FontAwesome file icon */
+            font-family: FontAwesome;
+        }
+
+        .sidebar ul li ul {
+            display: none;
+        }
+
+        .sidebar ul li.open > ul {
+            display: block;
+        }
+
+        .sidebar ul li a.toggle:after {
+            content: '\f078'; /* FontAwesome caret icon */
+            font-family: FontAwesome;
+            position: absolute;
+            right: 10px;
+        }
+
+        .sidebar ul li.open > a.toggle:after {
+            content: '\f077'; /* FontAwesome caret-down icon */
+        }
+
+        .content {
+            padding: 20px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <div class="sidebar">
-            <a href="index.html">
-                <img src="/assets/images/John_Ogletree_Logo.png" alt="John Ogletree Logo" class="logo">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li>
-                        <a href="#">Services</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Design and Print</a></li>
-                            <li><a href="#">Digital Media</a></li>
-                            <li><a href="#">Video and Animations</a></li>
-                            <li><a href="#">Audio</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Project Vault</a></li>
-                    <li><a href="#">Contact Me</a></li>
-                </ul>
-            </nav>
+            <ul>
+                <li><a href="#" class="toggle">Home</a></li>
+                <li><a href="#" class="toggle">About Me</a></li>
+                <li><a href="#" class="toggle">Services</a>
+                    <ul>
+                        <li><a href="#" class="toggle">Design and Print</a>
+                            <ul>
+                                <li><a href="#">Logo Design</a></li>
+                                <li><a href="#">Brand Style Guides</a></li>
+                                <li><a href="#">Business Cards</a></li>
+                                <!-- Add other services as needed -->
+                            </ul>
+                        </li>
+                        <li><a href="#" class="toggle">Digital Media</a>
+                            <ul>
+                                <li><a href="#">Website Design</a></li>
+                                <li><a href="#">Presentation Design</a></li>
+                                <!-- Add other services as needed -->
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="toggle">Pricing</a></li>
+                <li><a href="#" class="toggle">Project Vault</a>
+                    <ul>
+                        <li><a href="#" class="toggle">Graphics</a>
+                            <ul>
+                                <li><a href="#">Logoverse</a></li>
+                                <li><a href="#">Visions Unveiled</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">Music</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="toggle">Contact Me</a></li>
+            </ul>
         </div>
-
-        <!-- Main Content -->
         <div class="content">
-            <section class="main">
-                <h1>Your Vision, My Pixels</h1>
-                <p>Craftsmanship in Every Pixel.</p>
-                <a href="#"><button>View My Projects</button></a>
-            </section>
-            
-            <hr>
-
-            <section class="about">
-                <h1>A Bit About Me</h1>
-                <p>I invite you to explore my portfolio and witness the blend of ideas, skills, and creativity that defines my artistic journey. If you resonate with my work and have a project in mind, feel free to reach out.</p>
-                <a href="#"><button>Learn More About Me</button></a>
-            </section>
-
-            <hr>
-
-            <section class="services">
-                <h1>Service Categories</h1>
-                <p>Click on an image below to see all the services I offer in that category.</p>
-                <div class="polaroid-grid">
-                    <div class="polaroid">
-                        <a href="#">
-                            <img src="/assets/media/ServiceCatagoryImages/Audio.png" alt="Audio Services">
-                            <div class="caption">Audio</div>
-                        </a>
-                    </div>
-                    <div class="polaroid">
-                        <a href="#">
-                            <img src="/assets/media/ServiceCatagoryImages/DigitalMedia.png" alt="Digital Media Services">
-                            <div class="caption">Digital Media</div>
-                        </a>
-                    </div>
-                    <div class="polaroid">
-                        <a href="#">
-                            <img src="/assets/media/ServiceCatagoryImages/VideoAnimations.png" alt="Video and Animations Services">
-                            <div class="caption">Video & Animations</div>
-                        </a>
-                    </div>
-                    <div class="polaroid">
-                        <a href="#">
-                            <img src="/assets/media/ServiceCatagoryImages/DesignPrint.png" alt="Design and Print Services">
-                            <div class="caption">Design & Print</div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <hr>
-
-            <section class="projects">
-                <h1>Featured Projects</h1>
-                <div class="polaroid-grid" id="featuredProjectsContainer">
-                    <!-- Projects will be dynamically added here -->
-                </div>
-            </section>
+            <!-- Main content goes here -->
+            <h1>Welcome to My Portfolio</h1>
+            <p>Content will be displayed here.</p>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        document.querySelectorAll('.sidebar ul li a.toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 </html>
