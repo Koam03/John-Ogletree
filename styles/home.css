@@ -8,6 +8,7 @@
     background-color: #f0f0f0;
     padding: 20px;
     overflow-y: auto; /* Allows scrolling for large menus */
+    max-height: 100vh; /* Prevents the sidebar from extending beyond the viewport */
 }
 
 .sidebar ul {
@@ -48,18 +49,6 @@
     padding-left: 20px; /* Additional indentation for deeper nested lists */
 }
 
-/* Sidebar Scrollbars */
-.sidebar {
-    max-height: 100vh;
-    overflow-y: auto;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-}
-
 /* Optional styling for scrollbar */
 .sidebar::-webkit-scrollbar {
     width: 8px;
@@ -72,4 +61,133 @@
 
 .sidebar::-webkit-scrollbar-thumb:hover {
     background-color: #888;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    overflow-y: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+nav a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.logo {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+.logo img {
+    height: 99px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0px;
+}
+
+.logo img:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: static;
+    background-color: black;
+    width: calc(100% - 20px);
+    box-shadow: none;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sections Styling */
+.introduction, .about, .services, .projects, .music, .contact, footer {
+    background-color: gray;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-left: 250px;
+    color: white;
+}
+
+.introduction button, .about button, .services button, .projects button, .music button, .contact button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.introduction button:hover, .about button:hover, .services button:hover, .projects button:hover, .music button:hover, .contact button:hover {
+    background-color: #555;
+}
+
+.projects img, .music img {
+    width: 100%;
+    height: auto;
+}
+
+.contact form {
+    margin-top: 20px;
+}
+
+.contact input, .contact textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-left: 250px;
+}
+
+footer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+footer td {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer img {
+    vertical-align: middle;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
 }
