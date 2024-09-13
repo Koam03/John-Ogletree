@@ -3,93 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Profile Navigation</title>
+    <title>Creative Studio</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-            color: #333;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
         }
+
         .container {
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
+
         .sidebar {
             width: 250px;
-            background-color: #f6f8fa;
-            padding: 16px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
             overflow-y: auto;
-            border-right: 1px solid #e1e4e8;
+            position: fixed;
+            height: 100%;
         }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
         .sidebar ul {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
+
         .sidebar ul li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             position: relative;
         }
+
         .sidebar ul li a {
             text-decoration: none;
-            color: #0366d6;
+            color: #ecf0f1;
             display: block;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: background-color 0.2s ease;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         .sidebar ul li a:hover {
-            background-color: #f1f8ff;
+            background-color: #34495e;
+            color: #f39c12;
         }
+
         .sidebar ul ul {
             display: none;
             padding-left: 20px;
-            background-color: #e1e4e8;
+            background-color: #34495e;
         }
+
         .sidebar ul li:hover > ul {
             display: block;
         }
-        .sidebar ul ul ul {
+
+        .sidebar ul ul li a {
             padding-left: 20px;
-            background-color: #d1d5da;
         }
+
+        .sidebar ul ul ul {
+            background-color: #1c2833;
+        }
+
         .content {
             flex: 1;
             padding: 20px;
+            margin-left: 250px;
             background-color: #fff;
         }
+
         .content h1 {
-            margin-top: 0;
+            color: #2c3e50;
         }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            border-bottom: 2px solid #e1e4e8;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-        .section p {
-            margin: 0;
-        }
-        .sidebar::-webkit-scrollbar {
-            width: 8px;
-        }
-        .sidebar::-webkit-scrollbar-thumb {
-            background-color: #b0b0b0;
-            border-radius: 4px;
-        }
-        .sidebar::-webkit-scrollbar-thumb:hover {
-            background-color: #888;
+
+        .content p {
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
+            <h2>Creative Studio</h2>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Me</a></li>
@@ -99,63 +102,71 @@
                             <ul>
                                 <li><a href="#">Logo Design</a></li>
                                 <li><a href="#">Brand Style Guides</a></li>
-                                <!-- Add more items as needed -->
+                                <li><a href="#">Business Cards</a></li>
+                                <li><a href="#">Typography</a></li>
+                                <!-- Other items here -->
                             </ul>
                         </li>
                         <li><a href="#">Digital Media</a>
                             <ul>
                                 <li><a href="#">Website Design</a></li>
                                 <li><a href="#">Presentation Design</a></li>
-                                <!-- Add more items as needed -->
+                                <!-- Other items here -->
                             </ul>
                         </li>
                         <li><a href="#">Video and Animations</a>
                             <ul>
                                 <li><a href="#">Video Editing</a></li>
                                 <li><a href="#">Video Ads</a></li>
-                                <!-- Add more items as needed -->
+                                <!-- Other items here -->
                             </ul>
                         </li>
                         <li><a href="#">Audio</a>
                             <ul>
                                 <li><a href="#">Beat Making</a></li>
                                 <li><a href="#">Intro Songs</a></li>
-                                <!-- Add more items as needed -->
+                                <!-- Other items here -->
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <li><a href="#">Pricing</a>
                     <ul>
-                        <!-- List pricing items -->
+                        <li><a href="#">Logo Design</a></li>
+                        <li><a href="#">Brand Style Guides</a></li>
+                        <!-- Other items here -->
                     </ul>
                 </li>
                 <li><a href="#">Project Vault</a>
                     <ul>
                         <li><a href="#">Graphics</a>
                             <ul>
-                                <li><a href="#">Logoverse</a></li>
-                                <li><a href="#">Visions Unveiled</a></li>
-                                <!-- Add more items as needed -->
+                                <li><a href="#">Logoverse</a>
+                                    <ul>
+                                        <li><a href="#">Burst Through</a></li>
+                                        <li><a href="#">Vust Reservations</a></li>
+                                        <!-- Other items here -->
+                                    </ul>
+                                </li>
+                                <!-- Other categories here -->
                             </ul>
                         </li>
                         <li><a href="#">Videos</a>
                             <ul>
                                 <li><a href="#">Movie Trailers</a></li>
-                                <li><a href="#">Music Videos</a></li>
-                                <!-- Add more items as needed -->
+                                <!-- Other items here -->
                             </ul>
                         </li>
                         <li><a href="#">Books</a>
                             <ul>
                                 <li><a href="#">Inside the Storm</a></li>
-                                <!-- Add more items as needed -->
+                                <!-- Other items here -->
                             </ul>
                         </li>
                         <li><a href="#">Music</a>
                             <ul>
                                 <li><a href="#">Pink Moon</a></li>
-                                <!-- Add more items as needed -->
+                                <!-- Other items here -->
                             </ul>
                         </li>
                     </ul>
@@ -164,26 +175,8 @@
             </ul>
         </div>
         <div class="content">
-            <div class="section">
-                <h1>Welcome to My GitHub Profile</h1>
-                <p>This is where the main content will be displayed.</p>
-            </div>
-            <div class="section">
-                <h2>Projects</h2>
-                <p>Here you can find a collection of my projects, including design work, digital media, and more.</p>
-            </div>
-            <div class="section">
-                <h2>Skills</h2>
-                <p>Browse through my skills and areas of expertise, including graphic design, video editing, and audio production.</p>
-            </div>
-            <div class="section">
-                <h2>Experience</h2>
-                <p>Learn about my professional experience and the roles I have taken on in various projects and collaborations.</p>
-            </div>
-            <div class="section">
-                <h2>Contact</h2>
-                <p>If you'd like to get in touch, please use the contact form or reach out via email.</p>
-            </div>
+            <h1>Welcome to Creative Studio</h1>
+            <p>This is where the main content will be displayed.</p>
         </div>
     </div>
 </body>
