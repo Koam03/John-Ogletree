@@ -3,82 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Style Layout with Breadcrumb</title>
+    <title>Navigation Menu</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .header {
-            background-color: #24292e;
-            color: #fff;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            z-index: 1000;
-        }
-
-        .header .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .header .navbar h1 {
-            margin: 0;
-            font-size: 20px;
-        }
-
-        .header .navbar .search {
-            flex: 1;
-            margin-left: 20px;
-        }
-
-        .header .navbar input {
-            width: 100%;
-            padding: 8px;
-            border-radius: 4px;
-            border: none;
-        }
-
-        .header .breadcrumb {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #c0c0c0;
-        }
-
-        .header .breadcrumb a {
-            text-decoration: none;
-            color: #fff;
-            transition: color 0.3s ease;
-        }
-
-        .header .breadcrumb a:hover {
-            color: #e1e4e8;
-        }
-
         .container {
             display: flex;
-            margin-top: 80px; /* Space for fixed header */
-            height: calc(100vh - 80px); /* Adjust height for header */
+            height: 100vh;
         }
 
         .sidebar {
-            width: 250px;
-            background-color: #f6f8fa;
+            width: 20%;
+            background-color: #f0f0f0;
             padding: 20px;
-            border-right: 1px solid #e1e4e8;
             overflow-y: auto;
         }
 
         .sidebar ul {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         .sidebar ul li {
@@ -88,19 +29,20 @@
 
         .sidebar ul li a {
             text-decoration: none;
-            color: #0366d6;
+            color: #333;
             display: block;
-            padding: 8px;
+            padding: 8px 10px;
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
 
         .sidebar ul li a:hover {
-            background-color: #e1e4e8;
+            background-color: #ddd;
         }
 
         .sidebar ul ul {
             display: none;
+            position: relative;
             padding-left: 20px;
         }
 
@@ -116,54 +58,98 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="navbar">
-            <h1>My GitHub Style Layout</h1>
-            <div class="search">
-                <input type="text" placeholder="Search...">
-            </div>
-        </div>
-        <div class="breadcrumb">
-            <a href="#">Home</a>
-        </div>
-    </div>
     <div class="container">
         <div class="sidebar">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Me</a></li>
-                <li>
-                    <a href="#">Services</a>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-me">About Me</a></li>
+                <li><a href="/services">Services</a>
                     <ul>
-                        <li><a href="#">Design and Print</a></li>
-                        <li><a href="#">Digital Media</a></li>
-                        <li><a href="#">Video and Animations</a></li>
-                        <li><a href="#">Audio</a></li>
+                        <li><a href="/services/design-and-print">Design and Print</a>
+                            <ul>
+                                <li><a href="/services/design-and-print/logo-design">Logo Design</a></li>
+                                <li><a href="/services/design-and-print/brand-style-guides">Brand Style Guides</a></li>
+                                <li><a href="/services/design-and-print/business-cards">Business Cards</a></li>
+                                <li><a href="/services/design-and-print/typography">Typography</a></li>
+                                <li><a href="/services/design-and-print/icon-design">Icon Design</a></li>
+                                <li><a href="/services/design-and-print/illustration">Illustration</a></li>
+                                <li><a href="/services/design-and-print/pattern-design">Pattern Design</a></li>
+                                <li><a href="/services/design-and-print/tattoo-design">Tattoo Design</a></li>
+                                <li><a href="/services/design-and-print/flyer-design">Flyer Design</a></li>
+                                <li><a href="/services/design-and-print/brochure-design">Brochure Design</a></li>
+                                <li><a href="/services/design-and-print/poster-design">Poster Design</a></li>
+                                <li><a href="/services/design-and-print/catalog-design">Catalog Design</a></li>
+                                <li><a href="/services/design-and-print/menu-design">Menu Design</a></li>
+                                <li><a href="/services/design-and-print/invitation-design">Invitation Design</a></li>
+                                <li><a href="/services/design-and-print/label-design">Label Design</a></li>
+                                <li><a href="/services/design-and-print/book-covers">Book Covers</a></li>
+                                <li><a href="/services/design-and-print/album-cover-design">Album Cover Design</a></li>
+                                <li><a href="/services/design-and-print/podcast-cover-art">Podcast Cover Art</a></li>
+                                <li><a href="/services/design-and-print/social-media-kit-design">Social Media Kit Design</a></li>
+                                <li><a href="/services/design-and-print/email-design">Email Design</a></li>
+                                <li><a href="/services/design-and-print/web-banners">Web Banners</a></li>
+                                <li><a href="/services/design-and-print/signage-design">Signage Design</a></li>
+                                <li><a href="/services/design-and-print/graphics-for-streamers">Graphics for Streamers</a></li>
+                                <li><a href="/services/design-and-print/merchandise-design">Merchandise Design</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/services/digital-media">Digital Media</a>
+                            <ul>
+                                <li><a href="/services/digital-media/website-design">Website Design</a></li>
+                                <li><a href="/services/digital-media/presentation-design">Presentation Design</a></li>
+                                <li><a href="/services/digital-media/infographic-design">Infographic Design</a></li>
+                                <li><a href="/services/digital-media/vector-tracing">Vector Tracing</a></li>
+                                <li><a href="/services/digital-media/resume-design">Resume Design</a></li>
+                                <li><a href="/services/digital-media/social-media-videos">Social Media Videos</a></li>
+                                <li><a href="/services/digital-media/lottie-animation">Lottie Animation</a></li>
+                                <li><a href="/services/digital-media/text-animation">Text Animation</a></li>
+                                <li><a href="/services/digital-media/music-videos">Music Videos</a></li>
+                                <li><a href="/services/digital-media/slideshow-videos">Slideshow Videos</a></li>
+                                <li><a href="/services/digital-media/product-videos">Product Videos</a></li>
+                                <li><a href="/services/digital-media/ecommerce-product-videos">Ecommerce Product Videos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/services/video-and-animations">Video and Animations</a>
+                            <ul>
+                                <li><a href="/services/video-and-animations/video-editing">Video Editing</a></li>
+                                <li><a href="/services/video-and-animations/video-ads">Video Ads</a></li>
+                                <li><a href="/services/video-and-animations/character-animations">Character Animations</a></li>
+                                <li><a href="/services/video-and-animations/logo-animation">Logo Animation</a></li>
+                                <li><a href="/services/video-and-animations/web-animation">Web Animation</a></li>
+                                <li><a href="/services/video-and-animations/visual-effects">Visual Effects</a></li>
+                                <li><a href="/services/video-and-animations/3d-product-animation">3D Product Animation</a></li>
+                                <li><a href="/services/video-and-animations/intro-videos">Intro Videos</a></li>
+                                <li><a href="/services/video-and-animations/outro-videos">Outro Videos</a></li>
+                                <li><a href="/services/video-and-animations/subtitles">Subtitles</a></li>
+                                <li><a href="/services/video-and-animations/captions">Captions</a></li>
+                                <li><a href="/services/video-and-animations/animations-for-kids">Animations for Kids</a></li>
+                                <li><a href="/services/video-and-animations/animations-for-streamers">Animations for Streamers</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/services/audio">Audio</a>
+                            <ul>
+                                <li><a href="/services/audio/beat-making">Beat Making</a></li>
+                                <li><a href="/services/audio/intro-songs">Intro Songs</a></li>
+                                <li><a href="/services/audio/outro-songs">Outro Songs</a></li>
+                                <li><a href="/services/audio/custom-songs">Custom Songs</a></li>
+                                <li><a href="/services/audio/audio-editing">Audio Editing</a></li>
+                                <li><a href="/services/audio/podcast-production">Podcast Production</a></li>
+                                <li><a href="/services/audio/audiobook-production">Audiobook Production</a></li>
+                                <li><a href="/services/audio/audio-ads-production">Audio Ads Production</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Pricing</a>
-                    <ul>
-                        <li><a href="#">Design and Print</a></li>
-                        <li><a href="#">Digital Media</a></li>
-                        <li><a href="#">Video and Animations</a></li>
-                        <li><a href="#">Audio</a></li>
-                    </ul>
+                <li><a href="/pricing">Pricing</a>
+                    <!-- Add pricing links similarly to the above structure -->
                 </li>
-                <li>
-                    <a href="#">Project Vault</a>
-                    <ul>
-                        <li><a href="#">Design and Print</a></li>
-                        <li><a href="#">Digital Media</a></li>
-                        <li><a href="#">Video and Animations</a></li>
-                        <li><a href="#">Audio</a></li>
-                    </ul>
+                <li><a href="/project-vault">Project Vault</a>
+                    <!-- Add project vault links similarly to the above structure -->
                 </li>
-                <li><a href="#">Contact Me</a></li>
+                <li><a href="/contact-me">Contact Me</a></li>
             </ul>
         </div>
         <div class="content">
-            <!-- Main content goes here -->
             <h1>Welcome to the Main Content Area</h1>
             <p>This is where the main content will be displayed.</p>
         </div>
