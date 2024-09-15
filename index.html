@@ -3,74 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Navigation with Dropdowns</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-            position: relative;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            position: relative;
-            padding: 10px;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px;
-        }
-        nav ul li a:hover {
-            color: #007bff;
-        }
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #fff;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            z-index: 1000;
-            min-width: 200px;
-            padding: 10px;
-        }
-        nav ul li ul li {
-            padding: 5px;
-            margin: 0;
-        }
-        nav ul li ul li a {
-            color: #333;
-            padding: 5px 10px;
-        }
-        nav ul li:hover > ul {
-            display: block;
-        }
-        nav ul li ul li a:hover {
-            color: #007bff;
-            background-color: #f4f4f4;
-        }
-        footer {
-            margin-top: 20px;
-        }
-    </style>
+    <title>Sidebar Navigation with Dropdowns</title>
+    <link rel="stylesheet" href="/assets/stylesheets/index.css">
 </head>
 <body>
 
-    <header>
-        <h1>Website Navigation with Dropdowns</h1>
-    </header>
-
-    <nav>
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div id="sidebar-toggle" class="toggle-btn">&#9776;</div>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about-me">About Me</a></li>
@@ -83,7 +23,6 @@
                             <li><a href="/services/design-and-print/logo-design">Logo Design</a></li>
                             <li><a href="/services/design-and-print/brand-style-guides">Brand Style Guides</a></li>
                             <li><a href="/services/design-and-print/business-cards">Business Cards</a></li>
-                            <!-- Add more links here -->
                         </ul>
                     </li>
                     <li>
@@ -91,15 +30,6 @@
                         <ul>
                             <li><a href="/services/digital-media/website-design">Website Design</a></li>
                             <li><a href="/services/digital-media/presentation-design">Presentation Design</a></li>
-                            <!-- Add more links here -->
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/services/video-and-animations">Video and Animations</a>
-                        <ul>
-                            <li><a href="/services/video-and-animations/video-editing">Video Editing</a></li>
-                            <li><a href="/services/video-and-animations/video-ads">Video Ads</a></li>
-                            <!-- Add more links here -->
                         </ul>
                     </li>
                 </ul>
@@ -109,25 +39,23 @@
                 <ul>
                     <li><a href="/pricing/logo-design">Logo Design</a></li>
                     <li><a href="/pricing/brand-style-guides">Brand Style Guides</a></li>
-                    <!-- Add more pricing links here -->
-                </ul>
-            </li>
-            <li>
-                <a href="/project-vault">Project Vault</a>
-                <ul>
-                    <li><a href="/project-vault/graphics">Graphics</a></li>
-                    <li><a href="/project-vault/videos">Videos</a></li>
-                    <li><a href="/project-vault/books">Books</a></li>
-                    <li><a href="/project-vault/music">Music</a></li>
                 </ul>
             </li>
             <li><a href="/contact-me">Contact Me</a></li>
         </ul>
     </nav>
 
-    <footer>
+    <!-- Content Section -->
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is the content area where you can place your website's content.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="content">
         <p>&copy; 2024 Your Website Name. All rights reserved.</p>
     </footer>
 
+    <script src="/assets/scripts/navtoggle.js"></script>
 </body>
 </html>
