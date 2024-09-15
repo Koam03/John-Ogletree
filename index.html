@@ -3,47 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="John Ogletree | Freelance Graphic Designer">
-    <meta name="description" content="I'm John Ogletree, a freelance graphic designer creating impactful visuals for brands. Need a logo, website, or video? Let's chat!">
-    <meta name="keywords" content="graphic design, logo design, branding, web design, video editing, music production, illustrator, freelance designer">
-    <meta name="author" content="John Ogletree">
-    <meta property="og:title" content="John Ogletree | Freelance Graphic Designer">
-    <meta property="og:description" content="I'm John Ogletree, a freelance graphic designer creating impactful visuals for brands. Need a logo, website, or video? Let's chat!">
-    <meta property="og:image" content="images/graphics/06 20 24_JAOL.png">
-    <meta property="og:url" content="https://john-ogletree.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="John Ogletree">
-    <meta property="robots" content="index, follow">
-    <title>John Ogletree</title>
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/index.css">
+    <title>Website Navigation with Dropdowns</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            position: relative;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+            padding: 10px;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+        }
+        nav ul li a:hover {
+            color: #007bff;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+            min-width: 200px;
+            padding: 10px;
+        }
+        nav ul li ul li {
+            padding: 5px;
+            margin: 0;
+        }
+        nav ul li ul li a {
+            color: #333;
+            padding: 5px 10px;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul li ul li a:hover {
+            color: #007bff;
+            background-color: #f4f4f4;
+        }
+        footer {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <nav class="sidebar">
-        <div class="logo">
-            <h1>John Ogletree</h1>
-            <img src="images/graphics/06 20 24_JAOL.png" alt="Logo">
-        </div>
-        <a href="/">Home</a>
-        <a href="about.html">About</a>
-        <div class="dropdown">
-            <a href="services.html">Services</a>
-            <div class="dropdown-content">
-                <a href="services/design-and-print/logo-design.html">Logo Design</a>
-                <a href="services/design-and-print/brand-style-guides.html">Brand Style Guides</a>
-                <a href="services/design-and-print/business-cards.html">Business Cards</a>
-                <!-- Add more links as necessary -->
-            </div>
-        </div>
-        <a href="contact.html">Contact</a>
+
+    <header>
+        <h1>Website Navigation with Dropdowns</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-me">About Me</a></li>
+            <li>
+                <a href="/services">Services</a>
+                <ul>
+                    <li>
+                        <a href="/services/design-and-print">Design and Print</a>
+                        <ul>
+                            <li><a href="/services/design-and-print/logo-design">Logo Design</a></li>
+                            <li><a href="/services/design-and-print/brand-style-guides">Brand Style Guides</a></li>
+                            <li><a href="/services/design-and-print/business-cards">Business Cards</a></li>
+                            <!-- Add more links here -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/services/digital-media">Digital Media</a>
+                        <ul>
+                            <li><a href="/services/digital-media/website-design">Website Design</a></li>
+                            <li><a href="/services/digital-media/presentation-design">Presentation Design</a></li>
+                            <!-- Add more links here -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/services/video-and-animations">Video and Animations</a>
+                        <ul>
+                            <li><a href="/services/video-and-animations/video-editing">Video Editing</a></li>
+                            <li><a href="/services/video-and-animations/video-ads">Video Ads</a></li>
+                            <!-- Add more links here -->
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/pricing">Pricing</a>
+                <ul>
+                    <li><a href="/pricing/logo-design">Logo Design</a></li>
+                    <li><a href="/pricing/brand-style-guides">Brand Style Guides</a></li>
+                    <!-- Add more pricing links here -->
+                </ul>
+            </li>
+            <li>
+                <a href="/project-vault">Project Vault</a>
+                <ul>
+                    <li><a href="/project-vault/graphics">Graphics</a></li>
+                    <li><a href="/project-vault/videos">Videos</a></li>
+                    <li><a href="/project-vault/books">Books</a></li>
+                    <li><a href="/project-vault/music">Music</a></li>
+                </ul>
+            </li>
+            <li><a href="/contact-me">Contact Me</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
-        <div class="hero">
-            <h2>Welcome to my portfolio!</h2>
-            <p>Discover my work, learn about my services, and get in touch.</p>
-        </div>
-    </div>
+    <footer>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+    </footer>
 
-    <script src="scripts/navtoggle.js"></script>
 </body>
 </html>

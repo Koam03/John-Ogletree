@@ -1,11 +1,8 @@
-// Example for mobile menu toggle (if needed)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav');
+    const sidebar = document.querySelector('.sidebar');
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-    }
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
 });
