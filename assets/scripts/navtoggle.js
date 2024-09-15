@@ -1,8 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Example for mobile menu toggle (if needed)
+document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
+    const navMenu = document.querySelector('nav');
 
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-    });
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
 });
