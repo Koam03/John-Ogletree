@@ -56,18 +56,27 @@ nav ul li:hover > ul {
     display: block;
 }
 
-/* Content Section */
-.content {
+/* Main Content Wrapper */
+.main-content {
+    display: flex;
+    flex-direction: column;
     margin-left: 270px;
     padding: 20px;
     width: calc(100% - 270px);
     height: 100vh;
     overflow-y: auto;
-    transition: margin-left 0.3s ease;
 }
 
+/* Content Section */
+.content {
+    flex: 1; /* This ensures the content area grows to fill the space between the header and footer */
+}
+
+/* Footer */
 footer {
-    margin-top: 20px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f4f4f4;
 }
 
 /* Toggle Button for Sidebar */
@@ -92,7 +101,7 @@ footer {
         display: block;
     }
 
-    .content {
+    .main-content {
         margin-left: 0;
         width: 100%;
     }
