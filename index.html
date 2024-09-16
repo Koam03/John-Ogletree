@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Navigation with Dropdowns</title>
+    <title>Discover Page - Sidebar Navigation</title>
     <link rel="stylesheet" href="/assets/stylesheets/index.css">
 </head>
-<body>
 
+<body>
     <!-- Sidebar Navigation -->
     <nav id="sidebar">
         <div id="sidebar-toggle" class="toggle-btn">&#9776;</div>
-        <ul>
+        <ul class="sidebar-menu">
             <li><a href="/">Home</a></li>
             <li><a href="/about-me">About Me</a></li>
             <li>
                 <a href="/services">Services</a>
-                <ul>
+                <ul class="submenu">
                     <li>
                         <a href="/services/design-and-print">Design and Print</a>
-                        <ul>
+                        <ul class="submenu">
                             <li><a href="/services/design-and-print/logo-design">Logo Design</a></li>
                             <li><a href="/services/design-and-print/brand-style-guides">Brand Style Guides</a></li>
                             <li><a href="/services/design-and-print/business-cards">Business Cards</a></li>
@@ -27,7 +28,7 @@
                     </li>
                     <li>
                         <a href="/services/digital-media">Digital Media</a>
-                        <ul>
+                        <ul class="submenu">
                             <li><a href="/services/digital-media/website-design">Website Design</a></li>
                             <li><a href="/services/digital-media/presentation-design">Presentation Design</a></li>
                         </ul>
@@ -36,7 +37,7 @@
             </li>
             <li>
                 <a href="/pricing">Pricing</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="/pricing/logo-design">Logo Design</a></li>
                     <li><a href="/pricing/brand-style-guides">Brand Style Guides</a></li>
                 </ul>
@@ -58,4 +59,5 @@
 
     <script src="/assets/scripts/navtoggle.js"></script>
 </body>
+
 </html>

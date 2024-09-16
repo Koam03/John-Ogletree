@@ -1,112 +1,74 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General styles */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-/* Sidebar Styling */
-nav {
-    width: 250px;
-    background-color: #f4f4f4;
-    height: 100%;
+.content {
+    margin-left: 250px; /* Leave space for the sidebar */
     padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
 }
 
-nav ul {
+/* Sidebar styles */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    background-color: #333;
+    padding-top: 20px;
+    transition: 0.3s;
+}
+
+#sidebar-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sidebar-menu {
     list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
-    padding: 10px 0;
+.sidebar-menu li {
+    padding: 10px 20px;
 }
 
-nav ul li a {
+.sidebar-menu a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-nav ul li ul {
-    display: none;
-    padding-left: 15px;
-}
-
-nav ul li:hover > ul {
     display: block;
 }
 
-/* Main Content Wrapper */
-.main-content {
-    display: flex;
-    flex-direction: column;
-    margin-left: 270px;
-    padding: 20px;
-    width: calc(100% - 270px);
-    height: 100vh;
-    overflow-y: auto;
+.sidebar-menu a:hover {
+    background-color: #575757;
 }
 
-/* Content Section */
-.content {
-    flex: 1; /* This ensures the content area grows to fill the space between the header and footer */
+.submenu {
+    list-style-type: none;
+    padding-left: 20px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f4f4f4;
-}
-
-/* Toggle Button for Sidebar */
-.toggle-btn {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav {
-        width: 100%;
-        height: 100vh;
-        transform: translateX(-100%);
-    }
-
-    .toggle-btn {
-        display: block;
-    }
-
-    .main-content {
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .content {
         margin-left: 0;
-        width: 100%;
     }
 
-    nav.active {
-        transform: translateX(0);
+    #sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+
+    #sidebar.active {
+        width: 250px;
+    }
+
+    #sidebar-toggle {
+        display: block;
     }
 }
