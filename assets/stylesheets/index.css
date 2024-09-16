@@ -14,10 +14,51 @@ body {
     position: fixed;
     height: 100%;
     padding-top: 20px;
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
-#sidebar .toggle-btn {
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+#sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+#sidebar ul ul {
+    display: none;
+    padding-left: 20px;
+    background-color: #444;
+    transition: max-height 0.3s ease;
+}
+
+.dropdown-toggle::after {
+    content: '\25BC'; /* Downward arrow */
+    float: right;
+}
+
+.dropdown.active .dropdown-toggle::after {
+    content: '\25B2'; /* Upward arrow */
+}
+
+#sidebar ul li:hover ul {
+    display: block;
+}
+
+.toggle-btn {
     font-size: 30px;
     cursor: pointer;
     padding: 10px;
@@ -26,41 +67,28 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
 }
 
-/* Navigation links */
-#sidebar .nav-links {
-    list-style-type: none;
-    padding: 20px 0;
-}
-
-#sidebar .nav-links li {
-    padding: 10px;
-}
-
-#sidebar .nav-links li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-}
-
-#sidebar .nav-links li a:hover {
-    background-color: #575757;
-}
-
-#sidebar .nav-links ul {
+/* Toggle collapsed dropdown menu */
+.dropdown-content {
     display: none;
-    padding-left: 20px;
 }
 
-#sidebar .nav-links li:hover ul {
+.dropdown.active .dropdown-content {
     display: block;
+    animation: dropdownAnimation 0.3s ease-in-out;
 }
 
-/* Toggle the navigation visibility */
-#sidebar.hide-nav .nav-links {
-    display: none;
+/* Dropdown animation */
+@keyframes dropdownAnimation {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
 }
 
 /* Content section */
@@ -68,7 +96,6 @@ body {
     margin-left: 250px;
     padding: 20px;
     width: calc(100% - 250px);
-    transition: margin-left 0.3s ease;
 }
 
 /* Footer styles */
