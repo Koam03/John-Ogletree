@@ -1,0 +1,73 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Sidebar styles */
+#sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+#sidebar ul ul {
+    display: none;
+    padding-left: 20px;
+}
+
+#sidebar ul li:hover ul {
+    display: block;
+}
+
+.toggle-btn {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Content section */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
