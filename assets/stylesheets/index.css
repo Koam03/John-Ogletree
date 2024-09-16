@@ -3,29 +3,44 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .content {
-    margin-left: 250px; /* Leave space for the sidebar */
+    margin-left: 250px; /* Leave space for the sidebar in desktop view */
     padding: 20px;
+    transition: margin-left 0.3s ease;
 }
 
 /* Sidebar styles */
 #sidebar {
     width: 250px;
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
     background-color: #333;
     padding-top: 20px;
-    transition: 0.3s;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    z-index: 9999; /* Ensure the sidebar is on top of the content */
 }
 
-#sidebar-toggle {
+#sidebar.active {
+    transform: translateX(-250px); /* Hide the sidebar offscreen when inactive */
+}
+
+#sidebar-toggle, #mobile-nav-toggle {
+    display: none;
+}
+
+#sidebar-close {
     display: none;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    right: 20px;
     font-size: 30px;
+    color: white;
     cursor: pointer;
 }
 
@@ -53,22 +68,31 @@ body {
     padding-left: 20px;
 }
 
-/* Responsive design for smaller screens */
+/* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
     .content {
         margin-left: 0;
     }
 
     #sidebar {
-        width: 0;
-        overflow: hidden;
+        transform: translateX(-250px); /* Start hidden for mobile view */
     }
 
     #sidebar.active {
-        width: 250px;
+        transform: translateX(0); /* Slide in when active */
     }
 
-    #sidebar-toggle {
+    #mobile-nav-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 10000; /* Ensure the toggle button is always visible */
+    }
+
+    #sidebar-close {
         display: block;
     }
 }
