@@ -1,285 +1,100 @@
+/* General Styling */
 body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
-      color: #f4f4f9;
-      overflow-x: hidden;
-    }
-    
-    .neon-title {
-      text-align: center;
-      font-size: 4rem;
-      color: #ff007a;
-      text-shadow: 0 0 20px #ff007a, 0 0 30px #ff007a, 0 0 40px #ff007a;
-      animation: neon-glow 1.5s infinite alternate;
-    }
-
-    @keyframes neon-glow {
-      0% {
-        text-shadow: 0 0 20px #ff007a, 0 0 30px #ff007a, 0 0 40px #ff007a;
-      }
-      100% {
-        text-shadow: 0 0 30px #ff007a, 0 0 40px #ff007a, 0 0 50px #ff007a;
-      }
-    }
-
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 300px;
-      height: 100%;
-      background: rgba(25, 25, 112, 0.9);
-      box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
-      padding: 2rem;
-      z-index: 1000;
-    }
-
-    .sidebar h2 {
-      color: #00e6ff;
-      font-family: 'VT323', monospace;
-      text-shadow: 0 0 15px #00e6ff;
-    }
-
-    .sidebar nav a {
-      display: block;
-      font-size: 1.5rem;
-      color: #fff;
-      text-decoration: none;
-      margin: 1rem 0;
-      transition: color 0.3s ease;
-      font-family: 'VT323', monospace;
-    }
-
-    .sidebar nav a:hover {
-      color: #00e6ff;
-      text-shadow: 0 0 10px #00e6ff;
-    }
-
-    /* Main content */
-    .main-content {
-      margin-left: 320px;
-      padding: 50px;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(180deg, #000, #150025);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero h1 {
-      font-size: 5rem;
-      color: #ffffff;
-      text-align: center;
-      animation: floating 3s ease-in-out infinite;
-      text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff;
-    }
-
-    .hero .hero-subtitle {
-      font-size: 1.8rem;
-      color: #ff00ff;
-      text-align: center;
-      margin-top: 20px;
-      animation: neon-glow 2s infinite alternate;
-    }
-
-    @keyframes floating {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 30px;
-      margin-top: 30px;
-      font-size: 1.5rem;
-      color: #fff;
-      background: linear-gradient(90deg, #ff00ff, #00e6ff);
-      text-decoration: none;
-      border-radius: 50px;
-      box-shadow: 0 0 20px #ff00ff, 0 0 30px #00e6ff;
-      transition: background 0.5s ease;
-    }
-
-    .button:hover {
-      background: linear-gradient(90deg, #00e6ff, #ff00ff);
-      box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
-    }
-
-    /* Parallax elements */
-    .parallax {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      background-image: url('images/space-neon.svg');
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    .about, .services, .projects {
-      padding: 100px 0;
-      background: #0a0a1a;
-    }
-
-    .about h2, .services h2, .projects h2 {
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 20px;
-      text-shadow: 0 0 20px #ff007a;
-    }
-
-    .about p, .services p {
-      font-size: 1.4rem;
-      text-align: center;
-      color: #ffffff;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Glowing Grid for Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
-      margin-top: 50px;
-    }
-
-    .services-grid .service-item {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .services-grid .service-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-    }
-
-    /* Project Cards */
-    .project-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
-      margin-top: 50px;
-    }
-
-    .project-card {
-      background: #1a0033;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-      box-shadow: 0 0 40px rgba(255, 0, 255, 1);
-    }
-
-    /* Newsletter Form */
-    .newsletter {
-      text-align: center;
-      background: #150025;
-      padding: 100px 0;
-      color: #ffffff;
-    }
-
-    .newsletter form input {
-      padding: 15px;
-      width: 300px;
-      border-radius: 5px;
-      border: none;
-      margin-right: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
-
-    .newsletter form button {
-      padding: 15px 30px;
-      background: linear-gradient(90deg, #ff007a, #00e6ff);
-      border: none;
-      border-radius: 5px;
-      color: white;
-      box-shadow: 0 0 20px #ff007a;
-      cursor: pointer;
-      transition: background 0.5s ease;
-    }
-
-    .newsletter form button:hover {
-      background: linear-gradient(90deg, #00e6ff, #ff007a);
-      box-shadow: 0 0 30px #ff007a;
-    }
-
-    /* Menu Toggle Button (hidden by default) */
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
+    color: #f4f4f9;
+    overflow-x: hidden;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: rgba(25, 25, 112, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+    padding: 2rem;
+    z-index: 1000;
+    transform: translateX(-100%); /* Hide sidebar by default */
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-visible {
+    transform: translateX(0); /* Show sidebar when visible */
+  }
+  
+  .sidebar h2 {
+    color: #00e6ff;
+    font-family: 'VT323', monospace;
+    text-shadow: 0 0 15px #00e6ff;
+  }
+  
+  .sidebar nav a {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    margin: 1rem 0;
+    transition: color 0.3s ease;
+    font-family: 'VT323', monospace;
+  }
+  
+  .sidebar nav a:hover {
+    color: #00e6ff;
+    text-shadow: 0 0 10px #00e6ff;
+  }
+  
+  /* Main content */
+  .main-content {
+    margin-left: 320px;
+    padding: 50px;
+  }
+  
+  /* Menu Toggle Button (hidden by default) */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff007a;
+    border-radius: 50%;
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px #ff007a;
+    cursor: pointer;
+  }
+  
+  .menu-toggle svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
     .menu-toggle {
-        display: none;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 50px;
-        height: 50px;
-        background-color: #ff007a;
-        border-radius: 50%;
-        z-index: 2000;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 15px #ff007a;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
+      display: flex; /* Show toggle button on smaller screens */
+    }
   
-      .menu-toggle svg {
-        width: 30px;
-        height: 30px;
-        fill: white;
-      }
+    .main-content {
+      margin-left: 0; /* Remove left margin on small screens */
+    }
   
-      /* Sidebar */
-      .sidebar {
-        transition: transform 0.3s ease;
-      }
+    .sidebar {
+      width: 250px;
+      height: 100%;
+      transform: translateX(-100%); /* Sidebar hidden by default */
+    }
   
-      /* Initially hidden on smaller screens */
-      .sidebar-hidden {
-        transform: translateX(-100%);
-      }
+    .sidebar-visible {
+      transform: translateX(0); /* Sidebar shown when toggle is clicked */
+    }
+  }
   
-      /* Sidebar visible when menu is toggled */
-      .sidebar-visible {
-        transform: translateX(0);
-      }
-  
-      /* Media query for smaller screens */
-      @media screen and (max-width: 768px) {
-        .sidebar {
-          position: fixed;
-          width: 250px;
-          height: 100%;
-          transform: translateX(-100%);
-        }
-  
-        .menu-toggle {
-          display: flex;
-        }
-  
-        .main-content {
-          margin-left: 0;
-        }
-      }

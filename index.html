@@ -4,105 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neon Portfolio</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
-      color: #f4f4f9;
-      overflow-x: hidden;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 300px;
-      height: 100%;
-      background: rgba(25, 25, 112, 0.9);
-      box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
-      padding: 2rem;
-      z-index: 1000;
-      transform: translateX(-100%); /* Hide sidebar by default */
-      transition: transform 0.3s ease;
-    }
-
-    .sidebar-visible {
-      transform: translateX(0); /* Show sidebar when visible */
-    }
-
-    .sidebar h2 {
-      color: #00e6ff;
-      font-family: 'VT323', monospace;
-      text-shadow: 0 0 15px #00e6ff;
-    }
-
-    .sidebar nav a {
-      display: block;
-      font-size: 1.5rem;
-      color: #fff;
-      text-decoration: none;
-      margin: 1rem 0;
-      transition: color 0.3s ease;
-      font-family: 'VT323', monospace;
-    }
-
-    .sidebar nav a:hover {
-      color: #00e6ff;
-      text-shadow: 0 0 10px #00e6ff;
-    }
-
-    /* Main content */
-    .main-content {
-      margin-left: 320px;
-      padding: 50px;
-    }
-
-    .menu-toggle {
-      display: none;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 50px;
-      height: 50px;
-      background-color: #ff007a;
-      border-radius: 50%;
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 15px #ff007a;
-      cursor: pointer;
-    }
-
-    .menu-toggle svg {
-      width: 30px;
-      height: 30px;
-      fill: white;
-    }
-
-    /* Media query for smaller screens */
-    @media screen and (max-width: 768px) {
-      .menu-toggle {
-        display: flex; /* Show toggle button on smaller screens */
-      }
-
-      .main-content {
-        margin-left: 0; /* Remove left margin on small screens */
-      }
-
-      .sidebar {
-        width: 250px;
-        height: 100%;
-        transform: translateX(-100%); /* Sidebar hidden by default */
-      }
-
-      .sidebar-visible {
-        transform: translateX(0); /* Sidebar shown when toggle is clicked */
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/index.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
@@ -139,14 +41,7 @@
     <!-- Other sections... -->
   </div>
 
-  <!-- JavaScript -->
-  <script>
-    // JavaScript to toggle the sidebar on smaller screens
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('sidebar-visible'); // Toggle visibility
-    });
-  </script>
-
+  <!-- External JavaScript -->
+  <script src="/assets/js/nav-toggle.js"></script>
 </body>
 </html>
