@@ -226,3 +226,60 @@ body, html {
       background: linear-gradient(90deg, #00e6ff, #ff007a);
       box-shadow: 0 0 30px #ff007a;
     }
+
+    /* Menu Toggle Button (hidden by default) */
+    .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #ff007a;
+        border-radius: 50%;
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 15px #ff007a;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+  
+      .menu-toggle svg {
+        width: 30px;
+        height: 30px;
+        fill: white;
+      }
+  
+      /* Sidebar */
+      .sidebar {
+        transition: transform 0.3s ease;
+      }
+  
+      /* Initially hidden on smaller screens */
+      .sidebar-hidden {
+        transform: translateX(-100%);
+      }
+  
+      /* Sidebar visible when menu is toggled */
+      .sidebar-visible {
+        transform: translateX(0);
+      }
+  
+      /* Media query for smaller screens */
+      @media screen and (max-width: 768px) {
+        .sidebar {
+          position: fixed;
+          width: 250px;
+          height: 100%;
+          transform: translateX(-100%);
+        }
+  
+        .menu-toggle {
+          display: flex;
+        }
+  
+        .main-content {
+          margin-left: 0;
+        }
+      }
