@@ -1,55 +1,53 @@
-body,h1,h2,h3,h4,h5,h6,.w3-wide {
-    font-family: "Montserrat", sans-serif;
+/* Flexbox layout for the sidebar and main content */
+.main-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 100vh;
   }
   
-  .w3-sidebar a {
-    font-family: "Roboto", sans-serif;
+  .w3-sidebar {
+    flex: 0 0 250px; /* Sidebar will take 250px of width */
+    max-width: 250px;
+    height: 100vh;
+    overflow-y: auto;
   }
   
-  .w3-bar-item.w3-button {
-    padding: 10px 16px;
+  .main-content {
+    flex: 1; /* Main content will take the remaining space */
+    padding: 16px;
+    overflow: auto;
   }
   
-  /* Custom styles for dropdown */
-  .w3-bar-block .w3-hide {
+  /* For smaller screens, make the sidebar collapsible */
+  @media (max-width: 768px) {
+    .w3-sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      transition: left 0.3s;
+    }
+  
+    .w3-sidebar.open {
+      left: 0;
+    }
+  
+    .main-content {
+      margin-left: 0; /* No margin when sidebar is hidden */
+    }
+  }
+  
+  /* Button to open the sidebar on small screens */
+  .open-sidebar-btn {
     display: none;
   }
   
-  .w3-bar-block .w3-show {
-    display: block;
+  @media (max-width: 768px) {
+    .open-sidebar-btn {
+      display: block;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 4;
+    }
   }
-
-      /* Main layout using flexbox */
-      .main-wrapper {
-        display: flex;
-        min-height: 100vh;
-      }
   
-      .w3-sidebar {
-        flex: 0 0 250px; /* Sidebar takes 250px */
-        max-width: 250px;
-      }
-  
-      .main-content {
-        flex: 1; /* Content takes the remaining space */
-        padding: 16px;
-        overflow: auto; /* Allows scrolling of content if necessary */
-      }
-  
-      /* Ensures content isn't obscured by sidebar in smaller screens */
-      @media (max-width: 768px) {
-        .w3-sidebar {
-          position: fixed;
-          top: 0;
-          left: -250px;
-          transition: left 0.3s;
-        }
-  
-        .w3-sidebar.open {
-          left: 0;
-        }
-  
-        .main-content {
-          margin-left: 0; /* No margin when sidebar is closed on small screens */
-        }
-      }
