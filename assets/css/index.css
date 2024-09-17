@@ -19,12 +19,12 @@ body, html {
     box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
     padding: 2rem;
     z-index: 1000;
-    transform: translateX(-100%); /* Hide sidebar by default */
     transition: transform 0.3s ease;
   }
   
-  .sidebar-visible {
-    transform: translateX(0); /* Show sidebar when visible */
+  /* Sidebar should be hidden by default on smaller screens */
+  .sidebar-hidden {
+    transform: translateX(-100%); /* Hide sidebar on smaller screens */
   }
   
   .sidebar h2 {
@@ -50,19 +50,38 @@ body, html {
   
   /* Main content */
   .main-content {
-    margin-left: 320px;  /* This provides space between the sidebar and content on larger screens */
+    margin-left: 320px; /* Ensure content is pushed away from the sidebar */
     padding: 50px;
   }
   
   @media screen and (min-width: 769px) {
-    /* Adding more space between sidebar and content on large screens */
-    .main-content {
-      margin-left: 320px; /* Ensure content is pushed away from the sidebar */
-      padding: 50px 50px 50px 60px; /* Left padding adjusted for separation */
+    /* Sidebar visible by default on larger screens */
+    .sidebar {
+      transform: translateX(0); /* Show sidebar by default */
     }
   }
   
-  /* Menu Toggle Button (hidden by default) */
+  @media screen and (max-width: 768px) {
+    /* On smaller screens, the sidebar is hidden by default and toggle button appears */
+    .menu-toggle {
+      display: flex; /* Show toggle button on smaller screens */
+    }
+  
+    .main-content {
+      margin-left: 0; /* Remove left margin on small screens */
+    }
+  
+    .sidebar {
+      width: 250px;
+      transform: translateX(-100%); /* Sidebar hidden by default on small screens */
+    }
+  
+    .sidebar-visible {
+      transform: translateX(0); /* Sidebar shown when toggle is clicked */
+    }
+  }
+  
+  /* Menu Toggle Button */
   .menu-toggle {
     display: none;
     position: fixed;
@@ -83,26 +102,5 @@ body, html {
     width: 30px;
     height: 30px;
     fill: white;
-  }
-  
-  /* Media query for smaller screens */
-  @media screen and (max-width: 768px) {
-    .menu-toggle {
-      display: flex; /* Show toggle button on smaller screens */
-    }
-  
-    .main-content {
-      margin-left: 0; /* Remove left margin on small screens */
-    }
-  
-    .sidebar {
-      width: 250px;
-      height: 100%;
-      transform: translateX(-100%); /* Sidebar hidden by default */
-    }
-  
-    .sidebar-visible {
-      transform: translateX(0); /* Sidebar shown when toggle is clicked */
-    }
   }
   
