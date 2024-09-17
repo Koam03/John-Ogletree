@@ -20,6 +20,7 @@ body, html {
     padding: 2rem;
     z-index: 1000;
     transition: transform 0.3s ease;
+    color: white;
 }
 
 /* Hide Sidebar on Small Screens */
