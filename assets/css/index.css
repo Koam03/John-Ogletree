@@ -6,10 +6,10 @@ body, html {
     background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
     color: #f4f4f9;
     overflow-x: hidden;
-  }
+}
   
-  /* Sidebar */
-  .sidebar {
+/* Sidebar */
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,21 +20,21 @@ body, html {
     padding: 2rem;
     z-index: 1000;
     transition: transform 0.3s ease;
-  }
-  
-  /* Hide sidebar by default on small screens */
-  .sidebar-hidden {
+}
+
+/* Hide sidebar by default on small screens */
+.sidebar-hidden {
     transform: translateX(-100%);
-  }
-  
-  /* Sidebar h2 and nav styling */
-  .sidebar h2 {
+}
+
+/* Sidebar h2 and nav styling */
+.sidebar h2 {
     color: #00e6ff;
     font-family: 'VT323', monospace;
     text-shadow: 0 0 15px #00e6ff;
-  }
-  
-  .sidebar nav a {
+}
+
+.sidebar nav a {
     display: block;
     font-size: 1.5rem;
     color: #fff;
@@ -42,49 +42,49 @@ body, html {
     margin: 1rem 0;
     transition: color 0.3s ease;
     font-family: 'VT323', monospace;
-  }
-  
-  .sidebar nav a:hover {
+}
+
+.sidebar nav a:hover {
     color: #00e6ff;
     text-shadow: 0 0 10px #00e6ff;
-  }
-  
-  /* Main content */
-  .main-content {
+}
+
+/* Main content */
+.main-content {
     margin-left: 320px;
     padding-left: 10px;
-  }
-  
-  @media screen and (min-width: 769px) {
+}
+
+@media screen and (min-width: 769px) {
     /* Sidebar should be visible by default on larger screens */
     .sidebar {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
-  @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
     /* On smaller screens, hide sidebar by default */
     .sidebar {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
-  
+
     /* Show toggle button only on small screens */
     .menu-toggle {
-      display: flex;
+        display: flex;
     }
-  
+
     /* Sidebar becomes visible when the menu toggle is clicked */
     .sidebar-visible {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  
+
     .main-content {
-      margin-left: 0;
+        margin-left: 0;
     }
-  }
-  
-  /* Menu Toggle Button */
-  .menu-toggle {
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
     display: none; /* Initially hidden */
     position: fixed;
     top: 20px;
@@ -98,11 +98,197 @@ body, html {
     align-items: center;
     box-shadow: 0 0 15px #ff007a;
     cursor: pointer;
-  }
-  
-  .menu-toggle svg {
+}
+
+.menu-toggle svg {
     width: 30px;
     height: 30px;
     fill: white;
-  }
-  
+}
+
+/* Section Styling */
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, #000, #150025);
+    position: relative;
+    padding: 50px;
+    color: #ffffff;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    color: #ff00ff;
+    margin: 20px 0;
+}
+
+.hero .button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #ff00ff, #00e6ff);
+    border-radius: 50px;
+    text-decoration: none;
+    color: #ffffff;
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00e6ff;
+    transition: background 0.5s ease;
+}
+
+.hero .button:hover {
+    background: linear-gradient(90deg, #00e6ff, #ff00ff);
+    box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background: #0a0a1a;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 3rem;
+    color: #ff007a;
+    text-shadow: 0 0 20px #ff007a;
+}
+
+.about p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Services Section */
+.services {
+    padding: 100px 0;
+    background: #0f0f1c;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 3rem;
+    color: #00e6ff;
+    text-shadow: 0 0 20px #00e6ff;
+}
+
+.services p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.services-grid .service-item {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-grid .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+/* Projects Section */
+.projects {
+    padding: 100px 0;
+    background: #1a0033;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 3rem;
+    color: #ff007a;
+    text-shadow: 0 0 20px #ff007a;
+}
+
+.projects p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.project-card {
+    background: #1a0033;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 40px rgba(255, 0, 255, 1);
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 100px 0;
+    background: #150025;
+    text-align: center;
+    color: #ffffff;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    color: #00e6ff;
+    text-shadow: 0 0 20px #00e6ff;
+}
+
+.newsletter p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+}
+
+.newsletter form input {
+    padding: 15px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.newsletter form button {
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #ff007a, #00e6ff);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 20px #ff007a;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+.newsletter form button:hover {
+    background: linear-gradient(90deg, #00e6ff, #ff007a);
+    box-shadow: 0 0 30px #ff007a;
+}
