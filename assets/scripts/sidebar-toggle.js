@@ -21,3 +21,4 @@ document.addEventListener("DOMContentLoaded", function() {
       closeButton.addEventListener('click', closeSidebar);
     }
   });
+  
