@@ -1,0 +1,233 @@
+/* General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
+    color: #f4f4f9;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    line-height: 1.8;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(25, 25, 112, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+    padding: 2rem;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-hidden {
+    transform: translateX(-100%);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff007a;
+    border-radius: 50%;
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px #ff007a;
+    cursor: pointer;
+}
+
+.menu-toggle svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* Sidebar Header */
+.sidebar h2 {
+    color: #00e6ff;
+    font-family: 'VT323', monospace;
+    text-shadow: 0 0 15px #00e6ff;
+    margin-bottom: 1.5rem;
+}
+
+/* Scrollable Navigation */
+.sidebar nav {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Sidebar Links */
+.sidebar nav a {
+    display: block;
+    font-size: 1.2rem;
+    color: #f4f4f9;
+    text-decoration: none;
+    margin: 1rem 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-family: 'VT323', monospace;
+}
+
+.sidebar nav a:hover {
+    color: #00e6ff;
+    text-shadow: 0 0 10px #00e6ff;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.dropdown-menu li:hover .dropdown-submenu {
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+    width: calc(100vw - 270px);
+    color: #f0f0f5;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100vw;
+    }
+
+    .sidebar-visible {
+        transform: translateX(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #000, #150025);
+    color: #ffffff;
+    padding: 3rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 5vw;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 2.5vw;
+    color: #ff00ff;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* Button Styling */
+.button {
+    padding: 20px 40px;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #ff00ff, #00e6ff);
+    border-radius: 50px;
+    text-decoration: none;
+    color: #ffffff;
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00e6ff;
+    transition: background 0.5s ease;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #00e6ff, #ff00ff);
+    box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
+}
+
+/* Section Styling */
+.about, .services, .projects, .newsletter {
+    padding: 120px 0;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about h2, .services h2, .projects h2, .newsletter h2 {
+    font-size: 4.5vw;
+    margin-bottom: 40px;
+    color: #00e6ff;
+    text-shadow: 0 0 15px #00e6ff;
+}
+
+/* Paragraph Styling */
+.about p, .services p, .projects p {
+    font-size: 1.4rem;
+    color: #e0e0e5;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+/* Newsletter Form */
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter form input {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    max-width: 350px;
+    font-size: 1.4rem;
+    background-color: #2e2e3a;
+    color: #ffffff;
+}
+
+.newsletter form button {
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #ff007a, #00e6ff);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1.4rem;
+}
+
+.newsletter form button:hover {
+    background: linear-gradient(90deg, #00e6ff, #ff007a);
+}
