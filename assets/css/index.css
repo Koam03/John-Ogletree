@@ -84,41 +84,6 @@ body, html {
     text-shadow: 0 0 10px #00e6ff; /* Glow effect */
 }
 
-/* Dropdown Styling */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    list-style: none;
-    padding-left: 10px;
-}
-
-.dropdown:hover > .dropdown-menu {
-    display: block;
-}
-
-.dropdown-submenu {
-    display: none;
-    list-style: none;
-    padding-left: 15px;
-}
-
-.dropdown-menu li:hover > .dropdown-submenu {
-    display: block;
-}
-
-/* Scrollbar Styling */
-.sidebar nav::-webkit-scrollbar {
-    width: 5px;
-}
-
-.sidebar nav::-webkit-scrollbar-thumb {
-    background-color: #ff007a;
-    border-radius: 10px;
-}
-
 /* Main Content */
 .main-content {
     margin-left: 270px; /* Sidebar width */
@@ -161,26 +126,20 @@ body, html {
 }
 
 .hero h1 {
-    font-size: 6vw; /* Larger font size for prominence */
+    font-size: 6vw; /* Larger, responsive font size */
     margin-bottom: 20px;
     text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
-}
-
-/* Hero Content */
-.hero-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    line-height: 1.2; /* Ensures good spacing in the heading */
 }
 
 .hero-subtitle {
-    font-size: 2rem; /* Increased subtitle size */
+    font-size: 2vw; /* Responsive subtitle size */
     color: #ff00ff;
+    margin-bottom: 20px;
+    line-height: 1.4; /* Better readability */
 }
 
-/* Button */
+/* Button Styling */
 .button {
     padding: 15px 30px;
     font-size: 1.8rem;
@@ -206,38 +165,23 @@ body, html {
 }
 
 .about h2, .services h2, .projects h2, .newsletter h2 {
-    font-size: 5vw; /* Responsive headers for each section */
+    font-size: 5vw; /* Responsive headers */
     margin-bottom: 30px;
     color: #00e6ff;
     text-shadow: 0 0 15px #00e6ff;
     transition: font-size 0.5s ease;
 }
 
-/* About Section */
-.about p {
-    font-size: 1.6rem;
+/* Paragraph Styling */
+.about p, .services p, .projects p {
+    font-size: 1.6rem; /* Increased font size for readability */
     color: #ffffff;
+    line-height: 1.6; /* Good line height for easier reading */
     max-width: 700px;
     margin: 0 auto 40px auto;
 }
 
-/* Services Section */
-.services p {
-    font-size: 1.6rem;
-    color: #ffffff;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-}
-
-/* Projects Section */
-.projects p {
-    font-size: 1.6rem;
-    color: #ffffff;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-}
-
-/* Newsletter Section */
+/* Newsletter Form */
 .newsletter form {
     display: flex;
     flex-direction: column;
@@ -251,6 +195,7 @@ body, html {
     border: none;
     width: 80%;
     max-width: 300px;
+    font-size: 1.4rem; /* Larger font for form input */
 }
 
 .newsletter form button {
@@ -260,6 +205,7 @@ body, html {
     color: white;
     cursor: pointer;
     transition: background 0.3s ease;
+    font-size: 1.4rem; /* Larger font for button */
 }
 
 .newsletter form button:hover {
