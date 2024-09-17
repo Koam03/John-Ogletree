@@ -6,7 +6,7 @@ body, html {
     background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
     color: #f4f4f9;
     overflow-x: hidden;
-    font-size: 1.2vw; /* Responsive font size */
+    font-size: 16px; /* Default font size that will scale with zoom */
 }
 
 /* Sidebar */
@@ -14,11 +14,11 @@ body, html {
     position: fixed;
     top: 0;
     left: 0;
-    width: 20vw; /* Responsive width */
+    width: 300px; /* Fixed size on load */
     height: 100%;
     background: rgba(25, 25, 112, 0.9);
-    box-shadow: 0 0 2vw rgba(0, 0, 255, 0.8);
-    padding: 2vw;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+    padding: 2rem;
     z-index: 1000;
     transition: transform 0.3s ease;
 }
@@ -32,29 +32,29 @@ body, html {
 .sidebar h2 {
     color: #00e6ff;
     font-family: 'VT323', monospace;
-    text-shadow: 0 0 1.5vw #00e6ff;
-    font-size: 2vw;
+    text-shadow: 0 0 15px #00e6ff;
+    font-size: 1.8rem; /* Responsive with respect to default font size */
 }
 
 .sidebar nav a {
     display: block;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     color: #fff;
     text-decoration: none;
-    margin: 1vw 0;
+    margin: 1rem 0;
     transition: color 0.3s ease;
     font-family: 'VT323', monospace;
 }
 
 .sidebar nav a:hover {
     color: #00e6ff;
-    text-shadow: 0 0 1vw #00e6ff;
+    text-shadow: 0 0 10px #00e6ff;
 }
 
 /* Main content */
 .main-content {
-    margin-left: 22vw;
-    padding-left: 2vw;
+    margin-left: 320px;
+    padding-left: 2rem;
 }
 
 @media screen and (min-width: 769px) {
@@ -89,22 +89,22 @@ body, html {
 .menu-toggle {
     display: none; /* Initially hidden */
     position: fixed;
-    top: 2vw;
-    left: 2vw;
-    width: 5vw;
-    height: 5vw;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
     background-color: #ff007a;
     border-radius: 50%;
     z-index: 2000;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 1.5vw #ff007a;
+    box-shadow: 0 0 15px #ff007a;
     cursor: pointer;
 }
 
 .menu-toggle svg {
-    width: 2vw;
-    height: 2vw;
+    width: 30px;
+    height: 30px;
     fill: white;
 }
 
@@ -118,44 +118,44 @@ body, html {
     text-align: center;
     background: linear-gradient(180deg, #000, #150025);
     position: relative;
-    padding: 5vw;
+    padding: 50px;
     color: #ffffff;
 }
 
 .hero h1 {
-    font-size: 5vw;
-    text-shadow: 0 0 2vw #ffffff, 0 0 3vw #ff007a;
-    margin-bottom: 2vw;
+    font-size: 4rem;
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
+    margin-bottom: 20px;
 }
 
 .hero-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2vw;
-    margin-bottom: 3vw;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
 .hero-content p {
-    font-size: 2vw;
+    font-size: 1.8rem;
     color: #ff00ff;
     margin: 0;
 }
 
 .hero-content .button {
-    padding: 1vw 2vw;
-    font-size: 1.5vw;
+    padding: 15px 30px;
+    font-size: 1.5rem;
     background: linear-gradient(90deg, #ff00ff, #00e6ff);
     border-radius: 50px;
     text-decoration: none;
     color: #ffffff;
-    box-shadow: 0 0 2vw #ff00ff, 0 0 3vw #00e6ff;
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00e6ff;
     transition: background 0.5s ease;
 }
 
 .hero-content .button:hover {
     background: linear-gradient(90deg, #00e6ff, #ff00ff);
-    box-shadow: 0 0 3vw #00e6ff, 0 0 4vw #ff00ff;
+    box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
 }
 
 /* About Section */
@@ -166,16 +166,16 @@ body, html {
 }
 
 .about h2 {
-    font-size: 3vw;
+    font-size: 3rem;
     color: #ff007a;
-    text-shadow: 0 0 2vw #ff007a;
+    text-shadow: 0 0 20px #ff007a;
 }
 
 .about p {
-    font-size: 1.8vw;
+    font-size: 1.4rem;
     color: #ffffff;
-    max-width: 80%;
-    margin: 2vw auto;
+    max-width: 700px;
+    margin: 20px auto;
 }
 
 /* Services Section */
@@ -186,37 +186,37 @@ body, html {
 }
 
 .services h2 {
-    font-size: 3vw;
+    font-size: 3rem;
     color: #00e6ff;
-    text-shadow: 0 0 2vw #00e6ff;
+    text-shadow: 0 0 20px #00e6ff;
 }
 
 .services p {
-    font-size: 1.8vw;
+    font-size: 1.4rem;
     color: #ffffff;
-    margin-bottom: 4vh;
+    margin-bottom: 40px;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    max-width: 90%;
+    gap: 50px;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 .services-grid .service-item {
     background: rgba(0, 0, 0, 0.7);
-    padding: 2vw;
+    padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 2vw rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .services-grid .service-item:hover {
-    transform: translateY(-1vw);
-    box-shadow: 0 0 3vw rgba(255, 255, 255, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 }
 
 /* Projects Section */
@@ -227,35 +227,35 @@ body, html {
 }
 
 .projects h2 {
-    font-size: 3vw;
+    font-size: 3rem;
     color: #ff007a;
-    text-shadow: 0 0 2vw #ff007a;
+    text-shadow: 0 0 20px #ff007a;
 }
 
 .projects p {
-    font-size: 1.8vw;
+    font-size: 1.4rem;
     color: #ffffff;
-    margin-bottom: 4vh;
+    margin-bottom: 40px;
 }
 
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    max-width: 90%;
+    gap: 50px;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 .project-card {
     background: #1a0033;
-    padding: 3vw;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 2vw rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
     transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    box-shadow: 0 0 4vw rgba(255, 0, 255, 1);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 1);
 }
 
 /* Newsletter Section */
@@ -267,38 +267,38 @@ body, html {
 }
 
 .newsletter h2 {
-    font-size: 2.5vw;
+    font-size: 2.5rem;
     color: #00e6ff;
-    text-shadow: 0 0 2vw #00e6ff;
+    text-shadow: 0 0 20px #00e6ff;
 }
 
 .newsletter p {
-    font-size: 1.8vw;
-    margin-bottom: 4vh;
+    font-size: 1.4rem;
+    margin-bottom: 40px;
 }
 
 .newsletter form input {
-    padding: 1.5vw;
-    width: 20vw;
+    padding: 15px;
+    width: 300px;
     border-radius: 5px;
     border: none;
-    margin-right: 1vw;
+    margin-right: 10px;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
 .newsletter form button {
-    padding: 1.5vw 3vw;
+    padding: 15px 30px;
     background: linear-gradient(90deg, #ff007a, #00e6ff);
     border: none;
     border-radius: 5px;
     color: white;
-    box-shadow: 0 0 2vw #ff007a;
+    box-shadow: 0 0 20px #ff007a;
     cursor: pointer;
     transition: background 0.5s ease;
 }
 
 .newsletter form button:hover {
     background: linear-gradient(90deg, #00e6ff, #ff007a);
-    box-shadow: 0 0 3vw #ff007a;
+    box-shadow: 0 0 30px #ff007a;
 }
