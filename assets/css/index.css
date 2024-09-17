@@ -125,6 +125,7 @@ body, html {
     padding: 2rem;
     transition: margin-left 0.3s ease;
     max-width: 100%; /* Ensure it stays responsive */
+    width: calc(100vw - 270px); /* Adjust dynamically with sidebar */
 }
 
 @media screen and (max-width: 768px) {
@@ -138,6 +139,7 @@ body, html {
 
     .main-content {
         margin-left: 0;
+        width: 100vw; /* Use full viewport width on smaller screens */
     }
 
     .sidebar-visible {
@@ -159,7 +161,7 @@ body, html {
 }
 
 .hero h1 {
-    font-size: 4vw;
+    font-size: 4vw; /* Responsive font size */
     margin-bottom: 20px;
     text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
 }
