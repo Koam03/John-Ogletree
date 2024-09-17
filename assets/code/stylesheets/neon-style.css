@@ -1,0 +1,140 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar Navigation */
+  .neon-sidebar {
+    width: 250px;
+    background-color: #101010;
+    padding: 40px 20px;
+    position: fixed;
+    height: 100%;
+  }
+  
+  .logo h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .logo span {
+    color: #00eaff;
+    text-shadow: 0px 0px 10px #00eaff, 0px 0px 20px #00eaff;
+  }
+  
+  .neon-sidebar ul {
+    list-style: none;
+  }
+  
+  .neon-sidebar ul li {
+    margin: 25px 0;
+  }
+  
+  .neon-link {
+    text-decoration: none;
+    color: #00eaff;
+    font-size: 1.3rem;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    transition: 0.4s;
+  }
+  
+  .neon-link:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #00eaff, 0px 0px 30px #00eaff;
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 250px;
+    padding: 60px;
+    width: calc(100% - 250px);
+  }
+  
+  .main-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .main-header h2 {
+    font-size: 3rem;
+    color: #00eaff;
+    text-shadow: 0px 0px 10px #00eaff, 0px 0px 30px #00eaff;
+  }
+  
+  .main-header p {
+    font-size: 1.2rem;
+    color: #ff1aff;
+    text-shadow: 0px 0px 5px #ff1aff, 0px 0px 15px #ff1aff;
+  }
+  
+  /* Featured Projects Section */
+  .featured-projects h3 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: #ff1aff;
+    text-shadow: 0px 0px 10px #ff1aff, 0px 0px 30px #ff1aff;
+    margin-bottom: 40px;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .project {
+    background-color: #151515;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 234, 255, 0.5);
+    overflow: hidden;
+  }
+  
+  .project img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .project-info h4 {
+    color: #00eaff;
+    text-shadow: 0px 0px 10px #00eaff, 0px 0px 20px #00eaff;
+  }
+  
+  .project-info p {
+    color: #ff1aff;
+    font-size: 1rem;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      padding: 20px;
+    }
+  
+    .neon-sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  }
+  
