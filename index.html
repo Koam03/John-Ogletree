@@ -9,43 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/assets/stylesheets/index.css"> <!-- Link to external CSS -->
   <script src="/assets/scripts/subscribe.js" defer></script> <!-- Add the JavaScript file link here -->
+  <script src="/assets/scripts/sidebar.js" defer></script> <!-- Link to the sidebar JavaScript file -->
 </head>
 <body class="w3-content" style="max-width:1200px">
 
+  <div class="main-wrapper">
   <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
-    <div class="w3-container w3-display-container w3-padding-16">
-      <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-      <h3 class="w3-wide"><b>LOGO</b></h3>
-    </div>
-    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-      <!-- Main Navigation -->
-      <a href="/" class="w3-bar-item w3-button">Home</a>
-      <a href="/about-me" class="w3-bar-item w3-button">About Me</a>
-      <a href="javascript:void(0)" onclick="toggleDropdown('servicesDropdown')" class="w3-bar-item w3-button">Services <i class="fa fa-caret-down"></i></a>
-      <div id="servicesDropdown" class="w3-hide w3-bar-block">
-        <a href="/services" class="w3-bar-item w3-button">Overview</a>
-        <a href="javascript:void(0)" onclick="toggleDropdown('designDropdown')" class="w3-bar-item w3-button">Design & Print <i class="fa fa-caret-down"></i></a>
-        <div id="designDropdown" class="w3-hide w3-bar-block">
-          <a href="/services/design-and-print/logo-design" class="w3-bar-item w3-button">Logo Design</a>
-        </div>
-        <a href="javascript:void(0)" onclick="toggleDropdown('digitalMediaDropdown')" class="w3-bar-item w3-button">Digital Media <i class="fa fa-caret-down"></i></a>
-        <div id="digitalMediaDropdown" class="w3-hide w3-bar-block">
-          <a href="/services/digital-media/website-design" class="w3-bar-item w3-button">Website Design</a>
-        </div>
-        <a href="javascript:void(0)" onclick="toggleDropdown('videoDropdown')" class="w3-bar-item w3-button">Video & Animations <i class="fa fa-caret-down"></i></a>
-        <div id="videoDropdown" class="w3-hide w3-bar-block">
-          <a href="/services/video-and-animations/video-editing" class="w3-bar-item w3-button">Video Editing</a>
-        </div>
-        <a href="javascript:void(0)" onclick="toggleDropdown('audioDropdown')" class="w3-bar-item w3-button">Audio <i class="fa fa-caret-down"></i></a>
-        <div id="audioDropdown" class="w3-hide w3-bar-block">
-          <a href="/services/audio/beat-making" class="w3-bar-item w3-button">Beat Making</a>
-        </div>
-      </div>
-      <a href="/pricing" class="w3-bar-item w3-button">Pricing</a>
-      <a href="/contact-me" class="w3-bar-item w3-button">Contact Me</a>
-    </div>
-  </nav>
+  <div id="sidebar-container"></div>
 
   <div class="main-content">
     <!-- Image header -->
@@ -187,6 +157,7 @@
         <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
       </div>
     </div>
+  </div>
   </div>
   <!-- JavaScript -->
   <script src="/assets/scripts/navtoggle.js"></script>
