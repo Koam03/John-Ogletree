@@ -1,48 +1,46 @@
-/* Flexbox layout for the main wrapper */
+/* Flexbox layout for sidebar and main content */
 .main-wrapper {
   display: flex;
   flex-direction: row;
-  min-height: 100vh;
+  min-height: 100vh; /* Full height of the viewport */
 }
 
 .w3-sidebar {
-  flex: 0 0 250px; /* Sidebar stays fixed at 250px width */
+  flex: 0 0 250px; /* Sidebar takes a fixed width of 250px */
   max-width: 250px;
-  height: 100vh; /* Full height */
-  position: relative; /* Fixes scrolling issues */
-  overflow-y: auto; /* Scrollable sidebar */
+  height: 100vh; /* Full height of the viewport */
+  overflow-y: auto; /* Sidebar scrolls if content exceeds height */
+  background-color: #f1f1f1;
+  position: relative; /* Sidebar is static by default */
+  z-index: 3; /* Ensures it is above the content */
 }
 
 .main-content {
-  flex: 1; /* Main content takes remaining space */
+  flex: 1; /* Main content takes the remaining space */
   padding: 16px;
   overflow: auto;
-  min-width: 0; /* Prevents content from shrinking when window is resized */
+  min-width: 0; /* Prevents flexbox from shrinking content */
 }
 
-/* Responsive sidebar for smaller screens */
+/* Media query for small screens like phones and tablets */
 @media (max-width: 768px) {
   .w3-sidebar {
     position: fixed;
-    left: -250px; /* Initially off-screen */
-    transition: left 0.3s ease;
+    left: -250px; /* Initially hide sidebar off-screen */
+    top: 0;
+    transition: left 0.3s ease; /* Smooth sliding transition */
   }
 
   .w3-sidebar.open {
-    left: 0; /* Slide sidebar in */
+    left: 0; /* Show the sidebar when open */
   }
 
   .main-content {
-    margin-left: 0; /* Ensure no content margin when sidebar is hidden */
+    padding: 16px; /* Keep padding for content */
+    margin-left: 0; /* No margin for content when sidebar is closed */
   }
-}
 
-/* Sidebar open button for smaller screens */
-.open-sidebar-btn {
-  display: none;
-}
-
-@media (max-width: 768px) {
+  /* Show the sidebar toggle button on small screens */
   .open-sidebar-btn {
     display: block;
     position: fixed;
@@ -53,5 +51,21 @@
     color: white;
     border: none;
     padding: 10px;
+  }
+}
+
+/* Button to open the sidebar (hidden on larger screens) */
+.open-sidebar-btn {
+  display: none; /* Only show on small screens */
+}
+
+/* Ensure the sidebar doesn't overlap other content */
+@media (min-width: 769px) {
+  .open-sidebar-btn {
+    display: none; /* Don't show the button on large screens */
+  }
+
+  .w3-sidebar {
+    position: relative; /* Static position for larger screens */
   }
 }
