@@ -18,5 +18,38 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
   .w3-bar-block .w3-show {
     display: block;
   }
+
+      /* Main layout using flexbox */
+      .main-wrapper {
+        display: flex;
+        min-height: 100vh;
+      }
   
-  /* Add your additional styling here */  
+      .w3-sidebar {
+        flex: 0 0 250px; /* Sidebar takes 250px */
+        max-width: 250px;
+      }
+  
+      .main-content {
+        flex: 1; /* Content takes the remaining space */
+        padding: 16px;
+        overflow: auto; /* Allows scrolling of content if necessary */
+      }
+  
+      /* Ensures content isn't obscured by sidebar in smaller screens */
+      @media (max-width: 768px) {
+        .w3-sidebar {
+          position: fixed;
+          top: 0;
+          left: -250px;
+          transition: left 0.3s;
+        }
+  
+        .w3-sidebar.open {
+          left: 0;
+        }
+  
+        .main-content {
+          margin-left: 0; /* No margin when sidebar is closed on small screens */
+        }
+      }
