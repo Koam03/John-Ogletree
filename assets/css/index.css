@@ -6,18 +6,19 @@ body, html {
     background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
     color: #f4f4f9;
     overflow-x: hidden;
+    font-size: 1.2vw; /* Responsive font size */
 }
-  
+
 /* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 20vw; /* Responsive width */
     height: 100%;
     background: rgba(25, 25, 112, 0.9);
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
-    padding: 2rem;
+    box-shadow: 0 0 2vw rgba(0, 0, 255, 0.8);
+    padding: 2vw;
     z-index: 1000;
     transition: transform 0.3s ease;
 }
@@ -31,28 +32,29 @@ body, html {
 .sidebar h2 {
     color: #00e6ff;
     font-family: 'VT323', monospace;
-    text-shadow: 0 0 15px #00e6ff;
+    text-shadow: 0 0 1.5vw #00e6ff;
+    font-size: 2vw;
 }
 
 .sidebar nav a {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     color: #fff;
     text-decoration: none;
-    margin: 1rem 0;
+    margin: 1vw 0;
     transition: color 0.3s ease;
     font-family: 'VT323', monospace;
 }
 
 .sidebar nav a:hover {
     color: #00e6ff;
-    text-shadow: 0 0 10px #00e6ff;
+    text-shadow: 0 0 1vw #00e6ff;
 }
 
 /* Main content */
 .main-content {
-    margin-left: 320px;
-    padding-left: 10px;
+    margin-left: 22vw;
+    padding-left: 2vw;
 }
 
 @media screen and (min-width: 769px) {
@@ -87,221 +89,216 @@ body, html {
 .menu-toggle {
     display: none; /* Initially hidden */
     position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
+    top: 2vw;
+    left: 2vw;
+    width: 5vw;
+    height: 5vw;
     background-color: #ff007a;
     border-radius: 50%;
     z-index: 2000;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 15px #ff007a;
+    box-shadow: 0 0 1.5vw #ff007a;
     cursor: pointer;
 }
 
 .menu-toggle svg {
-    width: 30px;
-    height: 30px;
+    width: 2vw;
+    height: 2vw;
     fill: white;
 }
 
-/* Section Styling */
-
-/* Hero Section */
 /* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Arrange elements vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background: linear-gradient(180deg, #000, #150025);
     position: relative;
-    padding: 50px;
+    padding: 5vw;
     color: #ffffff;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
-    margin-bottom: 20px; /* Add some space between the heading and tagline/button */
+    font-size: 5vw;
+    text-shadow: 0 0 2vw #ffffff, 0 0 3vw #ff007a;
+    margin-bottom: 2vw;
 }
 
-/* Container for tagline and button */
 .hero-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between the tagline and button */
-    margin-bottom: 30px; /* Add some space below this group */
+    gap: 2vw;
+    margin-bottom: 3vw;
 }
 
 .hero-content p {
-    font-size: 1.8rem;
+    font-size: 2vw;
     color: #ff00ff;
     margin: 0;
 }
 
 .hero-content .button {
-    padding: 15px 30px;
-    font-size: 1.5rem;
+    padding: 1vw 2vw;
+    font-size: 1.5vw;
     background: linear-gradient(90deg, #ff00ff, #00e6ff);
     border-radius: 50px;
     text-decoration: none;
     color: #ffffff;
-    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00e6ff;
+    box-shadow: 0 0 2vw #ff00ff, 0 0 3vw #00e6ff;
     transition: background 0.5s ease;
 }
 
 .hero-content .button:hover {
     background: linear-gradient(90deg, #00e6ff, #ff00ff);
-    box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
+    box-shadow: 0 0 3vw #00e6ff, 0 0 4vw #ff00ff;
 }
-
 
 /* About Section */
 .about {
-    padding: 100px 0;
+    padding: 10vh 0;
     background: #0a0a1a;
     text-align: center;
 }
 
 .about h2 {
-    font-size: 3rem;
+    font-size: 3vw;
     color: #ff007a;
-    text-shadow: 0 0 20px #ff007a;
+    text-shadow: 0 0 2vw #ff007a;
 }
 
 .about p {
-    font-size: 1.4rem;
+    font-size: 1.8vw;
     color: #ffffff;
-    max-width: 700px;
-    margin: 20px auto;
+    max-width: 80%;
+    margin: 2vw auto;
 }
 
 /* Services Section */
 .services {
-    padding: 100px 0;
+    padding: 10vh 0;
     background: #0f0f1c;
     text-align: center;
 }
 
 .services h2 {
-    font-size: 3rem;
+    font-size: 3vw;
     color: #00e6ff;
-    text-shadow: 0 0 20px #00e6ff;
+    text-shadow: 0 0 2vw #00e6ff;
 }
 
 .services p {
-    font-size: 1.4rem;
+    font-size: 1.8vw;
     color: #ffffff;
-    margin-bottom: 40px;
+    margin-bottom: 4vh;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 3vw;
+    max-width: 90%;
     margin: 0 auto;
-    max-width: 1200px;
 }
 
 .services-grid .service-item {
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    padding: 2vw;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 2vw rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .services-grid .service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    transform: translateY(-1vw);
+    box-shadow: 0 0 3vw rgba(255, 255, 255, 0.5);
 }
 
 /* Projects Section */
 .projects {
-    padding: 100px 0;
+    padding: 10vh 0;
     background: #1a0033;
     text-align: center;
 }
 
 .projects h2 {
-    font-size: 3rem;
+    font-size: 3vw;
     color: #ff007a;
-    text-shadow: 0 0 20px #ff007a;
+    text-shadow: 0 0 2vw #ff007a;
 }
 
 .projects p {
-    font-size: 1.4rem;
+    font-size: 1.8vw;
     color: #ffffff;
-    margin-bottom: 40px;
+    margin-bottom: 4vh;
 }
 
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 3vw;
+    max-width: 90%;
     margin: 0 auto;
-    max-width: 1200px;
 }
 
 .project-card {
     background: #1a0033;
-    padding: 30px;
+    padding: 3vw;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 2vw rgba(255, 0, 255, 0.5);
     transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    box-shadow: 0 0 40px rgba(255, 0, 255, 1);
+    box-shadow: 0 0 4vw rgba(255, 0, 255, 1);
 }
 
 /* Newsletter Section */
 .newsletter {
-    padding: 100px 0;
+    padding: 10vh 0;
     background: #150025;
     text-align: center;
     color: #ffffff;
 }
 
 .newsletter h2 {
-    font-size: 2.5rem;
+    font-size: 2.5vw;
     color: #00e6ff;
-    text-shadow: 0 0 20px #00e6ff;
+    text-shadow: 0 0 2vw #00e6ff;
 }
 
 .newsletter p {
-    font-size: 1.4rem;
-    margin-bottom: 40px;
+    font-size: 1.8vw;
+    margin-bottom: 4vh;
 }
 
 .newsletter form input {
-    padding: 15px;
-    width: 300px;
+    padding: 1.5vw;
+    width: 20vw;
     border-radius: 5px;
     border: none;
-    margin-right: 10px;
+    margin-right: 1vw;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
 .newsletter form button {
-    padding: 15px 30px;
+    padding: 1.5vw 3vw;
     background: linear-gradient(90deg, #ff007a, #00e6ff);
     border: none;
     border-radius: 5px;
     color: white;
-    box-shadow: 0 0 20px #ff007a;
+    box-shadow: 0 0 2vw #ff007a;
     cursor: pointer;
     transition: background 0.5s ease;
 }
 
 .newsletter form button:hover {
     background: linear-gradient(90deg, #00e6ff, #ff007a);
-    box-shadow: 0 0 30px #ff007a;
+    box-shadow: 0 0 3vw #ff007a;
 }
