@@ -1,53 +1,55 @@
-/* Flexbox layout for the sidebar and main content */
+/* Main layout using flexbox */
 .main-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    min-height: 100vh;
-  }
-  
+  display: flex;
+  flex-direction: row; /* Sidebar and content side by side */
+  min-height: 100vh; /* Full-height layout */
+}
+
+.w3-sidebar {
+  flex: 0 0 250px; /* Sidebar takes fixed 250px width */
+  max-width: 250px; /* Ensure max width is 250px */
+  height: 100vh; /* Full height for sidebar */
+  overflow-y: auto; /* Scroll inside sidebar if content overflows */
+  position: relative; /* Sidebar stays fixed */
+}
+
+.main-content {
+  flex: 1; /* Main content takes the remaining space */
+  overflow: auto; /* Ensure content is scrollable */
+  padding: 16px; /* Space around content */
+}
+
+/* Responsive sidebar on smaller screens */
+@media (max-width: 768px) {
   .w3-sidebar {
-    flex: 0 0 250px; /* Sidebar will take 250px of width */
-    max-width: 250px;
-    height: 100vh;
-    overflow-y: auto;
+    position: fixed;
+    left: -250px; /* Initially hidden off-screen */
+    top: 0;
+    transition: left 0.3s ease; /* Smooth slide-in */
   }
-  
+
+  .w3-sidebar.open {
+    left: 0; /* Slide sidebar into view */
+  }
+
   .main-content {
-    flex: 1; /* Main content will take the remaining space */
-    padding: 16px;
-    overflow: auto;
+    margin-left: 0; /* No margin when sidebar is closed */
   }
-  
-  /* For smaller screens, make the sidebar collapsible */
-  @media (max-width: 768px) {
-    .w3-sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      transition: left 0.3s;
-    }
-  
-    .w3-sidebar.open {
-      left: 0;
-    }
-  
-    .main-content {
-      margin-left: 0; /* No margin when sidebar is hidden */
-    }
-  }
-  
-  /* Button to open the sidebar on small screens */
+
   .open-sidebar-btn {
-    display: none;
+    display: block; /* Display the sidebar toggle button */
   }
-  
-  @media (max-width: 768px) {
-    .open-sidebar-btn {
-      display: block;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 4;
-    }
-  }
-  
+}
+
+/* Button to open sidebar on small screens */
+.open-sidebar-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 4;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+}
