@@ -22,11 +22,12 @@ body, html {
     transition: transform 0.3s ease;
   }
   
-  /* Sidebar should be hidden by default on smaller screens */
+  /* Hide sidebar by default on small screens */
   .sidebar-hidden {
-    transform: translateX(-100%); /* Hide sidebar on smaller screens */
+    transform: translateX(-100%);
   }
   
+  /* Sidebar h2 and nav styling */
   .sidebar h2 {
     color: #00e6ff;
     font-family: 'VT323', monospace;
@@ -50,40 +51,41 @@ body, html {
   
   /* Main content */
   .main-content {
-    margin-left: 320px; /* Ensure content is pushed away from the sidebar */
+    margin-left: 320px;
     padding: 50px;
   }
   
   @media screen and (min-width: 769px) {
-    /* Sidebar visible by default on larger screens */
+    /* Sidebar should be visible by default on larger screens */
     .sidebar {
-      transform: translateX(0); /* Show sidebar by default */
+      transform: translateX(0);
     }
   }
   
   @media screen and (max-width: 768px) {
-    /* On smaller screens, the sidebar is hidden by default and toggle button appears */
+    /* On smaller screens, hide sidebar by default */
+    .sidebar {
+      transform: translateX(-100%);
+    }
+  
+    /* Show toggle button only on small screens */
     .menu-toggle {
-      display: flex; /* Show toggle button on smaller screens */
+      display: flex;
+    }
+  
+    /* Sidebar becomes visible when the menu toggle is clicked */
+    .sidebar-visible {
+      transform: translateX(0);
     }
   
     .main-content {
-      margin-left: 0; /* Remove left margin on small screens */
-    }
-  
-    .sidebar {
-      width: 250px;
-      transform: translateX(-100%); /* Sidebar hidden by default on small screens */
-    }
-  
-    .sidebar-visible {
-      transform: translateX(0); /* Sidebar shown when toggle is clicked */
+      margin-left: 0;
     }
   }
   
   /* Menu Toggle Button */
   .menu-toggle {
-    display: none;
+    display: none; /* Initially hidden */
     position: fixed;
     top: 20px;
     left: 20px;

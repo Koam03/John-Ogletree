@@ -25,5 +25,4 @@ function checkScreenWidth() {
   checkScreenWidth();
   
   // Add event listener for window resize to handle responsive changes
-  window.addEventListener('resize', checkScreenWidth);
-  
+  window.addEventListener('resize', checkScreenWidth);  
