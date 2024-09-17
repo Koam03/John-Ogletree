@@ -4,7 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neon Portfolio</title>
-  <link rel="stylesheet" href="/assets/css/index.css"> <!-- Link to external CSS -->
+  <style>
+    /* General Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Orbitron', sans-serif;
+        background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
+        color: #f4f4f9;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background: rgba(25, 25, 112, 0.9);
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+        padding: 2rem;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hide Sidebar on Small Screens */
+    .sidebar-hidden {
+        transform: translateX(-100%);
+    }
+
+    /* Menu Toggle Button */
+    .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #ff007a;
+        border-radius: 50%;
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 15px #ff007a;
+        cursor: pointer;
+    }
+
+    .menu-toggle svg {
+        width: 30px;
+        height: 30px;
+        fill: white;
+    }
+
+    /* Sidebar Header */
+    .sidebar h2 {
+        color: #00e6ff;
+        font-family: 'VT323', monospace;
+        text-shadow: 0 0 15px #00e6ff;
+        margin-bottom: 1rem;
+    }
+
+    /* Scrollable Navigation */
+    .sidebar nav {
+        flex-grow: 1; /* Occupies remaining space */
+        overflow-y: auto; /* Enables vertical scrolling */
+        padding-right: 10px; /* Prevents content from being hidden behind scrollbar */
+    }
+
+    /* Sidebar Links */
+    .sidebar nav a {
+        display: block;
+        font-size: 1.5rem;
+        color: #ffffff; /* White links */
+        text-decoration: none;
+        margin: 1rem 0;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+        font-family: 'VT323', monospace;
+    }
+
+    .sidebar nav a:hover {
+        color: #00e6ff; /* Blue on hover */
+        text-shadow: 0 0 10px #00e6ff; /* Glow effect */
+    }
+
+    /* Main Content */
+    .main-content {
+        margin-left: 270px; /* Sidebar width */
+        padding: 2rem;
+        transition: margin-left 0.3s ease;
+        max-width: 100%; /* Ensure it stays responsive */
+        width: calc(100vw - 270px); /* Adjust dynamically with sidebar */
+    }
+
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            transform: translateX(-100%);
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .main-content {
+            margin-left: 0;
+            width: 100vw; /* Use full viewport width on smaller screens */
+        }
+
+        .sidebar-visible {
+            transform: translateX(0);
+        }
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(180deg, #000, #150025);
+        color: #ffffff;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 6vw; /* Larger, responsive font size */
+        margin-bottom: 20px;
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
+        line-height: 1.2; /* Ensures good spacing in the heading */
+    }
+
+    .hero-subtitle {
+        font-size: 2vw; /* Responsive subtitle size */
+        color: #ff00ff;
+        margin-bottom: 20px;
+        line-height: 1.4; /* Better readability */
+    }
+
+    /* Button Styling */
+    .button {
+        padding: 15px 30px;
+        font-size: 1.8rem;
+        background: linear-gradient(90deg, #ff00ff, #00e6ff);
+        border-radius: 50px;
+        text-decoration: none;
+        color: #ffffff;
+        box-shadow: 0 0 20px #ff00ff, 0 0 30px #00e6ff;
+        transition: background 0.5s ease;
+    }
+
+    .button:hover {
+        background: linear-gradient(90deg, #00e6ff, #ff00ff);
+        box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
+    }
+
+    /* Section Styling */
+    .about, .services, .projects, .newsletter {
+        padding: 100px 0;
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .about h2, .services h2, .projects h2, .newsletter h2 {
+        font-size: 5vw; /* Responsive headers */
+        margin-bottom: 30px;
+        color: #00e6ff;
+        text-shadow: 0 0 15px #00e6ff;
+        transition: font-size 0.5s ease;
+    }
+
+    /* Paragraph Styling */
+    .about p, .services p, .projects p {
+        font-size: 1.6rem; /* Increased font size for readability */
+        color: #ffffff;
+        line-height: 1.6; /* Good line height for easier reading */
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+    }
+
+    /* Newsletter Form */
+    .newsletter form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter form input {
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+        width: 80%;
+        max-width: 300px;
+        font-size: 1.4rem; /* Larger font for form input */
+    }
+
+    .newsletter form button {
+        padding: 15px 30px;
+        background: linear-gradient(90deg, #ff007a, #00e6ff);
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-size: 1.4rem; /* Larger font for button */
+    }
+
+    .newsletter form button:hover {
+        background: linear-gradient(90deg, #00e6ff, #ff007a);
+    }
+  </style>
 </head>
 <body>
 
@@ -19,153 +233,102 @@
   <div class="sidebar" id="sidebar">
     <h2>John Ogletree</h2>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
+      <a href="/">Home</a>
+      <a href="/about-me">About Me</a>
       <div class="dropdown">
         <a href="/services" class="dropdown-toggle">Services</a>
         <ul class="dropdown-menu">
-          <!-- Design and Print Submenu -->
           <li>
             <a href="/services/design-and-print">Design and Print</a>
             <ul class="dropdown-submenu">
               <li><a href="/services/design-and-print/logo-design">Logo Design</a></li>
               <li><a href="/services/design-and-print/brand-style-guides">Brand Style Guides</a></li>
               <li><a href="/services/design-and-print/business-cards">Business Cards</a></li>
-              <!-- More sub-items... -->
             </ul>
           </li>
-          <!-- Digital Media Submenu -->
           <li>
             <a href="/services/digital-media">Digital Media</a>
             <ul class="dropdown-submenu">
               <li><a href="/services/digital-media/website-design">Website Design</a></li>
               <li><a href="/services/digital-media/presentation-design">Presentation Design</a></li>
-              <!-- More sub-items... -->
-            </ul>
-          </li>
-          <!-- Video and Animations Submenu -->
-          <li>
-            <a href="/services/video-and-animations">Video and Animations</a>
-            <ul class="dropdown-submenu">
-              <li><a href="/services/video-and-animations/video-editing">Video Editing</a></li>
-              <li><a href="/services/video-and-animations/video-ads">Video Ads</a></li>
-              <!-- More sub-items... -->
-            </ul>
-          </li>
-          <!-- Audio Submenu -->
-          <li>
-            <a href="/services/audio">Audio</a>
-            <ul class="dropdown-submenu">
-              <li><a href="/services/audio/beat-making">Beat Making</a></li>
-              <li><a href="/services/audio/intro-songs">Intro Songs</a></li>
-              <!-- More sub-items... -->
             </ul>
           </li>
         </ul>
       </div>
-  
-      <!-- Pricing Dropdown -->
+
       <div class="dropdown">
         <a href="/pricing" class="dropdown-toggle">Pricing</a>
         <ul class="dropdown-menu">
           <li><a href="/pricing/logo-design">Logo Design</a></li>
           <li><a href="/pricing/brand-style-guides">Brand Style Guides</a></li>
-          <li><a href="/pricing/business-cards">Business Cards</a></li>
-          <li><a href="/pricing/typography">Typography</a></li>
-          <li><a href="/pricing/icon-design">Icon Design</a></li>
-          <li><a href="/pricing/illustration">Illustration</a></li>
-          <!-- Add more pricing options as needed... -->
         </ul>
       </div>
+
       <div class="dropdown">
         <a href="/project-vault" class="dropdown-toggle">Project Vault</a>
         <ul class="dropdown-menu">
-          <!-- Graphics Submenu -->
           <li>
             <a href="/project-vault/graphics">Graphics</a>
             <ul class="dropdown-submenu">
-              <!-- Logoverse Submenu -->
               <li>
                 <a href="/project-vault/graphics/logoverse">Logoverse</a>
                 <ul class="dropdown-submenu">
                   <li><a href="/project-vault/graphics/logoverse/burst-through">Burst Through</a></li>
                   <li><a href="/project-vault/graphics/logoverse/vust-reservations">Vust Reservations</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/living-out-life-bible-study">Living Out Life Bible Study</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/peak">Peak</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/stay-whole">Stay Whole</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/foundation">Foundation</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/creative-minds">Creative Minds</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/avon-productions">Avon Productions</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/create-change">Create Change</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/build-the-lily">Build The Lily</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/number-one">Number One</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/the-mixo">The Mixo</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/blonde-jackets">Blonde Jackets</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/still-and-steal">Still and Steal</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/introverted-cafe">Introverted Cafe</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/burst-photography">Burst Photography</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/break-the-code">Break the Code</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/born-to-win">Born to Win</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/city-of-bad-dreams">City of Bad Dreams</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          </ul>
-        </div>
-      <a href="#">Contact</a>
+        </ul>
+      </div>
+
+      <a href="/contact-me">Contact Me</a>
     </nav>
-    <p class="availability">Available for hire</p>
   </div>
+
   <!-- Main Content -->
-<main class="main-content">
+  <div class="main-content">
 
-  <!-- Hero Section -->
-<section class="hero">
-  <h1 class="neon-title">Your Vision, My Pixels</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 class="neon-title">Your Vision, My Pixels</h1>
+      <div class="hero-content">
+          <p class="hero-subtitle">Craftsmanship in Every Pixel</p>
+          <a href="#" class="button">Explore my Portfolio</a>
+      </div>
+    </section>
 
-  <!-- Container for tagline and button -->
-  <div class="hero-content">
-      <p class="hero-subtitle">Craftsmanship in Every Pixel</p>
-      <a href="#" class="button">Explore my Portfolio</a>
+    <!-- About Section -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I’m a visual storyteller with a passion for turning ideas into art. Every pixel is part of your story, and I’m here to bring your vision to life with creativity, precision, and heart.</p>
+      <a href="#" class="button">Learn More About Me</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <h2>Service Categories</h2>
+      <p>Click on an image below to see all the services I offer in that category.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+      <h2>Featured Projects</h2>
+      <p>Click any project card or the button below to view the project</p>
+      <a href="#" class="button">View All My Projects</a>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <h2>Join My Newsletter</h2>
+      <p>Get updates on new projects and opportunities. You can also contact me for custom work.</p>
+      <form>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <button type="submit">Subscribe Now</button>
+      </form>
+    </section>
   </div>
-</section>
 
-  <!-- About Section -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>I’m a visual storyteller with a passion for turning ideas into art. Every pixel is part of your story, and I’m here to bring your vision to life with creativity, precision, and heart.</p>
-    <a href="#" class="button-outline">Learn More About Me</a>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services">
-    <h2>Service Categories</h2>
-    <p>Click on an image below to see all the services I offer in that category.</p>
-    <!-- Add your service grid here -->
-  </section>
-
-  <!-- Projects Section -->
-  <section class="projects">
-    <h2>Featured Projects</h2>
-    <p>Click any project card or the button below to view the project</p>
-    <a href="#" class="button-rounded-small">View All My Projects</a>
-    <!-- Add your project gallery here -->
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter">
-    <h2>Join My Newsletter</h2>
-    <p>Get updates on new projects and opportunities. You can also contact me for custom work.</p>
-    <form>
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <button type="submit">Subscribe Now</button>
-    </form>
-  </section>
-
-</main>
-  <!-- External JavaScript -->
-  <script src="/assets/js/nav-toggle.js"></script>
 </body>
 </html>
