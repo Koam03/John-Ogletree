@@ -6,6 +6,7 @@ body, html {
     background: radial-gradient(circle at center, #0f0f1c, #0a0a1a);
     color: #f4f4f9;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Sidebar Styling */
@@ -20,7 +21,7 @@ body, html {
     padding: 2rem;
     z-index: 1000;
     transition: transform 0.3s ease;
-    color: white;
+    overflow-y: auto; /* Scroll for overflowing content */
 }
 
 /* Hide Sidebar on Small Screens */
@@ -79,6 +80,7 @@ body, html {
 .main-content {
     margin-left: 270px;
     padding: 2rem;
+    transition: margin-left 0.3s ease; /* Smooth transition on sidebar hide/show */
 }
 
 @media screen and (max-width: 768px) {
@@ -111,7 +113,7 @@ body, html {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4vw; /* Use vw for responsive font scaling */
     margin-bottom: 20px;
     text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
 }
@@ -122,6 +124,7 @@ body, html {
     flex-direction: row;
     gap: 20px;
     align-items: center;
+    flex-wrap: wrap; /* Allow the elements to wrap on smaller screens */
 }
 
 .hero-subtitle {
@@ -153,6 +156,12 @@ body, html {
     color: #fff;
 }
 
+/* Focus Styles for Accessibility */
+a:focus, button:focus {
+    outline: 2px solid #00e6ff;
+    outline-offset: 3px;
+}
+
 /* Newsletter Section */
 .newsletter form input {
     padding: 15px;
@@ -165,4 +174,6 @@ body, html {
     background: linear-gradient(90deg, #ff007a, #00e6ff);
     border-radius: 5px;
     color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
