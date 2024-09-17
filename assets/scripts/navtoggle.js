@@ -1,18 +1,21 @@
-// Toggle sidebar visibility
-document.getElementById('sidebar-toggle').addEventListener('click', function () {
-    var sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('collapsed');
-});
-
-// Toggle submenu visibility
-document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
-    toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        var submenu = this.nextElementSibling;
-        if (submenu.style.display === 'block') {
-            submenu.style.display = 'none';
-        } else {
-            submenu.style.display = 'block';
-        }
-    });
-});
+// Function to toggle dropdown visibility
+function toggleDropdown(dropdownId) {
+    var x = document.getElementById(dropdownId);
+    if (x.className.indexOf("w3-show") === -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+  
+  // Function to open sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  
+  // Function to close sidebar
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }  
