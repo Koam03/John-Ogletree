@@ -3,118 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Looking for a creative collaborator? Dive into a world of captivating visual storytelling.">
-  <title>StoryCraft | Crafting Imagination</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+  <meta name="description" content="Unlock the power of visual storytelling with stunning designs that capture the essence of your message.">
+  <title>Pixel Narratives | Unfold Your Story</title>
   <link rel="stylesheet" href="/assets/code/stylesheets/index.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script defer src="/assets/code/javascript/scroll-carousel.js"></script>
 </head>
 <body>
 
-  <!-- Smooth scrolling and parallax effect added -->
-  <nav class="floating-sidebar">
-    <div class="profile">
-      <img src="images/avatar.png" alt="Avatar" class="profile-pic">
-      <h2>John Ogletree</h2>
-      <p>Digital Artist & Storyteller</p>
-      <a href="#contact" class="btn-primary">Hire Me</a>
+  <!-- Header with fixed navigation and minimal logo -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Pixel Narratives Logo">
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <ul class="menu">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#services">My Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="social-icons">
-      <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </nav>
+  </header>
 
-  <main class="content">
-    <!-- Hero Section with parallax background -->
-    <section class="hero" id="home">
-      <div class="overlay"></div>
+  <!-- Hero Section with text animations -->
+  <section class="hero">
+    <div class="container">
       <div class="hero-content">
-        <h1>Bringing Your <span class="highlight">Vision</span> to Life</h1>
-        <p>Let’s collaborate to create art that tells your story in the most visually stunning way possible.</p>
-        <a href="#portfolio" class="btn-primary">Explore Portfolio</a>
+        <h1 class="hero-title">Crafting <span class="highlight">Visual Stories</span> that Speak</h1>
+        <p class="hero-description">Where creativity meets storytelling. Let’s turn your ideas into unforgettable visuals.</p>
+        <a href="#portfolio" class="btn-primary">Explore Work</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p>I’m a digital artist passionate about blending creativity and storytelling. With a background in graphic design and a love for visuals that captivate, I offer a unique approach to visual communication.</p>
+  <!-- About Section with staggered cards -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Passion for Design</h3>
+          <p>I’ve always been drawn to visuals that tell a deeper story. My journey as a designer is fueled by a love for creativity and the ability to translate abstract ideas into impactful visuals.</p>
+        </div>
+        <div class="about-card">
+          <h3>Craft with Purpose</h3>
+          <p>Every project I take on is rooted in a dedication to craft. I focus on details and purpose, ensuring that each design delivers a message and engages the audience.</p>
+        </div>
+        <div class="about-card">
+          <h3>Collaboration</h3>
+          <p>I believe in the power of collaboration. Working closely with clients allows me to truly understand their vision and bring it to life in unique and unexpected ways.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Services Section with hover effects and icons -->
-    <section class="section services" id="services">
-      <div class="container">
-        <h2 class="section-title">Service Categories</h2>
-        <p class="section-description">Explore my diverse set of skills. Click on any icon below to view more details about the services I offer.</p>
-        <div class="services-grid">
-          <div class="service-card">
-            <i class="fas fa-paint-brush"></i>
-            <h3>Illustration</h3>
+  <!-- Services Section with icon cards -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">What I Offer</h2>
+      <div class="service-cards">
+        <div class="service-card">
+          <img src="images/icon-illustration.svg" alt="Illustration">
+          <h3>Illustration</h3>
+          <p>From hand-drawn sketches to digital illustrations, I create artwork that captures the essence of your brand or story.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/icon-graphic-design.svg" alt="Graphic Design">
+          <h3>Graphic Design</h3>
+          <p>Transform ideas into visual content that’s engaging and impactful, whether it’s branding, posters, or advertisements.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/icon-web-design.svg" alt="Web Design">
+          <h3>Web Design</h3>
+          <p>I build responsive and aesthetically pleasing websites that are user-friendly and aligned with your vision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section with lightbox gallery -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Selected Works</h2>
+      <div class="portfolio-gallery">
+        <div class="gallery-item">
+          <img src="images/project1.jpg" alt="Project 1" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Project Name 1</h4>
+            <a href="images/project1-large.jpg" class="view-link" target="_blank">View Full</a>
           </div>
-          <div class="service-card">
-            <i class="fas fa-camera"></i>
-            <h3>Photography</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="images/project2.jpg" alt="Project 2" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Project Name 2</h4>
+            <a href="images/project2-large.jpg" class="view-link" target="_blank">View Full</a>
           </div>
-          <div class="service-card">
-            <i class="fas fa-video"></i>
-            <h3>Video Editing</h3>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-pen-nib"></i>
-            <h3>Graphic Design</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="images/project3.jpg" alt="Project 3" class="gallery-img">
+          <div class="gallery-overlay">
+            <h4>Project Name 3</h4>
+            <a href="images/project3-large.jpg" class="view-link" target="_blank">View Full</a>
           </div>
         </div>
       </div>
-    </section>
+      <a href="#" class="btn-secondary">See More Projects</a>
+    </div>
+  </section>
 
-    <!-- Portfolio Section with a carousel slider -->
-    <section class="section portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="carousel">
-          <div class="carousel-item">
-            <img src="images/project1.jpg" alt="Project 1">
-            <div class="carousel-caption">Project Name 1</div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/project2.jpg" alt="Project 2">
-            <div class="carousel-caption">Project Name 2</div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/project3.jpg" alt="Project 3">
-            <div class="carousel-caption">Project Name 3</div>
-          </div>
-        </div>
-        <a href="#" class="btn-secondary">View All Projects</a>
-      </div>
-    </section>
+  <!-- Contact Section with a simple form -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p>If you have any questions or would like to collaborate, feel free to reach out to me using the form below.</p>
+      <form action="#" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-    <!-- Newsletter Signup -->
-    <section class="section newsletter" id="contact">
-      <div class="container">
-        <h2 class="section-title">Join My Newsletter</h2>
-        <p>Stay updated with my latest projects and tips by subscribing to my newsletter.</p>
-        <form action="#" method="POST" class="newsletter-form">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Email Address" required>
-          <textarea placeholder="Your Message"></textarea>
-          <button type="submit" class="btn-primary">Subscribe Now</button>
-        </form>
-      </div>
-    </section>
-  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 Pixel Narratives. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-  <script src="/assets/code/javascript/scroll-carousel.js"></script>
 </body>
 </html>
