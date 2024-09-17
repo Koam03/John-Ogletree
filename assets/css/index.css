@@ -50,8 +50,16 @@ body, html {
   
   /* Main content */
   .main-content {
-    margin-left: 320px;
+    margin-left: 320px;  /* This provides space between the sidebar and content on larger screens */
     padding: 50px;
+  }
+  
+  @media screen and (min-width: 769px) {
+    /* Adding more space between sidebar and content on large screens */
+    .main-content {
+      margin-left: 320px; /* Ensure content is pushed away from the sidebar */
+      padding: 50px 50px 50px 60px; /* Left padding adjusted for separation */
+    }
   }
   
   /* Menu Toggle Button (hidden by default) */
