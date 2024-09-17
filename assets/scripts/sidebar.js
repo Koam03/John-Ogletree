@@ -1,4 +1,3 @@
-// Sidebar HTML structure
 document.addEventListener("DOMContentLoaded", function() {
     const sidebarHTML = `
       <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
@@ -7,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
           <h3 class="w3-wide"><b>LOGO</b></h3>
         </div>
         <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-          <!-- Main Navigation -->
           <a href="/" class="w3-bar-item w3-button">Home</a>
           <a href="/about-me" class="w3-bar-item w3-button">About Me</a>
           <a href="javascript:void(0)" onclick="toggleDropdown('servicesDropdown')" class="w3-bar-item w3-button">Services <i class="fa fa-caret-down"></i></a>
@@ -17,25 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
             <div id="designDropdown" class="w3-hide w3-bar-block">
               <a href="/services/design-and-print/logo-design" class="w3-bar-item w3-button">Logo Design</a>
             </div>
-            <a href="javascript:void(0)" onclick="toggleDropdown('digitalMediaDropdown')" class="w3-bar-item w3-button">Digital Media <i class="fa fa-caret-down"></i></a>
-            <div id="digitalMediaDropdown" class="w3-hide w3-bar-block">
-              <a href="/services/digital-media/website-design" class="w3-bar-item w3-button">Website Design</a>
-            </div>
-            <a href="javascript:void(0)" onclick="toggleDropdown('videoDropdown')" class="w3-bar-item w3-button">Video & Animations <i class="fa fa-caret-down"></i></a>
-            <div id="videoDropdown" class="w3-hide w3-bar-block">
-              <a href="/services/video-and-animations/video-editing" class="w3-bar-item w3-button">Video Editing</a>
-            </div>
-            <a href="javascript:void(0)" onclick="toggleDropdown('audioDropdown')" class="w3-bar-item w3-button">Audio <i class="fa fa-caret-down"></i></a>
-            <div id="audioDropdown" class="w3-hide w3-bar-block">
-              <a href="/services/audio/beat-making" class="w3-bar-item w3-button">Beat Making</a>
-            </div>
           </div>
           <a href="/pricing" class="w3-bar-item w3-button">Pricing</a>
           <a href="/contact-me" class="w3-bar-item w3-button">Contact Me</a>
         </div>
       </nav>
     `;
-  
-    // Insert the sidebar into the DOM (e.g., in an element with id 'sidebar-container')
     document.getElementById('sidebar-container').innerHTML = sidebarHTML;
   });  
