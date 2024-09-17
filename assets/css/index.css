@@ -109,9 +109,11 @@ body, html {
 /* Section Styling */
 
 /* Hero Section */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
+    flex-direction: column; /* Arrange elements vertically */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -124,15 +126,25 @@ body, html {
 .hero h1 {
     font-size: 4rem;
     text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
+    margin-bottom: 20px; /* Add some space between the heading and tagline/button */
 }
 
-.hero p {
+/* Container for tagline and button */
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between the tagline and button */
+    margin-bottom: 30px; /* Add some space below this group */
+}
+
+.hero-content p {
     font-size: 1.8rem;
     color: #ff00ff;
-    margin: 20px 0;
+    margin: 0;
 }
 
-.hero .button {
+.hero-content .button {
     padding: 15px 30px;
     font-size: 1.5rem;
     background: linear-gradient(90deg, #ff00ff, #00e6ff);
@@ -143,10 +155,11 @@ body, html {
     transition: background 0.5s ease;
 }
 
-.hero .button:hover {
+.hero-content .button:hover {
     background: linear-gradient(90deg, #00e6ff, #ff00ff);
     box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
 }
+
 
 /* About Section */
 .about {
