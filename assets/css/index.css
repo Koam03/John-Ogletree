@@ -109,39 +109,22 @@ body, html {
     display: block;
 }
 
-/* Scrollbar Styling for WebKit Browsers */
+/* Scrollbar Styling */
 .sidebar nav::-webkit-scrollbar {
     width: 5px;
 }
 
-.sidebar nav::-webkit-scrollbar-track {
-    background: rgba(25, 25, 112, 0.9);
-}
-
 .sidebar nav::-webkit-scrollbar-thumb {
-    background-color: #ff007a; /* Scrollbar color */
+    background-color: #ff007a;
     border-radius: 10px;
-}
-
-/* Scrollbar Styling for Firefox */
-.sidebar nav {
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #ff007a rgba(25, 25, 112, 0.9); /* Firefox */
-}
-
-/* Availability Footer */
-.availability {
-    color: #00e6ff;
-    text-align: center;
-    text-shadow: 0 0 10px #00e6ff;
-    margin-top: 1rem;
 }
 
 /* Main Content */
 .main-content {
-    margin-left: 270px; /* Sidebar width + padding */
+    margin-left: 270px; /* Sidebar width */
     padding: 2rem;
-    transition: margin-left 0.3s ease; /* Smooth transition when sidebar toggles */
+    transition: margin-left 0.3s ease;
+    max-width: 100%; /* Ensure it stays responsive */
 }
 
 @media screen and (max-width: 768px) {
@@ -162,7 +145,7 @@ body, html {
     }
 }
 
-/* Hero Section Styling */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -171,21 +154,23 @@ body, html {
     align-items: center;
     background: linear-gradient(180deg, #000, #150025);
     color: #ffffff;
+    padding: 2rem;
+    text-align: center;
 }
 
 .hero h1 {
-    font-size: 4vw; /* Responsive font size */
+    font-size: 4vw;
     margin-bottom: 20px;
     text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
 }
 
-/* Hero Content (Tagline + Button) */
+/* Hero Content */
 .hero-content {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .hero-subtitle {
@@ -193,7 +178,7 @@ body, html {
     color: #ff00ff;
 }
 
-/* Button Styling */
+/* Button */
 .button {
     padding: 15px 30px;
     font-size: 1.5rem;
@@ -210,20 +195,28 @@ body, html {
     box-shadow: 0 0 30px #00e6ff, 0 0 40px #ff00ff;
 }
 
-/* Additional Sections (About, Services, Projects, Newsletter) */
+/* Section Styling */
 .about, .services, .projects, .newsletter {
     padding: 100px 0;
     text-align: center;
-    color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Focus Styles for Accessibility */
-a:focus, button:focus {
-    outline: 2px solid #00e6ff;
-    outline-offset: 3px;
+.about h2, .services h2, .projects h2, .newsletter h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00e6ff;
 }
 
-/* Newsletter Section Styling */
+.about p, .services p, .projects p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* Newsletter Form */
 .newsletter form {
     display: flex;
     flex-direction: column;
