@@ -161,7 +161,7 @@ body, html {
 }
 
 .hero h1 {
-    font-size: 4vw; /* Responsive font size */
+    font-size: 6vw; /* Larger font size for prominence */
     margin-bottom: 20px;
     text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
 }
@@ -176,14 +176,14 @@ body, html {
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
+    font-size: 2rem; /* Increased subtitle size */
     color: #ff00ff;
 }
 
 /* Button */
 .button {
     padding: 15px 30px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     background: linear-gradient(90deg, #ff00ff, #00e6ff);
     border-radius: 50px;
     text-decoration: none;
@@ -206,19 +206,38 @@ body, html {
 }
 
 .about h2, .services h2, .projects h2, .newsletter h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 5vw; /* Responsive headers for each section */
+    margin-bottom: 30px;
     color: #00e6ff;
+    text-shadow: 0 0 15px #00e6ff;
+    transition: font-size 0.5s ease;
 }
 
-.about p, .services p, .projects p {
-    font-size: 1.4rem;
+/* About Section */
+.about p {
+    font-size: 1.6rem;
     color: #ffffff;
     max-width: 700px;
     margin: 0 auto 40px auto;
 }
 
-/* Newsletter Form */
+/* Services Section */
+.services p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* Projects Section */
+.projects p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* Newsletter Section */
 .newsletter form {
     display: flex;
     flex-direction: column;
