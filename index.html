@@ -32,7 +32,6 @@
         flex-direction: column;
     }
 
-    /* Hide Sidebar on Small Screens */
     .sidebar-hidden {
         transform: translateX(-100%);
     }
@@ -70,16 +69,16 @@
 
     /* Scrollable Navigation */
     .sidebar nav {
-        flex-grow: 1; /* Occupies remaining space */
-        overflow-y: auto; /* Enables vertical scrolling */
-        padding-right: 10px; /* Prevents content from being hidden behind scrollbar */
+        flex-grow: 1;
+        overflow-y: auto;
+        padding-right: 10px;
     }
 
     /* Sidebar Links */
     .sidebar nav a {
         display: block;
         font-size: 1.5rem;
-        color: #ffffff; /* White links */
+        color: #ffffff;
         text-decoration: none;
         margin: 1rem 0;
         transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -87,17 +86,35 @@
     }
 
     .sidebar nav a:hover {
-        color: #00e6ff; /* Blue on hover */
-        text-shadow: 0 0 10px #00e6ff; /* Glow effect */
+        color: #00e6ff;
+        text-shadow: 0 0 10px #00e6ff;
+    }
+
+    /* Dropdown Menu Styling */
+    .dropdown-menu {
+        display: none;
+        padding-left: 20px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu {
+        display: none;
+        padding-left: 20px;
+    }
+
+    .dropdown-menu li:hover .dropdown-submenu {
+        display: block;
     }
 
     /* Main Content */
     .main-content {
-        margin-left: 270px; /* Sidebar width */
+        margin-left: 270px;
         padding: 2rem;
         transition: margin-left 0.3s ease;
-        max-width: 100%; /* Ensure it stays responsive */
-        width: calc(100vw - 270px); /* Adjust dynamically with sidebar */
+        width: calc(100vw - 270px);
     }
 
     @media screen and (max-width: 768px) {
@@ -111,7 +128,7 @@
 
         .main-content {
             margin-left: 0;
-            width: 100vw; /* Use full viewport width on smaller screens */
+            width: 100vw;
         }
 
         .sidebar-visible {
@@ -133,17 +150,17 @@
     }
 
     .hero h1 {
-        font-size: 6vw; /* Larger, responsive font size */
+        font-size: 6vw;
         margin-bottom: 20px;
         text-shadow: 0 0 20px #ffffff, 0 0 30px #ff007a;
-        line-height: 1.2; /* Ensures good spacing in the heading */
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 2vw; /* Responsive subtitle size */
+        font-size: 2vw;
         color: #ff00ff;
         margin-bottom: 20px;
-        line-height: 1.4; /* Better readability */
+        line-height: 1.4;
     }
 
     /* Button Styling */
@@ -172,18 +189,17 @@
     }
 
     .about h2, .services h2, .projects h2, .newsletter h2 {
-        font-size: 5vw; /* Responsive headers */
+        font-size: 5vw;
         margin-bottom: 30px;
         color: #00e6ff;
         text-shadow: 0 0 15px #00e6ff;
-        transition: font-size 0.5s ease;
     }
 
     /* Paragraph Styling */
     .about p, .services p, .projects p {
-        font-size: 1.6rem; /* Increased font size for readability */
+        font-size: 1.6rem;
         color: #ffffff;
-        line-height: 1.6; /* Good line height for easier reading */
+        line-height: 1.6;
         max-width: 700px;
         margin: 0 auto 40px auto;
     }
@@ -202,7 +218,7 @@
         border: none;
         width: 80%;
         max-width: 300px;
-        font-size: 1.4rem; /* Larger font for form input */
+        font-size: 1.4rem;
     }
 
     .newsletter form button {
@@ -212,7 +228,7 @@
         color: white;
         cursor: pointer;
         transition: background 0.3s ease;
-        font-size: 1.4rem; /* Larger font for button */
+        font-size: 1.4rem;
     }
 
     .newsletter form button:hover {
@@ -329,6 +345,16 @@
       </form>
     </section>
   </div>
+
+  <script>
+    // Sidebar toggle functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar-visible');
+    });
+  </script>
 
 </body>
 </html>
