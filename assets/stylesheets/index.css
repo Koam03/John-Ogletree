@@ -1,55 +1,57 @@
-/* Main layout using flexbox */
+/* Flexbox layout for the main wrapper */
 .main-wrapper {
   display: flex;
-  flex-direction: row; /* Sidebar and content side by side */
-  min-height: 100vh; /* Full-height layout */
+  flex-direction: row;
+  min-height: 100vh;
 }
 
 .w3-sidebar {
-  flex: 0 0 250px; /* Sidebar takes fixed 250px width */
-  max-width: 250px; /* Ensure max width is 250px */
-  height: 100vh; /* Full height for sidebar */
-  overflow-y: auto; /* Scroll inside sidebar if content overflows */
-  position: relative; /* Sidebar stays fixed */
+  flex: 0 0 250px; /* Sidebar stays fixed at 250px width */
+  max-width: 250px;
+  height: 100vh; /* Full height */
+  position: relative; /* Fixes scrolling issues */
+  overflow-y: auto; /* Scrollable sidebar */
 }
 
 .main-content {
-  flex: 1; /* Main content takes the remaining space */
-  overflow: auto; /* Ensure content is scrollable */
-  padding: 16px; /* Space around content */
+  flex: 1; /* Main content takes remaining space */
+  padding: 16px;
+  overflow: auto;
+  min-width: 0; /* Prevents content from shrinking when window is resized */
 }
 
-/* Responsive sidebar on smaller screens */
+/* Responsive sidebar for smaller screens */
 @media (max-width: 768px) {
   .w3-sidebar {
     position: fixed;
-    left: -250px; /* Initially hidden off-screen */
-    top: 0;
-    transition: left 0.3s ease; /* Smooth slide-in */
+    left: -250px; /* Initially off-screen */
+    transition: left 0.3s ease;
   }
 
   .w3-sidebar.open {
-    left: 0; /* Slide sidebar into view */
+    left: 0; /* Slide sidebar in */
   }
 
   .main-content {
-    margin-left: 0; /* No margin when sidebar is closed */
-  }
-
-  .open-sidebar-btn {
-    display: block; /* Display the sidebar toggle button */
+    margin-left: 0; /* Ensure no content margin when sidebar is hidden */
   }
 }
 
-/* Button to open sidebar on small screens */
+/* Sidebar open button for smaller screens */
 .open-sidebar-btn {
   display: none;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 4;
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .open-sidebar-btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 4;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+  }
 }
