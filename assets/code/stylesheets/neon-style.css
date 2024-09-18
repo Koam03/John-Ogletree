@@ -181,11 +181,18 @@
     padding: 20px;
     position: fixed;
     top: 20px;
-    left: 20px; /* Change right to left to position it on the left side */
-    z-index: 1000;
+    left: 20px; /* Keep it on the left */
+    background-color: rgba(16, 16, 16, 0.9); /* Add a semi-transparent background */
+    border-radius: 8px; /* Rounded corners for a button look */
+    z-index: 1001; /* Ensure it's above other content */
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); /* Add a glowing shadow for visibility */
 }
 
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
     .neon-sidebar {
         position: fixed;
         top: 0;
@@ -203,10 +210,6 @@
     .main-content {
         margin-left: 0;
         padding: 20px;
-    }
-
-    .menu-toggle {
-        display: block;
     }
 
     /* When sidebar is active, display the 'Close' text/icon */
