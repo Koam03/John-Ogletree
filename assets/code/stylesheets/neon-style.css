@@ -9,19 +9,18 @@
   body {
     background-color: #0a0a0a;
     color: #ffffff;
-    display: flex;
     min-height: 100vh;
-    flex-direction: column; /* Adjust to allow vertical stacking on small screens */
+    display: flex;
+    flex-direction: column;
   }
   
-  /* Sidebar Navigation */
   .neon-sidebar {
     width: 250px;
     background-color: #101010;
     padding: 40px 20px;
     position: fixed;
     height: 100%;
-    transition: 0.3s;
+    overflow-y: auto;
   }
   
   .logo h1 {
@@ -36,21 +35,20 @@
     text-shadow: 0px 0px 10px #00eaff, 0px 0px 20px #00eaff;
   }
   
-  .neon-sidebar ul {
-    list-style: none;
+  ul {
+    list-style-type: none;
   }
   
-  .neon-sidebar ul li {
-    margin: 25px 0;
+  li {
+    margin: 10px 0;
   }
   
   .neon-link {
     text-decoration: none;
     color: #00eaff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 10px;
     display: block;
-    text-align: center;
     transition: 0.4s;
   }
   
@@ -59,12 +57,42 @@
     text-shadow: 0px 0px 10px #00eaff, 0px 0px 30px #00eaff;
   }
   
+  /* Multi-tier Dropdown */
+  ul ul {
+    display: none; /* Initially hide dropdown items */
+    padding-left: 15px; /* Indent nested items */
+  }
+  
+  ul ul ul {
+    padding-left: 30px; /* Further indent for deeper tiers */
+  }
+  
+  /* Show dropdowns on hover */
+  li:hover > ul {
+    display: block;
+  }
+  
+  /* Style for active dropdown items */
+  ul li ul li {
+    margin: 5px 0;
+  }
+  
+  ul li ul li a {
+    padding-left: 15px;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  
+  /* Highlight deeper dropdowns */
+  ul ul ul li a {
+    padding-left: 30px;
+  }
+  
   /* Main Content */
   .main-content {
     margin-left: 250px;
     padding: 60px;
     width: calc(100% - 250px);
-    transition: margin-left 0.3s;
   }
   
   .main-header {
@@ -104,7 +132,6 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 234, 255, 0.5);
-    overflow: hidden;
   }
   
   .project img {
@@ -123,12 +150,8 @@
     font-size: 1rem;
   }
   
-  /* Mobile Responsiveness */
+  /* Responsiveness */
   @media (max-width: 768px) {
-    body {
-      flex-direction: column;
-    }
-  
     .projects-grid {
       grid-template-columns: 1fr;
     }
@@ -142,37 +165,6 @@
       width: 100%;
       height: auto;
       position: relative;
-      padding: 20px;
-      transition: none;
-    }
-  
-    .logo h1 {
-      font-size: 2rem;
-    }
-  
-    .neon-link {
-      font-size: 1.1rem;
-      padding: 8px;
-    }
-  
-    .main-header h2 {
-      font-size: 2.2rem;
-    }
-  
-    .main-header p {
-      font-size: 1rem;
-    }
-  
-    .featured-projects h3 {
-      font-size: 1.8rem;
-    }
-  
-    .project-info h4 {
-      font-size: 1.2rem;
-    }
-  
-    .project-info p {
-      font-size: 0.9rem;
     }
   }
   
