@@ -53,13 +53,20 @@
       height: 100%;
       overflow-y: auto;
       border-right: 1px solid #303030;
-      transform: translateX(-100%);
+      transform: translateX(0); /* Show sidebar by default */
       transition: transform 0.5s ease, background-color 0.3s ease;
       z-index: 1000;
     }
-  
-    .neon-sidebar.active {
-      transform: translateX(0);
+
+    /* Sidebar hidden by default on small screens */
+    @media (max-width: 768px) {
+      .neon-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .neon-sidebar.active {
+        transform: translateX(0);
+      }
     }
   
     /* Sidebar Logo */
@@ -180,6 +187,13 @@
       border-radius: 8px;
       transition: transform 0.3s ease;
       z-index: 2000;
+    }
+
+    /* Hide toggle on large screens */
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
     }
   
     .menu-toggle:hover {
