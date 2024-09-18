@@ -17,6 +17,9 @@
 <body>
 
   <!-- Sidebar Navigation -->
+  <div class="menu-toggle">
+    <span>&#9776; Menu</span>
+  </div>
   <nav class="neon-sidebar">
     <div class="logo">
       <h1>NEON<span>PORTFOLIO</span></h1>
@@ -154,5 +157,29 @@
 
   <!-- Link to internal JavaScript file for interactions -->
   <script src="/assets/code/javascripts/interactions.js"></script>
+  
+  <!-- Inline script for menu toggle functionality -->
+  <script>
+    // Menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.neon-sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    // Handling the dropdown functionality
+    const dropdownLinks = document.querySelectorAll('.neon-sidebar ul li > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const nextElement = link.nextElementSibling;
+        if (nextElement && nextElement.tagName === 'UL') {
+          e.preventDefault();
+          nextElement.classList.toggle('show');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
