@@ -15,14 +15,7 @@
   <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
-    <!-- Menu Toggle Block at the top -->
-    <div class="menu-toggle-container">
-      <div class="menu-toggle">
-        <span class="toggle-text">&#9776; Menu</span>
-      </div>
-    </div>
-
-  <!-- Sidebar Navigation -->
+    <!-- Sidebar Navigation -->
   <nav class="neon-sidebar">
     <div class="logo">
       <h1>NEON<span>PORTFOLIO</span></h1>
@@ -163,25 +156,14 @@
   
   <!-- Inline script for menu toggle functionality -->
     <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.neon-sidebar');
-    const toggleText = document.querySelector('.toggle-text');
-    const mainContent = document.querySelector('.main-content');
-    const menuContainer = document.querySelector('.menu-toggle-container');
+const menuToggle = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.neon-sidebar');
+const mainContent = document.querySelector('.main-content');
 
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-      
-      // Toggle between 'Menu' and 'Close'
-      if (menuToggle.classList.contains('active')) {
-        toggleText.innerHTML = '&#10005; Close'; // X symbol for close
-        mainContent.style.marginTop = menuContainer.offsetHeight + 'px'; // Shift content down
-      } else {
-        toggleText.innerHTML = '&#9776; Menu'; // Hamburger icon for menu
-        mainContent.style.marginTop = '0'; // Reset content position
-      }
-    });
+menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('shifted');
+});
   </script>
 </body>
 </html>

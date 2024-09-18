@@ -4,173 +4,158 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
-  }
-  
-  body {
+}
+
+body {
     background-color: #0a0a0a;
     color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  
-  .neon-sidebar {
+}
+
+/* Sidebar container */
+.neon-sidebar {
     width: 250px;
     background-color: #101010;
-    padding: 40px 20px;
+    padding: 20px;
     position: fixed;
     height: 100%;
     overflow-y: auto;
-  }
-  
-  .logo h1 {
+    border-right: 1px solid #303030; /* Subtle border for clean separation */
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Logo styling */
+.logo h1 {
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Slightly smaller font size */
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     max-width: 100%; /* Ensure the logo stays within the sidebar width */
     word-wrap: break-word; /* Break long words if necessary */
 }
 
+.logo span {
+    color: #00eaff;
+    text-shadow: 0px 0px 5px #00eaff;
+}
+
 .logo {
     display: flex;
-    justify-content: center; /* Center the logo within the sidebar */
+    justify-content: center;
     align-items: center;
-    overflow: hidden; /* Prevent any overflow issues */
+    overflow: hidden;
 }
-  
-  ul {
+
+/* Sidebar navigation */
+ul {
     list-style-type: none;
-  }
-  
-  li {
-    margin: 10px 0;
-  }
-  
-  .neon-link {
+}
+
+.sidebar-nav li {
+    margin: 15px 0;
+}
+
+/* Link styling */
+.neon-link {
     text-decoration: none;
-    color: #00eaff;
+    color: #00eaff; /* Neon blue color for links */
     font-size: 1.2rem;
-    padding: 10px;
     display: block;
-    transition: 0.4s;
-  }
-  
-  .neon-link:hover {
-    color: #ffffff;
-    text-shadow: 0px 0px 10px #00eaff, 0px 0px 30px #00eaff;
-  }
-  
-  /* Multi-tier Dropdown */
-  ul ul {
-    display: none; /* Initially hide dropdown items */
-    padding-left: 15px; /* Indent nested items */
-  }
-  
-  ul ul ul {
-    padding-left: 30px; /* Further indent for deeper tiers */
-  }
-  
-  /* Show dropdowns on hover */
-  li:hover > ul {
-    display: block;
-  }
-  
-  /* Style for active dropdown items */
-  ul li ul li {
-    margin: 5px 0;
-  }
-  
-  ul li ul li a {
-    padding-left: 15px;
-    font-size: 1rem;
-    transition: 0.3s;
-  }
-  
-  /* Highlight deeper dropdowns */
-  ul ul ul li a {
-    padding-left: 30px;
-  }
-  
-  /* Main Content */
-  .main-content {
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for links */
+.neon-link:hover {
+    background-color: #2e2e2e; /* Subtle hover background */
+    color: #ffffff; /* Change link text color on hover */
+}
+
+/* Active link styling */
+.neon-link.active {
+    background-color: #00eaff;
+    color: #101010;
+}
+
+/* Main Content */
+.main-content {
     margin-left: 250px;
     padding: 60px;
     width: calc(100% - 250px);
-  }
-  
-  .main-header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .main-header h2 {
-    font-size: 3rem;
-    color: #00eaff;
-    text-shadow: 0px 0px 10px #00eaff, 0px 0px 30px #00eaff;
-  }
-  
-  .main-header p {
-    font-size: 1.2rem;
-    color: #ff1aff;
-    text-shadow: 0px 0px 5px #ff1aff, 0px 0px 15px #ff1aff;
-  }
-  
-  /* Featured Projects Section */
-  .featured-projects h3 {
+    transition: all 0.3s ease;
+}
+
+/* Featured Projects Section */
+.featured-projects h3 {
     font-size: 2.2rem;
     text-align: center;
     color: #ff1aff;
     text-shadow: 0px 0px 10px #ff1aff, 0px 0px 30px #ff1aff;
     margin-bottom: 40px;
-  }
-  
-  .projects-grid {
+}
+
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-  
-  .project {
+}
+
+.project {
     background-color: #151515;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 234, 255, 0.5);
-  }
-  
-  .project img {
+}
+
+.project img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
-  }
-  
-  .project-info h4 {
+}
+
+.project-info h4 {
     color: #00eaff;
     text-shadow: 0px 0px 10px #00eaff, 0px 0px 20px #00eaff;
-  }
-  
-  .project-info p {
+}
+
+.project-info p {
     color: #ff1aff;
     font-size: 1rem;
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 768px) {
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
     .projects-grid {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-  
+
     .main-content {
-      margin-left: 0;
-      padding: 20px;
+        margin-left: 0;
+        padding: 20px;
     }
-  
+
     .neon-sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100%;
+        transition: all 0.3s ease;
+        z-index: 999;
     }
-  }
+
+    .neon-sidebar.active {
+        left: 0;
+    }
+
+    .menu-toggle.active .toggle-text {
+        content: "\00d7 Close"; /* X symbol for close */
+    }
+}
 
 /* Menu toggle container at the top */
 .menu-toggle-container {
@@ -196,23 +181,7 @@
     box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); /* Neon glow */
 }
 
-/* Sidebar and responsive behavior */
-@media (max-width: 768px) {
-    .neon-sidebar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 250px;
-        height: 100%;
-        transition: 0.3s ease;
-        z-index: 999;
-    }
-
-    .neon-sidebar.active {
-        left: 0;
-    }
-
-    .menu-toggle.active .toggle-text {
-        content: "\00d7 Close"; /* Change icon when active */
-    }
+/* Transition for shifting content when the sidebar is toggled */
+.main-content.shifted {
+    margin-top: 60px;
 }
