@@ -28,12 +28,16 @@
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
-  }
-  
-  .logo span {
-    color: #00eaff;
-    text-shadow: 0px 0px 10px #00eaff, 0px 0px 20px #00eaff;
-  }
+    max-width: 100%; /* Ensure the logo stays within the sidebar width */
+    word-wrap: break-word; /* Break long words if necessary */
+}
+
+.logo {
+    display: flex;
+    justify-content: center; /* Center the logo within the sidebar */
+    align-items: center;
+    overflow: hidden; /* Prevent any overflow issues */
+}
   
   ul {
     list-style-type: none;
@@ -177,7 +181,7 @@
     padding: 20px;
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px; /* Change right to left to position it on the left side */
     z-index: 1000;
 }
 
@@ -204,7 +208,7 @@
     .menu-toggle {
         display: block;
     }
-    
+
     /* When sidebar is active, display the 'Close' text/icon */
     .menu-toggle.active .toggle-text {
         content: "\00d7 Close"; /* X symbol for close */
