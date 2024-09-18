@@ -169,7 +169,6 @@
   }
 
 /* Menu toggle button */
-/* Menu toggle button */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -180,30 +179,34 @@
     top: 20px;
     right: 20px;
     z-index: 1000;
-  }
-  
-  /* Sidebar hidden by default on mobile */
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .neon-sidebar {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 250px;
-      height: 100%;
-      transition: 0.3s ease;
-      z-index: 999;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100%;
+        transition: 0.3s ease;
+        z-index: 999;
     }
-  
+
     .neon-sidebar.active {
-      left: 0;
+        left: 0;
     }
-  
+
     .main-content {
-      margin-left: 0;
-      padding: 20px;
+        margin-left: 0;
+        padding: 20px;
     }
-  
+
     .menu-toggle {
-      display: block;
+        display: block;
     }
-  }  
+    
+    /* When sidebar is active, display the 'Close' text/icon */
+    .menu-toggle.active .toggle-text {
+        content: "\00d7 Close"; /* X symbol for close */
+    }
+}
