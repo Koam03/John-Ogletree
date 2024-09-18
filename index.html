@@ -68,16 +68,21 @@
         transform: translateX(0);
       }
     }
-  
-    /* Sidebar Logo */
-    .logo h1 {
-      color: #fff;
-      text-align: center;
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      animation: neon-glow 1.5s infinite alternate;
-    }
+    .logo img {
+  display: block;
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center the image */
+  padding: 10px; /* Add some spacing around the image */
+}
+
+/* Optional: you can add a hover glow effect for a neon look */
+.logo img:hover {
+  filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 20px #ff1aff);
+  transform: scale(1.05);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
   
     @keyframes neon-glow {
       from {
@@ -275,8 +280,8 @@
   <!-- Sidebar -->
   <nav class="neon-sidebar">
     <div class="logo">
-      <h1>Surreal<span>Neon</span></h1>
-    </div>
+      <img src="path-to-your-logo.png" alt="Surreal Neon Logo" />
+    </div>    
     <ul class="sidebar-nav">
       <li><a href="#" class="neon-link">Home</a></li>
       <li><a href="#" class="neon-link">Projects</a></li>
