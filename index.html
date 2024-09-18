@@ -3,167 +3,257 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neon Portfolio</title>
+  <title>Surreal Neon World</title>
 
-  <!-- Link to internal CSS file for neon styling -->
-  <link rel="stylesheet" href="assets/code/stylesheets/neon-style.css">
-
-  <!-- Link to Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="css/font-awesome.min.css">
+
+  <!-- Internal CSS -->
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    .neon-sidebar {
+      width: 300px;
+      background: radial-gradient(circle at 50% 50%, #101010, #000);
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      border-right: 1px solid #303030;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease, background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .neon-sidebar.active {
+      transform: translateX(0);
+    }
+
+    /* Sidebar Logo */
+    .logo h1 {
+      color: #fff;
+      text-align: center;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      animation: neon-glow 1.5s infinite alternate;
+    }
+
+    @keyframes neon-glow {
+      from {
+        text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 20px #00eaff;
+      }
+      to {
+        text-shadow: 0 0 20px #ff1aff, 0 0 30px #ff1aff, 0 0 40px #ff1aff;
+      }
+    }
+
+    .logo span {
+      color: #ff1aff;
+    }
+
+    /* Navigation Links */
+    .sidebar-nav ul {
+      list-style-type: none;
+      padding: 10px;
+    }
+
+    .neon-link {
+      text-decoration: none;
+      color: #00eaff;
+      font-size: 1.4rem;
+      padding: 10px;
+      display: block;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .neon-link::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400%;
+      height: 400%;
+      background: radial-gradient(circle, transparent, rgba(0, 234, 255, 0.5));
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s ease;
+      border-radius: 50%;
+    }
+
+    .neon-link:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 300px;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.02);
+      transition: margin-left 0.5s ease;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: #ff1aff;
+      text-shadow: 0px 0px 10px #ff1aff, 0px 0px 30px #ff1aff;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #00eaff;
+      text-shadow: 0px 0px 10px #00eaff, 0px 0px 20px #00eaff;
+    }
+
+    /* Menu Toggle */
+    .menu-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: rgba(16, 16, 16, 0.9);
+      padding: 10px;
+      font-size: 2rem;
+      color: #00eaff;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      z-index: 2000;
+    }
+
+    .menu-toggle:hover {
+      transform: rotate(90deg);
+    }
+
+    /* Featured Projects Section */
+    .featured-projects {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: rgba(0, 234, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .featured-projects h3 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: #ff1aff;
+      text-shadow: 0px 0px 10px #ff1aff, 0px 0px 30px #ff1aff;
+      margin-bottom: 30px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background-color: #151515;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(255, 26, 255, 0.5);
+      transition: transform 0.5s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.05) rotate(-3deg);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .menu-toggle {
+        top: 20px;
+        left: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Sidebar Navigation -->
+  <!-- Sidebar -->
   <nav class="neon-sidebar">
     <div class="logo">
-      <h1>NEON<span>PORTFOLIO</span></h1>
+      <h1>Surreal<span>Neon</span></h1>
     </div>
-    <ul>
-      <!-- Home and About -->
-      <li><a href="/" class="neon-link">Home</a></li>
-      <li><a href="/about-me" class="neon-link">About Me</a></li>
-
-      <!-- Services Section (3-tier dropdown) -->
-      <li><a href="/services" class="neon-link">Services</a>
-        <ul>
-          <li><a href="/services/design-and-print" class="neon-link">Design and Print</a>
-            <ul>
-              <li><a href="/services/design-and-print/logo-design" class="neon-link">Logo Design</a></li>
-              <li><a href="/services/design-and-print/brand-style-guides" class="neon-link">Brand Style Guides</a></li>
-              <li><a href="/services/design-and-print/business-cards" class="neon-link">Business Cards</a></li>
-            </ul>
-          </li>
-          <li><a href="/services/digital-media" class="neon-link">Digital Media</a>
-            <ul>
-              <li><a href="/services/digital-media/website-design" class="neon-link">Website Design</a></li>
-              <li><a href="/services/digital-media/presentation-design" class="neon-link">Presentation Design</a></li>
-              <li><a href="/services/digital-media/vector-tracing" class="neon-link">Vector Tracing</a></li>
-            </ul>
-          </li>
-          <li><a href="/services/video-and-animations" class="neon-link">Video and Animations</a>
-            <ul>
-              <li><a href="/services/video-and-animations/video-editing" class="neon-link">Video Editing</a></li>
-              <li><a href="/services/video-and-animations/logo-animation" class="neon-link">Logo Animation</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-
-      <!-- Pricing Section (3-tier dropdown) -->
-      <li><a href="/pricing" class="neon-link">Pricing</a>
-        <ul>
-          <li><a href="/pricing/logo-design" class="neon-link">Logo Design Pricing</a></li>
-          <li><a href="/pricing/brand-style-guides" class="neon-link">Brand Style Guides Pricing</a></li>
-          <li><a href="/pricing/business-cards" class="neon-link">Business Cards Pricing</a></li>
-        </ul>
-      </li>
-
-      <!-- Project Vault Section -->
-      <li><a href="/project-vault" class="neon-link">Project Vault</a>
-        <ul>
-          <!-- 5-tier dropdown for Graphics -->
-          <li><a href="/project-vault/graphics" class="neon-link">Graphics</a>
-            <ul>
-              <li><a href="/project-vault/graphics/logoverse" class="neon-link">Logoverse</a>
-                <ul>
-                  <li><a href="/project-vault/graphics/logoverse/burst-through" class="neon-link">Burst Through</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/vust-reservations" class="neon-link">Vust Reservations</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/peak" class="neon-link">Peak</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/living-out-life-bible-study" class="neon-link">Living Out Life Bible Study</a></li>
-                  <li><a href="/project-vault/graphics/logoverse/creative-minds" class="neon-link">Creative Minds</a></li>
-                </ul>
-              </li>
-              <li><a href="/project-vault/graphics/visions-unveiled" class="neon-link">Visions Unveiled</a></li>
-            </ul>
-          </li>
-          <!-- 3-tier dropdown for Videos -->
-          <li><a href="/project-vault/videos" class="neon-link">Videos</a>
-            <ul>
-              <li><a href="/project-vault/videos/movie-trailers" class="neon-link">Movie Trailers</a></li>
-              <li><a href="/project-vault/videos/music-videos" class="neon-link">Music Videos</a></li>
-              <li><a href="/project-vault/videos/podcast-clips" class="neon-link">Podcast Clips</a></li>
-            </ul>
-          </li>
-          <!-- 3-tier dropdown for Books with Inside the Storm dropdown -->
-          <li><a href="/project-vault/books" class="neon-link">Books</a>
-            <ul>
-              <li><a href="/project-vault/books/inside-the-storm" class="neon-link">Inside the Storm</a>
-                <ul>
-                  <li><a href="/project-vault/books/inside-the-storm/the-awakening" class="neon-link">The Awakening</a></li>
-                  <li><a href="/project-vault/books/inside-the-storm/the-fallen" class="neon-link">The Fallen</a></li>
-                  <li><a href="/project-vault/books/inside-the-storm/redemption" class="neon-link">Redemption</a></li>
-                </ul>
-              </li>
-              <li><a href="/project-vault/books/another-book" class="neon-link">Another Book</a></li>
-            </ul>
-          </li>
-          <!-- 3-tier dropdown for Music -->
-          <li><a href="/project-vault/music" class="neon-link">Music</a>
-            <ul>
-              <li><a href="/project-vault/music/pink-moon" class="neon-link">Pink Moon</a></li>
-              <li><a href="/project-vault/music/midnight-drive" class="neon-link">Midnight Drive</a></li>
-              <li><a href="/project-vault/music/the-weight-of-depression" class="neon-link">The Weight of Depression</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-
-      <!-- Contact Section -->
-      <li><a href="/contact-me" class="neon-link">Contact Me</a></li>
+    <ul class="sidebar-nav">
+      <li><a href="#" class="neon-link">Home</a></li>
+      <li><a href="#" class="neon-link">Projects</a></li>
+      <li><a href="#" class="neon-link">Services</a></li>
+      <li><a href="#" class="neon-link">About Me</a></li>
+      <li><a href="#" class="neon-link">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Main content -->
-  <div class="main-content">
-    <header class="main-header">
-      <h2>Welcome to My Neon Portfolio</h2>
-      <p>Showcasing bold, creative, and glowing designs.</p>
-    </header>
+  <!-- Menu Toggle -->
+  <div class="menu-toggle">☰</div>
 
-    <!-- Featured Projects Section -->
+  <!-- Main Content -->
+  <div class="main-content">
+    <section class="hero">
+      <h2>Welcome to the Surreal Neon World</h2>
+      <p>Experience the blend of vibrant creativity and futuristic design.</p>
+    </section>
+
+    <!-- Featured Projects -->
     <section class="featured-projects">
       <h3>Featured Projects</h3>
       <div class="projects-grid">
         <div class="project">
-          <img src="images/project1.jpg" alt="Project 1">
-          <div class="project-info">
-            <h4>Project Neon One</h4>
-            <p>A creative project with vibrant glowing design.</p>
-          </div>
+          <h4>Project A</h4>
         </div>
         <div class="project">
-          <img src="images/project2.jpg" alt="Project 2">
-          <div class="project-info">
-            <h4>Project Neon Two</h4>
-            <p>A stunning visual with bold effects.</p>
-          </div>
+          <h4>Project B</h4>
         </div>
         <div class="project">
-          <img src="images/project3.jpg" alt="Project 3">
-          <div class="project-info">
-            <h4>Project Neon Three</h4>
-            <p>A concept brought to life with neon inspiration.</p>
-          </div>
+          <h4>Project C</h4>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- Link to internal JavaScript file for interactions -->
-  <script src="/assets/code/javascripts/interactions.js"></script>
-  
-  <!-- Inline script for menu toggle functionality -->
-    <script>
-const menuToggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.neon-sidebar');
-const mainContent = document.querySelector('.main-content');
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.neon-sidebar');
 
-menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    mainContent.classList.toggle('shifted');
-});
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
