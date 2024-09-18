@@ -22,19 +22,38 @@ body {
     position: fixed;
     height: 100%;
     overflow-y: auto;
-    border-right: 1px solid #303030; /* Subtle border for clean separation */
-    transition: all 0.3s ease;
+    border-right: 1px solid #303030;
+    transition: transform 0.3s ease;
     z-index: 1000;
+    left: 0;
+}
+
+/* Sidebar hidden by default on mobile */
+@media (max-width: 768px) {
+    .neon-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .neon-sidebar.active {
+        transform: translateX(0);
+    }
 }
 
 /* Logo styling */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
 .logo h1 {
     color: #fff;
-    font-size: 2rem; /* Slightly smaller font size */
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 30px;
-    max-width: 100%; /* Ensure the logo stays within the sidebar width */
-    word-wrap: break-word; /* Break long words if necessary */
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .logo span {
@@ -42,15 +61,8 @@ body {
     text-shadow: 0px 0px 5px #00eaff;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
 /* Sidebar navigation */
-ul {
+.sidebar-nav ul {
     list-style-type: none;
 }
 
@@ -58,10 +70,9 @@ ul {
     margin: 15px 0;
 }
 
-/* Link styling */
 .neon-link {
     text-decoration: none;
-    color: #00eaff; /* Neon blue color for links */
+    color: #00eaff;
     font-size: 1.2rem;
     display: block;
     padding: 10px 15px;
@@ -69,13 +80,12 @@ ul {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect for links */
+/* Link hover and active state */
 .neon-link:hover {
-    background-color: #2e2e2e; /* Subtle hover background */
-    color: #ffffff; /* Change link text color on hover */
+    background-color: #2e2e2e;
+    color: #ffffff;
 }
 
-/* Active link styling */
 .neon-link.active {
     background-color: #00eaff;
     color: #101010;
@@ -85,8 +95,20 @@ ul {
 .main-content {
     margin-left: 250px;
     padding: 60px;
+    transition: margin-left 0.3s ease;
     width: calc(100% - 250px);
-    transition: all 0.3s ease;
+}
+
+/* Adjust layout for mobile */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .main-content.shifted {
+        margin-top: 60px;
+    }
 }
 
 /* Featured Projects Section */
@@ -127,61 +149,42 @@ ul {
     font-size: 1rem;
 }
 
-/* Responsiveness */
+/* Responsive project grid */
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
     }
-
-    .main-content {
-        margin-left: 0;
-        padding: 20px;
-    }
-
-    .neon-sidebar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 250px;
-        height: 100%;
-        transition: all 0.3s ease;
-        z-index: 999;
-    }
-
-    .neon-sidebar.active {
-        left: 0;
-    }
-
-    .menu-toggle.active .toggle-text {
-        content: "\00d7 Close"; /* X symbol for close */
-    }
 }
 
-/* Menu toggle container at the top */
+/* Menu toggle button */
 .menu-toggle-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(16, 16, 16, 0.9); /* Dark background for visibility */
+    background-color: rgba(16, 16, 16, 0.9);
     padding: 10px;
     z-index: 1001;
     display: flex;
-    justify-content: flex-start; /* Position toggle on the left */
-    box-shadow: 0 2px 10px rgba(0, 234, 255, 0.5); /* Add shadow for separation */
+    justify-content: flex-start;
+    box-shadow: 0 2px 10px rgba(0, 234, 255, 0.5);
 }
 
-/* Menu toggle button */
 .menu-toggle {
     font-size: 2rem;
     color: #00eaff;
     cursor: pointer;
     padding: 10px;
-    border-radius: 8px; /* Button shape */
-    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); /* Neon glow */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Transition for shifting content when the sidebar is toggled */
-.main-content.shifted {
-    margin-top: 60px;
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Menu toggle active state */
+.menu-toggle.active .toggle-text {
+    content: "\00d7 Close"; /* X symbol for close */
 }
