@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Surreal Neon World</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
   
@@ -12,28 +12,13 @@
   <link rel="stylesheet" href="/assets/code/stylesheets/index.css">
 </head>
 <body>
-  <!-- Sidebar -->
-  <nav class="neon-sidebar">
-    <div class="logo">
-      <img src="/assets/media/images/logos/John Ogletree.png" alt="John Ogletree Logo" />
-    </div>    
-    <ul class="sidebar-nav">
-      <li><a href="#" class="neon-link">Home</a></li>
-      <li><a href="#" class="neon-link">Projects</a></li>
-      <li><a href="#" class="neon-link">Services</a></li>
-      <li><a href="#" class="neon-link">About Me</a></li>
-      <li><a href="#" class="neon-link">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Sidebar will be loaded here -->
+  <div id="sidebar"></div>
 
   <!-- Menu Toggle -->
   <div class="menu-toggle">☰</div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <section class="hero">
-      <h2>Welcome to the Surreal Neon World</h2>
-      <p>Experience the blend of vibrant creativity and futuristic design.</p>
+    <section id="hero">
     </section>
 
     <!-- Featured Projects -->
@@ -51,9 +36,9 @@
         </div>
       </div>
     </section>
-  </div>
 
   <!-- External JavaScript -->
   <script src="/assets/code/scripts/nav-toggle.js"></script>
+  <script src="/assets/code/scripts/fetch-nav.js"></script>
 </body>
 </html>
