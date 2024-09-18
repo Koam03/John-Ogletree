@@ -70,27 +70,31 @@
     }
   
     /* Sidebar Logo */
-    .logo h1 {
-      color: #fff;
-      text-align: center;
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      animation: neon-glow 1.5s infinite alternate;
-    }
-  
-    @keyframes neon-glow {
-      from {
-        text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 20px #00eaff;
-      }
-      to {
-        text-shadow: 0 0 20px #ff1aff, 0 0 30px #ff1aff, 0 0 40px #ff1aff;
-      }
-    }
-  
-    .logo span {
-      color: #ff1aff;
-    }
+    .logo {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+  background-color: #000; /* Background color to highlight the logo */
+  border-radius: 10px; /* Soft rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.logo img {
+  max-width: 100%; /* Ensure the image scales responsively */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any inline gap */
+  transition: opacity 0.3s ease; /* Fade effect on hover */
+}
+
+.logo:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+.logo img:hover {
+  opacity: 0.9; /* Slight fade on the image */
+}
   
     /* Navigation Links */
     .sidebar-nav ul {
