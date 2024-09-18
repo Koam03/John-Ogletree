@@ -11,6 +11,7 @@
     color: #ffffff;
     display: flex;
     min-height: 100vh;
+    flex-direction: column; /* Adjust to allow vertical stacking on small screens */
   }
   
   /* Sidebar Navigation */
@@ -20,6 +21,7 @@
     padding: 40px 20px;
     position: fixed;
     height: 100%;
+    transition: 0.3s;
   }
   
   .logo h1 {
@@ -62,6 +64,7 @@
     margin-left: 250px;
     padding: 60px;
     width: calc(100% - 250px);
+    transition: margin-left 0.3s;
   }
   
   .main-header {
@@ -120,8 +123,12 @@
     font-size: 1rem;
   }
   
-  /* Responsiveness */
+  /* Mobile Responsiveness */
   @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
+  
     .projects-grid {
       grid-template-columns: 1fr;
     }
@@ -135,6 +142,37 @@
       width: 100%;
       height: auto;
       position: relative;
+      padding: 20px;
+      transition: none;
+    }
+  
+    .logo h1 {
+      font-size: 2rem;
+    }
+  
+    .neon-link {
+      font-size: 1.1rem;
+      padding: 8px;
+    }
+  
+    .main-header h2 {
+      font-size: 2.2rem;
+    }
+  
+    .main-header p {
+      font-size: 1rem;
+    }
+  
+    .featured-projects h3 {
+      font-size: 1.8rem;
+    }
+  
+    .project-info h4 {
+      font-size: 1.2rem;
+    }
+  
+    .project-info p {
+      font-size: 0.9rem;
     }
   }
   
