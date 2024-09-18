@@ -172,27 +172,32 @@
     }
   }
 
+/* Menu toggle container at the top */
+.menu-toggle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(16, 16, 16, 0.9); /* Dark background for visibility */
+    padding: 10px;
+    z-index: 1001;
+    display: flex;
+    justify-content: flex-start; /* Position toggle on the left */
+    box-shadow: 0 2px 10px rgba(0, 234, 255, 0.5); /* Add shadow for separation */
+}
+
 /* Menu toggle button */
 .menu-toggle {
-    display: none;
     font-size: 2rem;
     color: #00eaff;
     cursor: pointer;
-    padding: 20px;
-    position: fixed;
-    top: 20px;
-    left: 20px; /* Keep it on the left */
-    background-color: rgba(16, 16, 16, 0.9); /* Add a semi-transparent background */
-    border-radius: 8px; /* Rounded corners for a button look */
-    z-index: 1001; /* Ensure it's above other content */
-    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); /* Add a glowing shadow for visibility */
+    padding: 10px;
+    border-radius: 8px; /* Button shape */
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8); /* Neon glow */
 }
 
+/* Sidebar and responsive behavior */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
     .neon-sidebar {
         position: fixed;
         top: 0;
@@ -207,13 +212,7 @@
         left: 0;
     }
 
-    .main-content {
-        margin-left: 0;
-        padding: 20px;
-    }
-
-    /* When sidebar is active, display the 'Close' text/icon */
     .menu-toggle.active .toggle-text {
-        content: "\00d7 Close"; /* X symbol for close */
+        content: "\00d7 Close"; /* Change icon when active */
     }
 }
