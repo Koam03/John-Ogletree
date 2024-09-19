@@ -115,16 +115,23 @@ body::before {
 
 /* Sidebar Toggle for Mobile */
 @media (max-width: 992px) {
-  .main-content {
-    margin-left: 0;
-  }
-
   .neon-sidebar {
     transform: translateX(-100%);
   }
 
   .neon-sidebar.active {
     transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Hide Menu Toggle on Desktop/Large Screens */
+@media (min-width: 992px) {
+  .menu-toggle {
+    display: none;
   }
 }
 
@@ -336,37 +343,4 @@ body::before {
   background-color: rgba(255, 255, 255, 0.05);
   color: #fff;
   font-size: 0.9rem;
-}
-
-/* Responsive Adjustments for Small Screens */
-@media (max-width: 992px) {
-  .main-content {
-    margin-left: 0;
-  }
-
-  .neon-sidebar {
-    transform: translateX(-100%);
-  }
-
-  .neon-sidebar.active {
-    transform: translateX(0);
-  }
-}
-
-/* Responsive Adjustments for Large Screens */
-@media (min-width: 992px) {
-  /* Hide the menu toggle button */
-  .menu-toggle {
-    display: none;
-  }
-
-  /* Ensure the sidebar is always visible */
-  .neon-sidebar {
-    transform: translateX(0);
-  }
-
-  /* Adjust main content margin */
-  .main-content {
-    margin-left: 260px; /* Width of the sidebar */
-  }
 }
