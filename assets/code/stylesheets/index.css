@@ -203,13 +203,8 @@ body::before {
   padding-left: 20px; /* Indent submenu items */
 }
 
-/* Dropdown Arrow for Dropdown Links */
-.sidebar-nav li.has-submenu > .neon-link::after {
-  content: none;
-}
-
-/* Show arrows on small screens */
-@media (max-width: 576px) {
+/* Dropdown Arrow for Mobile Only */
+@media (max-width: 576px), (hover: none) {
   .sidebar-nav li.has-submenu > .neon-link::after {
     content: "▼";
     font-size: 0.5rem; /* Smaller arrow size */
