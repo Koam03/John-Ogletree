@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -98,7 +99,6 @@ body::before {
   background-color: #ff1aff;
 }
 
-
 /* Sidebar */
 .neon-sidebar {
   width: 260px;
@@ -115,6 +115,10 @@ body::before {
 
 /* Sidebar Toggle for Mobile */
 @media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+  }
+
   .neon-sidebar {
     transform: translateX(-100%);
   }
@@ -334,7 +338,7 @@ body::before {
   font-size: 0.9rem;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Small Screens */
 @media (max-width: 992px) {
   .main-content {
     margin-left: 0;
@@ -346,5 +350,23 @@ body::before {
 
   .neon-sidebar.active {
     transform: translateX(0);
+  }
+}
+
+/* Responsive Adjustments for Large Screens */
+@media (min-width: 992px) {
+  /* Hide the menu toggle button */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Ensure the sidebar is always visible */
+  .neon-sidebar {
+    transform: translateX(0);
+  }
+
+  /* Adjust main content margin */
+  .main-content {
+    margin-left: 260px; /* Width of the sidebar */
   }
 }
