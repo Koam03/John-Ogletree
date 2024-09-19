@@ -1,6 +1,4 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.neon-sidebar');
-
-menuToggle.addEventListener('click', () => {
+function toggleSidebar() {
+  const sidebar = document.querySelector('.neon-sidebar');
   sidebar.classList.toggle('active');
-});
+}
