@@ -2,23 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Neon Dreams</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surreal Neon World</title>
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+
   <!-- CSS -->
   <style>
-    /* Reset and Typography */
+    /* General Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Raleway', sans-serif;
     }
 
+    /* Body Styling */
     body {
-      background: linear-gradient(135deg, #090909, #1a1a1a);
-      color: #e0e0e0;
+      background: linear-gradient(135deg, #000000, #070707 50%, #111 100%);
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
       overflow-x: hidden;
     }
 
@@ -30,21 +35,21 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('https://images.unsplash.com/photo-1557683316-973673baf926') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1499083097717-dbe4c9d0d6cf') center/cover no-repeat;
       z-index: -1;
-      filter: blur(8px) brightness(0.5);
+      filter: blur(5px) brightness(0.7);
     }
 
     /* Sidebar */
     .neon-sidebar {
       width: 250px;
-      background: rgba(0, 0, 0, 0.8);
+      background: radial-gradient(circle at 50% 50%, #101010, #000);
       padding: 20px;
       position: fixed;
       height: 100%;
       overflow-y: auto;
-      border-right: 1px solid #00ffd5;
-      box-shadow: 0 0 10px #00ffd5;
+      border-right: 2px solid #00eaff;
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
       z-index: 1000;
       transition: transform 0.3s ease;
     }
@@ -63,136 +68,264 @@
     /* Logo */
     .logo {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .logo img {
-      width: 100px;
-      filter: drop-shadow(0 0 10px #00ffd5);
+      width: 80px;
+      height: auto;
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 0 10px #00eaff);
+    }
+
+    /* Neon Glow Animation */
+    @keyframes neon-glow {
+      0% {
+        text-shadow: 0 0 10px #00eaff;
+      }
+      100% {
+        text-shadow: 0 0 20px #ff1aff;
+      }
     }
 
     /* Sidebar Navigation */
     .sidebar-nav ul {
       list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar-nav li {
+      position: relative;
     }
 
     .neon-link {
       text-decoration: none;
-      color: #00ffd5;
-      font-size: 1rem;
+      color: #00eaff;
+      font-size: 1.2rem;
       padding: 10px;
       display: block;
-      border-radius: 5px;
-      transition: background 0.3s;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-align: center;
     }
 
     .neon-link:hover {
-      background-color: rgba(0, 255, 213, 0.1);
+      background-color: rgba(255, 26, 255, 0.3);
+      color: #ff1aff;
+      box-shadow: 0 0 10px rgba(255, 26, 255, 0.6);
+    }
+
+    /* Dropdown Menu */
+    .sidebar-nav ul ul {
+      display: none;
+    }
+
+    .sidebar-nav li:hover > ul {
+      display: block;
+    }
+
+    .sidebar-nav ul ul .neon-link {
+      font-size: 1rem;
     }
 
     /* Main Content */
     .main-content {
       margin-left: 250px;
-      padding: 50px;
+      padding: 40px;
+      flex: 1;
+      background-color: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      color: #fff;
       min-height: 100vh;
       transition: margin-left 0.3s ease;
-    }
-
-    @media (max-width: 992px) {
-      .main-content {
-        margin-left: 0;
-      }
-    }
-
-    /* Menu Toggle Button */
-    .menu-toggle {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1100;
-      width: 50px;
-      height: 50px;
-      background-color: #00ffd5;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 15px #00ffd5;
-    }
-
-    .menu-toggle::before {
-      content: "☰";
-      font-size: 1.5rem;
-      color: #000;
-    }
-
-    @media (max-width: 992px) {
-      .menu-toggle {
-        display: flex;
-      }
     }
 
     /* Hero Section */
     .hero {
       text-align: center;
-      margin-bottom: 50px;
+      padding: 60px 20px;
     }
 
     .hero h1 {
       font-size: 3rem;
-      color: #00ffd5;
-      margin-bottom: 20px;
+      animation: neon-glow 2s infinite alternate;
     }
 
     .hero p {
       font-size: 1.2rem;
-      line-height: 1.5;
+      margin-top: 20px;
+    }
+
+    /* Call-to-Action Button */
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #00eaff;
+      color: #000;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #ff1aff;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
     }
 
     /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 25px;
+      margin-top: 30px;
     }
 
-    .project-card {
-      background: rgba(0, 0, 0, 0.6);
+    .project {
+      background-color: rgba(255, 255, 255, 0.05);
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
     }
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 15px #00ffd5;
-    }
-
-    .project-card img {
+    .project img {
       width: 100%;
-      border-radius: 5px;
+      height: auto;
+      border-radius: 8px;
       margin-bottom: 15px;
+      filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.3));
     }
 
-    .project-card h3 {
-      color: #00ffd5;
-      margin-bottom: 10px;
+    .project h4 {
+      color: #00eaff;
+      margin-top: 10px;
+      animation: neon-glow 2s infinite alternate;
     }
 
-    .project-card p {
-      font-size: 0.9rem;
-      line-height: 1.4;
+    .project a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* Footer */
-    footer {
+    .project:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
+    }
+
+    /* Menu Toggle Button */
+    .menu-toggle {
+      position: fixed;
+      top: 25px;
+      left: 25px;
+      z-index: 1100;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle at 50% 50%, #ff1aff, #00eaff);
+      border: 3px solid #ff1aff;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(255, 26, 255, 0.7);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .menu-toggle:hover {
+      background: radial-gradient(circle at 50% 50%, #00eaff, #ff1aff);
+      transform: rotate(180deg) scale(1.1);
+      box-shadow: 0 0 40px rgba(255, 26, 255, 0.9);
+    }
+
+    .menu-toggle::before {
+      content: "☰";
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 0 0 8px #ff1aff;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 26, 255, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
+      }
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 2rem;
       text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      color: #e0e0e0;
+      background: linear-gradient(90deg, #00eaff 0%, #ff1aff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+      position: relative;
+      animation: neon-glow-heading 1.5s infinite alternate;
+    }
+
+    @keyframes neon-glow-heading {
+      0% {
+        text-shadow: 0 0 10px #00eaff;
+      }
+      100% {
+        text-shadow: 0 0 20px #ff1aff;
+      }
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, #ff1aff 0%, #00eaff 100%);
+      box-shadow: 0 0 15px rgba(255, 26, 255, 0.8);
+      border-radius: 2px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .main-content {
+        margin-left: 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+
+      .projects-grid {
+        gap: 15px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+      }
     }
   </style>
 </head>
@@ -200,11 +333,13 @@
   <!-- Sidebar -->
   <nav class="neon-sidebar">
     <div class="logo">
-      <img src="/assets/media/images/logos/John Ogletree.png" alt="Logo" title="Logo"/>
+      <img src="/assets/media/images/logos/John Ogletree.png" alt="John Ogletree Logo" title="John Ogletree"/>
     </div>
+    <!-- Sidebar Navigation -->
     <ul class="sidebar-nav">
-      <!-- Sidebar content unchanged -->
-      <!-- ... (Same as provided) -->
+      <!-- Keep the sidebar content as is -->
+      <!-- ... -->
+      <!-- The existing sidebar code goes here -->
     </ul>
   </nav>
 
@@ -212,43 +347,53 @@
   <button class="menu-toggle" aria-label="Toggle Menu"></button>
 
   <!-- Main Content -->
-  <div class="main-content">
+  <main class="main-content">
     <section class="hero">
-      <h1>Neon Dreams</h1>
-      <p>Dive into a world where technology meets art. Explore our projects that blend innovation with creativity.</p>
+      <h1>Welcome to the Surreal Neon World</h1>
+      <p>Experience the blend of vibrant creativity and futuristic design.</p>
+      <a href="#services" class="cta-button">Explore Services</a>
     </section>
 
-    <section class="projects-grid">
-      <div class="project-card">
-        <img src="/assets/media/images/projects/project1.jpg" alt="Project 1">
-        <h3>Futuristic Interface</h3>
-        <p>An exploration into next-gen UI designs that challenge conventional interactions.</p>
-      </div>
-      <div class="project-card">
-        <img src="/assets/media/images/projects/project2.jpg" alt="Project 2">
-        <h3>Cyberpunk Art</h3>
-        <p>A collection of artworks inspired by cyberpunk aesthetics and neon-lit cities.</p>
-      </div>
-      <div class="project-card">
-        <img src="/assets/media/images/projects/project3.jpg" alt="Project 3">
-        <h3>Virtual Reality Worlds</h3>
-        <p>Step into immersive VR experiences that blur the line between reality and imagination.</p>
-      </div>
-      <div class="project-card">
-        <img src="/assets/media/images/projects/project4.jpg" alt="Project 4">
-        <h3>Interactive Installations</h3>
-        <p>Engage with interactive installations that respond to your movements and touch.</p>
+    <section id="about" class="about-section">
+      <h2 class="section-title">About Me</h2>
+      <p>Hello! I'm John Ogletree, a graphic artist passionate about visual storytelling. Every design is a journey into creativity and innovation. I strive to bring ideas to life through vibrant visuals and compelling narratives.</p>
+      <a href="/about-me.html" class="cta-button">Learn More About Me</a>
+    </section>
+
+    <section id="services" class="featured-projects">
+      <h2 class="section-title">Service Categories</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <a href="/services/design-and-print.html">
+            <img src="/assets/media/images/servicecatagoryimages/design-and-print.webp" alt="Design & Print Service Category" title="Design & Print">
+            <h4>Design & Print</h4>
+          </a>
+        </div>
+        <div class="project">
+          <a href="/services/digital-media.html">
+            <img src="/assets/media/images/servicecatagoryimages/digital-media.webp" alt="Digital Media Service Category" title="Digital Media">
+            <h4>Digital Media</h4>
+          </a>
+        </div>
+        <div class="project">
+          <a href="/services/video-and-animation.html">
+            <img src="/assets/media/images/servicecatagoryimages/video-and-animation.webp" alt="Video & Animation Service Category" title="Video & Animation">
+            <h4>Video & Animation</h4>
+          </a>
+        </div>
+        <div class="project">
+          <a href="/services/audio.html">
+            <img src="/assets/media/images/servicecatagoryimages/audio.webp" alt="Audio Service Category" title="Audio">
+            <h4>Audio</h4>
+          </a>
+        </div>
       </div>
     </section>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Neon Dreams. All rights reserved.</p>
-  </footer>
+  </main>
 
   <!-- JavaScript -->
   <script>
+    // Toggle sidebar on mobile
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.neon-sidebar');
 
