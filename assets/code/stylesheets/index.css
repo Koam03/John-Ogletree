@@ -205,16 +205,23 @@ body::before {
 
 /* Dropdown Arrow for Dropdown Links */
 .sidebar-nav li.has-submenu > .neon-link::after {
-  content: "▼";
-  font-size: 0.5rem; /* Smaller arrow size */
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  content: none;
 }
 
-.sidebar-nav li.has-submenu:hover > .neon-link::after {
-  content: "▲";
+/* Show arrows on small screens */
+@media (max-width: 576px) {
+  .sidebar-nav li.has-submenu > .neon-link::after {
+    content: "▼";
+    font-size: 0.5rem; /* Smaller arrow size */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .sidebar-nav li.has-submenu:hover > .neon-link::after {
+    content: "▲";
+  }
 }
 
 /* Main Content */
