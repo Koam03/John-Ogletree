@@ -202,19 +202,7 @@ body::before {
   font-size: 1rem;
 }
 
-/* Dropdown Arrow */
-.sidebar-nav li::after {
-  content: "▼";
-  font-size: 0.8rem;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.sidebar-nav li:hover::after {
-  content: "▲";
-}
+/* Removed Dropdown Arrow CSS */
 
 /* Main Content */
 .main-content {
