@@ -1,25 +1,26 @@
+/* Import Raleway font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 /* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
 }
 
 /* Body Styling */
 body {
+  font-family: 'Raleway', sans-serif;
   background: linear-gradient(135deg, #000000, #070707 50%, #111 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative; /* Added to contain pseudo-elements */
+  position: relative;
 }
 
-/* Parallax 3D Effect */
+/* Parallax Background Effect */
 body::before {
   content: "";
   position: absolute;
@@ -29,7 +30,6 @@ body::before {
   height: 150%;
   background: url('https://images.unsplash.com/photo-1499083097717-dbe4c9d0d6cf') center/cover no-repeat;
   z-index: -1;
-  transform: translateZ(-1px) scale(2);
   filter: blur(5px) brightness(0.7);
 }
 
@@ -44,16 +44,17 @@ body::before {
   border-right: 2px solid #00eaff;
   box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
   z-index: 1000;
+  transition: left 0.3s ease;
 }
 
 /* Sidebar hidden by default on small screens */
 @media (max-width: 768px) {
   .neon-sidebar {
-    transform: translateX(-100%);
+    left: -300px;
   }
 
   .neon-sidebar.active {
-    transform: translateX(0);
+    left: 0;
   }
 }
 
@@ -73,10 +74,10 @@ body::before {
 
 /* Neon Glow Effect */
 @keyframes neon-glow {
-  from {
+  0% {
     text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 30px #00eaff;
   }
-  to {
+  100% {
     text-shadow: 0 0 20px #ff1aff, 0 0 40px #ff1aff, 0 0 60px #ff1aff;
   }
 }
@@ -115,7 +116,6 @@ body::before {
   display: none;
   list-style: none;
   padding-left: 20px;
-  transition: all 0.3s ease;
 }
 
 .sidebar-nav li:hover > ul {
@@ -159,6 +159,13 @@ body::before {
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
+/* Responsive Adjustments for Main Content */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
 /* Call-to-Action Button */
 .cta-button {
   display: inline-block;
@@ -188,6 +195,14 @@ body::before {
   margin-top: 30px;
 }
 
+/* Responsive Projects Grid */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Card */
 .project {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 20px;
@@ -265,7 +280,7 @@ body::before {
   }
 }
 
-/* Headings (h3) for Service Categories */
+/* Headings for Featured Projects */
 .featured-projects h3 {
   font-size: 2.5rem;
   text-align: center;
@@ -302,18 +317,29 @@ body::before {
   border-radius: 2px;
 }
 
-/* Responsive Adjustment for smaller screens */
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Single column on small screens */
-  }
-
-  .main-content {
-    margin-left: 0;
-  }
-
+/* Additional Responsive Adjustments */
+@media (max-width: 480px) {
   .menu-toggle {
-    top: 20px;
-    left: 20px;
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .menu-toggle:before {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .featured-projects h3 {
+    font-size: 2rem;
+  }
+
+  .neon-link {
+    font-size: 1.2rem;
   }
 }
