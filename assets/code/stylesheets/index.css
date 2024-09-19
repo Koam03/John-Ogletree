@@ -40,9 +40,8 @@ body::before {
   position: fixed;
   height: 100%;
   overflow-y: auto;
-  border-right: 1px solid #303030;
-  transform: translateX(0); /* Show sidebar by default */
-  transition: transform 0.5s ease, background-color 0.3s ease;
+  border-right: 2px solid #00eaff;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
   z-index: 1000;
 }
 
@@ -68,19 +67,20 @@ body::before {
   height: auto;
   display: block;
   margin: 0 auto 10px;
+  filter: drop-shadow(0 0 10px #00eaff);
 }
 
 /* Neon Glow Effect */
 @keyframes neon-glow {
   from {
-    text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 20px #00eaff;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 30px #00eaff;
   }
   to {
-    text-shadow: 0 0 20px #ff1aff, 0 0 30px #ff1aff, 0 0 40px #ff1aff;
+    text-shadow: 0 0 20px #ff1aff, 0 0 40px #ff1aff, 0 0 60px #ff1aff;
   }
 }
 
-/* Navigation Links */
+/* Sidebar Links */
 .sidebar-nav ul {
   list-style-type: none;
   padding: 10px;
@@ -90,37 +90,22 @@ body::before {
   text-decoration: none;
   color: #00eaff;
   font-size: 1.4rem;
-  padding: 10px;
+  padding: 12px;
   display: block;
   border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.neon-link::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400%;
-  height: 400%;
-  background: radial-gradient(circle, transparent, rgba(0, 234, 255, 0.5));
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.6s ease;
-  border-radius: 50%;
-}
-
-.neon-link:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+  text-align: center;
 }
 
 .neon-link:hover {
   background-color: rgba(255, 26, 255, 0.3);
   color: #ff1aff;
+  box-shadow: 0 0 10px rgba(255, 26, 255, 0.6), 0 0 20px rgba(255, 26, 255, 0.4);
 }
 
-/* Dropdown Styling */
+/* Sidebar Dropdown */
 .sidebar-nav li {
   position: relative;
 }
@@ -152,28 +137,12 @@ body::before {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+  transition: transform 0.3s ease;
 }
 
 .sidebar-nav li:hover::after {
   content: "▲";
-}
-
-/* Active Dropdown */
-.sidebar-nav li.active > ul {
-  display: block;
-}
-
-/* Animated Dropdown Effect */
-.sidebar-nav ul ul {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-}
-
-.sidebar-nav li:hover > ul {
-  opacity: 1;
-  max-height: 1000px;
+  transform: translateY(-50%);
 }
 
 /* Main Content */
@@ -186,12 +155,13 @@ body::before {
   backdrop-filter: blur(10px);
   color: #fff;
   min-height: 100vh;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 /* Call-to-Action Button */
 .cta-button {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 14px 28px;
   background-color: #00eaff;
   color: #000;
   text-decoration: none;
@@ -199,38 +169,44 @@ body::before {
   font-weight: bold;
   border-radius: 8px;
   margin-top: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: #ff1aff;
   color: #fff;
+  box-shadow: 0 0 20px rgba(255, 26, 255, 0.6), 0 0 40px rgba(255, 26, 255, 0.4);
 }
 
 /* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2-column grid */
-  gap: 20px; /* Space between the grid items */
-  margin-top: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .project {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
 }
 
 .project img {
   max-width: 100%;
   border-radius: 8px;
   margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.3));
 }
 
 .project h4 {
   color: #00eaff;
+  margin-top: 10px;
+  animation: neon-glow 2s infinite alternate;
 }
 
 .project a {
@@ -240,13 +216,13 @@ body::before {
 
 .project:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 234, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
 }
 
 /* Responsive Adjustment for smaller screens */
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr; /* Switch to single-column layout on small screens */
+    grid-template-columns: 1fr; /* Single column on small screens */
   }
 
   .main-content {
