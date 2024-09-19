@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
   background-size: cover;
   background-attachment: fixed;
+  position: relative; /* Added to contain pseudo-elements */
 }
 
 /* Parallax 3D Effect */
@@ -217,6 +218,75 @@ body::before {
 .project:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 1100;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 50% 50%, #ff1aff, #00eaff);
+  border: 2px solid #ff1aff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 26, 255, 0.6), 0 0 40px rgba(0, 234, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: radial-gradient(circle at 50% 50%, #00eaff, #ff1aff);
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 26, 255, 0.8), 0 0 50px rgba(0, 234, 255, 0.8);
+}
+
+.menu-toggle:before {
+  content: "☰";
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 5px #ff1aff, 0 0 10px #00eaff;
+}
+
+/* Headings (h3) for Service Categories */
+.featured-projects h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  background: linear-gradient(90deg, #00eaff 0%, #ff1aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+  position: relative;
+  animation: neon-glow-heading 1.5s infinite alternate;
+}
+
+@keyframes neon-glow-heading {
+  0% {
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #ff1aff, 0 0 30px #ff1aff;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff1aff, 0 0 40px #00eaff, 0 0 50px #ff1aff;
+  }
+}
+
+.featured-projects h3::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff1aff 0%, #00eaff 100%);
+  box-shadow: 0 0 15px rgba(255, 26, 255, 0.8), 0 0 30px rgba(0, 234, 255, 0.8);
+  border-radius: 2px;
 }
 
 /* Responsive Adjustment for smaller screens */
