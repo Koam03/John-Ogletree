@@ -10,7 +10,6 @@
 body {
   background: linear-gradient(135deg, #000000, #070707 50%, #111 100%);
   color: #fff;
-  /* Remove flex properties if not needed */
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -41,11 +40,7 @@ body::before {
   border: none;
   cursor: pointer;
   outline: none;
-}
-
-/* Initially hide the menu toggle */
-.menu-toggle {
-  display: none;
+  display: none; /* Initially hide the menu toggle */
 }
 
 /* Show menu toggle on small screens */
@@ -175,13 +170,18 @@ body::before {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  text-align: center;
+  text-align: left; /* Align text to the left */
 }
 
 .neon-link:hover {
   background-color: rgba(255, 26, 255, 0.3);
   color: #ff1aff;
   box-shadow: 0 0 10px rgba(255, 26, 255, 0.6);
+}
+
+/* Remove arrows from all li elements */
+.sidebar-nav li::after {
+  content: none;
 }
 
 /* Dropdown Menu */
@@ -200,9 +200,22 @@ body::before {
 
 .sidebar-nav ul ul .neon-link {
   font-size: 1rem;
+  padding-left: 20px; /* Indent submenu items */
 }
 
-/* Removed Dropdown Arrow CSS */
+/* Dropdown Arrow for Dropdown Links */
+.sidebar-nav li.has-submenu > .neon-link::after {
+  content: "▼";
+  font-size: 0.6rem; /* Smaller arrow size */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar-nav li.has-submenu:hover > .neon-link::after {
+  content: "▲";
+}
 
 /* Main Content */
 .main-content {
