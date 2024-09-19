@@ -2,656 +2,249 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>John Ogletree - Graphic Artist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surreal Neon World</title>
-
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
   <!-- CSS -->
-<style>
-  /* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-}
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-/* Body Styling */
-body {
-  background: linear-gradient(135deg, #000000, #070707 50%, #111 100%);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
-}
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Parallax Background */
-body::before {
-  content: "";
-  position: fixed; /* Changed to fixed for better parallax effect */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://images.unsplash.com/photo-1499083097717-dbe4c9d0d6cf') center/cover no-repeat;
-  z-index: -1;
-  filter: blur(5px) brightness(0.7);
-}
+    /* Navigation Styles */
+    .navbar {
+      width: 100%;
+      background-color: #1a1a1a;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* Sidebar */
-.neon-sidebar {
-  width: 250px;
-  background: radial-gradient(circle at 50% 50%, #101010, #000);
-  padding: 20px;
-  position: fixed;
-  height: 100%;
-  overflow-y: auto;
-  border-right: 2px solid #00eaff;
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
-  z-index: 1000;
-  transition: transform 0.3s ease; /* Added transition for smooth sliding */
-}
+    .navbar .logo img {
+      width: 150px;
+    }
 
-/* Sidebar Toggle for Mobile */
-@media (max-width: 992px) {
-  .neon-sidebar {
-    transform: translateX(-100%);
-  }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-  .neon-sidebar.active {
-    transform: translateX(0);
-  }
-}
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-/* Logo */
-.logo {
-  text-align: center;
-  margin-bottom: 20px;
-}
+    .navbar ul li a:hover {
+      color: #00eaff;
+    }
 
-.logo img {
-  width: 80px;
-  height: auto;
-  margin: 0 auto 10px;
-  filter: drop-shadow(0 0 10px #00eaff);
-}
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1499083097717-dbe4c9d0d6cf') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-/* Neon Glow Animation */
-@keyframes neon-glow {
-  0% {
-    text-shadow: 0 0 10px #00eaff;
-  }
-  100% {
-    text-shadow: 0 0 20px #ff1aff;
-  }
-}
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(0, 234, 255, 0.7);
+    }
 
-/* Sidebar Navigation */
-.sidebar-nav ul {
-  list-style-type: none;
-  padding: 10px;
-}
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
 
-.neon-link {
-  text-decoration: none;
-  color: #00eaff;
-  font-size: 1.2rem;
-  padding: 10px;
-  display: block;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
+    .hero .cta-button {
+      padding: 15px 30px;
+      background-color: #00eaff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
 
-.neon-link:hover {
-  background-color: rgba(255, 26, 255, 0.3);
-  color: #ff1aff;
-  box-shadow: 0 0 10px rgba(255, 26, 255, 0.6);
-}
+    .hero .cta-button:hover {
+      background-color: #ff1aff;
+    }
 
-/* Dropdown Menu */
-.sidebar-nav li {
-  position: relative;
-}
+    /* Services Section */
+    .services {
+      padding: 80px 20px;
+      background-color: #111;
+      text-align: center;
+    }
 
-.sidebar-nav ul ul {
-  display: none;
-  list-style: none;
-  padding-left: 20px;
-}
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      position: relative;
+    }
 
-.sidebar-nav li:hover > ul {
-  display: block;
-}
+    .services h2::after {
+      content: '';
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, #00eaff, #ff1aff);
+      display: block;
+      margin: 10px auto 0;
+    }
 
-.sidebar-nav ul ul .neon-link {
-  font-size: 1rem;
-}
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-/* Dropdown Arrow */
-.sidebar-nav li::after {
-  content: "▼";
-  font-size: 0.8rem;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    .service-item {
+      background-color: #1a1a1a;
+      padding: 30px 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
 
-.sidebar-nav li:hover::after {
-  content: "▲";
-}
+    .service-item:hover {
+      transform: translateY(-10px);
+    }
 
-/* Main Content */
-.main-content {
-  margin-left: 250px;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.02);
-  z-index: 100;
-  backdrop-filter: blur(10px);
-  color: #fff;
-  min-height: 100vh;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
-  transition: margin-left 0.3s ease;
-}
+    .service-item img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
 
-/* Call-to-Action Button */
-.cta-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #00eaff;
-  color: #000;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
-  transition: all 0.3s ease;
-}
+    .service-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
 
-.cta-button:hover {
-  background-color: #ff1aff;
-  color: #fff;
-  box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
-}
+    .service-item p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-/* Projects Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-  gap: 25px;
-  margin-top: 30px;
-}
+    /* Footer */
+    .footer {
+      background-color: #1a1a1a;
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-.project {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
-}
+    .footer p {
+      font-size: 1rem;
+    }
 
-.project img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.3));
-}
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
 
-.project h4 {
-  color: #00eaff;
-  margin-top: 10px;
-  animation: neon-glow 2s infinite alternate;
-}
+      .navbar ul {
+        display: none;
+      }
 
-.project a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.project:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
-}
-
-/* Menu Toggle Button */
-.menu-toggle {
-  position: fixed;
-  top: 25px;
-  left: 25px;
-  z-index: 1100;
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle at 50% 50%, #ff1aff, #00eaff);
-  border: 3px solid #ff1aff;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none; /* Hidden by default */
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 25px rgba(255, 26, 255, 0.7);
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
-}
-
-.menu-toggle:hover {
-  background: radial-gradient(circle at 50% 50%, #00eaff, #ff1aff);
-  transform: rotate(180deg) scale(1.1);
-  box-shadow: 0 0 40px rgba(255, 26, 255, 0.9);
-}
-
-.menu-toggle::before {
-  content: "☰";
-  font-size: 2rem;
-  color: #fff;
-  text-shadow: 0 0 8px #ff1aff;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 26, 255, 0.8);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
-  }
-}
-
-/* Section Headings */
-.featured-projects h3 {
-  font-size: 2rem;
-  text-align: center;
-  background: linear-gradient(90deg, #00eaff 0%, #ff1aff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
-  position: relative;
-  animation: neon-glow-heading 1.5s infinite alternate;
-}
-
-@keyframes neon-glow-heading {
-  0% {
-    text-shadow: 0 0 10px #00eaff;
-  }
-  100% {
-    text-shadow: 0 0 20px #ff1aff;
-  }
-}
-
-.featured-projects h3::before {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 2px;
-  background: linear-gradient(90deg, #ff1aff 0%, #00eaff 100%);
-  box-shadow: 0 0 15px rgba(255, 26, 255, 0.8);
-  border-radius: 2px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .main-content {
-    margin-left: 0;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-@media (max-width: 576px) {
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-
-  .projects-grid {
-    gap: 15px;
-  }
-
-  .featured-projects h3 {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-  }
-}
-</style>>
-
+      .navbar .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <nav class="neon-sidebar">
+  <!-- Navigation -->
+  <nav class="navbar">
     <div class="logo">
-  <img src="/assets/media/images/logos/John Ogletree.png" alt="John Ogletree Logo" title="John Ogletree"/>
-</div>
-    <ul class="sidebar-nav">
-      <ul>
-        <li><a href="/home.html" class="neon-link">Home</a></li>
-        
-        <li><a href="/about-me.html" class="neon-link">About Me</a></li>
-        
-        <li>
-          <a href="/services.html" class="neon-link">Services</a>
-          <ul>
-            <li>
-              <a href="/services/design-and-print.html" class="neon-link">Design And Print</a>
-              <ul>
-                <li><a href="/services/design-and-print/logo-design.html" class="neon-link">Logo Design</a></li>
-                <li><a href="/services/design-and-print/brand-style-guides.html" class="neon-link">Brand Style Guides</a></li>
-                <li><a href="/services/design-and-print/business-cards.html" class="neon-link">Business Cards</a></li>
-                <li><a href="/services/design-and-print/typography.html" class="neon-link">Typography</a></li>
-                <li><a href="/services/design-and-print/icon-design.html" class="neon-link">Icon Design</a></li>
-                <li><a href="/services/design-and-print/illustration.html" class="neon-link">Illustration</a></li>
-                <li><a href="/services/design-and-print/pattern-design.html" class="neon-link">Pattern Design</a></li>
-                <li><a href="/services/design-and-print/tattoo-design.html" class="neon-link">Tattoo Design</a></li>
-                <li><a href="/services/design-and-print/flyer-design.html" class="neon-link">Flyer Design</a></li>
-                <li><a href="/services/design-and-print/brochure-design.html" class="neon-link">Brochure Design</a></li>
-                <li><a href="/services/design-and-print/poster-design.html" class="neon-link">Poster Design</a></li>
-                <li><a href="/services/design-and-print/catalog-design.html" class="neon-link">Catalog Design</a></li>
-                <li><a href="/services/design-and-print/menu-design.html" class="neon-link">Menu Design</a></li>
-                <li><a href="/services/design-and-print/invitation-design.html" class="neon-link">Invitation Design</a></li>
-                <li><a href="/services/design-and-print/label-design.html" class="neon-link">Label Design</a></li>
-                <li><a href="/services/design-and-print/book-covers.html" class="neon-link">Book Covers</a></li>
-                <li><a href="/services/design-and-print/album-cover-design.html" class="neon-link">Album Cover Design</a></li>
-                <li><a href="/services/design-and-print/podcast-cover-art.html" class="neon-link">Podcast Cover Art</a></li>
-                <li><a href="/services/design-and-print/social-media-kit-design.html" class="neon-link">Social Media Kit Design</a></li>
-                <li><a href="/services/design-and-print/email-design.html" class="neon-link">Email Design</a></li>
-                <li><a href="/services/design-and-print/web-banners.html" class="neon-link">Web Banners</a></li>
-                <li><a href="/services/design-and-print/signage-design.html" class="neon-link">Signage Design</a></li>
-                <li><a href="/services/design-and-print/graphics-for-streamers.html" class="neon-link">Graphics for Streamers</a></li>
-                <li><a href="/services/design-and-print/merchandise-design.html" class="neon-link">Merchandise Design</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/services/digital-media.html" class="neon-link">Digital Media</a>
-              <ul>
-                <li><a href="/services/digital-media/website-design.html" class="neon-link">Website Design</a></li>
-                <li><a href="/services/digital-media/presentation-design.html" class="neon-link">Presentation Design</a></li>
-                <li><a href="/services/digital-media/infographic-design.html" class="neon-link">Infographic Design</a></li>
-                <li><a href="/services/digital-media/vector-tracing.html" class="neon-link">Vector Tracing</a></li>
-                <li><a href="/services/digital-media/resume-design.html" class="neon-link">Resume Design</a></li>
-                <li><a href="/services/digital-media/social-media-videos.html" class="neon-link">Social Media Videos</a></li>
-                <li><a href="/services/digital-media/lottie-animation.html" class="neon-link">Lottie Animation</a></li>
-                <li><a href="/services/digital-media/text-animation.html" class="neon-link">Text Animation</a></li>
-                <li><a href="/services/digital-media/music-videos.html" class="neon-link">Music Videos</a></li>
-                <li><a href="/services/digital-media/slideshow-videos.html" class="neon-link">Slideshow Videos</a></li>
-                <li><a href="/services/digital-media/product-videos.html" class="neon-link">Product Videos</a></li>
-                <li><a href="/services/digital-media/ecommerce-product-videos.html" class="neon-link">Ecommerce Product Videos</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/services/video-and-animations.html" class="neon-link">Video And Animations</a>
-              <ul>
-                <li><a href="/services/video-and-animations/video-editing.html" class="neon-link">Video Editing</a></li>
-                <li><a href="/services/video-and-animations/video-ads.html" class="neon-link">Video Ads</a></li>
-                <li><a href="/services/video-and-animations/character-animations.html" class="neon-link">Character Animations</a></li>
-                <li><a href="/services/video-and-animations/logo-animation.html" class="neon-link">Logo Animation</a></li>
-                <li><a href="/services/video-and-animations/web-animation.html" class="neon-link">Web Animation</a></li>
-                <li><a href="/services/video-and-animations/visual-effects.html" class="neon-link">Visual Effects</a></li>
-                <li><a href="/services/video-and-animations/3d-product-animation.html" class="neon-link">3D Product Animation</a></li>
-                <li><a href="/services/video-and-animations/intro-videos.html" class="neon-link">Intro Videos</a></li>
-                <li><a href="/services/video-and-animations/outro-videos.html" class="neon-link">Outro Videos</a></li>
-                <li><a href="/services/video-and-animations/subtitles.html" class="neon-link">Subtitles</a></li>
-                <li><a href="/services/video-and-animations/captions.html" class="neon-link">Captions</a></li>
-                <li><a href="/services/video-and-animations/animations-for-kids.html" class="neon-link">Animations for Kids</a></li>
-                <li><a href="/services/video-and-animations/animations-for-streamers.html" class="neon-link">Animations for Streamers</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/services/audio.html" class="neon-link">Audio</a>
-              <ul>
-                <li><a href="/services/audio/beat-making.html" class="neon-link">Beat Making</a></li>
-                <li><a href="/services/audio/intro-songs.html" class="neon-link">Intro Songs</a></li>
-                <li><a href="/services/audio/outro-songs.html" class="neon-link">Outro Songs</a></li>
-                <li><a href="/services/audio/custom-songs.html" class="neon-link">Custom Songs</a></li>
-                <li><a href="/services/audio/audio-editing.html" class="neon-link">Audio Editing</a></li>
-                <li><a href="/services/audio/podcast-production.html" class="neon-link">Podcast Production</a></li>
-                <li><a href="/services/audio/audiobook-production.html" class="neon-link">Audiobook Production</a></li>
-                <li><a href="/services/audio/audio-ads-production.html" class="neon-link">Audio Ads Production</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        
-        <li>
-          <a href="/pricing.html" class="neon-link">Pricing</a>
-          <ul>
-            <li>
-              <a href="/pricing/design-and-print.html" class="neon-link">Design And Print</a>
-              <ul>
-                <li><a href="/pricing/design-and-print/logo-design.html" class="neon-link">Logo Design</a></li>
-                <li><a href="/pricing/design-and-print/brand-style-guides.html" class="neon-link">Brand Style Guides</a></li>
-                <li><a href="/pricing/design-and-print/business-cards.html" class="neon-link">Business Cards</a></li>
-                <li><a href="/pricing/design-and-print/typography.html" class="neon-link">Typography</a></li>
-                <li><a href="/pricing/design-and-print/icon-design.html" class="neon-link">Icon Design</a></li>
-                <li><a href="/pricing/design-and-print/illustration.html" class="neon-link">Illustration</a></li>
-                <li><a href="/pricing/design-and-print/pattern-design.html" class="neon-link">Pattern Design</a></li>
-                <li><a href="/pricing/design-and-print/tattoo-design.html" class="neon-link">Tattoo Design</a></li>
-                <li><a href="/pricing/design-and-print/flyer-design.html" class="neon-link">Flyer Design</a></li>
-                <li><a href="/pricing/design-and-print/brochure-design.html" class="neon-link">Brochure Design</a></li>
-                <li><a href="/pricing/design-and-print/poster-design.html" class="neon-link">Poster Design</a></li>
-                <li><a href="/pricing/design-and-print/catalog-design.html" class="neon-link">Catalog Design</a></li>
-                <li><a href="/pricing/design-and-print/menu-design.html" class="neon-link">Menu Design</a></li>
-                <li><a href="/pricing/design-and-print/invitation-design.html" class="neon-link">Invitation Design</a></li>
-                <li><a href="/pricing/design-and-print/label-design.html" class="neon-link">Label Design</a></li>
-                <li><a href="/pricing/design-and-print/book-covers.html" class="neon-link">Book Covers</a></li>
-                <li><a href="/pricing/design-and-print/album-cover-design.html" class="neon-link">Album Cover Design</a></li>
-                <li><a href="/pricing/design-and-print/podcast-cover-art.html" class="neon-link">Podcast Cover Art</a></li>
-                <li><a href="/pricing/design-and-print/social-media-kit-design.html" class="neon-link">Social Media Kit Design</a></li>
-                <li><a href="/pricing/design-and-print/email-design.html" class="neon-link">Email Design</a></li>
-                <li><a href="/pricing/design-and-print/web-banners.html" class="neon-link">Web Banners</a></li>
-                <li><a href="/pricing/design-and-print/signage-design.html" class="neon-link">Signage Design</a></li>
-                <li><a href="/pricing/design-and-print/graphics-for-streamers.html" class="neon-link">Graphics for Streamers</a></li>
-                <li><a href="/pricing/design-and-print/merchandise-design.html" class="neon-link">Merchandise Design</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/pricing/digital-media.html" class="neon-link">Digital Media</a>
-              <ul>
-                <li><a href="/pricing/digital-media/website-design.html" class="neon-link">Website Design</a></li>
-                <li><a href="/pricing/digital-media/presentation-design.html" class="neon-link">Presentation Design</a></li>
-                <li><a href="/pricing/digital-media/infographic-design.html" class="neon-link">Infographic Design</a></li>
-                <li><a href="/pricing/digital-media/vector-tracing.html" class="neon-link">Vector Tracing</a></li>
-                <li><a href="/pricing/digital-media/resume-design.html" class="neon-link">Resume Design</a></li>
-                <li><a href="/pricing/digital-media/social-media-videos.html" class="neon-link">Social Media Videos</a></li>
-                <li><a href="/pricing/digital-media/lottie-animation.html" class="neon-link">Lottie Animation</a></li>
-                <li><a href="/pricing/digital-media/text-animation.html" class="neon-link">Text Animation</a></li>
-                <li><a href="/pricing/digital-media/music-videos.html" class="neon-link">Music Videos</a></li>
-                <li><a href="/pricing/digital-media/slideshow-videos.html" class="neon-link">Slideshow Videos</a></li>
-                <li><a href="/pricing/digital-media/product-videos.html" class="neon-link">Product Videos</a></li>
-                <li><a href="/pricing/digital-media/ecommerce-product-videos.html" class="neon-link">Ecommerce Product Videos</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/pricing/video-and-animations.html" class="neon-link">Video And Animations</a>
-              <ul>
-                <li><a href="/pricing/video-and-animations/video-editing.html" class="neon-link">Video Editing</a></li>
-                <li><a href="/pricing/video-and-animations/video-ads.html" class="neon-link">Video Ads</a></li>
-                <li><a href="/pricing/video-and-animations/character-animations.html" class="neon-link">Character Animations</a></li>
-                <li><a href="/pricing/video-and-animations/logo-animation.html" class="neon-link">Logo Animation</a></li>
-                <li><a href="/pricing/video-and-animations/web-animation.html" class="neon-link">Web Animation</a></li>
-                <li><a href="/pricing/video-and-animations/visual-effects.html" class="neon-link">Visual Effects</a></li>
-                <li><a href="/pricing/video-and-animations/3d-product-animation.html" class="neon-link">3D Product Animation</a></li>
-                <li><a href="/pricing/video-and-animations/intro-videos.html" class="neon-link">Intro Videos</a></li>
-                <li><a href="/pricing/video-and-animations/outro-videos.html" class="neon-link">Outro Videos</a></li>
-                <li><a href="/pricing/video-and-animations/subtitles.html" class="neon-link">Subtitles</a></li>
-                <li><a href="/pricing/video-and-animations/captions.html" class="neon-link">Captions</a></li>
-                <li><a href="/pricing/video-and-animations/animations-for-kids.html" class="neon-link">Animations for Kids</a></li>
-                <li><a href="/pricing/video-and-animations/animations-for-streamers.html" class="neon-link">Animations for Streamers</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/pricing/audio.html" class="neon-link">Audio</a>
-              <ul>
-                <li><a href="/pricing/audio/beat-making.html" class="neon-link">Beat Making</a></li>
-                <li><a href="/pricing/audio/intro-songs.html" class="neon-link">Intro Songs</a></li>
-                <li><a href="/pricing/audio/outro-songs.html" class="neon-link">Outro Songs</a></li>
-                <li><a href="/pricing/audio/custom-songs.html" class="neon-link">Custom Songs</a></li>
-                <li><a href="/pricing/audio/audio-editing.html" class="neon-link">Audio Editing</a></li>
-                <li><a href="/pricing/audio/podcast-production.html" class="neon-link">Podcast Production</a></li>
-                <li><a href="/pricing/audio/audiobook-production.html" class="neon-link">Audiobook Production</a></li>
-                <li><a href="/pricing/audio/audio-ads-production.html" class="neon-link">Audio Ads Production</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        
-        <li>
-          <a href="/project-vault.html" class="neon-link">Project Vault</a>
-          <ul>
-            <li>
-              <a href="/project-vault/graphics.html" class="neon-link">Graphics</a>
-              <ul>
-                <li>
-                  <a href="/project-vault/graphics/logoverse.html" class="neon-link">Logoverse</a>
-                  <ul>
-                    <li><a href="/project-vault/graphics/logoverse/burst-through.html" class="neon-link">Burst Through</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/vust-reservations.html" class="neon-link">Vust Reservations</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/living-out-life-bible-study.html" class="neon-link">Living Out Life: Bible Study</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/peak.html" class="neon-link">Peak</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/stay-whole.html" class="neon-link">Stay Whole</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/foundation.html" class="neon-link">Foundation</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/creative-minds.html" class="neon-link">Creative Minds</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/avon-productions.html" class="neon-link">Avon Productions</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/create-change.html" class="neon-link">Create Change</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/build-the-lily.html" class="neon-link">Build The Lily</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/number-one.html" class="neon-link">Number One</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/the-mixo.html" class="neon-link">The Mixo</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/blonde-jackets.html" class="neon-link">Blonde Jackets</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/still-and-steal.html" class="neon-link">Still And Steal</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/introverted-cafe.html" class="neon-link">Introverted Cafe</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/burst-photography.html" class="neon-link">Burst Photography</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/break-the-code.html" class="neon-link">Break The Code</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/born-to-win.html" class="neon-link">Born to Win</a></li>
-                    <li><a href="/project-vault/graphics/logoverse/city-of-bad-dreams.html" class="neon-link">City Of Bad Dreams</a></li>
-                  </ul>
-                </li>
-                
-                <li><a href="/project-vault/graphics/visions-unveiled.html" class="neon-link">Visions Unveiled</a></li>
-                <li><a href="/project-vault/graphics/fallen-angel.html" class="neon-link">Fallen Angel</a></li>
-                <li><a href="/project-vault/graphics/death-is-only-the-beginning.html" class="neon-link">Death Is Only The Beginning</a></li>
-                <li><a href="/project-vault/graphics/watch-what-you-say.html" class="neon-link">Watch What You Say</a></li>
-                <li><a href="/project-vault/graphics/god-bless-america.html" class="neon-link">God Bless America</a></li>
-                <li><a href="/project-vault/graphics/serpentine-sip.html" class="neon-link">Serpentine Sip</a></li>
-                <li><a href="/project-vault/graphics/serpentine-gaze-a-dance-of-mortality.html" class="neon-link">Serpentine Gaze: A Dance of Mortality</a></li>
-                <li><a href="/project-vault/graphics/dreamweaver.html" class="neon-link">Dreamweaver</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/project-vault/videos.html" class="neon-link">Videos</a>
-              <ul>
-                <li><a href="/project-vault/videos/movie-trailers.html" class="neon-link">Movie Trailers</a></li>
-                <li><a href="/project-vault/videos/book-trailers.html" class="neon-link">Book Trailers</a></li>
-                <li><a href="/project-vault/videos/music-videos.html" class="neon-link">Music Videos</a></li>
-                <li><a href="/project-vault/videos/podcasts.html" class="neon-link">Podcasts</a></li>
-                <li><a href="/project-vault/videos/podcasts-clips.html" class="neon-link">Podcasts Clips</a></li>
-                <li><a href="/project-vault/videos/product-videos.html" class="neon-link">Product Videos</a></li>
-                <li><a href="/project-vault/videos/artwork-videos.html" class="neon-link">Artwork Videos</a></li>
-                <li><a href="/project-vault/videos/from-pixels-to-pixels.html" class="neon-link">From Pixels To Pixels</a></li>
-              </ul>
-            </li>
-            
-            <li>
-              <a href="/project-vault/books.html" class="neon-link">Books</a>
-              <ul>
-                <li>
-                  <a href="/project-vault/books/inside-the-storm.html" class="neon-link">Inside The Storm</a>
-                  <ul>
-                    <li><a href="/project-vault/books/inside-the-storm/the-awakening.html" class="neon-link">The Awakening</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        
-        <li><a href="/contact-me.html" class="neon-link">Contact Me</a></li>
-      </ul>      
+      <img src="/assets/media/images/logos/John Ogletree.png" alt="John Ogletree Logo">
+    </div>
+    <ul>
+      <li><a href="/home.html">Home</a></li>
+      <li><a href="/about-me.html">About Me</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/project-vault.html">Projects</a></li>
+      <li><a href="/contact-me.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
   </nav>
 
-  <!-- Menu Toggle -->
-  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu"></button>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Welcome to My Creative World</h1>
+      <p>I'm John Ogletree, a graphic artist passionate about bringing ideas to life through visual storytelling.</p>
+      <a href="/about-me.html" class="cta-button">Learn More About Me</a>
+    </div>
+  </section>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <section class="hero">
-      <h2>Welcome to the Surreal Neon World</h2>
-      <p>Experience the blend of vibrant creativity and futuristic design.</p>
-    </section>
-
-    <section class="hero">
-      <h2>About Me</h2>
-      <p>Welcome to the space where creativity breathes and ideas come to life. This is where you get a glimpse into the mind that drives the artistry you see in every design piece. My name is John Ogletree, and I am a graphic artist with a passion for visual storytelling. With every stroke, color, and design, I aim to communicate emotions, ideas, and a unique perspective.</p>
-      <a href="#" class="cta-button">Learn More About Me</a>
-    </section>
-    <section class="featured-projects">
-      <h3>Service Categories</h3>
-      <div class="projects-grid">
-        
-        <div class="project">
-          <a href="/project-a.html">
-            <img src="/assets/media/images/servicecatagoryimages/design and print.webp" alt="Design & Print Service Catagory" title="Design & Print Service Catagory">
-            <h4>Design & Print</h4>
-          </a>
-        </div>
-        
-        <div class="project">
-          <a href="/project-b.html">
-            <img src="/assets/media/images/servicecatagoryimages/digital media.webp" alt="Digital Media Service Catagory" title="Digital Media Service Catagory">
-            <h4>Digital Media</h4>
-          </a>
-        </div>
-        
-        <div class="project">
-          <a href="/project-c.html">
-            <img src="/assets/media/images/servicecatagoryimages/video and animation.webp" alt="Video & Animation Service Catagory" title="Video & Animation Service Catagory">
-            <h4>Video & Animation</h4>
-          </a>
-        </div>
-        
-        <div class="project">
-          <a href="/project-d.html">
-            <img src="/assets/media/images/servicecatagoryimages/audio.webp" alt="Audio Service Catagory" title="Audio Service Catagory">
-            <h4>Audio</h4>
-          </a>
-        </div>
-        
+  <!-- Services Section -->
+  <section class="services">
+    <h2>My Services</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <img src="/assets/media/icons/design-print.png" alt="Design & Print">
+        <h3>Design & Print</h3>
+        <p>Creating visually stunning designs for print media, including logos, brochures, and business cards.</p>
       </div>
-    </section>
-    
-  </div>
+      <div class="service-item">
+        <img src="/assets/media/icons/digital-media.png" alt="Digital Media">
+        <h3>Digital Media</h3>
+        <p>Crafting engaging digital content like website designs, social media graphics, and online ads.</p>
+      </div>
+      <div class="service-item">
+        <img src="/assets/media/icons/video-animation.png" alt="Video & Animation">
+        <h3>Video & Animation</h3>
+        <p>Producing dynamic videos and animations that capture attention and tell compelling stories.</p>
+      </div>
+      <div class="service-item">
+        <img src="/assets/media/icons/audio.png" alt="Audio">
+        <h3>Audio Production</h3>
+        <p>Composing custom audio tracks and providing sound editing for various multimedia projects.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 John Ogletree. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu -->
   <script>
-    // JavaScript to toggle sidebar on mobile
-const menuToggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.neon-sidebar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbarUl = document.querySelector('.navbar ul');
 
-menuToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-});
+    menuToggle.addEventListener('click', () => {
+      navbarUl.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
