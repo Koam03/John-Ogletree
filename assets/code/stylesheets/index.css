@@ -179,7 +179,7 @@ body::before {
   box-shadow: 0 0 10px rgba(255, 26, 255, 0.6);
 }
 
-/* Remove arrows from all li elements */
+/* Remove arrows from all li elements by default */
 .sidebar-nav li::after {
   content: none;
 }
@@ -203,8 +203,8 @@ body::before {
   padding-left: 20px; /* Indent submenu items */
 }
 
-/* Dropdown Arrow for Mobile Only */
-@media (max-width: 576px), (hover: none) {
+/* Show dropdown arrows only on mobile/small screens/touch devices */
+@media (max-width: 991px) {
   .sidebar-nav li.has-submenu > .neon-link::after {
     content: "▼";
     font-size: 0.5rem; /* Smaller arrow size */
