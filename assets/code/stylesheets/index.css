@@ -226,30 +226,43 @@ body::before {
   top: 25px;
   left: 25px;
   z-index: 1100;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: radial-gradient(circle at 50% 50%, #ff1aff, #00eaff);
-  border: 2px solid #ff1aff;
+  border: 3px solid #ff1aff;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(255, 26, 255, 0.6), 0 0 40px rgba(0, 234, 255, 0.6);
+  box-shadow: 0 0 25px rgba(255, 26, 255, 0.7), 0 0 50px rgba(0, 234, 255, 0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
 .menu-toggle:hover {
   background: radial-gradient(circle at 50% 50%, #00eaff, #ff1aff);
-  transform: rotate(180deg) scale(1.1);
-  box-shadow: 0 0 30px rgba(255, 26, 255, 0.8), 0 0 50px rgba(0, 234, 255, 0.8);
+  transform: rotate(180deg) scale(1.2);
+  box-shadow: 0 0 40px rgba(255, 26, 255, 0.9), 0 0 60px rgba(0, 234, 255, 0.9);
 }
 
 .menu-toggle:before {
   content: "☰";
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #fff;
-  text-shadow: 0 0 5px #ff1aff, 0 0 10px #00eaff;
+  text-shadow: 0 0 8px #ff1aff, 0 0 15px #00eaff;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 26, 255, 0.6), 0 0 40px rgba(0, 234, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 26, 255, 0.8), 0 0 50px rgba(0, 234, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 26, 255, 0.6), 0 0 40px rgba(0, 234, 255, 0.6);
+  }
 }
 
 /* Headings (h3) for Service Categories */
