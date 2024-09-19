@@ -9,7 +9,329 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link href="/assets/code/stylesheets/index.css" rel="stylesheet">
+<style>
+  /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #000000, #070707 50%, #111 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Parallax Background */
+body::before {
+  content: "";
+  position: fixed; /* Changed to fixed for better parallax effect */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1499083097717-dbe4c9d0d6cf') center/cover no-repeat;
+  z-index: -1;
+  filter: blur(5px) brightness(0.7);
+}
+
+/* Sidebar */
+.neon-sidebar {
+  width: 250px;
+  background: radial-gradient(circle at 50% 50%, #101010, #000);
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 2px solid #00eaff;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
+  z-index: 1000;
+  transition: transform 0.3s ease; /* Added transition for smooth sliding */
+}
+
+/* Sidebar Toggle for Mobile */
+@media (max-width: 992px) {
+  .neon-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .neon-sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+/* Logo */
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 10px;
+  filter: drop-shadow(0 0 10px #00eaff);
+}
+
+/* Neon Glow Animation */
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 10px #00eaff;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff1aff;
+  }
+}
+
+/* Sidebar Navigation */
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.neon-link {
+  text-decoration: none;
+  color: #00eaff;
+  font-size: 1.2rem;
+  padding: 10px;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.neon-link:hover {
+  background-color: rgba(255, 26, 255, 0.3);
+  color: #ff1aff;
+  box-shadow: 0 0 10px rgba(255, 26, 255, 0.6);
+}
+
+/* Dropdown Menu */
+.sidebar-nav li {
+  position: relative;
+}
+
+.sidebar-nav ul ul {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.sidebar-nav li:hover > ul {
+  display: block;
+}
+
+.sidebar-nav ul ul .neon-link {
+  font-size: 1rem;
+}
+
+/* Dropdown Arrow */
+.sidebar-nav li::after {
+  content: "▼";
+  font-size: 0.8rem;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar-nav li:hover::after {
+  content: "▲";
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.02);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  min-height: 100vh;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: margin-left 0.3s ease;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00eaff;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff1aff;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.3));
+}
+
+.project h4 {
+  color: #00eaff;
+  margin-top: 10px;
+  animation: neon-glow 2s infinite alternate;
+}
+
+.project a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 1100;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 50% 50%, #ff1aff, #00eaff);
+  border: 3px solid #ff1aff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 26, 255, 0.7);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.menu-toggle:hover {
+  background: radial-gradient(circle at 50% 50%, #00eaff, #ff1aff);
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 0 40px rgba(255, 26, 255, 0.9);
+}
+
+.menu-toggle::before {
+  content: "☰";
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 8px #ff1aff;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 26, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
+  }
+}
+
+/* Section Headings */
+.featured-projects h3 {
+  font-size: 2rem;
+  text-align: center;
+  background: linear-gradient(90deg, #00eaff 0%, #ff1aff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  position: relative;
+  animation: neon-glow-heading 1.5s infinite alternate;
+}
+
+@keyframes neon-glow-heading {
+  0% {
+    text-shadow: 0 0 10px #00eaff;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff1aff;
+  }
+}
+
+.featured-projects h3::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff1aff 0%, #00eaff 100%);
+  box-shadow: 0 0 15px rgba(255, 26, 255, 0.8);
+  border-radius: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .projects-grid {
+    gap: 15px;
+  }
+
+  .featured-projects h3 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+}
+</style>>
 
 </head>
 <body>
@@ -322,6 +644,14 @@
     
   </div>
 
-  <script src="/assets/code/scripts/nav-toggle.js"></script>
+  <script>
+    // JavaScript to toggle sidebar on mobile
+const menuToggle = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.neon-sidebar');
+
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+  </script>
 </body>
 </html>
