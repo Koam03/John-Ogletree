@@ -16,7 +16,6 @@ body {
   overflow-x: hidden;
   background-size: cover;
   background-attachment: fixed;
-  position: relative; /* To contain the ::before pseudo-element */
 }
 
 /* Parallax 3D Effect */
@@ -209,17 +208,6 @@ body::before {
 }
 
 /* Projects Grid */
-.featured-projects {
-  margin-top: 40px; /* Added spacing above the section */
-}
-
-.featured-projects h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  animation: neon-glow 1.5s infinite alternate;
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2-column grid */
@@ -243,7 +231,6 @@ body::before {
 
 .project h4 {
   color: #00eaff;
-  margin-top: 10px;
 }
 
 .project a {
