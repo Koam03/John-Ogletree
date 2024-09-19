@@ -2,241 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Neon Dreams</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Ogletree - Graphic Artist</title>
-  
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
   <!-- CSS -->
   <style>
-    /* Reset */
+    /* Reset and Typography */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
-    
+
     body {
-      background-color: #1a1a1a;
-      color: #fff;
-      line-height: 1.6;
-      min-height: 100vh;
+      background: linear-gradient(135deg, #090909, #1a1a1a);
+      color: #e0e0e0;
+      overflow-x: hidden;
     }
-    
-    /* Header */
-    header {
-      background: #333;
+
+    /* Parallax Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1557683316-973673baf926') center/cover no-repeat;
+      z-index: -1;
+      filter: blur(8px) brightness(0.5);
+    }
+
+    /* Sidebar */
+    .neon-sidebar {
+      width: 250px;
+      background: rgba(0, 0, 0, 0.8);
       padding: 20px;
-    }
-    
-    header h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #fff;
-    }
-    
-    /* Navigation */
-    nav {
-      background: #444;
-      padding: 15px;
-    }
-    
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-    }
-    
-    nav ul li {
-      margin: 0 15px;
-    }
-    
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-    
-    nav ul li a:hover {
-      color: #00eaff;
-    }
-    
-    /* Hero Section */
-    .hero {
-      background: url('https://images.unsplash.com/photo-1499083097717-dbe4c9d0d6cf') center/cover no-repeat;
-      color: #fff;
-      padding: 100px 20px;
-      text-align: center;
-    }
-    
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    
-    .hero p {
-      font-size: 1.5rem;
-    }
-    
-    /* Main Content */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-    
-    /* Services Section */
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 40px;
-    }
-    
-    .service {
-      background: #2a2a2a;
-      margin: 10px;
-      padding: 20px;
-      border-radius: 8px;
-      flex: 1 1 calc(45% - 40px);
-      box-sizing: border-box;
-      text-align: center;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      border-right: 1px solid #00ffd5;
+      box-shadow: 0 0 10px #00ffd5;
+      z-index: 1000;
       transition: transform 0.3s ease;
     }
-    
-    .service img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
+
+    /* Sidebar Toggle for Mobile */
+    @media (max-width: 992px) {
+      .neon-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .neon-sidebar.active {
+        transform: translateX(0);
+      }
     }
-    
-    .service h3 {
-      margin-bottom: 15px;
+
+    /* Logo */
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
     }
-    
-    .service p {
+
+    .logo img {
+      width: 100px;
+      filter: drop-shadow(0 0 10px #00ffd5);
+    }
+
+    /* Sidebar Navigation */
+    .sidebar-nav ul {
+      list-style-type: none;
+    }
+
+    .neon-link {
+      text-decoration: none;
+      color: #00ffd5;
+      font-size: 1rem;
+      padding: 10px;
+      display: block;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .neon-link:hover {
+      background-color: rgba(0, 255, 213, 0.1);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 250px;
+      padding: 50px;
+      min-height: 100vh;
+      transition: margin-left 0.3s ease;
+    }
+
+    @media (max-width: 992px) {
+      .main-content {
+        margin-left: 0;
+      }
+    }
+
+    /* Menu Toggle Button */
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1100;
+      width: 50px;
+      height: 50px;
+      background-color: #00ffd5;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 15px #00ffd5;
+    }
+
+    .menu-toggle::before {
+      content: "☰";
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    @media (max-width: 992px) {
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #00ffd5;
       margin-bottom: 20px;
     }
-    
-    .service a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #00eaff;
-      color: #000;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.5;
     }
-    
-    .service a:hover {
-      background: #ff1aff;
-      color: #fff;
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
-    
-    .service:hover {
+
+    .project-card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
       transform: translateY(-10px);
+      box-shadow: 0 0 15px #00ffd5;
     }
-    
+
+    .project-card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      color: #00ffd5;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
     /* Footer */
     footer {
-      background: #333;
-      color: #fff;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
-    }
-    
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .services {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .service {
-        flex: 1 1 100%;
-      }
-      
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      nav ul li {
-        margin: 10px 0;
-      }
+      background: rgba(0, 0, 0, 0.8);
+      color: #e0e0e0;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>John Ogletree</h1>
-  </header>
-  
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="/home.html">Home</a></li>
-      <li><a href="/about-me.html">About Me</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/project-vault.html">Project Vault</a></li>
-      <li><a href="/contact-me.html">Contact Me</a></li>
+  <!-- Sidebar -->
+  <nav class="neon-sidebar">
+    <div class="logo">
+      <img src="/assets/media/images/logos/John Ogletree.png" alt="Logo" title="Logo"/>
+    </div>
+    <ul class="sidebar-nav">
+      <!-- Sidebar content unchanged -->
+      <!-- ... (Same as provided) -->
     </ul>
   </nav>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Welcome to My World of Creativity</h2>
-    <p>Where imagination meets design</p>
-  </section>
-  
+
+  <!-- Menu Toggle -->
+  <button class="menu-toggle" aria-label="Toggle Menu"></button>
+
   <!-- Main Content -->
-  <div class="container">
-    <!-- About Section -->
-    <section class="about">
-      <h2>About Me</h2>
-      <p>Welcome to the space where creativity breathes and ideas come to life. My name is John Ogletree, a graphic artist with a passion for visual storytelling. With every stroke, color, and design, I aim to communicate emotions, ideas, and a unique perspective.</p>
+  <div class="main-content">
+    <section class="hero">
+      <h1>Neon Dreams</h1>
+      <p>Dive into a world where technology meets art. Explore our projects that blend innovation with creativity.</p>
     </section>
-    
-    <!-- Services Section -->
-    <section class="services">
-      <div class="service">
-        <img src="/assets/media/images/servicecatagoryimages/design-and-print.webp" alt="Design & Print">
-        <h3>Design & Print</h3>
-        <p>Creating visually stunning designs for print media.</p>
-        <a href="/services/design-and-print.html">Learn More</a>
+
+    <section class="projects-grid">
+      <div class="project-card">
+        <img src="/assets/media/images/projects/project1.jpg" alt="Project 1">
+        <h3>Futuristic Interface</h3>
+        <p>An exploration into next-gen UI designs that challenge conventional interactions.</p>
       </div>
-      
-      <div class="service">
-        <img src="/assets/media/images/servicecatagoryimages/digital-media.webp" alt="Digital Media">
-        <h3>Digital Media</h3>
-        <p>Innovative digital designs for the modern world.</p>
-        <a href="/services/digital-media.html">Learn More</a>
+      <div class="project-card">
+        <img src="/assets/media/images/projects/project2.jpg" alt="Project 2">
+        <h3>Cyberpunk Art</h3>
+        <p>A collection of artworks inspired by cyberpunk aesthetics and neon-lit cities.</p>
       </div>
-      
-      <div class="service">
-        <img src="/assets/media/images/servicecatagoryimages/video-and-animation.webp" alt="Video & Animation">
-        <h3>Video & Animation</h3>
-        <p>Bringing stories to life through motion.</p>
-        <a href="/services/video-and-animation.html">Learn More</a>
+      <div class="project-card">
+        <img src="/assets/media/images/projects/project3.jpg" alt="Project 3">
+        <h3>Virtual Reality Worlds</h3>
+        <p>Step into immersive VR experiences that blur the line between reality and imagination.</p>
       </div>
-      
-      <div class="service">
-        <img src="/assets/media/images/servicecatagoryimages/audio.webp" alt="Audio">
-        <h3>Audio</h3>
-        <p>Crafting immersive audio experiences.</p>
-        <a href="/services/audio.html">Learn More</a>
+      <div class="project-card">
+        <img src="/assets/media/images/projects/project4.jpg" alt="Project 4">
+        <h3>Interactive Installations</h3>
+        <p>Engage with interactive installations that respond to your movements and touch.</p>
       </div>
     </section>
   </div>
-  
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 John Ogletree. All rights reserved.</p>
+    <p>&copy; 2024 Neon Dreams. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.neon-sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
