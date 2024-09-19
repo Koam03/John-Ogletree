@@ -9,7 +9,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-   <link rel="stylesheet" href="/assets/code/stylesheets/index.css">
+   <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Dropdown Menu Styling */
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  position: relative;
+}
+
+.sidebar-nav li.has-submenu > .neon-link::after {
+  content: none; /* Hide arrows by default */
+}
+
+/* Only show dropdown arrows on mobile/touch devices */
+@media (max-width: 991px) {
+  /* Show dropdown arrow for menu items with submenus */
+  .sidebar-nav li.has-submenu > .neon-link::after {
+    content: "▼";
+    font-size: 0.8rem;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00eaff;
+  }
+
+  /* Change the arrow to an upward arrow when hovered or submenu is active */
+  .sidebar-nav li.has-submenu.active > .neon-link::after,
+  .sidebar-nav li.has-submenu:hover > .neon-link::after {
+    content: "▲";
+  }
+}
+
+/* Dropdown Menu Visibility */
+.sidebar-nav ul ul {
+  display: none; /* Hide submenus by default */
+}
+
+.sidebar-nav li.has-submenu:hover > ul,
+.sidebar-nav li.has-submenu.active > ul {
+  display: block; /* Show submenus on hover or when active */
+}
+   </style>
 </head>
 <body>
   <button class="menu-toggle" aria-label="Toggle Navigation">
