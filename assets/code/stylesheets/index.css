@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
   background-size: cover;
   background-attachment: fixed;
+  position: relative; /* To contain the ::before pseudo-element */
 }
 
 /* Parallax 3D Effect */
@@ -208,10 +209,21 @@ body::before {
 }
 
 /* Projects Grid */
+.featured-projects {
+  margin-top: 40px; /* Added spacing above the section */
+}
+
+.featured-projects h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: neon-glow 1.5s infinite alternate;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+  gap: 20px; /* Space between the grid items */
   margin-top: 20px;
 }
 
@@ -231,6 +243,7 @@ body::before {
 
 .project h4 {
   color: #00eaff;
+  margin-top: 10px;
 }
 
 .project a {
@@ -243,8 +256,12 @@ body::before {
   box-shadow: 0 4px 20px rgba(0, 234, 255, 0.5);
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustment for smaller screens */
 @media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Switch to single-column layout on small screens */
+  }
+
   .main-content {
     margin-left: 0;
   }
