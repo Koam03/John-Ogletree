@@ -42,6 +42,47 @@ body::before {
   filter: blur(5px) brightness(0.7);
 }
 
+/* Menu Toggle Button */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #00eaff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Change color on hover */
+.menu-toggle:hover span {
+  background-color: #ff1aff;
+}
+
+/* Transform lines when active */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
 /* Sidebar */
 .neon-sidebar {
   width: 260px;
@@ -91,18 +132,9 @@ body::before {
 }
 
 /* Sidebar Navigation */
-.sidebar-nav {
+.sidebar-nav ul {
   list-style-type: none;
-  padding: 0;
-}
-
-.sidebar-nav > ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar-nav li {
-  position: relative;
+  padding: 10px;
 }
 
 .neon-link {
@@ -115,7 +147,7 @@ body::before {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  text-align: left;
+  text-align: center;
 }
 
 .neon-link:hover {
@@ -125,6 +157,10 @@ body::before {
 }
 
 /* Dropdown Menu */
+.sidebar-nav li {
+  position: relative;
+}
+
 .sidebar-nav ul ul {
   display: none;
   padding-left: 20px;
@@ -139,7 +175,7 @@ body::before {
 }
 
 /* Dropdown Arrow */
-.sidebar-nav li > .neon-link::after {
+.sidebar-nav li::after {
   content: "▼";
   font-size: 0.8rem;
   position: absolute;
@@ -148,7 +184,7 @@ body::before {
   transform: translateY(-50%);
 }
 
-.sidebar-nav li:hover > .neon-link::after {
+.sidebar-nav li:hover::after {
   content: "▲";
 }
 
@@ -288,24 +324,12 @@ body::before {
     margin-left: 0;
   }
 
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-@media (max-width: 576px) {
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+  .neon-sidebar {
+    transform: translateX(-100%);
   }
 
-  .projects-grid {
-    gap: 15px;
-  }
-
-  .featured-projects h2 {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+  .neon-sidebar.active {
+    transform: translateX(0);
   }
 }
   </style>
