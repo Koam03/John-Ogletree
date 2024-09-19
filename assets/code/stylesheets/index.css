@@ -6,46 +6,184 @@
   font-family: 'Raleway', sans-serif;
 }
 
-/* Dropdown Menu Styling */
+/* Sidebar Styling */
+.neon-sidebar {
+  width: 250px;
+  background-color: #111; /* Dark background for contrast */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-top: 20px;
+  /* Optional: Add a neon glow effect */
+  box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 30px #00eaff;
+}
+
+.neon-sidebar .logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.neon-sidebar .logo img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Navigation Menu Styling */
+.sidebar-nav {
+  width: 100%;
+}
+
 .sidebar-nav ul {
   list-style-type: none;
-  padding: 0;
 }
 
 .sidebar-nav li {
   position: relative;
 }
 
-.sidebar-nav li.has-submenu > .neon-link::after {
-  content: none; /* Hide arrows by default */
+.sidebar-nav a.neon-link {
+  display: block;
+  padding: 12px 20px;
+  color: #00eaff;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
 }
 
-/* Only show dropdown arrows on mobile/touch devices */
-@media (max-width: 991px) {
-  /* Show dropdown arrow for menu items with submenus */
-  .sidebar-nav li.has-submenu > .neon-link::after {
-    content: "▼";
-    font-size: 0.8rem;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #00eaff;
-  }
+.sidebar-nav a.neon-link:hover,
+.sidebar-nav a.neon-link:focus {
+  background-color: #00eaff;
+  color: #111;
+  outline: none;
+}
 
-  /* Change the arrow to an upward arrow when hovered or submenu is active */
-  .sidebar-nav li.has-submenu.active > .neon-link::after,
-  .sidebar-nav li.has-submenu:hover > .neon-link::after {
-    content: "▲";
-  }
+/* Indicator for submenu items */
+.sidebar-nav li.has-submenu > a.neon-link::after {
+  content: '▶'; /* Right-pointing arrow */
+  position: absolute;
+  right: 20px;
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+  color: #00eaff;
+}
+
+/* Rotate arrow when submenu is open */
+.sidebar-nav li.has-submenu.active > a.neon-link::after,
+.sidebar-nav li.has-submenu:hover > a.neon-link::after {
+  transform: rotate(90deg);
 }
 
 /* Dropdown Menu Visibility */
 .sidebar-nav ul ul {
-  display: none; /* Hide submenus by default */
+  display: none; /* Hide all submenus by default */
+  background-color: #222; /* Slightly lighter for differentiation */
+}
+
+.sidebar-nav ul ul ul {
+  left: 100%;
+  top: 0;
+  /* Position deeper submenus to the right */
 }
 
 .sidebar-nav li.has-submenu:hover > ul,
 .sidebar-nav li.has-submenu.active > ul {
-  display: block; /* Show submenus on hover or when active */
+  display: block; /* Show submenu on hover or when active */
+}
+
+/* Styling for nested submenu links */
+.sidebar-nav ul ul a.neon-link {
+  padding-left: 40px; /* Indent for visual hierarchy */
+}
+
+/* Further indentation for deeper levels */
+.sidebar-nav ul ul ul a.neon-link {
+  padding-left: 60px;
+}
+
+/* Responsive Styling */
+@media (max-width: 991px) {
+  .neon-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: none;
+  }
+
+  .sidebar-nav ul ul {
+    position: static;
+  }
+
+  /* Change arrow indicators for mobile */
+  .sidebar-nav li.has-submenu > a.neon-link::after {
+    content: "▼"; /* Downward arrow */
+    transform: rotate(0deg);
+  }
+
+  .sidebar-nav li.has-submenu.active > a.neon-link::after,
+  .sidebar-nav li.has-submenu:hover > a.neon-link::after {
+    content: "▲"; /* Upward arrow */
+  }
+
+  /* Show submenus when active */
+  .sidebar-nav ul ul {
+    display: none;
+  }
+
+  .sidebar-nav li.has-submenu.active > ul {
+    display: block;
+  }
+
+  /* Toggle submenu on click */
+  .sidebar-nav a.neon-link {
+    padding-left: 20px;
+  }
+
+  .sidebar-nav ul ul a.neon-link {
+    padding-left: 40px;
+  }
+
+  .sidebar-nav ul ul ul a.neon-link {
+    padding-left: 60px;
+  }
+}
+
+/* Scrollbar Styling (optional for better aesthetics) */
+.neon-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.neon-sidebar::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.neon-sidebar::-webkit-scrollbar-thumb {
+  background-color: #00eaff;
+  border-radius: 4px;
+}
+
+/* Optional: Transition for smooth dropdowns */
+.sidebar-nav ul ul {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.sidebar-nav li.has-submenu.active > ul,
+.sidebar-nav li.has-submenu:hover > ul {
+  max-height: 1000px; /* Arbitrary large value for max-height */
+  opacity: 1;
+}
+
+/* Optional: Adjust z-index to ensure dropdowns appear above other elements */
+.sidebar-nav ul ul {
+  z-index: 1000;
+}
+
+/* Accessibility Enhancements */
+.sidebar-nav a.neon-link:focus {
+  background-color: #00eaff;
+  color: #111;
 }

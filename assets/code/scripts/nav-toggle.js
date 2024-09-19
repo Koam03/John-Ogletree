@@ -1,7 +1,22 @@
-// JavaScript to toggle sidebar on mobile
-const menuToggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.neon-sidebar');
+document.addEventListener('DOMContentLoaded', function() {
+  const submenuParents = document.querySelectorAll('.sidebar-nav li.has-submenu > a.neon-link');
 
-menuToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
+  submenuParents.forEach(function(parentLink) {
+    parentLink.addEventListener('click', function(e) {
+      const parentLi = this.parentElement;
+
+      // Toggle the 'active' class
+      parentLi.classList.toggle('active');
+
+      // Optional: Close other open submenus
+      submenuParents.forEach(function(otherLink) {
+        if (otherLink !== parentLink) {
+          otherLink.parentElement.classList.remove('active');
+        }
+      });
+
+      // Prevent default link behavior if the parent link has a submenu
+      e.preventDefault();
+    });
+  });
 });
