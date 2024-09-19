@@ -120,7 +120,7 @@ body::before {
   color: #ff1aff;
 }
 
-/* Dropdown Navigation */
+/* Dropdown Styling */
 .sidebar-nav li {
   position: relative;
 }
@@ -129,6 +129,7 @@ body::before {
   display: none;
   list-style: none;
   padding-left: 20px;
+  transition: all 0.3s ease;
 }
 
 .sidebar-nav li:hover > ul {
@@ -137,6 +138,10 @@ body::before {
 
 .sidebar-nav ul ul li {
   padding-left: 15px;
+}
+
+.sidebar-nav ul ul .neon-link {
+  font-size: 1.2rem;
 }
 
 /* Dropdown Arrow */
@@ -153,6 +158,24 @@ body::before {
   content: "▲";
 }
 
+/* Active Dropdown */
+.sidebar-nav li.active > ul {
+  display: block;
+}
+
+/* Animated Dropdown Effect */
+.sidebar-nav ul ul {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.sidebar-nav li:hover > ul {
+  opacity: 1;
+  max-height: 1000px;
+}
+
 /* Main Content */
 .main-content {
   margin-left: 300px;
@@ -163,6 +186,61 @@ body::before {
   backdrop-filter: blur(10px);
   color: #fff;
   min-height: 100vh;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00eaff;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff1aff;
+  color: #fff;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project h4 {
+  color: #00eaff;
+}
+
+.project a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 234, 255, 0.5);
 }
 
 /* Responsive Adjustments */
