@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surreal Neon World</title>
+  <title>John Ogletree - Graphic Artist Portfolio</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
@@ -23,8 +23,10 @@
       background: linear-gradient(135deg, #000000, #070707 50%, #111 100%);
       color: #fff;
       display: flex;
+      flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
     }
 
     /* Parallax Background */
@@ -91,11 +93,7 @@
     /* Sidebar Navigation */
     .sidebar-nav ul {
       list-style-type: none;
-      padding: 0;
-    }
-
-    .sidebar-nav li {
-      position: relative;
+      padding: 10px;
     }
 
     .neon-link {
@@ -106,6 +104,7 @@
       display: block;
       border-radius: 8px;
       transition: all 0.3s ease;
+      position: relative;
       overflow: hidden;
       text-align: center;
     }
@@ -117,8 +116,14 @@
     }
 
     /* Dropdown Menu */
+    .sidebar-nav li {
+      position: relative;
+    }
+
     .sidebar-nav ul ul {
       display: none;
+      list-style: none;
+      padding-left: 20px;
     }
 
     .sidebar-nav li:hover > ul {
@@ -129,15 +134,30 @@
       font-size: 1rem;
     }
 
+    /* Dropdown Arrow */
+    .sidebar-nav li::after {
+      content: "▼";
+      font-size: 0.8rem;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .sidebar-nav li:hover::after {
+      content: "▲";
+    }
+
     /* Main Content */
     .main-content {
       margin-left: 250px;
       padding: 40px;
-      flex: 1;
       background-color: rgba(255, 255, 255, 0.02);
+      z-index: 100;
       backdrop-filter: blur(10px);
       color: #fff;
       min-height: 100vh;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
       transition: margin-left 0.3s ease;
     }
 
@@ -149,7 +169,7 @@
 
     .hero h1 {
       font-size: 3rem;
-      animation: neon-glow 2s infinite alternate;
+      animation: neon-glow-heading 2s infinite alternate;
     }
 
     .hero p {
@@ -203,7 +223,7 @@
       filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.3));
     }
 
-    .project h4 {
+    .project h3 {
       color: #00eaff;
       margin-top: 10px;
       animation: neon-glow 2s infinite alternate;
@@ -219,86 +239,45 @@
       box-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
     }
 
-    /* Menu Toggle Button */
-    .menu-toggle {
-      position: fixed;
-      top: 25px;
-      left: 25px;
-      z-index: 1100;
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle at 50% 50%, #ff1aff, #00eaff);
-      border: 3px solid #ff1aff;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 25px rgba(255, 26, 255, 0.7);
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-
-    .menu-toggle:hover {
-      background: radial-gradient(circle at 50% 50%, #00eaff, #ff1aff);
-      transform: rotate(180deg) scale(1.1);
-      box-shadow: 0 0 40px rgba(255, 26, 255, 0.9);
-    }
-
-    .menu-toggle::before {
-      content: "☰";
-      font-size: 2rem;
-      color: #fff;
-      text-shadow: 0 0 8px #ff1aff;
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
-      }
-      50% {
-        box-shadow: 0 0 30px rgba(255, 26, 255, 0.8);
-      }
-      100% {
-        box-shadow: 0 0 20px rgba(255, 26, 255, 0.6);
-      }
-    }
-
-    /* Section Headings */
-    .section-title {
-      font-size: 2rem;
+    /* Testimonials Section */
+    .testimonials {
+      margin-top: 60px;
       text-align: center;
-      background: linear-gradient(90deg, #00eaff 0%, #ff1aff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 30px;
-      position: relative;
-      animation: neon-glow-heading 1.5s infinite alternate;
     }
 
-    @keyframes neon-glow-heading {
-      0% {
-        text-shadow: 0 0 10px #00eaff;
-      }
-      100% {
-        text-shadow: 0 0 20px #ff1aff;
-      }
+    .testimonials h2 {
+      font-size: 2rem;
+      animation: neon-glow-heading 2s infinite alternate;
+      margin-bottom: 40px;
     }
 
-    .section-title::before {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 2px;
-      background: linear-gradient(90deg, #ff1aff 0%, #00eaff 100%);
-      box-shadow: 0 0 15px rgba(255, 26, 255, 0.8);
-      border-radius: 2px;
+    .testimonial {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .testimonial p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .testimonial h4 {
+      margin-top: 15px;
+      color: #ff1aff;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-size: 0.9rem;
     }
 
     /* Responsive Adjustments */
@@ -322,7 +301,7 @@
         gap: 15px;
       }
 
-      .section-title {
+      .featured-projects h2 {
         font-size: 1.5rem;
         letter-spacing: 2px;
       }
@@ -335,71 +314,104 @@
     <div class="logo">
       <img src="/assets/media/images/logos/John Ogletree.png" alt="John Ogletree Logo" title="John Ogletree"/>
     </div>
-    <!-- Sidebar Navigation -->
     <ul class="sidebar-nav">
-      <!-- Keep the sidebar content as is -->
-      <!-- ... -->
-      <!-- The existing sidebar code goes here -->
+      <ul>
+        <li><a href="/home.html" class="neon-link">Home</a></li>
+        <li><a href="/about-me.html" class="neon-link">About Me</a></li>
+        <li>
+          <a href="/services.html" class="neon-link">Services</a>
+          <ul>
+            <li>
+              <a href="/services/design-and-print.html" class="neon-link">Design And Print</a>
+              <ul>
+                <li><a href="/services/design-and-print/logo-design.html" class="neon-link">Logo Design</a></li>
+                <!-- ... Include all other nested items as per your original code -->
+              </ul>
+            </li>
+            <!-- Include other service categories and their sub-items -->
+          </ul>
+        </li>
+        <!-- Include other main navigation items and their sub-menus -->
+        <li><a href="/contact-me.html" class="neon-link">Contact Me</a></li>
+      </ul>
     </ul>
   </nav>
 
   <!-- Menu Toggle -->
-  <button class="menu-toggle" aria-label="Toggle Menu"></button>
+  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu"></button>
 
   <!-- Main Content -->
-  <main class="main-content">
+  <div class="main-content">
+    <!-- Hero Section -->
     <section class="hero">
-      <h1>Welcome to the Surreal Neon World</h1>
-      <p>Experience the blend of vibrant creativity and futuristic design.</p>
-      <a href="#services" class="cta-button">Explore Services</a>
+      <h1>Welcome to My Creative World</h1>
+      <p>I'm John Ogletree, a graphic artist passionate about visual storytelling. Dive into my portfolio to explore the fusion of art and innovation.</p>
+      <a href="/about-me.html" class="cta-button">Discover More</a>
     </section>
 
-    <section id="about" class="about-section">
-      <h2 class="section-title">About Me</h2>
-      <p>Hello! I'm John Ogletree, a graphic artist passionate about visual storytelling. Every design is a journey into creativity and innovation. I strive to bring ideas to life through vibrant visuals and compelling narratives.</p>
-      <a href="/about-me.html" class="cta-button">Learn More About Me</a>
-    </section>
-
-    <section id="services" class="featured-projects">
-      <h2 class="section-title">Service Categories</h2>
+    <!-- Featured Services -->
+    <section class="featured-projects">
+      <h2>Featured Services</h2>
       <div class="projects-grid">
+        <!-- Service 1 -->
         <div class="project">
           <a href="/services/design-and-print.html">
-            <img src="/assets/media/images/servicecatagoryimages/design-and-print.webp" alt="Design & Print Service Category" title="Design & Print">
-            <h4>Design & Print</h4>
+            <img src="/assets/media/images/servicecatagoryimages/design-and-print.webp" alt="Design & Print">
+            <h3>Design & Print</h3>
           </a>
         </div>
+        <!-- Service 2 -->
         <div class="project">
           <a href="/services/digital-media.html">
-            <img src="/assets/media/images/servicecatagoryimages/digital-media.webp" alt="Digital Media Service Category" title="Digital Media">
-            <h4>Digital Media</h4>
+            <img src="/assets/media/images/servicecatagoryimages/digital-media.webp" alt="Digital Media">
+            <h3>Digital Media</h3>
           </a>
         </div>
+        <!-- Service 3 -->
         <div class="project">
           <a href="/services/video-and-animation.html">
-            <img src="/assets/media/images/servicecatagoryimages/video-and-animation.webp" alt="Video & Animation Service Category" title="Video & Animation">
-            <h4>Video & Animation</h4>
+            <img src="/assets/media/images/servicecatagoryimages/video-and-animation.webp" alt="Video & Animation">
+            <h3>Video & Animation</h3>
           </a>
         </div>
+        <!-- Service 4 -->
         <div class="project">
           <a href="/services/audio.html">
-            <img src="/assets/media/images/servicecatagoryimages/audio.webp" alt="Audio Service Category" title="Audio">
-            <h4>Audio</h4>
+            <img src="/assets/media/images/servicecatagoryimages/audio.webp" alt="Audio">
+            <h3>Audio</h3>
           </a>
         </div>
       </div>
     </section>
-  </main>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2>What Clients Say</h2>
+      <div class="testimonial">
+        <p>"John's creativity and professionalism are unmatched. He transformed our vision into reality with exceptional design work."</p>
+        <h4>- Client A</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Working with John was a pleasure. His attention to detail and artistic flair brought our project to life."</p>
+        <h4>- Client B</h4>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 John Ogletree. All rights reserved.</p>
+  </footer>
 
   <!-- JavaScript -->
   <script>
-    // Toggle sidebar on mobile
+    // JavaScript to toggle sidebar on mobile
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.neon-sidebar');
 
-    menuToggle.addEventListener('click', () => {
+    function toggleSidebar() {
       sidebar.classList.toggle('active');
-    });
+    }
   </script>
 </body>
 </html>
