@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update ARIA attributes
       const isExpanded = menuToggle.classList.contains('active');
       menuToggle.setAttribute('aria-expanded', isExpanded);
+
+      if (isExpanded) {
+          // Focus on the first link in the sidebar
+          const firstLink = sidebar.querySelector('.sidebar-nav a.neon-link');
+          firstLink.focus();
+      } else {
+          // Return focus to the menu toggle button
+          menuToggle.focus();
+      }
   }
 
   // Event listener for menu toggle button
@@ -32,10 +41,31 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-  // Close sidebar with Esc key for accessibility
+  // Close sidebar with Esc key for accessibility and trap focus
   document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && sidebar.classList.contains('active')) {
           toggleSidebar();
+      }
+
+      // Trap focus within the sidebar when it's active
+      if (sidebar.classList.contains('active')) {
+          const focusableElements = sidebar.querySelectorAll('a.neon-link, button.neon-button, input, textarea');
+          const firstElement = focusableElements[0];
+          const lastElement = focusableElements[focusableElements.length - 1];
+
+          if (e.key === 'Tab') {
+              if (e.shiftKey) { // Shift + Tab
+                  if (document.activeElement === firstElement) {
+                      e.preventDefault();
+                      lastElement.focus();
+                  }
+              } else { // Tab
+                  if (document.activeElement === lastElement) {
+                      e.preventDefault();
+                      firstElement.focus();
+                  }
+              }
+          }
       }
   });
 });

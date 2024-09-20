@@ -170,18 +170,20 @@ body {
 }
 
 /* Dropdown Menu Styling */
+/* Add to your CSS */
 .dropdown {
-  list-style-type: none;
-  padding-left: 20px;
-  background-color: var(--light-bg);
-  display: none;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .has-submenu.active > .dropdown,
 .has-submenu:hover > .dropdown {
-  display: block;
+  max-height: 1000px; /* A sufficiently large value to accommodate content */
+  opacity: 1;
 }
+
 
 /* Nested Dropdowns */
 .dropdown .has-submenu > a.neon-link {
