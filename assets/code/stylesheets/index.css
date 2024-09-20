@@ -20,8 +20,11 @@
 
 /* Body Styling */
 body {
+  margin: 0;
+  padding: 0;
   background-color: #000;
   color: white;
+  transition: margin-left 0.3s ease-in-out;
 }
 
 /* Neon Menu Toggle Button */
@@ -35,7 +38,7 @@ body {
   background-color: var(--dark-bg);
   border: 3px solid var(--neon-blue);
   border-radius: 50%;
-  display: none; /* Hidden by default */
+  display: none; /* Hidden on larger screens */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -81,83 +84,175 @@ body {
   visibility: visible;
 }
 
-/* Flex Container */
-.container {
-  display: flex;
-  flex-direction: column; /* Stack on mobile by default */
-  min-height: 100vh; /* Ensure the container covers full height */
-}
-
 /* Sidebar Styling */
 .neon-sidebar {
-  width: 250px; /* Sidebar width */
+  width: 250px;
   background-color: var(--dark-bg);
-  overflow-y: auto;
-  padding-top: 20px;
-  transition: transform 0.3s ease-in-out;
-  z-index: 1050;
-  transform: translateX(-100%); /* Hidden by default on mobile */
+  height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
-  height: 100vh;
+  left: -250px; /* Hidden by default on the left */
+  overflow-y: auto;
+  padding-top: 20px;
+  transition: left 0.3s ease-in-out; /* Transition from left */
+  z-index: 1050;
 
   /* Neon Glow Effect */
-  box-shadow: 0 0 10px var(--neon-blue),
-              0 0 20px var(--neon-blue),
+  box-shadow: 0 0 10px var(--neon-blue), 
+              0 0 20px var(--neon-blue), 
               0 0 30px var(--neon-blue);
 }
 
-/* Sidebar visible by default on desktop */
-@media (min-width: 992px) {
-  .container {
-    flex-direction: row; /* Side by side on desktop */
-  }
+.neon-sidebar.active {
+  left: 0; /* Slide in from the left */
+}
+
+/* Logo Styling */
+.neon-sidebar .logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.neon-sidebar .logo h1 {
+  color: var(--neon-blue);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.neon-sidebar .logo img {
+  max-width: 80%;
+  height: auto;
+  border: 2px solid var(--neon-blue);
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.neon-sidebar .logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+/* Navigation Menu Styling */
+.sidebar-nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  position: relative;
+}
+
+.sidebar-nav a.neon-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+}
+
+.sidebar-nav a.neon-link:hover,
+.sidebar-nav a.neon-link:focus {
+  background-color: var(--neon-hover);
+  color: var(--dark-bg);
+  outline: none;
+}
+
+/* Dropdown Indicators */
+.sidebar-nav .has-submenu > a.neon-link i {
+  transition: transform 0.3s;
+}
+
+.sidebar-nav .has-submenu.active > a.neon-link i,
+.sidebar-nav .has-submenu:hover > a.neon-link i {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+  list-style-type: none;
+  padding-left: 20px;
+  background-color: var(--light-bg);
+  display: none;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.has-submenu.active > .dropdown,
+.has-submenu:hover > .dropdown {
+  display: block;
+}
+
+/* Nested Dropdowns */
+.dropdown .has-submenu > a.neon-link {
+  padding-left: 30px;
+}
+
+.dropdown .dropdown {
+  padding-left: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 991px) {
+  /* Sidebar Hidden by Default on Mobile */
   .neon-sidebar {
-    transform: translateX(0);
-    position: relative; /* Position relative within the container */
-    height: auto; /* Let the sidebar height adjust naturally */
+    left: -250px; /* Ensure it's hidden on the left */
+  }
+  
+  /* Show Sidebar when Active */
+  .neon-sidebar.active {
+    left: 0;
+  }
+
+  /* Show Hamburger Menu on Mobile */
+  .menu-toggle.neon-toggle {
+    display: flex;
+  }
+  
+  /* Overlay Effect when Sidebar is Active */
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Main Content Adjustment on Mobile */
+  main {
+    margin-left: 10px; /* Slight margin when sidebar is closed */
+  }
+}
+
+@media (min-width: 992px) {
+  /* Adjust Main Content to Account for Sidebar on the Left */
+  main {
+    margin-left: 250px; /* Sidebar width */
+  }
+
+  /* Sidebar should be visible by default on larger screens */
+  .neon-sidebar {
+    left: 0;
+  }
+
+  /* Hide the menu toggle on larger screens */
+  .menu-toggle.neon-toggle {
+    display: none;
+  }
+
+  /* Overlay should not be visible on larger screens */
+  .overlay {
+    display: none;
   }
 }
 
 /* Main Content Styling */
 main {
-  flex: 1; /* Allow main content to fill remaining space */
+  margin-left: 10px; /* Default margin when sidebar is closed */
   padding: 20px;
-  margin-left: 0;
   transition: margin-left 0.3s ease-in-out;
 }
 
-/* When sidebar is active on mobile */
-body.active-sidebar .neon-sidebar {
-  transform: translateX(0);
-}
-
 body.active-sidebar main {
-  /* Optional: prevent scrolling when sidebar is open */
-  overflow: hidden;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-  /* Show Hamburger Menu on Mobile */
-  .menu-toggle.neon-toggle {
-    display: flex;
-  }
-
-  /* Main Content Adjustment on Mobile */
-  .container {
-    flex-direction: column;
-  }
-  
-  main {
-    margin-left: 0;
-  }
-
-  .neon-sidebar {
-    position: fixed;
-    height: 100vh;
-  }
+  margin-left: 250px; /* Sidebar width when active */
 }
 
 /* Section Styling */
@@ -209,13 +304,11 @@ section hr {
 }
 
 /* Project and Track Styling */
-.project,
-.track {
+.project, .track {
   margin-bottom: 20px;
 }
 
-.project img,
-.track img {
+.project img, .track img {
   width: 100%;
   height: auto;
   border: 2px solid var(--neon-blue);
@@ -223,8 +316,7 @@ section hr {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project img:hover,
-.track img:hover {
+.project img:hover, .track img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
 }
@@ -240,8 +332,7 @@ section hr {
   color: var(--neon-blue);
 }
 
-.contact input,
-.contact textarea {
+.contact input, .contact textarea {
   padding: 10px;
   margin-bottom: 15px;
   border: 2px solid var(--neon-blue);
@@ -255,8 +346,7 @@ section hr {
   color: var(--neon-hover);
 }
 
-.contact input:focus,
-.contact textarea:focus {
+.contact input:focus, .contact textarea:focus {
   outline: none;
   border-color: var(--neon-hover);
 }
