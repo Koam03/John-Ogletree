@@ -24,14 +24,13 @@ body {
   padding: 0;
   background-color: #000;
   color: white;
-  transition: margin-left 0.3s ease-in-out;
 }
 
 /* Neon Menu Toggle Button */
 .menu-toggle.neon-toggle {
   position: fixed;
   top: 20px;
-  left: 20px; /* Positioned on the left */
+  left: 20px;
   z-index: 1100;
   width: 50px;
   height: 50px;
