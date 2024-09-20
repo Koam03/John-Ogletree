@@ -6,37 +6,100 @@
   font-family: 'Raleway', sans-serif;
 }
 
+/* Neon Color Variables */
+:root {
+  --neon-blue: #00eaff;
+  --dark-bg: #111;
+  --light-bg: #222;
+  --neon-hover: #00c4ff;
+  --button-bg: rgba(0, 234, 255, 0.2);
+  --button-hover-bg: rgba(0, 234, 255, 0.4);
+}
+
+/* Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: white;
+  transition: margin-left 0.3s ease-in-out;
+}
+
 /* Sidebar Styling */
 .neon-sidebar {
   width: 250px;
-  background-color: #111; /* Dark background for contrast */
+  background-color: var(--dark-bg);
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   overflow-y: auto;
   padding-top: 20px;
-  /* Optional: Add a neon glow effect */
-  box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 30px #00eaff;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  
+  /* Neon Glow Effect */
+  box-shadow: 0 0 10px var(--neon-blue), 
+              0 0 20px var(--neon-blue), 
+              0 0 30px var(--neon-blue);
 }
 
+/* Logo Styling */
 .neon-sidebar .logo {
   text-align: center;
   margin-bottom: 30px;
 }
 
+.neon-sidebar .logo h1 {
+  color: var(--neon-blue);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
 .neon-sidebar .logo img {
   max-width: 80%;
   height: auto;
+  border: 2px solid var(--neon-blue);
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.neon-sidebar .logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+/* Hamburger Menu Styling */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: -45px;
+  background-color: var(--dark-bg);
+  color: var(--neon-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+}
+
+.menu-toggle.active {
+  background-color: var(--neon-blue);
+  color: var(--dark-bg);
+}
+
+.menu-toggle i {
+  font-size: 1.2rem;
 }
 
 /* Navigation Menu Styling */
 .sidebar-nav {
-  width: 100%;
-}
-
-.sidebar-nav ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .sidebar-nav li {
@@ -44,9 +107,11 @@
 }
 
 .sidebar-nav a.neon-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 12px 20px;
-  color: #00eaff;
+  color: var(--neon-blue);
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
   position: relative;
@@ -54,136 +119,236 @@
 
 .sidebar-nav a.neon-link:hover,
 .sidebar-nav a.neon-link:focus {
-  background-color: #00eaff;
-  color: #111;
+  background-color: var(--neon-hover);
+  color: var(--dark-bg);
   outline: none;
 }
 
-/* Indicator for submenu items */
-.sidebar-nav li.has-submenu > a.neon-link::after {
-  content: '▶'; /* Right-pointing arrow */
-  position: absolute;
-  right: 20px;
-  font-size: 0.8rem;
+/* Dropdown Indicators */
+.sidebar-nav .has-submenu > a.neon-link i {
   transition: transform 0.3s;
-  color: #00eaff;
 }
 
-/* Rotate arrow when submenu is open */
-.sidebar-nav li.has-submenu.active > a.neon-link::after,
-.sidebar-nav li.has-submenu:hover > a.neon-link::after {
-  transform: rotate(90deg);
+.sidebar-nav .has-submenu.active > a.neon-link i,
+.sidebar-nav .has-submenu:hover > a.neon-link i {
+  transform: rotate(180deg);
 }
 
-/* Dropdown Menu Visibility */
-.sidebar-nav ul ul {
-  display: none; /* Hide all submenus by default */
-  background-color: #222; /* Slightly lighter for differentiation */
+/* Dropdown Menu Styling */
+.dropdown {
+  list-style-type: none;
+  padding-left: 20px;
+  background-color: var(--light-bg);
+  display: none;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.sidebar-nav ul ul ul {
-  left: 100%;
-  top: 0;
-  /* Position deeper submenus to the right */
+.has-submenu.active > .dropdown,
+.has-submenu:hover > .dropdown {
+  display: block;
 }
 
-.sidebar-nav li.has-submenu:hover > ul,
-.sidebar-nav li.has-submenu.active > ul {
-  display: block; /* Show submenu on hover or when active */
+/* Nested Dropdowns */
+.dropdown .has-submenu > a.neon-link {
+  padding-left: 30px;
 }
 
-/* Styling for nested submenu links */
-.sidebar-nav ul ul a.neon-link {
-  padding-left: 40px; /* Indent for visual hierarchy */
-}
-
-/* Further indentation for deeper levels */
-.sidebar-nav ul ul ul a.neon-link {
-  padding-left: 60px;
+.dropdown .dropdown {
+  padding-left: 20px;
 }
 
 /* Responsive Styling */
 @media (max-width: 991px) {
+  /* Sidebar Hidden by Default */
   .neon-sidebar {
+    transform: translateX(-100%);
+  }
+  
+  /* Show Sidebar when Active */
+  .neon-sidebar.active {
+    transform: translateX(0);
+  }
+  
+  /* Show Hamburger Menu */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  /* Overlay Effect when Sidebar is Active */
+  body.active-sidebar::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    position: relative;
-    box-shadow: none;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
-
-  .sidebar-nav ul ul {
+  
+  /* Adjust Dropdown Positioning */
+  .dropdown {
     position: static;
-  }
-
-  /* Change arrow indicators for mobile */
-  .sidebar-nav li.has-submenu > a.neon-link::after {
-    content: "▼"; /* Downward arrow */
-    transform: rotate(0deg);
-  }
-
-  .sidebar-nav li.has-submenu.active > a.neon-link::after,
-  .sidebar-nav li.has-submenu:hover > a.neon-link::after {
-    content: "▲"; /* Upward arrow */
-  }
-
-  /* Show submenus when active */
-  .sidebar-nav ul ul {
-    display: none;
-  }
-
-  .sidebar-nav li.has-submenu.active > ul {
-    display: block;
-  }
-
-  /* Toggle submenu on click */
-  .sidebar-nav a.neon-link {
-    padding-left: 20px;
-  }
-
-  .sidebar-nav ul ul a.neon-link {
-    padding-left: 40px;
-  }
-
-  .sidebar-nav ul ul ul a.neon-link {
-    padding-left: 60px;
   }
 }
 
-/* Scrollbar Styling (optional for better aesthetics) */
+/* Main Content Styling */
+main {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+@media (max-width: 991px) {
+  main {
+    margin-left: 0;
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 60px 20px;
+  background-color: #111;
+  color: var(--neon-blue);
+}
+
+section:nth-of-type(even) {
+  background-color: #222;
+}
+
+section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--neon-hover);
+}
+
+section hr {
+  border: 0;
+  height: 2px;
+  background: var(--neon-hover);
+  margin-bottom: 20px;
+}
+
+.neon-button {
+  background-color: var(--button-bg);
+  color: var(--neon-blue);
+  padding: 10px 20px;
+  border: 2px solid var(--neon-blue);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+}
+
+.neon-button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--dark-bg);
+}
+
+/* Project and Track Styling */
+.project, .track {
+  margin-bottom: 20px;
+}
+
+.project img, .track img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--neon-blue);
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project img:hover, .track img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+/* Contact Form Styling */
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact label {
+  margin-bottom: 5px;
+  color: var(--neon-blue);
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid var(--neon-blue);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--neon-blue);
+}
+
+.contact input:focus, .contact textarea:focus {
+  outline: none;
+  border-color: var(--neon-hover);
+}
+
+/* Footer Styling */
+footer {
+  background-color: #111;
+  padding: 20px;
+  color: var(--neon-blue);
+  text-align: center;
+}
+
+footer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+footer td {
+  padding: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--neon-blue);
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--neon-hover);
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+footer img:hover {
+  transform: scale(1.1);
+}
+
+/* Scrollbar Styling (optional) */
 .neon-sidebar::-webkit-scrollbar {
   width: 8px;
 }
 
 .neon-sidebar::-webkit-scrollbar-track {
-  background: #111;
+  background: var(--dark-bg);
 }
 
 .neon-sidebar::-webkit-scrollbar-thumb {
-  background-color: #00eaff;
+  background-color: var(--neon-blue);
   border-radius: 4px;
-}
-
-/* Optional: Transition for smooth dropdowns */
-.sidebar-nav ul ul {
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-}
-
-.sidebar-nav li.has-submenu.active > ul,
-.sidebar-nav li.has-submenu:hover > ul {
-  max-height: 1000px; /* Arbitrary large value for max-height */
-  opacity: 1;
-}
-
-/* Optional: Adjust z-index to ensure dropdowns appear above other elements */
-.sidebar-nav ul ul {
-  z-index: 1000;
 }
 
 /* Accessibility Enhancements */
 .sidebar-nav a.neon-link:focus {
-  background-color: #00eaff;
-  color: #111;
+  background-color: var(--neon-hover);
+  color: var(--dark-bg);
 }
