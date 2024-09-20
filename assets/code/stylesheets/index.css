@@ -28,14 +28,14 @@ body {
 .menu-toggle.neon-toggle {
   position: fixed;
   top: 20px;
-  left: 20px; /* Positioned on the left */
+  left: 20px;
   z-index: 1100;
   width: 50px;
   height: 50px;
   background-color: var(--dark-bg);
   border: 3px solid var(--neon-blue);
   border-radius: 50%;
-  display: none; /* Hidden by default */
+  display: none; /* Hidden by default on desktop */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -113,10 +113,16 @@ body {
   .container {
     flex-direction: row; /* Side by side on desktop */
   }
+
   .neon-sidebar {
     transform: translateX(0);
     position: relative; /* Position relative within the container */
     height: auto; /* Let the sidebar height adjust naturally */
+  }
+
+  /* Main Content fills remaining width */
+  main {
+    flex: 1;
   }
 }
 
@@ -124,7 +130,6 @@ body {
 main {
   flex: 1; /* Allow main content to fill remaining space */
   padding: 20px;
-  margin-left: 0;
   transition: margin-left 0.3s ease-in-out;
 }
 
@@ -148,10 +153,6 @@ body.active-sidebar main {
   /* Main Content Adjustment on Mobile */
   .container {
     flex-direction: column;
-  }
-  
-  main {
-    margin-left: 0;
   }
 
   .neon-sidebar {

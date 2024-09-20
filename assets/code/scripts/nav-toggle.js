@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.addEventListener('click', toggleSidebar);
   }
 
-  // Optional: Close the sidebar when a navigation link is clicked (useful for single-page applications)
+  // Optional: Close the sidebar when a navigation link is clicked
   const navLinks = document.querySelectorAll('.sidebar-nav a.neon-link');
   navLinks.forEach(link => {
       link.addEventListener('click', function () {
