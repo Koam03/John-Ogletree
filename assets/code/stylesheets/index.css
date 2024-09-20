@@ -23,21 +23,21 @@ body {
   padding: 0;
   background-color: #000;
   color: white;
-  transition: margin-left 0.3s ease-in-out;
+  transition: margin-right 0.3s ease-in-out;
 }
 
 /* Neon Menu Toggle Button */
 .menu-toggle.neon-toggle {
   position: fixed;
   top: 20px;
-  right: 20px; /* Changed from left: 20px to right: 20px */
+  right: 20px; /* Moved to the right */
   z-index: 1100;
   width: 50px;
   height: 50px;
   background-color: var(--dark-bg);
   border: 3px solid var(--neon-blue);
   border-radius: 50%;
-  display: flex;
+  display: none; /* Hidden on larger screens */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -90,10 +90,10 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -250px; /* Changed from left: -250px to right: -250px */
+  right: -250px; /* Hidden by default on the right */
   overflow-y: auto;
   padding-top: 20px;
-  transition: right 0.3s ease-in-out; /* Changed transition property */
+  transition: right 0.3s ease-in-out; /* Transition from right */
   z-index: 1050;
 
   /* Neon Glow Effect */
@@ -103,7 +103,7 @@ body {
 }
 
 .neon-sidebar.active {
-  right: 0; /* Changed from left: 0 to right: 0 */
+  right: 0; /* Slide in from the right */
 }
 
 /* Logo Styling */
@@ -215,27 +215,44 @@ body {
     visibility: visible;
   }
 
-  /* Main Content Adjustment */
+  /* Main Content Adjustment on Mobile */
   main {
-    margin-left: 0;
-    margin-right: 0; /* Remove any right margin */
+    margin-right: 10px; /* Slight margin when sidebar is closed */
   }
 }
 
-/* Larger Screens */
+/* Large Screens Styling */
 @media (min-width: 992px) {
   /* Adjust Main Content to Account for Sidebar on the Right */
   main {
-    margin-right: 250px; /* Accommodate the sidebar on the right */
+    margin-right: 250px; /* Sidebar width */
+  }
+
+  /* Sidebar should be visible by default on larger screens */
+  .neon-sidebar {
+    right: 0;
+  }
+
+  /* Hide the menu toggle on larger screens */
+  .menu-toggle.neon-toggle {
+    display: none;
+  }
+
+  /* Overlay should not be visible on larger screens */
+  .overlay {
+    display: none;
   }
 }
 
 /* Main Content Styling */
 main {
-  margin-left: 0; /* Changed from 250px to 0 */
-  margin-right: 0; /* Add this to ensure no margin on smaller screens */
+  margin-right: 10px; /* Default margin when sidebar is closed */
   padding: 20px;
-  transition: margin 0.3s ease-in-out;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+body.active-sidebar main {
+  margin-right: 250px; /* Sidebar width when active */
 }
 
 /* Section Styling */
