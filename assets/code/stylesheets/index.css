@@ -245,7 +245,7 @@ body {
 
 /* Main Content Styling */
 main {
-  margin-left: 100px; /* Default margin when sidebar is closed */
+  margin-left: 300px; /* Default margin when sidebar is closed */
   padding: 20px;
   transition: margin-left 0.3s ease-in-out;
 }
