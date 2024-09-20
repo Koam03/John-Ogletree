@@ -86,7 +86,7 @@ body {
 
 /* Sidebar Styling */
 .neon-sidebar {
-  width: 250px;
+  width: 250px; /* Sidebar width */
   background-color: var(--dark-bg);
   height: 100vh;
   position: fixed;
@@ -241,7 +241,7 @@ body {
 
   /* Main Content Adjustment on Desktop */
   main {
-    margin-left: 924px; /* Adjust for sidebar width */
+    margin-left: 250px; /* Adjust for sidebar width */
   }
 }
 
