@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
       sidebar.classList.toggle('active');
       overlay.classList.toggle('active');
       menuToggle.classList.toggle('active');
-      body.classList.toggle('active-sidebar'); // Toggle class on body for main content margin
+      body.classList.toggle('active-sidebar'); // Toggle class on body for main content adjustments
 
       // Update ARIA attributes
       const isExpanded = menuToggle.classList.contains('active');
