@@ -38,7 +38,7 @@ body {
   background-color: var(--dark-bg);
   border: 3px solid var(--neon-blue);
   border-radius: 50%;
-  display: none; /* Hidden on larger screens */
+  display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -91,20 +91,27 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: -250px; /* Hidden by default on the left */
+  left: 0; /* Sidebar is visible by default on larger screens */
   overflow-y: auto;
   padding-top: 20px;
-  transition: left 0.3s ease-in-out; /* Transition from left */
+  transition: transform 0.3s ease-in-out; /* Use transform for smoother animations */
   z-index: 1050;
+  transform: translateX(0); /* Sidebar is visible by default */
 
   /* Neon Glow Effect */
-  box-shadow: 0 0 10px var(--neon-blue), 
-              0 0 20px var(--neon-blue), 
+  box-shadow: 0 0 10px var(--neon-blue),
+              0 0 20px var(--neon-blue),
               0 0 30px var(--neon-blue);
 }
 
-.neon-sidebar.active {
-  left: 0; /* Slide in from the left */
+/* Sidebar hidden by default on mobile */
+@media (max-width: 991px) {
+  .neon-sidebar {
+    transform: translateX(-100%); /* Hide the sidebar off-screen */
+  }
+  .neon-sidebar.active {
+    transform: translateX(0); /* Show the sidebar */
+  }
 }
 
 /* Logo Styling */
@@ -195,21 +202,11 @@ body {
 
 /* Responsive Styling */
 @media (max-width: 991px) {
-  /* Sidebar Hidden by Default on Mobile */
-  .neon-sidebar {
-    left: -250px; /* Ensure it's hidden on the left */
-  }
-  
-  /* Show Sidebar when Active */
-  .neon-sidebar.active {
-    left: 0;
-  }
-
   /* Show Hamburger Menu on Mobile */
   .menu-toggle.neon-toggle {
     display: flex;
   }
-  
+
   /* Overlay Effect when Sidebar is Active */
   .overlay.active {
     opacity: 1;
@@ -218,24 +215,18 @@ body {
 
   /* Main Content Adjustment on Mobile */
   main {
-    margin-left: 10px; /* Slight margin when sidebar is closed */
+    margin-left: 0; /* No margin on mobile when sidebar is hidden */
   }
 
-  /* Adjust main content when sidebar is active on mobile */
   body.active-sidebar main {
-    margin-left: 250px;
+    margin-left: 0; /* Content doesn't shift on mobile when sidebar is open */
   }
 }
 
 @media (min-width: 992px) {
-  /* Adjust Main Content to Account for Sidebar on the Left */
-  main {
-    margin-left: 250px; /* Sidebar width */
-  }
-
-  /* Sidebar should be visible by default on larger screens */
+  /* Sidebar is visible by default */
   .neon-sidebar {
-    left: 0;
+    transform: translateX(0);
   }
 
   /* Hide the menu toggle on larger screens */
@@ -247,11 +238,15 @@ body {
   .overlay {
     display: none;
   }
+
+  /* Main Content Adjustment on Desktop */
+  main {
+    margin-left: 250px; /* Adjust for sidebar width */
+  }
 }
 
 /* Main Content Styling */
 main {
-  margin-left: 10px; /* Default margin when sidebar is closed */
   padding: 20px;
   transition: margin-left 0.3s ease-in-out;
 }
@@ -305,11 +300,13 @@ section hr {
 }
 
 /* Project and Track Styling */
-.project, .track {
+.project,
+.track {
   margin-bottom: 20px;
 }
 
-.project img, .track img {
+.project img,
+.track img {
   width: 100%;
   height: auto;
   border: 2px solid var(--neon-blue);
@@ -317,7 +314,8 @@ section hr {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project img:hover, .track img:hover {
+.project img:hover,
+.track img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
 }
@@ -333,7 +331,8 @@ section hr {
   color: var(--neon-blue);
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
   padding: 10px;
   margin-bottom: 15px;
   border: 2px solid var(--neon-blue);
@@ -347,7 +346,8 @@ section hr {
   color: var(--neon-hover);
 }
 
-.contact input:focus, .contact textarea:focus {
+.contact input:focus,
+.contact textarea:focus {
   outline: none;
   border-color: var(--neon-hover);
 }

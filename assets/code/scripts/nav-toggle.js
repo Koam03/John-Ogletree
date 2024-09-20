@@ -17,10 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Event listener for menu toggle button
-  menuToggle.addEventListener('click', toggleSidebar);
+  if (menuToggle) {
+    menuToggle.addEventListener('click', toggleSidebar);
+  }
 
   // Event listener for overlay click to close the sidebar
-  overlay.addEventListener('click', toggleSidebar);
+  if (overlay) {
+    overlay.addEventListener('click', toggleSidebar);
+  }
 
   // Optional: Close the sidebar when a navigation link is clicked (useful for single-page applications)
   const navLinks = document.querySelectorAll('.sidebar-nav a.neon-link');
