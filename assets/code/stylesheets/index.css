@@ -293,6 +293,7 @@ section hr {
   padding: 10px 20px;
   border: 2px solid var(--neon-blue);
   border-radius: 5px;
+  margin-top: 10px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
