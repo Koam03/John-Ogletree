@@ -251,7 +251,7 @@ main {
 }
 
 body.active-sidebar main {
-  margin-left: 350px; /* Sidebar width when active */
+  margin-left: 250px; /* Sidebar width when active */
 }
 
 /* Section Styling */
