@@ -22,7 +22,6 @@
 body {
   background-color: #000;
   color: white;
-  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Neon Menu Toggle Button */
@@ -36,7 +35,7 @@ body {
   background-color: var(--dark-bg);
   border: 3px solid var(--neon-blue);
   border-radius: 50%;
-  display: none; /* Hidden by default on desktop */
+  display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -114,28 +113,10 @@ body {
   .container {
     flex-direction: row; /* Side by side on desktop */
   }
-
   .neon-sidebar {
-    transform: translateX(0); /* Show sidebar */
+    transform: translateX(0);
     position: relative; /* Position relative within the container */
     height: auto; /* Let the sidebar height adjust naturally */
-    box-shadow: none; /* Remove shadow to prevent overlayer */
-  }
-
-  /* Main Content fills remaining width */
-  main {
-    flex: 1;
-    margin-left: 0; /* Remove any margin */
-  }
-
-  /* Hide the menu toggle on larger screens */
-  .menu-toggle.neon-toggle {
-    display: none;
-  }
-
-  /* Overlay should not be visible on larger screens */
-  .overlay {
-    display: none;
   }
 }
 
@@ -143,17 +124,13 @@ body {
 main {
   flex: 1; /* Allow main content to fill remaining space */
   padding: 20px;
+  margin-left: 0;
   transition: margin-left 0.3s ease-in-out;
 }
 
 /* When sidebar is active on mobile */
 body.active-sidebar .neon-sidebar {
   transform: translateX(0);
-}
-
-body.active-sidebar .overlay {
-  opacity: 1;
-  visibility: visible;
 }
 
 body.active-sidebar main {
@@ -168,18 +145,18 @@ body.active-sidebar main {
     display: flex;
   }
 
-  /* Ensure sidebar covers the full height and overlays content */
-  .neon-sidebar {
-    position: fixed;
-    height: 100vh;
-    box-shadow: 0 0 10px var(--neon-blue),
-                0 0 20px var(--neon-blue),
-                0 0 30px var(--neon-blue);
-  }
-
   /* Main Content Adjustment on Mobile */
   .container {
     flex-direction: column;
+  }
+  
+  main {
+    margin-left: 0;
+  }
+
+  .neon-sidebar {
+    position: fixed;
+    height: 100vh;
   }
 }
 
