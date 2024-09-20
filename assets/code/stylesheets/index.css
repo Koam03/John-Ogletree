@@ -69,7 +69,6 @@ body {
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
 }
 
-/* Hamburger Menu Styling */
 .menu-toggle {
   display: none;
   position: absolute;
