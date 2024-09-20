@@ -14,6 +14,7 @@
   --neon-hover: #00c4ff;
   --button-bg: rgba(0, 234, 255, 0.2);
   --button-hover-bg: rgba(0, 234, 255, 0.4);
+  --overlay-bg: rgba(0, 0, 0, 0.7);
 }
 
 /* Body Styling */
@@ -25,6 +26,63 @@ body {
   transition: margin-left 0.3s ease-in-out;
 }
 
+/* Neon Menu Toggle Button */
+.menu-toggle.neon-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  width: 50px;
+  height: 50px;
+  background-color: var(--dark-bg);
+  border: 3px solid var(--neon-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s;
+  box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.menu-toggle.neon-toggle:hover {
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+.menu-toggle.neon-toggle.active {
+  background-color: var(--neon-blue);
+  transform: rotate(90deg);
+}
+
+.menu-toggle.neon-toggle i {
+  color: #fff;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.menu-toggle.neon-toggle.active i {
+  color: var(--dark-bg);
+}
+
+/* Overlay Styling */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-bg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Sidebar Styling */
 .neon-sidebar {
   width: 250px;
@@ -32,16 +90,20 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -250px; /* Hidden by default */
   overflow-y: auto;
   padding-top: 20px;
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  z-index: 1050;
 
   /* Neon Glow Effect */
   box-shadow: 0 0 10px var(--neon-blue), 
               0 0 20px var(--neon-blue), 
               0 0 30px var(--neon-blue);
+}
+
+.neon-sidebar.active {
+  left: 0;
 }
 
 /* Logo Styling */
@@ -67,33 +129,6 @@ body {
 .neon-sidebar .logo img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-}
-
-/* Menu Toggle Styling */
-.menu-toggle {
-  display: none;
-  position: absolute;
-  top: 15px;
-  right: -45px;
-  background-color: var(--dark-bg);
-  color: var(--neon-blue);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  display: flex;
-}
-
-.menu-toggle.active {
-  background-color: var(--neon-blue);
-  color: var(--dark-bg);
-}
-
-.menu-toggle i {
-  font-size: 1.2rem;
 }
 
 /* Navigation Menu Styling */
@@ -159,37 +194,25 @@ body {
 
 /* Responsive Styling */
 @media (max-width: 991px) {
-  /* Sidebar Hidden by Default */
+  /* Sidebar Hidden by Default on Mobile */
   .neon-sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    left: -250px;
   }
   
   /* Show Sidebar when Active */
   .neon-sidebar.active {
-    transform: translateX(0);
+    left: 0;
   }
 
-  /* Show Hamburger Menu */
-  .menu-toggle {
+  /* Show Hamburger Menu on Mobile */
+  .menu-toggle.neon-toggle {
     display: flex;
   }
   
   /* Overlay Effect when Sidebar is Active */
-  body.active-sidebar::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-
-  /* Adjust Dropdown Positioning */
-  .dropdown {
-    position: static;
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
   }
 
   /* Main Content Adjustment */
@@ -289,6 +312,11 @@ section hr {
   border-radius: 5px;
   background-color: transparent;
   color: var(--neon-blue);
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: var(--neon-hover);
 }
 
 .contact input:focus, .contact textarea:focus {
