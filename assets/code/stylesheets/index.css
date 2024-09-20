@@ -14,6 +14,7 @@
   --neon-hover: #00c4ff;
   --button-bg: rgba(0, 234, 255, 0.2);
   --button-hover-bg: rgba(0, 234, 255, 0.4);
+  --button-margin-top: 20px;
   --overlay-bg: rgba(0, 0, 0, 0.7);
 }
 
@@ -170,20 +171,18 @@ body {
 }
 
 /* Dropdown Menu Styling */
-/* Add to your CSS */
 .dropdown {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  list-style-type: none;
+  padding-left: 20px;
+  background-color: var(--light-bg);
+  display: none;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .has-submenu.active > .dropdown,
 .has-submenu:hover > .dropdown {
-  max-height: 1000px; /* A sufficiently large value to accommodate content */
-  opacity: 1;
+  display: block;
 }
-
 
 /* Nested Dropdowns */
 .dropdown .has-submenu > a.neon-link {
@@ -221,10 +220,6 @@ body {
   main {
     margin-left: 10px; /* Slight margin when sidebar is closed */
   }
-
-  body.active-sidebar main {
-    margin-left: 250px; /* Sidebar width when active */
-  }
 }
 
 @media (min-width: 992px) {
@@ -246,11 +241,6 @@ body {
   /* Overlay should not be visible on larger screens */
   .overlay {
     display: none;
-  }
-
-  /* Main Content when Sidebar is Always Visible */
-  body.active-sidebar main {
-    margin-left: 250px; /* Maintain sidebar width */
   }
 }
 
