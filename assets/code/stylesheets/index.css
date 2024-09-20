@@ -24,13 +24,14 @@ body {
   padding: 0;
   background-color: #000;
   color: white;
+  transition: margin-left 0.3s ease-in-out;
 }
 
 /* Neon Menu Toggle Button */
 .menu-toggle.neon-toggle {
   position: fixed;
   top: 20px;
-  left: 20px;
+  left: 20px; /* Positioned on the left */
   z-index: 1100;
   width: 50px;
   height: 50px;
@@ -219,6 +220,11 @@ body {
   main {
     margin-left: 10px; /* Slight margin when sidebar is closed */
   }
+
+  /* Adjust main content when sidebar is active on mobile */
+  body.active-sidebar main {
+    margin-left: 250px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -248,10 +254,6 @@ main {
   margin-left: 10px; /* Default margin when sidebar is closed */
   padding: 20px;
   transition: margin-left 0.3s ease-in-out;
-}
-
-body.active-sidebar main {
-  margin-left: 250px; /* Sidebar width when active */
 }
 
 /* Section Styling */
