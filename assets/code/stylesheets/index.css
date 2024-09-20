@@ -56,17 +56,6 @@ body {
   color: var(--dark-bg);
 }
 
-
-.menu-toggle.neon-toggle i {
-  color: #fff;
-  font-size: 18px; /* Reduced icon size */
-  transition: color 0.3s;
-}
-
-.menu-toggle.neon-toggle.active i {
-  color: var(--dark-bg);
-}
-
 /* Overlay Styling */
 .overlay {
   position: fixed;
@@ -245,6 +234,7 @@ section hr {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  margin-top: var(--button-margin-top); /* Added top margin */
 }
 
 .neon-button:hover {
