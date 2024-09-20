@@ -30,11 +30,11 @@ body {
 /* Neon Menu Toggle Button */
 .menu-toggle.neon-toggle {
   position: fixed;
-  top: 50px; /* Adjusted to avoid blocking the header */
+  top: 60px; /* Adjusted to sit below the logo */
   left: 20px;
   z-index: 1100;
-  width: 24px; /* Reduced width */
-  height: 24px; /* Reduced height */
+  width: 24px; /* Smaller button size */
+  height: 24px; /* Smaller button size */
   background-color: var(--dark-bg);
   border: 3px solid var(--neon-blue);
   border-radius: 50%;
@@ -46,14 +46,16 @@ body {
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
 }
 
-.menu-toggle.neon-toggle:hover {
-  box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+.menu-toggle.neon-toggle i {
+  color: #fff;
+  font-size: 18px; /* Smaller icon size */
+  transition: color 0.3s;
 }
 
-.menu-toggle.neon-toggle.active {
-  background-color: var(--neon-blue);
-  transform: rotate(90deg);
+.menu-toggle.neon-toggle.active i {
+  color: var(--dark-bg);
 }
+
 
 .menu-toggle.neon-toggle i {
   color: #fff;
