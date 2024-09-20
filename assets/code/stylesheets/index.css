@@ -81,19 +81,26 @@ body {
   visibility: visible;
 }
 
+/* Flex Container */
+.container {
+  display: flex;
+  flex-direction: column; /* Stack on mobile by default */
+  min-height: 100vh; /* Ensure the container covers full height */
+}
+
 /* Sidebar Styling */
 .neon-sidebar {
   width: 250px; /* Sidebar width */
   background-color: var(--dark-bg);
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0; /* Sidebar is visible by default on larger screens */
   overflow-y: auto;
   padding-top: 20px;
   transition: transform 0.3s ease-in-out;
   z-index: 1050;
-  transform: translateX(0); /* Sidebar is visible by default */
+  transform: translateX(-100%); /* Hidden by default on mobile */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
 
   /* Neon Glow Effect */
   box-shadow: 0 0 10px var(--neon-blue),
@@ -101,152 +108,56 @@ body {
               0 0 30px var(--neon-blue);
 }
 
-/* Sidebar hidden by default on mobile */
-@media (max-width: 991px) {
+/* Sidebar visible by default on desktop */
+@media (min-width: 992px) {
+  .container {
+    flex-direction: row; /* Side by side on desktop */
+  }
   .neon-sidebar {
-    transform: translateX(-100%); /* Hide the sidebar off-screen */
+    transform: translateX(0);
+    position: relative; /* Position relative within the container */
+    height: auto; /* Let the sidebar height adjust naturally */
   }
-  .neon-sidebar.active {
-    transform: translateX(0); /* Show the sidebar */
-  }
 }
 
-/* Logo Styling */
-.neon-sidebar .logo {
-  text-align: center;
-  margin-bottom: 30px;
+/* Main Content Styling */
+main {
+  flex: 1; /* Allow main content to fill remaining space */
+  padding: 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
 }
 
-.neon-sidebar .logo h1 {
-  color: var(--neon-blue);
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+/* When sidebar is active on mobile */
+body.active-sidebar .neon-sidebar {
+  transform: translateX(0);
 }
 
-.neon-sidebar .logo img {
-  max-width: 80%;
-  height: auto;
-  border: 2px solid var(--neon-blue);
-  border-radius: 50%;
-  transition: transform 0.3s, box-shadow 0.3s;
+body.active-sidebar main {
+  /* Optional: prevent scrolling when sidebar is open */
+  overflow: hidden;
 }
 
-.neon-sidebar .logo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-}
-
-/* Navigation Menu Styling */
-.sidebar-nav {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar-nav li {
-  position: relative;
-}
-
-.sidebar-nav a.neon-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  color: var(--neon-blue);
-  text-decoration: none;
-  transition: background 0.3s, color 0.3s;
-  position: relative;
-}
-
-.sidebar-nav a.neon-link:hover,
-.sidebar-nav a.neon-link:focus {
-  background-color: var(--neon-hover);
-  color: var(--dark-bg);
-  outline: none;
-}
-
-/* Dropdown Indicators */
-.sidebar-nav .has-submenu > a.neon-link i {
-  transition: transform 0.3s;
-}
-
-.sidebar-nav .has-submenu.active > a.neon-link i,
-.sidebar-nav .has-submenu:hover > a.neon-link i {
-  transform: rotate(180deg);
-}
-
-/* Dropdown Menu Styling */
-.dropdown {
-  list-style-type: none;
-  padding-left: 20px;
-  background-color: var(--light-bg);
-  display: none;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.has-submenu.active > .dropdown,
-.has-submenu:hover > .dropdown {
-  display: block;
-}
-
-/* Nested Dropdowns */
-.dropdown .has-submenu > a.neon-link {
-  padding-left: 30px;
-}
-
-.dropdown .dropdown {
-  padding-left: 20px;
-}
-
-/* Responsive Styling */
+/* Responsive Adjustments */
 @media (max-width: 991px) {
   /* Show Hamburger Menu on Mobile */
   .menu-toggle.neon-toggle {
     display: flex;
   }
 
-  /* Overlay Effect when Sidebar is Active */
-  .overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-
   /* Main Content Adjustment on Mobile */
+  .container {
+    flex-direction: column;
+  }
+  
   main {
-    margin-left: 0; /* No margin on mobile when sidebar is hidden */
+    margin-left: 0;
   }
 
-  body.active-sidebar main {
-    margin-left: 0; /* Content doesn't shift on mobile when sidebar is open */
-  }
-}
-
-@media (min-width: 992px) {
-  /* Sidebar is visible by default */
   .neon-sidebar {
-    transform: translateX(0);
+    position: fixed;
+    height: 100vh;
   }
-
-  /* Hide the menu toggle on larger screens */
-  .menu-toggle.neon-toggle {
-    display: none;
-  }
-
-  /* Overlay should not be visible on larger screens */
-  .overlay {
-    display: none;
-  }
-
-  /* Main Content Adjustment on Desktop */
-  main {
-    margin-left: 250px; /* Adjust for sidebar width */
-    padding-left: 0; /* Remove left padding to eliminate gap */
-  }
-}
-
-/* Main Content Styling */
-main {
-  padding: 20px;
-  margin-left: 0; /* Ensure no unintended left margin */
 }
 
 /* Section Styling */
