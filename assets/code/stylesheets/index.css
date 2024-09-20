@@ -38,7 +38,7 @@
     background-color: var(--dark-bg);
     border: 3px solid var(--neon-blue);
     border-radius: 50%;
-    display: none; /* Hidden on larger screens */
+    display: flex; /* Always display the toggle */
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -91,7 +91,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default on the left */
+    left: -250px; /* Hidden by default on all screens */
     overflow-y: auto;
     padding-top: 20px;
     transition: left 0.3s ease-in-out; /* Transition from left */
@@ -194,55 +194,7 @@
   }
   
   /* Responsive Styling */
-  @media (max-width: 991px) {
-    /* Sidebar Hidden by Default on Mobile */
-    .neon-sidebar {
-      left: -250px; /* Ensure it's hidden on the left */
-    }
-    
-    /* Show Sidebar when Active */
-    .neon-sidebar.active {
-      left: 0;
-    }
-  
-    /* Show Hamburger Menu on Mobile */
-    .menu-toggle.neon-toggle {
-      display: flex;
-    }
-    
-    /* Overlay Effect when Sidebar is Active */
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-  
-    /* Main Content Adjustment on Mobile */
-    main {
-      margin-left: 10px; /* Slight margin when sidebar is closed */
-    }
-  }
-  
-  @media (min-width: 992px) {
-    /* Adjust Main Content to Account for Sidebar on the Left */
-    main {
-      margin-left: 250px; /* Sidebar width */
-    }
-  
-    /* Sidebar should be visible by default on larger screens */
-    .neon-sidebar {
-      left: 0;
-    }
-  
-    /* Hide the menu toggle on larger screens */
-    .menu-toggle.neon-toggle {
-      display: none;
-    }
-  
-    /* Overlay should not be visible on larger screens */
-    .overlay {
-      display: none;
-    }
-  }
+  /* Removed the min-width: 992px media query */
   
   /* Main Content Styling */
   main {
