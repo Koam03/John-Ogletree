@@ -14,6 +14,7 @@
   --neon-hover: #00c4ff;
   --button-bg: rgba(0, 234, 255, 0.2);
   --button-hover-bg: rgba(0, 234, 255, 0.4);
+  --button-margin-top: 20px;
   --overlay-bg: rgba(0, 0, 0, 0.7);
 }
 
@@ -23,14 +24,14 @@ body {
   padding: 0;
   background-color: #000;
   color: white;
-  transition: margin-right 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out;
 }
 
 /* Neon Menu Toggle Button */
 .menu-toggle.neon-toggle {
   position: fixed;
   top: 20px;
-  right: 20px; /* Moved to the right */
+  left: 20px; /* Positioned on the left */
   z-index: 1100;
   width: 50px;
   height: 50px;
@@ -90,10 +91,10 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -250px; /* Hidden by default on the right */
+  left: -250px; /* Hidden by default on the left */
   overflow-y: auto;
   padding-top: 20px;
-  transition: right 0.3s ease-in-out; /* Transition from right */
+  transition: left 0.3s ease-in-out; /* Transition from left */
   z-index: 1050;
 
   /* Neon Glow Effect */
@@ -103,7 +104,7 @@ body {
 }
 
 .neon-sidebar.active {
-  right: 0; /* Slide in from the right */
+  left: 0; /* Slide in from the left */
 }
 
 /* Logo Styling */
@@ -196,12 +197,12 @@ body {
 @media (max-width: 991px) {
   /* Sidebar Hidden by Default on Mobile */
   .neon-sidebar {
-    right: -250px; /* Ensure it's hidden on the right */
+    left: -250px; /* Ensure it's hidden on the left */
   }
   
   /* Show Sidebar when Active */
   .neon-sidebar.active {
-    right: 0;
+    left: 0;
   }
 
   /* Show Hamburger Menu on Mobile */
@@ -217,20 +218,19 @@ body {
 
   /* Main Content Adjustment on Mobile */
   main {
-    margin-right: 10px; /* Slight margin when sidebar is closed */
+    margin-left: 10px; /* Slight margin when sidebar is closed */
   }
 }
 
-/* Large Screens Styling */
 @media (min-width: 992px) {
-  /* Adjust Main Content to Account for Sidebar on the Right */
+  /* Adjust Main Content to Account for Sidebar on the Left */
   main {
-    margin-right: 250px; /* Sidebar width */
+    margin-left: 250px; /* Sidebar width */
   }
 
   /* Sidebar should be visible by default on larger screens */
   .neon-sidebar {
-    right: 0;
+    left: 0;
   }
 
   /* Hide the menu toggle on larger screens */
@@ -246,13 +246,13 @@ body {
 
 /* Main Content Styling */
 main {
-  margin-right: 10px; /* Default margin when sidebar is closed */
+  margin-left: 10px; /* Default margin when sidebar is closed */
   padding: 20px;
-  transition: margin-right 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out;
 }
 
 body.active-sidebar main {
-  margin-right: 250px; /* Sidebar width when active */
+  margin-left: 250px; /* Sidebar width when active */
 }
 
 /* Section Styling */
@@ -293,7 +293,6 @@ section hr {
   padding: 10px 20px;
   border: 2px solid var(--neon-blue);
   border-radius: 5px;
-  margin-top: 30px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
