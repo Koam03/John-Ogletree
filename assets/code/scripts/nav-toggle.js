@@ -1,31 +1,27 @@
-// Update your JavaScript to trap focus within the sidebar when it's active
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.getElementById('menuToggle');
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('overlay');
   const body = document.body;
 
+  // Function to toggle the sidebar
   function toggleSidebar() {
       sidebar.classList.toggle('active');
       overlay.classList.toggle('active');
       menuToggle.classList.toggle('active');
 
+      // Update ARIA attributes
       const isExpanded = menuToggle.classList.contains('active');
       menuToggle.setAttribute('aria-expanded', isExpanded);
-
-      if (isExpanded) {
-          // Focus on the first link in the sidebar
-          const firstLink = sidebar.querySelector('.sidebar-nav a.neon-link');
-          firstLink.focus();
-      } else {
-          // Return focus to the menu toggle button
-          menuToggle.focus();
-      }
   }
 
+  // Event listener for menu toggle button
   menuToggle.addEventListener('click', toggleSidebar);
+
+  // Event listener for overlay click to close the sidebar
   overlay.addEventListener('click', toggleSidebar);
 
+  // Optional: Close the sidebar when a navigation link is clicked (for single-page applications)
   const navLinks = document.querySelectorAll('.sidebar-nav a.neon-link');
   navLinks.forEach(link => {
       link.addEventListener('click', function () {
@@ -35,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-  // Close sidebar with Esc key
+  // Optional: Close sidebar with Esc key
   document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && sidebar.classList.contains('active')) {
           toggleSidebar();

@@ -30,7 +30,7 @@ body {
 .menu-toggle.neon-toggle {
   position: fixed;
   top: 20px;
-  left: 20px;
+  right: 20px; /* Changed from left: 20px to right: 20px */
   z-index: 1100;
   width: 50px;
   height: 50px;
@@ -90,10 +90,10 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: -250px; /* Hidden by default */
+  right: -250px; /* Changed from left: -250px to right: -250px */
   overflow-y: auto;
   padding-top: 20px;
-  transition: left 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out; /* Changed transition property */
   z-index: 1050;
 
   /* Neon Glow Effect */
@@ -103,7 +103,7 @@ body {
 }
 
 .neon-sidebar.active {
-  left: 0;
+  right: 0; /* Changed from left: 0 to right: 0 */
 }
 
 /* Logo Styling */
@@ -196,12 +196,12 @@ body {
 @media (max-width: 991px) {
   /* Sidebar Hidden by Default on Mobile */
   .neon-sidebar {
-    left: -250px;
+    right: -250px; /* Ensure it's hidden on the right */
   }
   
   /* Show Sidebar when Active */
   .neon-sidebar.active {
-    left: 0;
+    right: 0;
   }
 
   /* Show Hamburger Menu on Mobile */
@@ -218,14 +218,24 @@ body {
   /* Main Content Adjustment */
   main {
     margin-left: 0;
+    margin-right: 0; /* Remove any right margin */
+  }
+}
+
+/* Larger Screens */
+@media (min-width: 992px) {
+  /* Adjust Main Content to Account for Sidebar on the Right */
+  main {
+    margin-right: 250px; /* Accommodate the sidebar on the right */
   }
 }
 
 /* Main Content Styling */
 main {
-  margin-left: 250px;
+  margin-left: 0; /* Changed from 250px to 0 */
+  margin-right: 0; /* Add this to ensure no margin on smaller screens */
   padding: 20px;
-  transition: margin-left 0.3s ease-in-out;
+  transition: margin 0.3s ease-in-out;
 }
 
 /* Section Styling */
