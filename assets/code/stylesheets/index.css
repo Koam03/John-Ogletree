@@ -30,13 +30,13 @@ body {
 /* Neon Menu Toggle Button */
 .menu-toggle.neon-toggle {
   position: fixed;
-  top: 80px; /* Adjusted to sit a bit lower below the logo */
-  left: 30px; /* Slightly moved right to allow more space for the logo */
+  top: 60px; /* Adjusted to sit below the logo */
+  left: 20px;
   z-index: 1100;
-  width: 40px; /* Increased button size */
-  height: 40px; /* Increased button size */
+  width: 24px; /* Smaller button size */
+  height: 24px; /* Smaller button size */
   background-color: var(--dark-bg);
-  border: 4px solid var(--neon-blue); /* Increased border size */
+  border: 3px solid var(--neon-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -44,59 +44,16 @@ body {
   cursor: pointer;
   transition: box-shadow 0.3s, transform 0.3s;
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-  position: relative; /* Ensure the before/after are positioned properly */
 }
 
 .menu-toggle.neon-toggle i {
   color: #fff;
-  font-size: 24px; /* Increased icon size for better visibility */
+  font-size: 18px; /* Smaller icon size */
   transition: color 0.3s;
 }
 
 .menu-toggle.neon-toggle.active i {
   color: var(--dark-bg);
-}
-
-/* Adding Neon Effect Before and After for the Toggle Button */
-.menu-toggle.neon-toggle::before,
-.menu-toggle.neon-toggle::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue),
-              0 0 45px var(--neon-hover), 0 0 60px var(--neon-hover);
-  opacity: 0;
-}
-
-.menu-toggle.neon-toggle::before {
-  top: -5px;
-  left: -5px;
-  width: 120%; /* Slightly larger for a glowing effect */
-  height: 120%;
-  z-index: -1;
-}
-
-.menu-toggle.neon-toggle::after {
-  bottom: -5px;
-  right: -5px;
-  width: 120%; /* Slightly larger for a glowing effect */
-  height: 120%;
-  z-index: -1;
-}
-
-.menu-toggle.neon-toggle:hover::before,
-.menu-toggle.neon-toggle:hover::after {
-  opacity: 1;
-  transform: scale(1.1); /* Add a subtle grow/shrink effect on hover */
-}
-
-.menu-toggle.neon-toggle.active::before,
-.menu-toggle.neon-toggle.active::after {
-  box-shadow: 0 0 30px var(--neon-hover), 0 0 60px var(--neon-hover),
-              0 0 90px var(--neon-blue), 0 0 120px var(--neon-blue);
 }
 
 /* Overlay Styling */
@@ -301,20 +258,6 @@ section hr {
 .project img:hover, .track img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-}
-
-/* Responsive Image Grids for Projects and Music */
-.projects, .music {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-@media (min-width: 1024px) {
-  .projects, .music {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid on desktop */
-  }
 }
 
 /* Contact Form Styling */
