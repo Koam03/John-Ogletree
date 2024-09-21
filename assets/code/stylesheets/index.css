@@ -109,13 +109,6 @@
     margin-bottom: 30px;
   }
   
-  .neon-sidebar .logo h1 {
-    color: var(--neon-pink);
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
-  }
-  
   .neon-sidebar .logo img {
     max-width: 80%;
     height: auto;
