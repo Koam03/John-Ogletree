@@ -1,80 +1,74 @@
-/* General Reset */
+/* Futuristic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Orbitron', sans-serif; /* Bold futuristic font */
 }
 
-/* Neon Color Variables */
+/* Neon & Futuristic Color Variables */
 :root {
-    --neon-blue: #00eaff;
-    --neon-pink: #ff00e6;
-    --neon-green: #00ff99;
-    --dark-bg: #0a0a0a;
-    --light-bg: #222;
-    --neon-hover: #00c4ff;
-    --button-bg: rgba(0, 234, 255, 0.2);
-    --button-hover-bg: rgba(0, 234, 255, 0.4);
-    --button-margin-top: 20px;
-    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --neon-cyan: #00ffea;
+    --deep-space: #080808;
+    --glow-purple: #ba00ff;
+    --neon-highlight: #00b3ff;
+    --btn-glow-bg: rgba(0, 255, 234, 0.15);
+    --btn-hover-glow-bg: rgba(0, 255, 234, 0.3);
+    --overlay-glow: rgba(0, 0, 0, 0.85);
 }
 
-/* Body Styling */
+/* Body Styling - Futuristic Neon Base */
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--dark-bg);
+    background-color: var(--deep-space);
     color: #fff;
     transition: margin-left 0.3s ease-in-out;
+    font-size: 16px;
 }
 
-/* Neon Menu Toggle Button (always visible) */
+/* Futuristic Neon Toggle Button */
 .menu-toggle.neon-toggle {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1100;
-    width: 50px;
-    height: 50px;
-    background-color: var(--dark-bg);
-    border: 3px solid var(--neon-pink);
+    z-index: 1200;
+    width: 60px;
+    height: 60px;
+    background-color: var(--deep-space);
+    border: 4px solid var(--neon-cyan);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: box-shadow 0.3s, transform 0.3s;
-    box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+    box-shadow: 0 0 12px var(--neon-cyan), 0 0 25px var(--glow-purple);
 }
 
 .menu-toggle.neon-toggle:hover {
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-green);
+    box-shadow: 0 0 20px var(--neon-cyan), 0 0 35px var(--glow-purple);
 }
 
 .menu-toggle.neon-toggle.active {
-    background-color: var(--neon-pink);
+    background-color: var(--neon-cyan);
     transform: rotate(90deg);
 }
 
 .menu-toggle.neon-toggle i {
-    color: #fff;
-    font-size: 24px;
+    color: var(--deep-space);
+    font-size: 28px;
     transition: color 0.3s;
 }
 
-.menu-toggle.neon-toggle.active i {
-    color: var(--dark-bg);
-}
-
-/* Overlay Styling */
+/* Neon Overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--overlay-bg);
+    background-color: var(--overlay-glow);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
@@ -86,53 +80,54 @@ body {
     visibility: visible;
 }
 
-/* Sidebar Styling */
+/* Neon Sidebar */
 .neon-sidebar {
-    width: 250px;
-    background-color: var(--dark-bg);
+    width: 280px;
+    background-color: var(--deep-space);
     height: 100vh;
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default */
+    left: -280px; /* Hidden by default */
     overflow-y: auto;
-    padding-top: 20px;
+    padding-top: 30px;
     transition: left 0.3s ease-in-out;
     z-index: 1050;
-    box-shadow: 0 0 10px var(--neon-blue), 
-                0 0 20px var(--neon-pink), 
-                0 0 30px var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-cyan), 
+                0 0 30px var(--glow-purple), 
+                0 0 50px var(--neon-cyan);
 }
 
 .neon-sidebar.active {
     left: 0; /* Slide in from the left */
 }
 
-/* Logo Styling */
+/* Neon Sidebar Logo */
 .neon-sidebar .logo {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .neon-sidebar .logo h1 {
-    color: var(--neon-blue);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    color: var(--neon-cyan);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .neon-sidebar .logo img {
-    max-width: 80%;
-    height: auto;
-    border: 2px solid var(--neon-pink);
+    max-width: 85%;
+    border: 3px solid var(--neon-cyan);
     border-radius: 50%;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .neon-sidebar .logo img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-green);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--neon-cyan), 0 0 30px var(--glow-purple);
 }
 
-/* Navigation Menu Styling */
+/* Neon Navigation Menu */
 .sidebar-nav {
     list-style-type: none;
     padding: 0;
@@ -146,21 +141,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px;
-    color: var(--neon-blue);
+    padding: 15px 25px;
+    color: var(--neon-cyan);
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
-    position: relative;
+    font-weight: 700;
 }
 
 .sidebar-nav a.neon-link:hover,
 .sidebar-nav a.neon-link:focus {
-    background-color: var(--neon-hover);
-    color: var(--dark-bg);
+    background-color: var(--neon-highlight);
+    color: var(--deep-space);
     outline: none;
 }
 
-/* Dropdown Indicators */
+/* Futuristic Dropdown Animation */
 .sidebar-nav .has-submenu > a.neon-link i {
     transition: transform 0.3s;
 }
@@ -170,11 +165,10 @@ body {
     transform: rotate(180deg);
 }
 
-/* Dropdown Menu Styling */
 .dropdown {
     list-style-type: none;
-    padding-left: 20px;
-    background-color: var(--light-bg);
+    padding-left: 25px;
+    background-color: var(--glow-purple);
     display: none;
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
@@ -184,89 +178,50 @@ body {
     display: block;
 }
 
-/* Nested Dropdowns */
-.dropdown .has-submenu > a.neon-link {
-    padding-left: 30px;
-}
-
-.dropdown .dropdown {
-    padding-left: 20px;
-}
-
 /* Main Content Styling */
 main {
-    margin-left: 10px; /* Default margin when sidebar is closed */
-    padding: 20px;
+    margin-left: 20px;
+    padding: 30px;
     transition: margin-left 0.3s ease-in-out;
 }
 
 body.active-sidebar main {
-    margin-left: 250px; /* Sidebar width when active */
+    margin-left: 280px;
 }
 
 /* Section Styling */
 section {
-    padding: 60px 20px;
-    background-color: var(--dark-bg);
-    color: var(--neon-blue);
+    padding: 70px 30px;
+    background-color: var(--deep-space);
+    color: var(--neon-cyan);
 }
 
 section:nth-of-type(even) {
-    background-color: var(--light-bg);
+    background-color: #181818;
 }
 
-/* Scrollbar Styling */
-.neon-sidebar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.neon-sidebar::-webkit-scrollbar-track {
-    background: var(--dark-bg);
-}
-
-.neon-sidebar::-webkit-scrollbar-thumb {
-    background-color: var(--neon-pink);
-    border-radius: 4px;
-}
-
-/* -----------------------------------
-   Updated CSS for Rainbow Loading Bar
------------------------------------ */
-
-/* Loading Bar Styles */
+/* Rainbow Loading Bar */
 #loading-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 0%;
-    height: 4px;
-    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-    background-size: 200% 100%;
-    background-position: left center;
-    z-index: 3000; /* Ensure it sits above other elements */
+    height: 5px;
+    background: linear-gradient(90deg, #ff0055, #ff8800, #ffee00, #33ff00, #00eeff, #0066ff, #8800ff);
+    z-index: 4000;
     transition: width 0.4s ease, opacity 0.4s ease;
     opacity: 1;
-    animation: rainbow-slide 3s linear infinite;
+    animation: neon-rainbow-slide 3s linear infinite;
 }
 
 /* When Loading Completes */
 #loading-bar.complete {
     width: 100%;
     opacity: 0;
-    animation: none; /* Stop the animation */
-}
-
-/* Optional: Hide the Loading Bar Completely After Completion */
-#loading-bar.hidden {
-    display: none;
 }
 
 /* Rainbow Animation */
-@keyframes rainbow-slide {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+@keyframes neon-rainbow-slide {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
