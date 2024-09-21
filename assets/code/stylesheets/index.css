@@ -124,15 +124,11 @@ body {
   height: auto;
   border: 2px solid var(--neon-blue);
   border-radius: 50%;
-  background-color: transparent;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  padding: 5px;
-  background-clip: padding-box;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .neon-sidebar .logo img:hover {
   transform: scale(1.05);
-  background-color: var(--neon-blue);
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
 }
 
