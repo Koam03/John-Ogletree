@@ -30,13 +30,13 @@ body {
 /* Neon Menu Toggle Button */
 .menu-toggle.neon-toggle {
   position: fixed;
-  top: 60px; /* Adjusted to sit below the logo */
-  left: 20px;
+  top: 80px;
+  left: 30px;
   z-index: 1100;
-  width: 24px; /* Smaller button size */
-  height: 24px; /* Smaller button size */
+  width: 40px;
+  height: 40px;
   background-color: var(--dark-bg);
-  border: 3px solid var(--neon-blue);
+  border: 4px solid var(--neon-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -44,11 +44,12 @@ body {
   cursor: pointer;
   transition: box-shadow 0.3s, transform 0.3s;
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  position: relative;
 }
 
 .menu-toggle.neon-toggle i {
   color: #fff;
-  font-size: 18px; /* Smaller icon size */
+  font-size: 24px;
   transition: color 0.3s;
 }
 
@@ -56,198 +57,39 @@ body {
   color: var(--dark-bg);
 }
 
-/* Overlay Styling */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.menu-toggle.neon-toggle::before,
+.menu-toggle.neon-toggle::after {
+  content: '';
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--overlay-bg);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 1000;
-}
-
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Sidebar Styling */
-.neon-sidebar {
-  width: 250px;
-  background-color: var(--dark-bg);
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  overflow-y: auto;
-  padding-top: 20px;
-  transition: left 0.3s ease-in-out;
-  z-index: 1050;
-  box-shadow: 0 0 10px var(--neon-blue), 
-              0 0 20px var(--neon-blue), 
-              0 0 30px var(--neon-blue);
-}
-
-.neon-sidebar.active {
-  left: 0;
-}
-
-/* Logo Styling */
-.neon-sidebar .logo {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.neon-sidebar .logo h1 {
-  color: var(--neon-blue);
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.neon-sidebar .logo img {
-  max-width: 80%;
-  height: auto;
-  border: 2px solid var(--neon-blue);
   border-radius: 50%;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue),
+              0 0 45px var(--neon-hover), 0 0 60px var(--neon-hover);
+  opacity: 0;
 }
 
-.neon-sidebar .logo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+.menu-toggle.neon-toggle:hover::before,
+.menu-toggle.neon-toggle:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
-/* Navigation Menu Styling */
-.sidebar-nav {
-  list-style-type: none;
-  padding: 0;
+.menu-toggle.neon-toggle.active::before,
+.menu-toggle.neon-toggle.active::after {
+  box-shadow: 0 0 30px var(--neon-hover), 0 0 60px var(--neon-hover),
+              0 0 90px var(--neon-blue), 0 0 120px var(--neon-blue);
 }
 
-.sidebar-nav li {
-  position: relative;
-}
-
-.sidebar-nav a.neon-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  color: var(--neon-blue);
-  text-decoration: none;
-  transition: background 0.3s, color 0.3s;
-  position: relative;
-}
-
-.sidebar-nav a.neon-link:hover,
-.sidebar-nav a.neon-link:focus {
-  background-color: var(--neon-hover);
-  color: var(--dark-bg);
-  outline: none;
-}
-
-/* Dropdown Indicators */
-.sidebar-nav .has-submenu > a.neon-link i {
-  transition: transform 0.3s;
-}
-
-.sidebar-nav .has-submenu.active > a.neon-link i,
-.sidebar-nav .has-submenu:hover > a.neon-link i {
-  transform: rotate(180deg);
-}
-
-/* Dropdown Menu Styling */
-.dropdown {
-  list-style-type: none;
-  padding-left: 20px;
-  background-color: var(--light-bg);
-  display: none;
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.has-submenu.active > .dropdown,
-.has-submenu:hover > .dropdown {
-  display: block;
-}
-
-/* Nested Dropdowns */
-.dropdown .has-submenu > a.neon-link {
-  padding-left: 30px;
-}
-
-.dropdown .dropdown {
-  padding-left: 20px;
-}
-
-/* Responsive Styling */
-main {
-  margin-left: 10px;
-  padding: 20px;
-  transition: margin-left 0.3s ease-in-out;
-}
-
-body.active-sidebar main {
-  margin-left: 250px;
-}
-
-/* Section Styling */
-section {
-  padding: 60px 20px;
-  background-color: #111;
-  color: var(--neon-blue);
-}
-
-section:nth-of-type(even) {
-  background-color: #222;
-}
-
-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: var(--neon-blue);
-  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
-}
-
-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: var(--neon-hover);
-}
-
-section hr {
-  border: 0;
-  height: 2px;
-  background: var(--neon-hover);
+/* Image Grid Styling */
+.image-grid {
+  display: grid;
+  gap: 20px;
   margin-bottom: 20px;
 }
 
-/* Button Styling */
-.neon-button {
-  background-color: var(--button-bg);
-  color: var(--neon-blue);
-  padding: 10px 20px;
-  border: 2px solid var(--neon-blue);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
-  margin-top: var(--button-margin-top); /* Added top margin */
-}
-
-.neon-button:hover {
-  background-color: var(--button-hover-bg);
-  color: var(--dark-bg);
-}
-
-/* Project and Track Styling */
-.project, .track {
-  margin-bottom: 20px;
-}
-
-.project img, .track img {
+.image-grid img {
   width: 100%;
   height: auto;
   border: 2px solid var(--neon-blue);
@@ -255,39 +97,23 @@ section hr {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project img:hover, .track img:hover {
+.image-grid img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
 }
 
-/* Contact Form Styling */
-.contact form {
-  display: flex;
-  flex-direction: column;
+/* Mobile View - Single Column Layout */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.contact label {
-  margin-bottom: 5px;
-  color: var(--neon-blue);
-}
-
-.contact input, .contact textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 2px solid var(--neon-blue);
-  border-radius: 5px;
-  background-color: transparent;
-  color: var(--neon-blue);
-}
-
-.contact input::placeholder,
-.contact textarea::placeholder {
-  color: var(--neon-hover);
-}
-
-.contact input:focus, .contact textarea:focus {
-  outline: none;
-  border-color: var(--neon-hover);
+/* Desktop View - 2 by 2 Grid Layout */
+@media (min-width: 769px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Footer Styling */
@@ -298,15 +124,6 @@ footer {
   text-align: center;
 }
 
-footer table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-footer td {
-  padding: 10px;
-}
-
 footer a {
   text-decoration: none;
   color: var(--neon-blue);
@@ -315,17 +132,6 @@ footer a {
 
 footer a:hover {
   color: var(--neon-hover);
-}
-
-footer img {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px;
-  transition: transform 0.3s;
-}
-
-footer img:hover {
-  transform: scale(1.1);
 }
 
 /* Scrollbar Styling */
