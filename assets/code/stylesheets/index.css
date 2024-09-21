@@ -27,12 +27,43 @@
     transition: margin-left 0.3s ease-in-out;
   }
   
-  /* Neon Menu Toggle Button */
+  /* Header Styling */
+  header {
+    position: relative; /* Ensure z-index takes effect */
+    top: 0;
+    width: 100%;
+    z-index: 1200; /* Higher than both sidebar and menu toggle */
+    background-color: var(--dark-bg);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo in Header */
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo img {
+    max-width: 50px;
+    height: auto;
+    margin-right: 15px;
+  }
+  
+  header .logo h1 {
+    color: var(--neon-pink);
+    font-size: 1.8rem;
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+  }
+  
+  /* Menu Toggle Button */
   .menu-toggle.neon-toggle {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1100;
+    z-index: 1100; /* Ensure it's below the header */
     width: 50px;
     height: 50px;
     background-color: var(--light-bg);
@@ -76,7 +107,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
-    z-index: 1000;
+    z-index: 1000; /* Below header and menu toggle */
   }
   
   .overlay.active {
@@ -95,7 +126,7 @@
     overflow-y: auto;
     padding-top: 20px;
     transition: left 0.3s ease-in-out;
-    z-index: 1050;
+    z-index: 1050; /* Below header and menu toggle */
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
   }
   
@@ -103,20 +134,20 @@
     left: 0;
   }
   
-  /* Logo Styling */
-  .neon-sidebar .logo {
+  /* Sidebar Logo Styling */
+  .neon-sidebar .sidebar-logo {
     text-align: center;
     margin-bottom: 30px;
   }
   
-  .neon-sidebar .logo h1 {
+  .neon-sidebar .sidebar-logo h1 {
     color: var(--neon-pink);
     font-size: 2rem;
     margin-bottom: 10px;
     text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
   }
   
-  .neon-sidebar .logo img {
+  .neon-sidebar .sidebar-logo img {
     max-width: 80%;
     height: auto;
     border: 2px solid var(--neon-blue);
@@ -124,7 +155,7 @@
     transition: transform 0.3s, box-shadow 0.3s;
   }
   
-  .neon-sidebar .logo img:hover {
+  .neon-sidebar .sidebar-logo img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
   }
@@ -206,9 +237,6 @@
   .dropdown .dropdown {
     padding-left: 20px;
   }
-  
-  /* Responsive Styling */
-  /* Removed media queries that hide the menu toggle and display the sidebar by default */
   
   /* Main Content Styling */
   main {
