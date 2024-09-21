@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Complete the loading bar
         loadingBar.style.width = '100%';
         
-        // After a short delay, hide the loading bar
+        // After a short delay, fade out and hide the loading bar
         setTimeout(() => {
             loadingBar.classList.add('complete');
             setTimeout(() => {

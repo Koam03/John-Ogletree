@@ -226,3 +226,45 @@ section:nth-of-type(even) {
     background-color: var(--neon-blue);
     border-radius: 4px;
 }
+
+/* -----------------------------------
+   Updated CSS for Rainbow Loading Bar
+----------------------------------- */
+
+/* Loading Bar Styles */
+#loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 200% 100%;
+    background-position: left center;
+    z-index: 3000; /* Ensure it sits above other elements */
+    transition: width 0.4s ease, opacity 0.4s ease;
+    opacity: 1;
+    animation: rainbow-slide 3s linear infinite;
+}
+
+/* When Loading Completes */
+#loading-bar.complete {
+    width: 100%;
+    opacity: 0;
+    animation: none; /* Stop the animation */
+}
+
+/* Optional: Hide the Loading Bar Completely After Completion */
+#loading-bar.hidden {
+    display: none;
+}
+
+/* Rainbow Animation */
+@keyframes rainbow-slide {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
