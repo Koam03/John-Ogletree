@@ -9,7 +9,9 @@
 /* Neon Color Variables */
 :root {
     --neon-blue: #00eaff;
-    --dark-bg: #111;
+    --neon-pink: #ff00e6;
+    --neon-green: #00ff99;
+    --dark-bg: #0a0a0a;
     --light-bg: #222;
     --neon-hover: #00c4ff;
     --button-bg: rgba(0, 234, 255, 0.2);
@@ -22,8 +24,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: white;
+    background-color: var(--dark-bg);
+    color: #fff;
     transition: margin-left 0.3s ease-in-out;
 }
 
@@ -36,22 +38,22 @@ body {
     width: 50px;
     height: 50px;
     background-color: var(--dark-bg);
-    border: 3px solid var(--neon-blue);
+    border: 3px solid var(--neon-pink);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: box-shadow 0.3s, transform 0.3s;
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
 }
 
 .menu-toggle.neon-toggle:hover {
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-green);
 }
 
 .menu-toggle.neon-toggle.active {
-    background-color: var(--neon-blue);
+    background-color: var(--neon-pink);
     transform: rotate(90deg);
 }
 
@@ -97,8 +99,8 @@ body {
     transition: left 0.3s ease-in-out;
     z-index: 1050;
     box-shadow: 0 0 10px var(--neon-blue), 
-                0 0 20px var(--neon-blue), 
-                0 0 30px var(--neon-blue);
+                0 0 20px var(--neon-pink), 
+                0 0 30px var(--neon-green);
 }
 
 .neon-sidebar.active {
@@ -120,14 +122,14 @@ body {
 .neon-sidebar .logo img {
     max-width: 80%;
     height: auto;
-    border: 2px solid var(--neon-blue);
+    border: 2px solid var(--neon-pink);
     border-radius: 50%;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .neon-sidebar .logo img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-green);
 }
 
 /* Navigation Menu Styling */
@@ -205,15 +207,15 @@ body.active-sidebar main {
 /* Section Styling */
 section {
     padding: 60px 20px;
-    background-color: #111;
+    background-color: var(--dark-bg);
     color: var(--neon-blue);
 }
 
 section:nth-of-type(even) {
-    background-color: #222;
+    background-color: var(--light-bg);
 }
 
-/* Scrollbar Styling (optional) */
+/* Scrollbar Styling */
 .neon-sidebar::-webkit-scrollbar {
     width: 8px;
 }
@@ -223,7 +225,7 @@ section:nth-of-type(even) {
 }
 
 .neon-sidebar::-webkit-scrollbar-thumb {
-    background-color: var(--neon-blue);
+    background-color: var(--neon-pink);
     border-radius: 4px;
 }
 
