@@ -1,1 +1,381 @@
-d
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Import Futuristic Font */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+  
+  /* Neon Color Variables */
+  :root {
+    --neon-blue: #00ffff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #8a2be2;
+    --dark-bg: #050505;
+    --light-bg: #0d0d0d;
+    --hover-bg: rgba(0, 255, 255, 0.1);
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Body Styling */
+  body {
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+    font-family: 'Orbitron', sans-serif;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  /* Neon Menu Toggle Button */
+  .menu-toggle.neon-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-bg);
+    border: 3px solid var(--neon-blue);
+    border-radius: 50%;
+    display: flex; /* Displayed on all screen sizes */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+  }
+  
+  .menu-toggle.neon-toggle:hover {
+    box-shadow: 0 0 25px var(--neon-blue), 0 0 45px var(--neon-blue);
+  }
+  
+  .menu-toggle.neon-toggle.active {
+    background-color: var(--neon-blue);
+    transform: rotate(90deg);
+  }
+  
+  .menu-toggle.neon-toggle i {
+    color: var(--neon-blue);
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+  
+  .menu-toggle.neon-toggle.active i {
+    color: var(--light-bg);
+  }
+  
+  /* Overlay Styling */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Sidebar Styling */
+  .neon-sidebar {
+    width: 250px;
+    background-color: var(--light-bg);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    overflow-y: auto;
+    padding-top: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1050;
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+  }
+  
+  .neon-sidebar.active {
+    left: 0;
+  }
+  
+  /* Logo Styling */
+  .neon-sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .neon-sidebar .logo h1 {
+    color: var(--neon-pink);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+  }
+  
+  .neon-sidebar .logo img {
+    max-width: 80%;
+    height: auto;
+    border: 2px solid var(--neon-blue);
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .neon-sidebar .logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+  }
+  
+  /* Navigation Menu Styling */
+  .sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-nav li {
+    position: relative;
+  }
+  
+  .sidebar-nav a.neon-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    color: var(--neon-blue);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+  }
+  
+  .sidebar-nav a.neon-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--neon-blue);
+    transform: scaleY(0);
+    transition: transform 0.3s;
+  }
+  
+  .sidebar-nav a.neon-link:hover::before,
+  .sidebar-nav a.neon-link:focus::before {
+    transform: scaleY(1);
+  }
+  
+  .sidebar-nav a.neon-link:hover,
+  .sidebar-nav a.neon-link:focus {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+    outline: none;
+  }
+  
+  /* Dropdown Indicators */
+  .sidebar-nav .has-submenu > a.neon-link i {
+    transition: transform 0.3s;
+  }
+  
+  .sidebar-nav .has-submenu.active > a.neon-link i,
+  .sidebar-nav .has-submenu:hover > a.neon-link i {
+    transform: rotate(180deg);
+  }
+  
+  /* Dropdown Menu Styling */
+  .dropdown {
+    list-style-type: none;
+    padding-left: 20px;
+    background-color: var(--dark-bg);
+    display: none;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .has-submenu.active > .dropdown,
+  .has-submenu:hover > .dropdown {
+    display: block;
+  }
+  
+  /* Nested Dropdowns */
+  .dropdown .has-submenu > a.neon-link {
+    padding-left: 40px;
+  }
+  
+  .dropdown .dropdown {
+    padding-left: 20px;
+  }
+  
+  /* Responsive Styling */
+  /* Removed media queries that hide the menu toggle and display the sidebar by default */
+  
+  /* Main Content Styling */
+  main {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  body.active-sidebar main {
+    margin-left: 250px; /* Sidebar width when active */
+  }
+  
+  /* Section Styling */
+  section {
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+  }
+  
+  section:nth-of-type(even) {
+    background-color: var(--light-bg);
+  }
+  
+  section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+  }
+  
+  section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+  }
+  
+  section hr {
+    border: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    margin-bottom: 30px;
+  }
+  
+  /* Button Styling */
+  .neon-button {
+    background-color: transparent;
+    color: var(--neon-blue);
+    padding: 12px 25px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  }
+  
+  .neon-button:hover {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+  }
+  
+  /* Project and Track Styling */
+  .project, .track {
+    margin-bottom: 40px;
+  }
+  
+  .project img, .track img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .project img:hover, .track img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+  }
+  
+  /* Contact Form Styling */
+  .contact form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact label {
+    margin-bottom: 10px;
+    color: var(--neon-purple);
+  }
+  
+  .contact input, .contact textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--neon-blue);
+  }
+  
+  .contact input::placeholder,
+  .contact textarea::placeholder {
+    color: var(--neon-purple);
+  }
+  
+  .contact input:focus, .contact textarea:focus {
+    outline: none;
+    border-color: var(--neon-pink);
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: var(--light-bg);
+    padding: 30px;
+    color: var(--neon-blue);
+    text-align: center;
+  }
+  
+  footer table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  footer td {
+    padding: 15px;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: var(--neon-blue);
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: var(--neon-pink);
+  }
+  
+  footer img {
+    width: 35px;
+    height: 35px;
+    margin: 0 15px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+  }
+  
+  footer img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px var(--neon-blue));
+  }
+  
+  /* Scrollbar Styling */
+  .neon-sidebar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .neon-sidebar::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+  }
+  
+  .neon-sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--neon-blue);
+    border-radius: 4px;
+  }
+  
+  /* Accessibility Enhancements */
+  .sidebar-nav a.neon-link:focus {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+    outline: none;
+  }
+  
