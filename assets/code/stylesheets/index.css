@@ -27,49 +27,18 @@
     transition: margin-left 0.3s ease-in-out;
   }
   
-  /* Header Styling */
-  header {
-    position: relative; /* Ensure z-index takes effect */
-    top: 0;
-    width: 100%;
-    z-index: 1200; /* Higher than both sidebar and menu toggle */
-    background-color: var(--dark-bg);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* Logo in Header */
-  header .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  header .logo img {
-    max-width: 50px;
-    height: auto;
-    margin-right: 15px;
-  }
-  
-  header .logo h1 {
-    color: var(--neon-pink);
-    font-size: 1.8rem;
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
-  }
-  
-  /* Menu Toggle Button */
+  /* Neon Menu Toggle Button */
   .menu-toggle.neon-toggle {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1100; /* Ensure it's below the header */
+    z-index: 1100;
     width: 50px;
     height: 50px;
     background-color: var(--light-bg);
     border: 3px solid var(--neon-blue);
     border-radius: 50%;
-    display: flex; /* Displayed on all screen sizes */
+    display: none; /* Hidden on larger screens */
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -107,7 +76,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
-    z-index: 1000; /* Below header and menu toggle */
+    z-index: 1000;
   }
   
   .overlay.active {
@@ -126,7 +95,7 @@
     overflow-y: auto;
     padding-top: 20px;
     transition: left 0.3s ease-in-out;
-    z-index: 1050; /* Below header and menu toggle */
+    z-index: 1050;
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
   }
   
@@ -134,20 +103,20 @@
     left: 0;
   }
   
-  /* Sidebar Logo Styling */
-  .neon-sidebar .sidebar-logo {
+  /* Logo Styling */
+  .neon-sidebar .logo {
     text-align: center;
     margin-bottom: 30px;
   }
   
-  .neon-sidebar .sidebar-logo h1 {
+  .neon-sidebar .logo h1 {
     color: var(--neon-pink);
     font-size: 2rem;
     margin-bottom: 10px;
     text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
   }
   
-  .neon-sidebar .sidebar-logo img {
+  .neon-sidebar .logo img {
     max-width: 80%;
     height: auto;
     border: 2px solid var(--neon-blue);
@@ -155,7 +124,7 @@
     transition: transform 0.3s, box-shadow 0.3s;
   }
   
-  .neon-sidebar .sidebar-logo img:hover {
+  .neon-sidebar .logo img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
   }
@@ -238,6 +207,48 @@
     padding-left: 20px;
   }
   
+  /* Responsive Styling */
+  @media (max-width: 991px) {
+    .neon-sidebar {
+      left: -250px;
+    }
+    
+    .neon-sidebar.active {
+      left: 0;
+    }
+  
+    .menu-toggle.neon-toggle {
+      display: flex;
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    main {
+      margin-left: 0;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    main {
+      margin-left: 250px;
+    }
+  
+    .neon-sidebar {
+      left: 0;
+    }
+  
+    .menu-toggle.neon-toggle {
+      display: none;
+    }
+  
+    .overlay {
+      display: none;
+    }
+  }
+  
   /* Main Content Styling */
   main {
     margin-left: 0;
@@ -246,7 +257,7 @@
   }
   
   body.active-sidebar main {
-    margin-left: 250px; /* Sidebar width when active */
+    margin-left: 250px;
   }
   
   /* Section Styling */
