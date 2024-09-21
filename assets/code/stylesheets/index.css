@@ -27,18 +27,18 @@ body {
     transition: margin-left 0.3s ease-in-out;
 }
 
-/* Neon Menu Toggle Button */
+/* Neon Menu Toggle Button (always visible) */
 .menu-toggle.neon-toggle {
     position: fixed;
     top: 20px;
-    left: 20px; /* Positioned on the left */
+    left: 20px;
     z-index: 1100;
     width: 50px;
     height: 50px;
     background-color: var(--dark-bg);
     border: 3px solid var(--neon-blue);
     border-radius: 50%;
-    display: flex; /* Always visible */
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -91,13 +91,11 @@ body {
     height: 100vh;
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default on the left */
+    left: -250px; /* Hidden by default */
     overflow-y: auto;
     padding-top: 20px;
-    transition: left 0.3s ease-in-out; /* Transition from left */
+    transition: left 0.3s ease-in-out;
     z-index: 1050;
-
-    /* Neon Glow Effect */
     box-shadow: 0 0 10px var(--neon-blue), 
                 0 0 20px var(--neon-blue), 
                 0 0 30px var(--neon-blue);
@@ -193,7 +191,7 @@ body {
     padding-left: 20px;
 }
 
-/* Responsive Styling - Apply mobile styles on all screen sizes */
+/* Main Content Styling */
 main {
     margin-left: 10px; /* Default margin when sidebar is closed */
     padding: 20px;
@@ -202,23 +200,6 @@ main {
 
 body.active-sidebar main {
     margin-left: 250px; /* Sidebar width when active */
-}
-
-@media (max-width: 991px) {
-    /* Sidebar Hidden by Default on Mobile */
-    .neon-sidebar {
-      left: -250px; /* Ensure it's hidden on the left */
-    }
-
-    /* Show Sidebar when Active */
-    .neon-sidebar.active {
-      left: 0;
-    }
-
-    /* Main Content Adjustment on Mobile */
-    main {
-      margin-left: 10px; /* Slight margin when sidebar is closed */
-    }
 }
 
 /* Section Styling */
