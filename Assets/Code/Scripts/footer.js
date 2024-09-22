@@ -5,20 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.querySelector('.social-carousel .prev');
     const nextButton = document.querySelector('.social-carousel .next');
     const socialIcons = document.querySelector('.social-icons');
-    const socialLinks = document.querySelectorAll('.social-icons .social-link');
-    const totalIcons = socialLinks.length;
-    const visibleIcons = calculateVisibleIcons();
+    const socialItems = document.querySelectorAll('.social-icons .social-item');
+    const totalIcons = socialItems.length;
+    let visibleIcons = calculateVisibleIcons(); // Initialize
     let currentIndex = 0;
   
     function calculateVisibleIcons() {
       const wrapperWidth = document.querySelector('.carousel-wrapper').offsetWidth;
-      const linkWidth = socialLinks[0].offsetWidth + 30; // width + margin (15px each side)
-      return Math.floor(wrapperWidth / linkWidth);
+      const itemWidth = socialItems[0].offsetWidth + 30; // width + margin (15px each side)
+      return Math.floor(wrapperWidth / itemWidth);
     }
   
     const updateCarousel = () => {
-      const iconWidth = socialLinks[0].offsetWidth + 30; // width + margin (15px each side)
-      socialIcons.style.transform = `translateX(-${currentIndex * iconWidth}px)`;
+      const itemWidth = socialItems[0].offsetWidth + 30; // width + margin
+      socialIcons.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     };
   
     prevButton.addEventListener('click', () => {
@@ -36,15 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     window.addEventListener('resize', () => {
-      // Recalculate visible icons on resize
       const newVisibleIcons = calculateVisibleIcons();
-      if (newVisibleIcons !== visibleIcons) {
+      if (visibleIcons !== newVisibleIcons) {
         visibleIcons = newVisibleIcons;
         if (currentIndex > totalIcons - visibleIcons) {
           currentIndex = totalIcons - visibleIcons;
           if (currentIndex < 0) currentIndex = 0;
+          updateCarousel();
         }
-        updateCarousel();
       }
     });
   });
