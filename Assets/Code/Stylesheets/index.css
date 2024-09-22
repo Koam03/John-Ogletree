@@ -390,7 +390,7 @@ section hr {
 .neon-footer {
     background-color: #0f0f0f;
     color: #00ffea;
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
     font-family: 'Arial', sans-serif;
     position: relative;
@@ -398,7 +398,7 @@ section hr {
   }
   
   .neon-footer p {
-    margin: 0 0 15px;
+    margin: 0 0 25px;
     font-size: 1.2em;
     text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
   }
@@ -417,6 +417,7 @@ section hr {
     font-size: 2em;
     cursor: pointer;
     transition: color 0.3s;
+    padding: 10px;
   }
   
   .social-carousel button:hover {
@@ -425,8 +426,8 @@ section hr {
   
   .carousel-wrapper {
     overflow: hidden;
-    width: 200px; /* Adjust based on number of icons and desired size */
-    margin: 0 10px;
+    width: 300px; /* Adjust based on number of icons and desired size */
+    margin: 0 15px;
   }
   
   .social-icons {
@@ -434,43 +435,89 @@ section hr {
     transition: transform 0.5s ease-in-out;
   }
   
-  .social-icons a {
-    margin: 0 10px;
+  .social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #00ffea;
     filter: drop-shadow(0 0 5px #00ffea);
   }
   
-  .social-icons img {
-    width: 40px;
-    height: 40px;
+  .social-link img {
+    width: 60px;
+    height: 60px;
     transition: transform 0.3s, filter 0.3s;
   }
   
-  .social-icons img:hover {
+  .social-link span {
+    margin-top: 8px;
+    font-size: 1em;
+    text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
+  }
+  
+  .social-link:hover img {
     transform: scale(1.2);
     filter: drop-shadow(0 0 10px #00ffea);
   }
   
+  .social-link:hover span {
+    color: #ff00c8;
+  }
+  
   /* Responsive Design */
+  @media (max-width: 800px) {
+    .carousel-wrapper {
+      width: 250px;
+    }
+  
+    .social-link img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .social-link span {
+      font-size: 0.9em;
+    }
+  }
+  
   @media (max-width: 600px) {
     .neon-footer {
-      padding: 15px;
+      padding: 20px 15px;
     }
   
     .neon-footer p {
       font-size: 1em;
+      margin-bottom: 20px;
     }
   
     .carousel-wrapper {
-      width: 150px;
+      width: 200px;
     }
   
-    .social-icons img {
-      width: 30px;
-      height: 30px;
+    .social-link img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .social-link span {
+      font-size: 0.8em;
     }
   
     .social-carousel button {
       font-size: 1.5em;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .carousel-wrapper {
+      width: 150px;
+    }
+  
+    .social-link {
+      margin: 0 10px;
     }
   }  
 
