@@ -386,45 +386,93 @@ section hr {
     border-color: var(--neon-pink);
 }
 
-/* Footer Styling */
-footer {
-    background-color: var(--light-bg);
-    padding: 30px;
-    color: var(--neon-blue);
+/* Neon Footer Styles */
+.neon-footer {
+    background-color: #0f0f0f;
+    color: #00ffea;
+    padding: 20px;
     text-align: center;
-}
-
-footer table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-footer td {
-    padding: 15px;
-}
-
-footer a {
-    text-decoration: none;
-    color: var(--neon-blue);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
+  }
+  
+  .neon-footer p {
+    margin: 0 0 15px;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
+  }
+  
+  .social-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .social-carousel button {
+    background: none;
+    border: none;
+    color: #00ffea;
+    font-size: 2em;
+    cursor: pointer;
     transition: color 0.3s;
-}
-
-footer a:hover {
-    color: var(--neon-pink);
-}
-
-footer img {
-    width: 35px;
-    height: 35px;
-    margin: 0 15px;
+  }
+  
+  .social-carousel button:hover {
+    color: #ff00c8;
+  }
+  
+  .carousel-wrapper {
+    overflow: hidden;
+    width: 200px; /* Adjust based on number of icons and desired size */
+    margin: 0 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    filter: drop-shadow(0 0 5px #00ffea);
+  }
+  
+  .social-icons img {
+    width: 40px;
+    height: 40px;
     transition: transform 0.3s, filter 0.3s;
-    filter: drop-shadow(0 0 5px var(--neon-blue));
-}
-
-footer img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 15px var(--neon-blue));
-}
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px #00ffea);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .neon-footer {
+      padding: 15px;
+    }
+  
+    .neon-footer p {
+      font-size: 1em;
+    }
+  
+    .carousel-wrapper {
+      width: 150px;
+    }
+  
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .social-carousel button {
+      font-size: 1.5em;
+    }
+  }  
 
 /* Scrollbar Styling */
 .neon-sidebar::-webkit-scrollbar {
