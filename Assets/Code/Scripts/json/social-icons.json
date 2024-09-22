@@ -7,12 +7,12 @@
     {
       "name": "Dribbble",
       "link": "https://dribbble.com/OGLE2003",
-      "icon": "/"
+      "icon": "Assets/Media/Images/Icons/Social Icons/dribble.png"
     },
     {
       "name": "Facebook",
       "link": "https://www.facebook.com/profile.php?id=61554807376438",
-      "icon": "/images/social links/Facebook Link.svg"
+      "icon": "Assets/Media/Images/Icons/Social Icons/Facebook.png"
     },
     {
       "name": "Twitter",
