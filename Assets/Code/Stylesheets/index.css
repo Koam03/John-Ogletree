@@ -454,7 +454,7 @@ section hr {
   .social-item span {
     margin-top: 8px;
     font-size: 1em;
-    text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
+    text-shadow: 0 0 5px #00ffea, 0 0 10px #ff00c8;
   }
   
   .social-item:hover img {
@@ -463,7 +463,7 @@ section hr {
   }
   
   .social-item:hover span {
-    color: #ff00c8;
+    text-shadow: 0 0 5px #ff00c8, 0 0 10px #00ffea;
   }
   
   /* Responsive Design */
