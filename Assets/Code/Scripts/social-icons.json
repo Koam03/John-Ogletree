@@ -1,0 +1,52 @@
+[
+    {
+      "name": "YouTube",
+      "link": "https://www.youtube.com/channel/UCsIIKP2MFRyo8KX3g6358bg",
+      "icon": "/Assets/Media/Images/Icons/Youtube.webp"
+    },
+    {
+      "name": "Dribbble",
+      "link": "https://dribbble.com/OGLE2003",
+      "icon": "/"
+    },
+    {
+      "name": "Facebook",
+      "link": "https://www.facebook.com/profile.php?id=61554807376438",
+      "icon": "/images/social links/Facebook Link.svg"
+    },
+    {
+      "name": "Twitter",
+      "link": "https://twitter.com/yourprofile",
+      "icon": "/images/social links/Twitter.svg"
+    },
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/yourprofile",
+      "icon": "/images/social links/LinkedIn.svg"
+    },
+    {
+      "name": "Instagram",
+      "link": "https://www.instagram.com/yourprofile",
+      "icon": "/images/social links/Instagram.svg"
+    },
+    {
+      "name": "GitHub",
+      "link": "https://github.com/yourprofile",
+      "icon": "/images/social links/GitHub.svg"
+    },
+    {
+      "name": "Pinterest",
+      "link": "https://www.pinterest.com/yourprofile",
+      "icon": "/images/social links/Pinterest.svg"
+    },
+    {
+      "name": "TikTok",
+      "link": "https://www.tiktok.com/@yourprofile",
+      "icon": "/images/social links/TikTok.svg"
+    },
+    {
+      "name": "Reddit",
+      "link": "https://www.reddit.com/user/yourprofile",
+      "icon": "/images/social links/Reddit.svg"
+    }
+]

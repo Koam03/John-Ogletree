@@ -1,50 +1,83 @@
 // footer.js
 
-// Simple Carousel Pagination for Social Icons
 document.addEventListener('DOMContentLoaded', () => {
-    const prevButton = document.querySelector('.social-carousel .prev');
-    const nextButton = document.querySelector('.social-carousel .next');
-    const socialIcons = document.querySelector('.social-icons');
-    const socialItems = document.querySelectorAll('.social-icons .social-item');
-    const totalIcons = socialItems.length;
-    let visibleIcons = calculateVisibleIcons(); // Initialize
-    let currentIndex = 0;
+    const socialIconsContainer = document.querySelector('.social-icons');
+    const jsonFilePath = '/Assets/Code/Scripts/social-icons.json'; // Update the path if necessary
+    const maxIcons = 6; // Maximum number of icons to display
   
-    function calculateVisibleIcons() {
-      const wrapperWidth = document.querySelector('.carousel-wrapper').offsetWidth;
-      const itemWidth = socialItems[0].offsetWidth + 30; // width + margin (15px each side)
-      return Math.floor(wrapperWidth / itemWidth);
+    // Function to fetch JSON data
+    async function fetchSocialIcons() {
+      try {
+        const response = await fetch(jsonFilePath);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('Failed to fetch social icons:', error);
+        return [];
+      }
     }
   
-    const updateCarousel = () => {
-      const itemWidth = socialItems[0].offsetWidth + 30; // width + margin
-      socialIcons.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    };
-  
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
+    // Function to shuffle an array
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
       }
-    });
+      return array;
+    }
   
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < totalIcons - visibleIcons) {
-        currentIndex++;
-        updateCarousel();
-      }
-    });
+    // Function to create a social icon element
+    function createSocialIcon(item) {
+      const link = document.createElement('a');
+      link.href = item.link;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', item.name);
+      link.classList.add('social-item');
   
-    window.addEventListener('resize', () => {
-      const newVisibleIcons = calculateVisibleIcons();
-      if (visibleIcons !== newVisibleIcons) {
-        visibleIcons = newVisibleIcons;
-        if (currentIndex > totalIcons - visibleIcons) {
-          currentIndex = totalIcons - visibleIcons;
-          if (currentIndex < 0) currentIndex = 0;
-          updateCarousel();
-        }
+      const img = document.createElement('img');
+      img.src = item.icon;
+      img.alt = item.name;
+      img.title = item.name;
+  
+      const span = document.createElement('span');
+      span.textContent = item.name;
+  
+      link.appendChild(img);
+      link.appendChild(span);
+  
+      return link;
+    }
+  
+    // Main function to initialize social icons
+    async function initializeSocialIcons() {
+      const allIcons = await fetchSocialIcons();
+      if (allIcons.length === 0) {
+        // Optional: Display a default message or icons if JSON fails
+        socialIconsContainer.innerHTML = '<p>No social icons available.</p>';
+        return;
       }
-    });
+  
+      // Shuffle the array to randomize the selection
+      const shuffledIcons = shuffleArray([...allIcons]);
+  
+      // Select up to maxIcons
+      const selectedIcons = shuffledIcons.slice(0, maxIcons);
+  
+      // Clear any existing content
+      socialIconsContainer.innerHTML = '';
+  
+      // Append each selected icon to the container
+      selectedIcons.forEach(icon => {
+        const socialElement = createSocialIcon(icon);
+        socialIconsContainer.appendChild(socialElement);
+      });
+    }
+  
+    // Initialize on page load
+    initializeSocialIcons();
   });
   
