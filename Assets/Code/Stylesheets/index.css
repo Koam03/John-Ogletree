@@ -387,6 +387,7 @@ section hr {
 }
 
 /* Neon Footer Styles */
+/* Neon Footer Styles */
 .neon-footer {
     background-color: #0f0f0f;
     color: #00ffea;
@@ -420,7 +421,8 @@ section hr {
     padding: 10px;
   }
   
-  .social-carousel button:hover {
+  .social-carousel button:hover,
+  .social-carousel button:focus {
     color: #ff00c8;
   }
   
@@ -443,6 +445,7 @@ section hr {
     text-decoration: none;
     color: #00ffea;
     filter: drop-shadow(0 0 5px #00ffea);
+    transition: transform 0.3s, filter 0.3s;
   }
   
   .social-item img {
@@ -454,15 +457,20 @@ section hr {
   .social-item span {
     margin-top: 8px;
     font-size: 1em;
-    text-shadow: 0 0 5px #00ffea, 0 0 10px #ff00c8;
+    color: #00ffea;
+    text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
+    transition: color 0.3s, text-shadow 0.3s;
   }
   
-  .social-item:hover img {
+  .social-item:hover img,
+  .social-item:focus img {
     transform: scale(1.3);
     filter: drop-shadow(0 0 10px #00ffea);
   }
   
-  .social-item:hover span {
+  .social-item:hover span,
+  .social-item:focus span {
+    color: #ff00c8;
     text-shadow: 0 0 5px #ff00c8, 0 0 10px #00ffea;
   }
   
@@ -475,6 +483,10 @@ section hr {
     .social-item img {
       width: 50px;
       height: 50px;
+    }
+    
+    .social-item span {
+      font-size: 0.95em;
     }
     
     .social-carousel button {
@@ -509,8 +521,7 @@ section hr {
       font-size: 1.8em;
       padding: 8px;
     }
-  }
-  
+  }  
 
 /* Scrollbar Styling */
 .neon-sidebar::-webkit-scrollbar {
