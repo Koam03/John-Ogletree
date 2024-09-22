@@ -407,44 +407,18 @@ section hr {
     font-weight: bold;
   }
   
-  .social-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .social-carousel button {
-    background: none;
-    border: none;
-    color: #00ffea;
-    font-size: 2.5em;
-    cursor: pointer;
-    transition: color 0.3s;
-    padding: 10px;
-  }
-  
-  .social-carousel button:hover,
-  .social-carousel button:focus {
-    color: #ff00c8; /* Vibrant pink on hover/focus */
-  }
-  
-  .carousel-wrapper {
-    overflow: hidden;
-    width: 300px; /* Adjust based on number of icons and desired size */
-    margin: 0 15px;
-  }
-  
   .social-icons {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between social icons */
+    transition: all 0.3s ease-in-out;
   }
   
   .social-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 15px;
     text-decoration: none;
     color: #00ffea;
     filter: drop-shadow(0 0 5px #00ffea);
@@ -480,22 +454,26 @@ section hr {
   }
   
   /* Responsive Design */
-  @media (max-width: 900px) {
-    .carousel-wrapper {
-      width: 250px;
+  @media (max-width: 1200px) {
+    /* Adjust gap for medium screens */
+    .social-icons {
+      gap: 15px;
     }
-    
+  }
+  
+  @media (max-width: 900px) {
+    /* Adjust gap and icon sizes for smaller screens */
+    .social-icons {
+      gap: 12px;
+    }
+  
     .social-item img {
       width: 50px;
       height: 50px;
     }
-    
+  
     .social-item span {
       font-size: 0.95em;
-    }
-    
-    .social-carousel button {
-      font-size: 2em;
     }
   }
   
@@ -509,8 +487,8 @@ section hr {
       margin-bottom: 20px;
     }
   
-    .carousel-wrapper {
-      width: 200px;
+    .social-icons {
+      gap: 10px;
     }
   
     .social-item img {
@@ -521,12 +499,8 @@ section hr {
     .social-item span {
       font-size: 0.9em;
     }
+  }
   
-    .social-carousel button {
-      font-size: 1.8em;
-      padding: 8px;
-    }
-  }  
 
 /* Scrollbar Styling */
 .neon-sidebar::-webkit-scrollbar {
