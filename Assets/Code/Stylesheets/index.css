@@ -389,11 +389,11 @@ section hr {
 /* Neon Footer Styles */
 /* Neon Footer Styles */
 .neon-footer {
-    background-color: #0f0f0f;
-    color: #00ffea;
+    background-color: #0f0f0f; /* Very dark background for high contrast */
+    color: #00ffea; /* Bright cyan for neon effect */
     padding: 30px 20px;
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Arial is generally readable */
     position: relative;
     box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
   }
@@ -401,7 +401,10 @@ section hr {
   .neon-footer p {
     margin: 0 0 25px;
     font-size: 1.3em;
-    text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
+    /* Simplified text-shadow for better readability */
+    text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
+    /* Optional: Increase font weight for better clarity */
+    font-weight: bold;
   }
   
   .social-carousel {
@@ -423,7 +426,7 @@ section hr {
   
   .social-carousel button:hover,
   .social-carousel button:focus {
-    color: #ff00c8;
+    color: #ff00c8; /* Vibrant pink on hover/focus */
   }
   
   .carousel-wrapper {
@@ -458,7 +461,8 @@ section hr {
     margin-top: 8px;
     font-size: 1em;
     color: #00ffea;
-    text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
+    /* Reduced text-shadow for clarity */
+    text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
     transition: color 0.3s, text-shadow 0.3s;
   }
   
@@ -470,8 +474,9 @@ section hr {
   
   .social-item:hover span,
   .social-item:focus span {
-    color: #ff00c8;
-    text-shadow: 0 0 5px #ff00c8, 0 0 10px #00ffea;
+    color: #ff00c8; /* Change text color on hover/focus */
+    /* Adjusted text-shadow to match new color */
+    text-shadow: 0 0 3px #ff00c8, 0 0 6px #00ffea;
   }
   
   /* Responsive Design */
