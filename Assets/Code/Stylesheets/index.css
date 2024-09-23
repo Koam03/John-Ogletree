@@ -38,7 +38,7 @@ body {
     background-color: var(--light-bg);
     border: 3px solid var(--neon-blue);
     border-radius: 50%;
-    display: flex; /* Displayed on all screen sizes */
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -293,6 +293,36 @@ body {
     box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
 }
 
+/* Photo Grid for Service Categories */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.service-item {
+    text-align: center;
+    text-decoration: none;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item h4 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: var(--neon-blue);
+}
+
+.service-item img:hover {
+    transform: scale(1.05);
+}
+
 /* Responsive Adjustments */
 @media (max-width: 600px) {
     .grid-container {
@@ -310,6 +340,10 @@ body {
     
     .project p, .track p {
         font-size: 0.9rem;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
     }
 }
 
