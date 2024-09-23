@@ -103,6 +103,24 @@ body {
     left: 0;
 }
 
+/* Full-width section styling */
+.full-width-section {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: var(--dark-bg); /* Default background color */
+}
+
+.full-width-section:nth-of-type(even) {
+    background-color: var(--light-bg); /* Alternating background for sections */
+}
+
+/* Content container for centering content inside full-width sections */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* Logo Styling */
 .neon-sidebar .logo {
     text-align: center;
@@ -196,49 +214,7 @@ body {
     padding-left: 40px;
 }
 
-/* About Me Section */
-.main {
-    margin-left: 0;
-    padding: 20px;
-    transition: margin-left 0.3s ease-in-out;
-}
-
-body.active-sidebar .main {
-    margin-left: 250px;
-}
-
-section {
-    padding: 80px 20px;
-    background-color: var(--dark-bg);
-    color: var(--neon-blue);
-}
-
-section:nth-of-type(even) {
-    background-color: var(--light-bg);
-}
-
-section h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: var(--neon-pink);
-    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
-}
-
-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: var(--neon-purple);
-    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
-}
-
-section hr {
-    border: 0;
-    height: 2px;
-    background: var(--neon-blue);
-    margin-bottom: 30px;
-}
-
-/* Neon Heading */
+/* Neon Headings and Subheadings */
 .neon-heading {
     font-size: 3rem;
     text-align: center;
@@ -248,7 +224,6 @@ section hr {
     margin-bottom: 30px;
 }
 
-/* Neon Subheadings */
 .neon-subheading {
     font-size: 2rem;
     color: #ff00ff;
@@ -263,8 +238,10 @@ section hr {
     padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
-    width: 80%;
-    max-width: 900px;
+    width: 100%; /* Full width for process step */
+    max-width: 900px; /* Maximum width for readability */
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
