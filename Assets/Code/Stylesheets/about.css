@@ -253,11 +253,11 @@ body {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-/* Center the button container */
+/* Full-width Button Container */
 .button {
+    width: 100%; /* Full width of the section */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center the button */
     margin-top: 30px;
 }
 
@@ -273,6 +273,8 @@ body {
     letter-spacing: 1.5px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    width: 100%; /* Full width of the button container */
+    max-width: 900px; /* Set a max width for readability */
 }
 
 .neon-button:hover {
