@@ -182,7 +182,16 @@ body {
     transform: rotate(180deg);
 }
 
-/* Service Grid and Card Styling */
+/* Grid Container Styling */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Service Grid Styling */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -199,19 +208,12 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
     animation: neon-pulse 3s infinite;
-    font-size: 1.2rem;
 }
 
 .service-category:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
     background-color: var(--hover-bg);
-}
-
-.service-category h2 {
-    font-size: 1.5rem;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
 }
 
 .service-category img {
@@ -227,7 +229,256 @@ body {
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
 }
 
-/* Neon Footer Styling */
+.service-category h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.image-grid-item {
+    background-color: var(--light-bg);
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    animation: neon-pulse 3s infinite;
+}
+
+.image-grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
+    background-color: var(--hover-bg);
+}
+
+.image-grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-grid-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+.image-grid-item h2 {
+    font-size: 1.5rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+/* Project and Track Card Styling */
+.project, .track {
+    background-color: var(--light-bg);
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    animation: neon-pulse 3s infinite;
+}
+
+.project:hover, .track:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
+    background-color: var(--hover-bg);
+}
+
+/* Ensure project links do not disrupt layout */
+.project a.project-link,
+.track a.track-link {
+    display: block; /* Make the link cover the image area */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.project a.project-link img,
+.track a.track-link img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project a.project-link:hover img,
+.project a.project-link:focus img,
+.track a.track-link:hover img,
+.track a.track-link:focus img {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+/* Creative Process Section */
+section.creative-process {
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+}
+
+.creative-process h1 {
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+}
+
+.creative-process h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+}
+
+.creative-process hr {
+    border: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    margin-bottom: 30px;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.process-step {
+    background-color: var(--light-bg);
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    animation: neon-pulse 3s infinite;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
+    background-color: var(--hover-bg);
+}
+
+.process-step h2 {
+    font-size: 1.5rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: var(--neon-blue);
+}
+
+/* Neon Pulse Animation */
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+    }
+}
+
+/* Neon Button Enhancements */
+.neon-button {
+    background-color: transparent;
+    color: var(--neon-blue);
+    padding: 12px 25px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.neon-button:hover {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+}
+
+.contact h1 {
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+}
+
+.contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+}
+
+.contact hr {
+    border: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    margin-bottom: 30px;
+}
+
+.contact p {
+    font-size: 1rem;
+    color: var(--neon-blue);
+    margin-bottom: 30px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin-bottom: 10px;
+    color: var(--neon-purple);
+}
+
+.contact input, .contact textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--neon-blue);
+    transition: border-color 0.3s;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: var(--neon-purple);
+}
+
+.contact input:focus, .contact textarea:focus {
+    outline: none;
+    border-color: var(--neon-pink);
+}
+
+/* Neon Footer Styles */
 .neon-footer {
     background-color: #0f0f0f;
     color: #00ffea;
@@ -235,7 +486,7 @@ body {
     text-align: center;
     font-family: 'Arial', sans-serif;
     position: relative;
-    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
 }
 
 .neon-footer p {
@@ -313,16 +564,16 @@ body {
 }
 
 @media (max-width: 600px) {
-    .grid-container, .service-grid, .process-grid {
+    .grid-container, .service-grid, .image-grid, .process-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .service-category, .project, .track, .process-step {
+    .service-category, .project, .track, .image-grid-item, .process-step {
         padding: 15px;
     }
 
-    .service-category h2, .project h2, .track h2, .process-step h2 {
+    .service-category h2, .project h2, .track h2, .image-grid-item h2, .process-step h2 {
         font-size: 1.3rem;
     }
 
@@ -347,4 +598,25 @@ body {
     .social-item span {
         font-size: 0.9em;
     }
+}
+
+/* Scrollbar Styling */
+.neon-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.neon-sidebar::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+.neon-sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--neon-blue);
+    border-radius: 4px;
+}
+
+/* Accessibility Enhancements */
+.sidebar-nav a.neon-link:focus {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+    outline: none;
 }
