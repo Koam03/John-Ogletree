@@ -15,11 +15,6 @@
       "icon": "Assets/Media/Images/Icons/Social Icons/Facebook.png"
     },
     {
-      "name": "Twitter (X)",
-      "link": "https://x.com/john_ogletre",
-      "icon": "/images/social links/Twitter.svg"
-    },
-    {
       "name": "LinkedIn",
       "link": "https://www.linkedin.com/in/john-ogletree-72826a15a/",
       "icon": "Assets/Media/Images/Icons/Social Icons/linkedin.png"
@@ -47,7 +42,7 @@
     {
       "name": "Reddit",
       "link": "https://www.reddit.com/user/No_Percentage_2503/",
-      "icon": "Assets/Media/Images/Icon.s/Social Icons/reddit.png"
+      "icon": "Assets/Media/Images/Icons/Social Icons/reddit.png"
     },
     {
       "name": "Snapchat",
