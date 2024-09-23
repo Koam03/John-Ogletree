@@ -24,7 +24,11 @@ body {
     background-color: var(--dark-bg);
     color: var(--neon-blue);
     font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
     transition: margin-left 0.3s ease-in-out;
+    font-size: 18px;
+    padding: 10px;
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
 }
 
 /* Neon Menu Toggle Button */
@@ -103,25 +107,212 @@ body {
     left: 0;
 }
 
-/* Responsive Adjustments */
+/* Sidebar and Logo Styling */
+.neon-sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.neon-sidebar .logo img {
+    max-width: 80%;
+    height: auto;
+    border: 2px solid var(--neon-blue);
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.neon-sidebar .logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+/* Navigation Menu Styling */
+.sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    position: relative;
+}
+
+.sidebar-nav a.neon-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    color: var(--neon-blue);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+}
+
+.sidebar-nav a.neon-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--neon-blue);
+    transform: scaleY(0);
+    transition: transform 0.3s;
+}
+
+.sidebar-nav a.neon-link:hover::before,
+.sidebar-nav a.neon-link:focus::before {
+    transform: scaleY(1);
+}
+
+.sidebar-nav a.neon-link:hover,
+.sidebar-nav a.neon-link:focus {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+    outline: none;
+}
+
+/* Dropdown Menu */
+.sidebar-nav .has-submenu > a.neon-link i {
+    transition: transform 0.3s;
+}
+
+.sidebar-nav .has-submenu.active > a.neon-link i,
+.sidebar-nav .has-submenu:hover > a.neon-link i {
+    transform: rotate(180deg);
+}
+
+/* Service Grid and Card Styling */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-category {
+    background-color: var(--light-bg);
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    animation: neon-pulse 3s infinite;
+    font-size: 1.2rem;
+}
+
+.service-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
+    background-color: var(--hover-bg);
+}
+
+.service-category h2 {
+    font-size: 1.5rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+.service-category img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-category img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+/* Neon Footer Styling */
+.neon-footer {
+    background-color: #0f0f0f;
+    color: #00ffea;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+}
+
+.neon-footer p {
+    margin: 0 0 25px;
+    font-size: 1.3em;
+    text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
+    font-weight: bold;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #00ffea;
+    filter: drop-shadow(0 0 5px #00ffea);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-item img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-item span {
+    margin-top: 8px;
+    font-size: 1em;
+    color: #00ffea;
+    text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social-item:hover img,
+.social-item:focus img {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 10px #00ffea);
+}
+
+.social-item:hover span,
+.social-item:focus span {
+    color: #ff00c8;
+    text-shadow: 0 0 3px #ff00c8, 0 0 6px #00ffea;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .social-icons {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .social-icons {
+        gap: 12px;
+    }
+
+    .social-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-item span {
+        font-size: 0.95em;
+    }
+}
+
 @media (max-width: 600px) {
-    .neon-sidebar {
-        width: 100%;
-    }
-
-    .neon-sidebar .logo img {
-        max-width: 50%;
-    }
-
-    .menu-toggle.neon-toggle {
-        width: 40px;
-        height: 40px;
-    }
-
-    .menu-toggle.neon-toggle i {
-        font-size: 20px;
-    }
-
     .grid-container, .service-grid, .process-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -132,31 +323,16 @@ body {
     }
 
     .service-category h2, .project h2, .track h2, .process-step h2 {
-        font-size: 1.2rem;
-    }
-
-    .service-category img, .project img, .track img {
-        width: 100%;
-    }
-
-    .contact h1, .creative-process h1 {
-        font-size: 2rem;
-    }
-
-    .contact h3, .creative-process h3 {
-        font-size: 1.5rem;
-    }
-    
-    .contact p, .process-step p {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
     }
 
     .neon-footer {
-        padding: 20px;
+        padding: 20px 15px;
     }
 
     .neon-footer p {
-        font-size: 1.1rem;
+        font-size: 1.1em;
+        margin-bottom: 20px;
     }
 
     .social-icons {
@@ -170,21 +346,5 @@ body {
 
     .social-item span {
         font-size: 0.9em;
-    }
-}
-
-/* Additional Responsive Adjustments for Tablets */
-@media (max-width: 900px) {
-    .grid-container, .service-grid, .process-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-
-    .service-category, .project, .track, .process-step {
-        padding: 20px;
-    }
-
-    .neon-footer p {
-        font-size: 1.2em;
     }
 }
