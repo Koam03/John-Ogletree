@@ -38,7 +38,7 @@ body {
     background-color: var(--light-bg);
     border: 3px solid var(--neon-blue);
     border-radius: 50%;
-    display: flex; /* Displayed on all screen sizes */
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -167,16 +167,6 @@ body {
     outline: none;
 }
 
-/* Dropdown Indicators */
-.sidebar-nav .has-submenu > a.neon-link i {
-    transition: transform 0.3s;
-}
-
-.sidebar-nav .has-submenu.active > a.neon-link i,
-.sidebar-nav .has-submenu:hover > a.neon-link i {
-    transform: rotate(180deg);
-}
-
 /* Dropdown Menu Styling */
 .dropdown {
     list-style-type: none;
@@ -191,40 +181,66 @@ body {
     display: block;
 }
 
-/* Nested Dropdowns */
-.dropdown .has-submenu > a.neon-link {
-    padding-left: 40px;
+/* Creative Process Section */
+section.creative-process {
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
 }
 
-.dropdown .dropdown {
-    padding-left: 20px;
+.creative-process h1 {
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
 }
 
-/* Grid Container Styling */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+.creative-process h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+}
+
+.creative-process hr {
+    border: 0;
+    height: 2px;
+    background: var(--neon-blue);
     margin-bottom: 30px;
 }
 
-/* Project and Track Card Styling */
-.project, .track {
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.process-step {
     background-color: var(--light-bg);
     border: 2px solid var(--neon-blue);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
     animation: neon-pulse 3s infinite;
 }
 
-.project:hover, .track:hover {
+.process-step:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
     background-color: var(--hover-bg);
+}
+
+.process-step h2 {
+    font-size: 1.5rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: var(--neon-blue);
 }
 
 /* Neon Pulse Animation */
@@ -238,40 +254,6 @@ body {
     100% {
         box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
     }
-}
-
-/* Image Styling within Cards */
-.project img, .track img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project img:hover, .track img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
-}
-
-/* Card Titles */
-.project h2, .track h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
-}
-
-/* Card Descriptions */
-.project p, .track p {
-    font-size: 1rem;
-    color: var(--neon-blue);
-}
-
-/* Button Container Alignment */
-.button {
-    text-align: center;
-    margin-top: 30px; /* Increased from 20px to 30px to move buttons down by 10px */
 }
 
 /* Neon Button Enhancements */
@@ -290,73 +272,10 @@ body {
     background-color: var(--hover-bg);
     color: var(--neon-pink);
     transform: scale(1.05);
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var (--neon-blue);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .project, .track {
-        padding: 15px;
-    }
-    
-    .project h2, .track h2 {
-        font-size: 1.3rem;
-    }
-    
-    .project p, .track p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Main Content Styling */
-main {
-    margin-left: 0;
-    padding: 20px;
-    transition: margin-left 0.3s ease-in-out;
-}
-
-body.active-sidebar main {
-    margin-left: 250px; /* Sidebar width when active */
-}
-
-/* Section Styling */
-section {
-    padding: 80px 20px;
-    background-color: var(--dark-bg);
-    color: var(--neon-blue);
-}
-
-section:nth-of-type(even) {
-    background-color: var(--light-bg);
-}
-
-section h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: var(--neon-pink);
-    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
-}
-
-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: var(--neon-purple);
-    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
-}
-
-section hr {
-    border: 0;
-    height: 2px;
-    background: var(--neon-blue);
-    margin-bottom: 30px;
-}
-
-/* Contact Form Styling */
+/* Contact Section */
 .contact form {
     display: flex;
     flex-direction: column;
@@ -367,7 +286,8 @@ section hr {
     color: var(--neon-purple);
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
     padding: 12px;
     margin-bottom: 20px;
     border: 2px solid var(--neon-blue);
@@ -381,40 +301,39 @@ section hr {
     color: var(--neon-purple);
 }
 
-.contact input:focus, .contact textarea:focus {
+.contact input:focus,
+.contact textarea:focus {
     outline: none;
     border-color: var(--neon-pink);
 }
 
-/* Neon Footer Styles */
+/* Footer Styling */
 .neon-footer {
-    background-color: #0f0f0f; /* Very dark background for high contrast */
-    color: #00ffea; /* Bright cyan for neon effect */
+    background-color: #0f0f0f;
+    color: #00ffea;
     padding: 30px 20px;
     text-align: center;
-    font-family: 'Arial', sans-serif; /* Arial is generally readable */
-    position: relative;
+    font-family: 'Arial', sans-serif;
     box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
-  }
-  
-  .neon-footer p {
+}
+
+.neon-footer p {
     margin: 0 0 25px;
     font-size: 1.3em;
-    /* Simplified text-shadow for better readability */
     text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
-    /* Optional: Increase font weight for better clarity */
     font-weight: bold;
-  }
-  
-  .social-icons {
+}
+
+/* Social Icons */
+.social-icons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between social icons */
+    gap: 20px;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .social-item {
+}
+
+.social-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -422,101 +341,50 @@ section hr {
     color: #00ffea;
     filter: drop-shadow(0 0 5px #00ffea);
     transition: transform 0.3s, filter 0.3s;
-  }
-  
-  .social-item img {
+}
+
+.social-item img {
     width: 60px;
     height: 60px;
     transition: transform 0.3s, filter 0.3s;
-  }
-  
-  .social-item span {
+}
+
+.social-item span {
     margin-top: 8px;
     font-size: 1em;
     color: #00ffea;
-    /* Reduced text-shadow for clarity */
     text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
     transition: color 0.3s, text-shadow 0.3s;
-  }
-  
-  .social-item:hover img,
-  .social-item:focus img {
+}
+
+.social-item:hover img,
+.social-item:focus img {
     transform: scale(1.3);
     filter: drop-shadow(0 0 10px #00ffea);
-  }
-  
-  .social-item:hover span,
-  .social-item:focus span {
-    color: #ff00c8; /* Change text color on hover/focus */
-    /* Adjusted text-shadow to match new color */
+}
+
+.social-item:hover span,
+.social-item:focus span {
+    color: #ff00c8;
     text-shadow: 0 0 3px #ff00c8, 0 0 6px #00ffea;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1200px) {
-    /* Adjust gap for medium screens */
-    .social-icons {
-      gap: 15px;
-    }
-  }
-  
-  @media (max-width: 900px) {
-    /* Adjust gap and icon sizes for smaller screens */
-    .social-icons {
-      gap: 12px;
-    }
-  
-    .social-item img {
-      width: 50px;
-      height: 50px;
-    }
-  
-    .social-item span {
-      font-size: 0.95em;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .neon-footer {
-      padding: 20px 15px;
-    }
-  
-    .neon-footer p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
-  
-    .social-icons {
-      gap: 10px;
-    }
-  
-    .social-item img {
-      width: 40px;
-      height: 40px;
-    }
-  
-    .social-item span {
-      font-size: 0.9em;
-    }
-  }  
-
-/* Scrollbar Styling */
-.neon-sidebar::-webkit-scrollbar {
-    width: 8px;
 }
 
-.neon-sidebar::-webkit-scrollbar-track {
-    background: var(--dark-bg);
-}
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-.neon-sidebar::-webkit-scrollbar-thumb {
-    background-color: var(--neon-blue);
-    border-radius: 4px;
-}
+    .process-step {
+        padding: 15px;
+    }
 
-/* Accessibility Enhancements */
-.sidebar-nav a.neon-link:focus {
-    background-color: var(--hover-bg);
-    color: var(--neon-pink);
-    outline: none;
+    .process-step h2 {
+        font-size: 1.3rem;
+    }
+
+    .process-step p {
+        font-size: 0.9rem;
+    }
 }
