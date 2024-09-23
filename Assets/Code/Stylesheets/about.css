@@ -1,0 +1,349 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Import Futuristic Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Neon Color Variables */
+:root {
+    --neon-blue: #00ffff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #8a2be2;
+    --dark-bg: #050505;
+    --light-bg: #0d0d0d;
+    --hover-bg: rgba(0, 255, 255, 0.1);
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+}
+
+/* Body Styling */
+body {
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+    font-family: 'Orbitron', sans-serif;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Neon Menu Toggle Button */
+.menu-toggle.neon-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-bg);
+    border: 3px solid var(--neon-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+.menu-toggle.neon-toggle:hover {
+    box-shadow: 0 0 25px var(--neon-blue), 0 0 45px var(--neon-blue);
+}
+
+.menu-toggle.neon-toggle.active {
+    background-color: var(--neon-blue);
+    transform: rotate(90deg);
+}
+
+.menu-toggle.neon-toggle i {
+    color: var(--neon-blue);
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.menu-toggle.neon-toggle.active i {
+    color: var(--light-bg);
+}
+
+/* Overlay Styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar Styling */
+.neon-sidebar {
+    width: 250px;
+    background-color: var(--light-bg);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    overflow-y: auto;
+    padding-top: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1050;
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+.neon-sidebar.active {
+    left: 0;
+}
+
+/* Logo Styling */
+.neon-sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.neon-sidebar .logo img {
+    max-width: 80%;
+    height: auto;
+    border: 2px solid var(--neon-blue);
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.neon-sidebar .logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+/* Navigation Menu Styling */
+.sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    position: relative;
+}
+
+.sidebar-nav a.neon-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    color: var(--neon-blue);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
+.sidebar-nav a.neon-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--neon-blue);
+    transform: scaleY(0);
+    transition: transform 0.3s;
+}
+
+.sidebar-nav a.neon-link:hover::before,
+.sidebar-nav a.neon-link:focus::before {
+    transform: scaleY(1);
+}
+
+.sidebar-nav a.neon-link:hover,
+.sidebar-nav a.neon-link:focus {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+    outline: none;
+}
+
+/* Dropdown Indicators */
+.sidebar-nav .has-submenu > a.neon-link i {
+    transition: transform 0.3s;
+}
+
+.sidebar-nav .has-submenu.active > a.neon-link i,
+.sidebar-nav .has-submenu:hover > a.neon-link i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+    list-style-type: none;
+    padding-left: 20px;
+    background-color: var(--dark-bg);
+    display: none;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.has-submenu.active > .dropdown,
+.has-submenu:hover > .dropdown {
+    display: block;
+}
+
+/* Nested Dropdowns */
+.dropdown .has-submenu > a.neon-link {
+    padding-left: 40px;
+}
+
+/* About Me Section */
+.main {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+body.active-sidebar .main {
+    margin-left: 250px;
+}
+
+section {
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light-bg);
+}
+
+section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+}
+
+section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+}
+
+section hr {
+    border: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    margin-bottom: 30px;
+}
+
+/* Neon Heading */
+.neon-heading {
+    font-size: 3rem;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 20px #0ff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* Neon Subheadings */
+.neon-subheading {
+    font-size: 2rem;
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    margin-bottom: 20px;
+}
+
+/* Process Step Container */
+.process-step {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Description Text */
+.neon-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Neon Button */
+.neon-button {
+    background-color: #00ffff;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 30px;
+}
+
+.neon-button:hover {
+    background-color: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+.neon-footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+    background-color: #111;
+    width: 100%;
+    border-top: 1px solid #222;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .neon-heading {
+        font-size: 2.5rem;
+    }
+
+    .neon-subheading {
+        font-size: 1.7rem;
+    }
+
+    .neon-description {
+        font-size: 1rem;
+    }
+
+    .neon-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .process-step {
+        padding: 15px;
+    }
+}
+
+/* Scrollbar Styling */
+.neon-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.neon-sidebar::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+.neon-sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--neon-blue);
+    border-radius: 4px;
+}
