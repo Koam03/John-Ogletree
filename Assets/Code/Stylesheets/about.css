@@ -253,6 +253,14 @@ body {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
+/* Center the button container */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
 /* Neon Button */
 .neon-button {
     background-color: #00ffff;
@@ -265,7 +273,6 @@ body {
     letter-spacing: 1.5px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    margin-top: 30px;
 }
 
 .neon-button:hover {
