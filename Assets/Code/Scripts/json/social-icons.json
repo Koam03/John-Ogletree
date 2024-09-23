@@ -15,6 +15,11 @@
       "icon": "Assets/Media/Images/Icons/Social Icons/Facebook.png"
     },
     {
+      "name": "Twitter (X)",
+      "link": "https://x.com/john_ogletre",
+      "icon": "Assets/Media/Images/Icons/Social Icons/twitter.png"
+    },
+    {
       "name": "LinkedIn",
       "link": "https://www.linkedin.com/in/john-ogletree-72826a15a/",
       "icon": "Assets/Media/Images/Icons/Social Icons/linkedin.png"
