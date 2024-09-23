@@ -19,7 +19,7 @@
 body {
     background-color: #000;
     color: #fff;
-    margin-left: 0;
+    margin-left: 250px; /* Sidebar visible by default */
     transition: margin-left 0.3s ease;
 }
 
@@ -29,7 +29,7 @@ body {
     height: 100vh;
     background-color: var(--dark-bg);
     position: fixed;
-    left: -250px;
+    left: 0; /* Sidebar visible by default */
     transition: left 0.3s;
     z-index: 1000;
 }
@@ -76,10 +76,11 @@ body {
 main {
     padding: 20px;
     transition: margin-left 0.3s ease;
+    margin-left: 250px; /* Main content adjusted for default visible sidebar */
 }
 
 main.active-sidebar {
-    margin-left: 250px;
+    margin-left: 0; /* Adjust for toggling */
 }
 
 /* Buttons */
