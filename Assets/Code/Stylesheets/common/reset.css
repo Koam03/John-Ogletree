@@ -1,0 +1,30 @@
+/* reset.css */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Import Futuristic Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Neon Color Variables */
+:root {
+    --neon-blue: #00ffff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #8a2be2;
+    --dark-bg: #050505;
+    --light-bg: #0d0d0d;
+    --hover-bg: rgba(0, 255, 255, 0.1);
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+}
+
+/* Body Styling */
+body {
+    background-color: var(--dark-bg);
+    color: var(--neon-blue);
+    font-family: 'Orbitron', sans-serif;
+    transition: margin-left 0.3s ease-in-out;
+}

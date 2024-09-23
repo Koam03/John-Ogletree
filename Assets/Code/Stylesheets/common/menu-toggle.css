@@ -1,0 +1,39 @@
+/* menu-toggle.css */
+
+/* Neon Menu Toggle Button */
+.menu-toggle.neon-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-bg);
+    border: 3px solid var(--neon-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+.menu-toggle.neon-toggle:hover {
+    box-shadow: 0 0 25px var(--neon-blue), 0 0 45px var(--neon-blue);
+}
+
+.menu-toggle.neon-toggle.active {
+    background-color: var(--neon-blue);
+    transform: rotate(90deg);
+}
+
+.menu-toggle.neon-toggle i {
+    color: var(--neon-blue);
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.menu-toggle.neon-toggle.active i {
+    color: var(--light-bg);
+}
