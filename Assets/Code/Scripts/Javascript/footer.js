@@ -1,5 +1,3 @@
-// footer.js
-
 document.addEventListener('DOMContentLoaded', () => {
   const socialIconsContainer = document.querySelector('.social-icons');
   const jsonFilePath = 'Assets/Code/Scripts/json/social-icons.json'; // Update the path if necessary
