@@ -1,14 +1,14 @@
-/* Reset */
+/* Universal Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Import Futuristic Font */
+/* Load Futuristic Font */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-/* Neon Color Variables */
+/* Neon Color Palette */
 :root {
     --neon-blue: #00ffff;
     --neon-pink: #ff00ff;
@@ -19,7 +19,7 @@
     --overlay-bg: rgba(0, 0, 0, 0.8);
 }
 
-/* Body Styling */
+/* Body Styles */
 body {
     background-color: var(--dark-bg);
     color: var(--neon-blue);
@@ -31,7 +31,7 @@ body {
     text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
 }
 
-/* Neon Menu Toggle Button */
+/* Toggle Button for Neon Menu */
 .menu-toggle.neon-toggle {
     position: fixed;
     top: 20px;
@@ -43,8 +43,8 @@ body {
     border: 3px solid var(--neon-blue);
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     transition: box-shadow 0.3s, transform 0.3s;
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
@@ -69,7 +69,7 @@ body {
     color: var(--light-bg);
 }
 
-/* Overlay Styling */
+/* Overlay Layer */
 .overlay {
     position: fixed;
     top: 0;
@@ -88,7 +88,7 @@ body {
     visibility: visible;
 }
 
-/* Sidebar Styling */
+/* Sidebar Menu */
 .neon-sidebar {
     width: 250px;
     background-color: var(--light-bg);
@@ -107,7 +107,7 @@ body {
     left: 0;
 }
 
-/* Sidebar and Logo Styling */
+/* Logo Styles for Sidebar */
 .neon-sidebar .logo {
     text-align: center;
     margin-bottom: 30px;
@@ -126,7 +126,7 @@ body {
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
 }
 
-/* Navigation Menu Styling */
+/* Sidebar Navigation Menu */
 .sidebar-nav {
     list-style-type: none;
     padding: 0;
@@ -138,8 +138,8 @@ body {
 
 .sidebar-nav a.neon-link {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 25px;
     color: var(--neon-blue);
     text-decoration: none;
@@ -172,7 +172,7 @@ body {
     outline: none;
 }
 
-/* Dropdown Menu */
+/* Dropdown Toggle */
 .sidebar-nav .has-submenu > a.neon-link i {
     transition: transform 0.3s;
 }
@@ -182,16 +182,15 @@ body {
     transform: rotate(180deg);
 }
 
-/* Grid Container Styling */
+/* Grid Layout for Content */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
-/* Service Grid Styling */
+/* Service Grid Layout */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -199,6 +198,7 @@ body {
     margin-top: 30px;
 }
 
+/* Individual Service Card */
 .service-category {
     background-color: var(--light-bg);
     border: 2px solid var(--neon-blue);
@@ -216,407 +216,12 @@ body {
     background-color: var(--hover-bg);
 }
 
-.service-category img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-category img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
-}
-
-.service-category h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
-}
-
-/* Image Grid Styling */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.image-grid-item {
-    background-color: var(--light-bg);
-    border: 2px solid var(--neon-blue);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-    animation: neon-pulse 3s infinite;
-}
-
-.image-grid-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
-    background-color: var(--hover-bg);
-}
-
-.image-grid-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.image-grid-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
-}
-
-.image-grid-item h2 {
-    font-size: 1.5rem;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
-}
-
-/* Project and Track Card Styling */
-.project, .track {
-    background-color: var(--light-bg);
-    border: 2px solid var(--neon-blue);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-    animation: neon-pulse 3s infinite;
-}
-
-.project:hover, .track:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
-    background-color: var(--hover-bg);
-}
-
-/* Ensure project links do not disrupt layout */
-.project a.project-link,
-.track a.track-link {
-    display: block; /* Make the link cover the image area */
-    text-decoration: none; /* Remove underline from links */
-}
-
-.project a.project-link img,
-.track a.track-link img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project a.project-link:hover img,
-.project a.project-link:focus img,
-.track a.track-link:hover img,
-.track a.track-link:focus img {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
-}
-
-/* Creative Process Section */
-section.creative-process {
-    padding: 80px 20px;
-    background-color: var(--dark-bg);
-    color: var(--neon-blue);
-}
-
-.creative-process h1 {
-    font-size: 3rem;
-    color: var(--neon-pink);
-    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
-}
-
-.creative-process h3 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: var(--neon-purple);
-    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
-}
-
-.creative-process hr {
-    border: 0;
-    height: 2px;
-    background: var(--neon-blue);
-    margin-bottom: 30px;
-}
-
-.process-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.process-step {
-    background-color: var(--light-bg);
-    border: 2px solid var(--neon-blue);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-    animation: neon-pulse 3s infinite;
-}
-
-.process-step:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
-    background-color: var(--hover-bg);
-}
-
-.process-step h2 {
-    font-size: 1.5rem;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
-}
-
-.process-step p {
-    font-size: 1rem;
-    color: var(--neon-blue);
-}
-
-/* Neon Pulse Animation */
+/* Animation for Neon Elements */
 @keyframes neon-pulse {
-    0% {
+    0%, 100% {
         box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
     }
     50% {
         box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
     }
-    100% {
-        box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
-    }
-}
-
-/* Neon Button Enhancements */
-.neon-button {
-    background-color: transparent;
-    color: var(--neon-blue);
-    padding: 12px 25px;
-    border: 2px solid var(--neon-blue);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-}
-
-.neon-button:hover {
-    background-color: var(--hover-bg);
-    color: var(--neon-pink);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
-}
-
-/* Contact Section */
-.contact {
-    padding: 80px 20px;
-    background-color: var(--dark-bg);
-    color: var(--neon-blue);
-}
-
-.contact h1 {
-    font-size: 3rem;
-    color: var(--neon-pink);
-    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
-}
-
-.contact h3 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: var(--neon-purple);
-    text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
-}
-
-.contact hr {
-    border: 0;
-    height: 2px;
-    background: var(--neon-blue);
-    margin-bottom: 30px;
-}
-
-.contact p {
-    font-size: 1rem;
-    color: var(--neon-blue);
-    margin-bottom: 30px;
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact label {
-    margin-bottom: 10px;
-    color: var(--neon-purple);
-}
-
-.contact input, .contact textarea {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 2px solid var(--neon-blue);
-    border-radius: 5px;
-    background-color: transparent;
-    color: var(--neon-blue);
-    transition: border-color 0.3s;
-}
-
-.contact input::placeholder,
-.contact textarea::placeholder {
-    color: var(--neon-purple);
-}
-
-.contact input:focus, .contact textarea:focus {
-    outline: none;
-    border-color: var(--neon-pink);
-}
-
-/* Neon Footer Styles */
-.neon-footer {
-    background-color: #0f0f0f;
-    color: #00ffea;
-    padding: 30px 20px;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    position: relative;
-    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
-}
-
-.neon-footer p {
-    margin: 0 0 25px;
-    font-size: 1.3em;
-    text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
-    font-weight: bold;
-}
-
-/* Social Icons Styling */
-.social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    transition: all 0.3s ease-in-out;
-}
-
-.social-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #00ffea;
-    filter: drop-shadow(0 0 5px #00ffea);
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.social-item img {
-    width: 60px;
-    height: 60px;
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.social-item span {
-    margin-top: 8px;
-    font-size: 1em;
-    color: #00ffea;
-    text-shadow: 0 0 3px #00ffea, 0 0 6px #00ffea;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-.social-item:hover img,
-.social-item:focus img {
-    transform: scale(1.3);
-    filter: drop-shadow(0 0 10px #00ffea);
-}
-
-.social-item:hover span,
-.social-item:focus span {
-    color: #ff00c8;
-    text-shadow: 0 0 3px #ff00c8, 0 0 6px #00ffea;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .social-icons {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 900px) {
-    .social-icons {
-        gap: 12px;
-    }
-
-    .social-item img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .social-item span {
-        font-size: 0.95em;
-    }
-}
-
-@media (max-width: 600px) {
-    .grid-container, .service-grid, .image-grid, .process-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .service-category, .project, .track, .image-grid-item, .process-step {
-        padding: 15px;
-    }
-
-    .service-category h2, .project h2, .track h2, .image-grid-item h2, .process-step h2 {
-        font-size: 1.3rem;
-    }
-
-    .neon-footer {
-        padding: 20px 15px;
-    }
-
-    .neon-footer p {
-        font-size: 1.1em;
-        margin-bottom: 20px;
-    }
-
-    .social-icons {
-        gap: 10px;
-    }
-
-    .social-item img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .social-item span {
-        font-size: 0.9em;
-    }
-}
-
-/* Scrollbar Styling */
-.neon-sidebar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.neon-sidebar::-webkit-scrollbar-track {
-    background: var(--dark-bg);
-}
-
-.neon-sidebar::-webkit-scrollbar-thumb {
-    background-color: var(--neon-blue);
-    border-radius: 4px;
-}
-
-/* Accessibility Enhancements */
-.sidebar-nav a.neon-link:focus {
-    background-color: var(--hover-bg);
-    color: var(--neon-pink);
-    outline: none;
 }
