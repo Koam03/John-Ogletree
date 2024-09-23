@@ -272,6 +272,29 @@ body {
     background-color: var(--hover-bg);
 }
 
+/* Ensure project links do not disrupt layout */
+.project a.project-link,
+.track a.track-link {
+    display: block; /* Make the link cover the image area */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.project a.project-link img,
+.track a.track-link img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project a.project-link:hover img,
+.project a.project-link:focus img,
+.track a.track-link:hover img,
+.track a.track-link:focus img {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
 /* Creative Process Section */
 section.creative-process {
     padding: 80px 20px;
@@ -521,7 +544,7 @@ section.creative-process {
 
 @media (max-width: 600px) {
     /* Adjust grid layouts for mobile */
-    .grid-container, .service-grid, .process-grid {
+    .grid-container, .service-grid, .process-grid, .music .grid-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -581,4 +604,27 @@ section.creative-process {
     background-color: var(--hover-bg);
     color: var(--neon-pink);
     outline: none;
+}
+
+/* Ensure project and track links do not disrupt layout */
+.project a.project-link,
+.track a.track-link {
+    display: block; /* Make the link cover the image area */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.project a.project-link img,
+.track a.track-link img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project a.project-link:hover img,
+.project a.project-link:focus img,
+.track a.track-link:hover img,
+.track a.track-link:focus img {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
 }
