@@ -1,0 +1,18 @@
+/* Neon Button Enhancements */
+.neon-button {
+    background-color: transparent;
+    color: var(--neon-blue);
+    padding: 12px 25px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.neon-button:hover {
+    background-color: var(--hover-bg);
+    color: var(--neon-pink);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
