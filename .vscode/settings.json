@@ -2,5 +2,8 @@
     "svn.ignoreMissingSvnWarning": true,
     "githubPullRequests.ignoredPullRequestBranches": [
         "main"
-    ]
+    ],
+    "editor.cursorStyle": "underline",
+    "terminal.integrated.cursorStyleInactive": "line",
+    "editor.cursorWidth": 1
 }
