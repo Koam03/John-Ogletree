@@ -3,7 +3,9 @@
     "githubPullRequests.ignoredPullRequestBranches": [
         "main"
     ],
-    "editor.cursorStyle": "underline",
+    "editor.cursorStyle": "line",
     "terminal.integrated.cursorStyleInactive": "line",
-    "editor.cursorWidth": 1
+    "editor.cursorWidth": 1,
+    "editor.multiCursorModifier": "alt",
+    "terminal.integrated.cursorStyle": "line"
 }
