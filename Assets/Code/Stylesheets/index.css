@@ -214,8 +214,8 @@ body {
     margin-bottom: 30px;
 }
 
-/* Project and Track Card Styling */
-.project, .track {
+/* Project, Track, and Service Card Styling */
+.project, .track, .service {
     background-color: var(--light-bg);
     border: 2px solid var(--neon-blue);
     border-radius: 10px;
@@ -226,7 +226,7 @@ body {
     animation: neon-pulse 3s infinite;
 }
 
-.project:hover, .track:hover {
+.project:hover, .track:hover, .service:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
     background-color: var(--hover-bg);
@@ -246,7 +246,7 @@ body {
 }
 
 /* Image Styling within Cards */
-.project img, .track img {
+.project img, .track img, .service img {
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -254,13 +254,13 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project img:hover, .track img:hover {
+.project img:hover, .track img:hover, .service img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
 }
 
 /* Card Titles */
-.project h2, .track h2 {
+.project h2, .track h2, .service h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: var(--neon-pink);
@@ -268,7 +268,7 @@ body {
 }
 
 /* Card Descriptions */
-.project p, .track p {
+.project p, .track p, .service p {
     font-size: 1rem;
     color: var(--neon-blue);
 }
@@ -304,63 +304,8 @@ body {
 }
 
 /* Optional: Adjusting Button Position within Project Cards */
-.project a.neon-button {
+.project a.neon-button, .track a.neon-button, .service a.neon-button {
     margin-top: 15px; /* Adds space between description and button */
-}
-
-/* Photo Grid for Service Categories */
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-/* Service Item Styling (matches Project styling) */
-.service-item {
-    background-color: var(--light-bg);
-    border: 2px solid var(--neon-blue);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
-    animation: neon-pulse 3s infinite;
-}
-
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
-    background-color: var(--hover-bg);
-}
-
-/* Image Styling within Service Cards */
-.service-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue);
-}
-
-/* Service Item Titles (matches Project titles) */
-.service-item h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
-}
-
-/* Service Item Descriptions */
-.service-item p {
-    font-size: 1rem;
-    color: var(--neon-blue);
 }
 
 /* Social Icons Styling */
@@ -477,20 +422,20 @@ body {
         padding: 8px;
     }
     
-    .grid-container, .service-grid {
+    .grid-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .project, .track, .service-item {
+    .project, .track, .service {
         padding: 15px;
     }
 
-    .project h2, .track h2, .service-item h4 {
+    .project h2, .track h2, .service h2 {
         font-size: 1.3rem;
     }
 
-    .project p, .track p, .service-item p {
+    .project p, .track p, .service p {
         font-size: 0.9rem;
     }
 }
@@ -596,28 +541,28 @@ section hr {
 }
 
 /* Optional: Enhance Button Accessibility When Wrapped in Anchor */
-.project a .neon-button, .track a .neon-button {
+.project a .neon-button, .track a .neon-button, .service a .neon-button {
     display: inline-block; /* Ensure buttons behave correctly inside links */
 }
 
 /* Ensuring Button Containers Have Proper Spacing */
-.project, .track {
+.project, .track, .service {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.project a, .track a {
+.project a, .track a, .service a {
     text-decoration: none;
     color: inherit;
     width: 100%;
 }
 
-.project p, .track p {
+.project p, .track p, .service p {
     margin-bottom: 15px;
 }
 
-.project .neon-button, .track .neon-button {
+.project .neon-button, .track .neon-button, .service .neon-button {
     margin-top: auto; /* Push the button to the bottom if using flex */
 }
 
