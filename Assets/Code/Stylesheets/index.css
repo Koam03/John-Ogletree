@@ -17,6 +17,11 @@
     --light-bg: #0d0d0d;
     --hover-bg: rgba(0, 255, 255, 0.1);
     --overlay-bg: rgba(0, 0, 0, 0.8);
+    /* New Variables for Buttons */
+    --button-bg: var(--dark-bg);
+    --button-hover-bg: var(--neon-blue);
+    --button-text: var(--neon-blue);
+    --button-hover-text: var(--dark-bg);
 }
 
 /* Body Styling */
@@ -274,23 +279,28 @@ body {
     margin-top: 30px;
 }
 
-/* Neon Button Enhancements */
+/* Updated Neon Button Enhancements */
 .neon-button {
-    background-color: transparent;
-    color: var(--neon-blue);
+    display: inline-block; /* Ensures buttons align properly */
     padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--button-text);
+    background-color: var(--button-bg);
     border: 2px solid var(--neon-blue);
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
 }
 
 .neon-button:hover {
-    background-color: var(--hover-bg);
-    color: var(--neon-pink);
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
     transform: scale(1.05);
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue), 0 0 40px var(--neon-blue);
 }
 
 /* Photo Grid for Service Categories */
