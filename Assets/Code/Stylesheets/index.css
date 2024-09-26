@@ -16,15 +16,9 @@
   --button-hover-bg: rgba(0, 234, 255, 0.4);
   --button-margin-top: 20px;
   --overlay-bg: rgba(0, 0, 0, 0.7);
-  
-  /* Additional Variables for Neon Footer */
-  --neon-cyan: #0ff;
-  --neon-magenta: #ff00ff;
-  --neon-green: #39ff14;
-  --footer-bg: #0d0d0d;
-  --footer-text: #0ff;
-  --footer-shadow: #0ff;
-  --footer-glow: #0ff;
+  --neon-color: #0ff; /* Added for neon footer */
+  --neon-glow: #0ff;  /* Added for neon footer */
+  --hover-glow: #0ff; /* Added for neon footer */
 }
 
 /* Body Styling */
@@ -360,114 +354,96 @@ section hr {
   border-color: var(--neon-hover);
 }
 
-/* ------------------ Neon Footer Styles ------------------ */
-
-/* Neon Footer Container */
-.neon-footer {
-  background-color: var(--footer-bg); /* Deep dark background */
-  color: var(--footer-text); /* Neon cyan color for text */
+/* Neon Footer Styling */
+footer.neon-footer {
+  background-color: var(--dark-bg); /* Deep dark background */
+  color: var(--neon-color); /* Neon cyan color for text */
   font-family: 'Raleway Dots', cursive; /* Neon-inspired font */
   text-align: center;
   padding: 40px 20px;
   position: relative;
   overflow: hidden;
-  z-index: 100; /* Ensure footer is above background effects */
-}
-
-/* Neon Footer Content */
-.footer-content {
-  position: relative;
   z-index: 1;
 }
 
-/* Footer Text with Neon Glow */
-.neon-footer p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  text-shadow:
-    0 0 5px var(--footer-shadow),
-    0 0 10px var(--footer-shadow),
-    0 0 20px var(--footer-shadow),
-    0 0 40px var(--footer-shadow),
-    0 0 80px var(--footer-shadow);
-  animation: footer-glow 1.5s ease-in-out infinite alternate;
-}
-
-/* Social Icons Container */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Social Icons Styling */
-.social-icons a img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0) invert(1); /* Makes icons white */
-  transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
-}
-
-.social-icons a:hover img {
-  filter: brightness(0) invert(0.7) drop-shadow(0 0 10px var(--footer-glow));
-  transform: scale(1.2);
-}
-
-/* Neon Footer Animated Background */
-.neon-footer::before,
-.neon-footer::after {
+/* Neon Footer Background Animations */
+footer.neon-footer::before,
+footer.neon-footer::after {
   content: '';
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(0,255,255,0.2) 0%, rgba(0,0,0,0) 70%);
   animation: rotate 10s linear infinite;
   z-index: 0;
 }
 
-.neon-footer::after {
-  background: radial-gradient(circle, rgba(255, 0, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+footer.neon-footer::after {
+  background: radial-gradient(circle, rgba(255,0,255,0.2) 0%, rgba(0,0,0,0) 70%);
   animation-direction: reverse;
+}
+
+/* Footer Content Positioning */
+footer.neon-footer .footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Neon Footer Text Styling */
+footer.neon-footer p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 5px var(--neon-glow),
+    0 0 10px var(--neon-glow),
+    0 0 20px var(--neon-glow),
+    0 0 40px var(--neon-glow),
+    0 0 80px var(--neon-glow);
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Social Icons Styling */
+footer.neon-footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer.neon-footer .social-icons a {
+  display: inline-block;
+}
+
+footer.neon-footer .social-icons a img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1); /* Makes icons white */
+  transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
+}
+
+footer.neon-footer .social-icons a:hover img {
+  filter: brightness(0) invert(0.7) drop-shadow(0 0 10px var(--neon-color));
+  transform: scale(1.2);
 }
 
 /* Keyframes for Animations */
 @keyframes glow {
   from {
     text-shadow:
-      0 0 5px var(--footer-shadow),
-      0 0 10px var(--footer-shadow),
-      0 0 20px var(--footer-shadow),
-      0 0 40px var(--footer-shadow),
-      0 0 80px var(--footer-shadow);
+      0 0 5px var(--neon-glow),
+      0 0 10px var(--neon-glow),
+      0 0 20px var(--neon-glow),
+      0 0 40px var(--neon-glow),
+      0 0 80px var(--neon-glow);
   }
   to {
     text-shadow:
-      0 0 10px var(--footer-shadow),
-      0 0 20px var(--footer-shadow),
-      0 0 30px var(--footer-shadow),
-      0 0 50px var(--footer-shadow),
-      0 0 100px var(--footer-shadow);
-  }
-}
-
-@keyframes footer-glow {
-  from {
-    text-shadow:
-      0 0 5px var(--footer-shadow),
-      0 0 10px var(--footer-shadow),
-      0 0 20px var(--footer-shadow),
-      0 0 40px var(--footer-shadow),
-      0 0 80px var(--footer-shadow);
-  }
-  to {
-    text-shadow:
-      0 0 10px var(--footer-shadow),
-      0 0 20px var(--footer-shadow),
-      0 0 30px var(--footer-shadow),
-      0 0 50px var(--footer-shadow),
-      0 0 100px var(--footer-shadow);
+      0 0 10px var(--neon-glow),
+      0 0 20px var(--neon-glow),
+      0 0 30px var(--neon-glow),
+      0 0 50px var(--neon-glow),
+      0 0 100px var(--neon-glow);
   }
 }
 
@@ -480,61 +456,19 @@ section hr {
   }
 }
 
-/* Responsive Design for Neon Footer */
+/* Responsive Design for Footer */
 @media (max-width: 600px) {
-  .neon-footer p {
+  footer.neon-footer p {
     font-size: 1em;
   }
 
-  .social-icons a img {
+  footer.neon-footer .social-icons a img {
     width: 30px;
     height: 30px;
   }
 }
 
-/* ------------------ End of Neon Footer Styles ------------------ */
-
-/* Footer Styling (Retired) */
-/* 
-footer {
-  background-color: #111;
-  padding: 20px;
-  color: var(--neon-blue);
-  text-align: center;
-}
-
-footer table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-footer td {
-  padding: 10px;
-}
-
-footer a {
-  text-decoration: none;
-  color: var(--neon-blue);
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: var(--neon-hover);
-}
-
-footer img {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px;
-  transition: transform 0.3s;
-}
-
-footer img:hover {
-  transform: scale(1.1);
-}
-*/
-
-/* Scrollbar Styling (optional) */
+/* Optional: Scrollbar Styling */
 .neon-sidebar::-webkit-scrollbar {
   width: 8px;
 }
@@ -554,68 +488,12 @@ footer img:hover {
   color: var(--dark-bg);
 }
 
-.neon-footer a {
+footer.neon-footer a {
   text-decoration: none;
-  color: var(--footer-text);
+  color: var(--neon-color);
   transition: color 0.3s;
 }
 
-.neon-footer a:hover {
+footer.neon-footer a:hover {
   color: var(--neon-hover);
-}
-
-.neon-footer img {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.neon-footer img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px var(--footer-glow), 0 0 20px var(--footer-glow);
-}
-
-/* Optional: Reduce motion for users who prefer minimal animations */
-@media (prefers-reduced-motion: reduce) {
-  .neon-footer p {
-    animation: none;
-  }
-
-  .neon-footer::before,
-  .neon-footer::after {
-    animation: none;
-  }
-
-  .social-icons a img {
-    transition: transform 0s, filter 0s, box-shadow 0s;
-  }
-
-  .social-icons a:hover img {
-    transform: scale(1);
-    filter: brightness(0) invert(1);
-    box-shadow: none;
-  }
-
-  .menu-toggle.neon-toggle,
-  .menu-toggle.neon-toggle.active {
-    transition: none;
-  }
-
-  .neon-sidebar .logo img,
-  .project img,
-  .track img,
-  .neon-button,
-  .neon-footer img {
-    transition: none;
-  }
-
-  .neon-sidebar .logo img:hover,
-  .project img:hover,
-  .track img:hover,
-  .neon-button:hover,
-  .neon-footer img:hover {
-    transform: none;
-    box-shadow: none;
-  }
 }
