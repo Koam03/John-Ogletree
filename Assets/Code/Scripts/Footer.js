@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const socialIconsContainer = document.querySelector('.social-icons');
-  const jsonFilePath = 'Assets/Code/json/social-icons.json'; // Ensure this path is correct
+  const jsonFilePath = 'Assets/Code/databaseses/Social_Icons.json'; // Ensure this path is correct
   const maxIcons = 5; // Maximum number of icons to display
 
   /**
