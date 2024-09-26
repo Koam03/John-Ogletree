@@ -211,7 +211,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 /* Project, Track, and Service Card Styling */
@@ -306,6 +305,11 @@ body {
 /* Optional: Adjusting Button Position within Project Cards */
 .project a.neon-button, .track a.neon-button, .service a.neon-button {
     margin-top: 15px; /* Adds space between description and button */
+}
+
+/* Move View All Projects button below grid */
+.grid-container + .button {
+    margin-top: 50px;
 }
 
 /* Social Icons Styling */
