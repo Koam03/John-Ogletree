@@ -17,7 +17,7 @@
     --light-bg: #0d0d0d;
     --hover-bg: rgba(0, 255, 255, 0.1);
     --overlay-bg: rgba(0, 0, 0, 0.8);
-    /* New Variables for Buttons */
+    /* Button Variables */
     --button-bg: var(--dark-bg);
     --button-hover-bg: var(--neon-blue);
     --button-text: var(--neon-blue);
@@ -303,6 +303,11 @@ body {
     box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue), 0 0 40px var(--neon-blue);
 }
 
+/* Optional: Adjusting Button Position within Project Cards */
+.project a.neon-button {
+    margin-top: 15px; /* Adds space between description and button */
+}
+
 /* Photo Grid for Service Categories */
 .service-grid {
     display: grid;
@@ -582,4 +587,41 @@ section hr {
     background-color: var(--hover-bg);
     color: var(--neon-pink);
     outline: none;
+}
+
+/* Additional Accessibility for Buttons */
+.neon-button:focus {
+    outline: 2px solid var(--neon-pink);
+    outline-offset: 2px;
+}
+
+/* Optional: Enhance Button Accessibility When Wrapped in Anchor */
+.project a .neon-button, .track a .neon-button {
+    display: inline-block; /* Ensure buttons behave correctly inside links */
+}
+
+/* Ensuring Button Containers Have Proper Spacing */
+.project, .track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project a, .track a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.project p, .track p {
+    margin-bottom: 15px;
+}
+
+.project .neon-button, .track .neon-button {
+    margin-top: auto; /* Push the button to the bottom if using flex */
+}
+
+/* Optional: Smooth Scrolling for Anchor Links */
+html {
+    scroll-behavior: smooth;
 }
