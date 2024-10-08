@@ -1,59 +1,118 @@
 {
-    "socialIcons": [
-      {
-        "href": "https://www.youtube.com/channel/UCsIIKP2MFRyo8KX3g6358bg",
-        "imgSrc": "/images/social links/youtube-round-svgrepo-com.svg",
-        "alt": "YouTube",
-        "title": "YouTube"
-      },
-      {
-        "href": "https://dribbble.com/OGLE2003",
-        "imgSrc": "/images/social links/dribbble-logo-bold-svgrepo-com.svg",
-        "alt": "Dribbble",
-        "title": "Dribbble"
-      },
-      {
-        "href": "https://www.facebook.com/profile.php?id=61554807376438",
-        "imgSrc": "/images/social links/Facebook Link.svg",
-        "alt": "Facebook",
-        "title": "Facebook"
-      },
-      {
-        "href": "https://twitter.com/yourprofile",
-        "imgSrc": "/images/social links/twitter-svgrepo-com.svg",
-        "alt": "Twitter",
-        "title": "Twitter"
-      },
-      {
-        "href": "https://www.linkedin.com/in/yourprofile",
-        "imgSrc": "/images/social links/linkedin-svgrepo-com.svg",
-        "alt": "LinkedIn",
-        "title": "LinkedIn"
-      },
-      {
-        "href": "https://github.com/yourprofile",
-        "imgSrc": "/images/social links/github-svgrepo-com.svg",
-        "alt": "GitHub",
-        "title": "GitHub"
-      },
-      {
-        "href": "https://www.instagram.com/yourprofile",
-        "imgSrc": "/images/social links/instagram-svgrepo-com.svg",
-        "alt": "Instagram",
-        "title": "Instagram"
-      },
-      {
-        "href": "https://www.pinterest.com/yourprofile",
-        "imgSrc": "/images/social links/pinterest-svgrepo-com.svg",
-        "alt": "Pinterest",
-        "title": "Pinterest"
-      },
-      {
-        "href": "https://www.tiktok.com/@yourprofile",
-        "imgSrc": "/images/social links/tiktok-svgrepo-com.svg",
-        "alt": "TikTok",
-        "title": "TikTok"
-      }
-    ]
-  }
-  
+  "socialIcons": [
+    {
+      "href": "https://www.youtube.com/@johnogletree187",
+      "imgSrc": "Assets/Media/Images/Social_icons/Youtube.png",
+      "alt": "YouTube",
+      "title": "YouTube"
+    },
+    {
+      "href": "https://wa.me/+17064146157",
+      "imgSrc": "Assets/Media/Images/Social_icons/Whatsapp.png",
+      "alt": "WhatsApp",
+      "title": "WhatsApp"
+    },
+    {
+      "href": "https://x.com/john_ogletre",
+      "imgSrc": "Assets/Media/Images/Social_icons/Twitter_X.png",
+      "alt": "Twitter (X)",
+      "title": "Twitter (X)"
+    },
+    {
+      "href": "https://www.tiktok.com/@therealkoam?lang=en",
+      "imgSrc": "Assets/Media/Images/Social_icons/Tiktok.png",
+      "alt": "TikTok",
+      "title": "TikTok"
+    },
+    {
+      "href": "https://www.threads.net/@the.real.john.ogletree",
+      "imgSrc": "Assets/Media/Images/Social_icons/Threads.png",
+      "alt": "Threads",
+      "title": "Threads"
+    },
+    {
+      "href": "https://open.spotify.com/artist/2zkt79WuEkzY4Pao6GKft5?si=dAqR5sa2SYizeabWKbYhsQ",
+      "imgSrc": "Assets/Media/Images/Social_icons/Spotify.png",
+      "alt": "Spotify",
+      "title": "Spotify"
+    },
+    {
+      "href": "https://www.snapchat.com/add/koam_03?share_id=zMX_9gO_l68&locale=en-US",
+      "imgSrc": "Assets/Media/Images/Social_icons/Snapchat.png",
+      "alt": "Snapchat",
+      "title": "Snapchat"
+    },
+    {
+      "href": "https://www.pinterest.com/jo783750/",
+      "imgSrc": "Assets/Media/Images/Social_icons/Pinterest.png",
+      "alt": "Pinterest",
+      "title": "Pinterest"
+    },
+    {
+      "href": "https://www.behance.net/yourprofile",
+      "imgSrc": "Assets/Media/Images/Social_icons/Behance.png",
+      "alt": "Behance",
+      "title": "Behance"
+    },
+    {
+      "href": "https://www.vimeo.com/yourprofile",
+      "imgSrc": "Assets/Media/Images/Social_icons/Vimeo.png",
+      "alt": "Vimeo",
+      "title": "Vimeo"
+    },
+    {
+      "href": "https://www.wechat.com/",
+      "imgSrc": "Assets/Media/Images/Social_icons/WeChat.png",
+      "alt": "WeChat",
+      "title": "WeChat"
+    },
+    {
+      "href": "https://www.qq.com/",
+      "imgSrc": "Assets/Media/Images/Social_icons/QQ.png",
+      "alt": "QQ",
+      "title": "QQ"
+    },
+    {
+      "href": "https://www.weibo.com/",
+      "imgSrc": "Assets/Media/Images/Social_icons/Weibo.png",
+      "alt": "Weibo",
+      "title": "Weibo"
+    },
+    {
+      "href": "https://line.me/en/",
+      "imgSrc": "Assets/Media/Images/Social_icons/Line.png",
+      "alt": "Line",
+      "title": "Line"
+    },
+    {
+      "href": "https://www.kakaocorp.com/",
+      "imgSrc": "Assets/Media/Images/Social_icons/KakaoTalk.png",
+      "alt": "KakaoTalk",
+      "title": "KakaoTalk"
+    },
+    {
+      "href": "https://www.vk.com/",
+      "imgSrc": "Assets/Media/Images/Social_icons/VK.png",
+      "alt": "VK",
+      "title": "VK"
+    },
+    {
+      "href": "https://www.douyin.com/",
+      "imgSrc": "Assets/Media/Images/Social_icons/Douyin.png",
+      "alt": "Douyin",
+      "title": "Douyin"
+    },
+    {
+      "href": "https://meetup.com",
+      "imgSrc": "Assets/Media/Images/Social_icons/Meetup.png",
+      "alt": "Meetup",
+      "title": "Meetup"
+    },
+    {
+      "href": "https://www.myspace.com/yourprofile",
+      "imgSrc": "Assets/Media/Images/Social_icons/Myspace.png",
+      "alt": "MySpace",
+      "title": "MySpace"
+    }
+  ]
+}
