@@ -1,118 +1,160 @@
 {
   "socialIcons": [
     {
-      "href": "https://www.youtube.com/@johnogletree187",
-      "imgSrc": "Assets/Media/Images/Social_icons/Youtube.png",
+      "href": "https://www.youtube.com/channel/UCsIIKP2MFRyo8KX3g6358bg",
+      "imgSrc": "/images/social links/youtube-round-svgrepo-com.svg",
       "alt": "YouTube",
       "title": "YouTube"
     },
     {
-      "href": "https://wa.me/+17064146157",
-      "imgSrc": "Assets/Media/Images/Social_icons/Whatsapp.png",
+      "href": "https://wa.me/yourprofile",
+      "imgSrc": "/images/social links/whatsapp-svgrepo-com.svg",
       "alt": "WhatsApp",
       "title": "WhatsApp"
     },
     {
-      "href": "https://x.com/john_ogletre",
-      "imgSrc": "Assets/Media/Images/Social_icons/Twitter_X.png",
+      "href": "https://twitter.com/yourprofile",
+      "imgSrc": "/images/social links/twitter-svgrepo-com.svg",
       "alt": "Twitter (X)",
       "title": "Twitter (X)"
     },
     {
-      "href": "https://www.tiktok.com/@therealkoam?lang=en",
-      "imgSrc": "Assets/Media/Images/Social_icons/Tiktok.png",
+      "href": "https://www.tiktok.com/@yourprofile",
+      "imgSrc": "/images/social links/tiktok-svgrepo-com.svg",
       "alt": "TikTok",
       "title": "TikTok"
     },
     {
-      "href": "https://www.threads.net/@the.real.john.ogletree",
-      "imgSrc": "Assets/Media/Images/Social_icons/Threads.png",
+      "href": "https://www.threads.net/@yourprofile",
+      "imgSrc": "/images/social links/threads-svgrepo-com.svg",
       "alt": "Threads",
       "title": "Threads"
     },
     {
-      "href": "https://open.spotify.com/artist/2zkt79WuEkzY4Pao6GKft5?si=dAqR5sa2SYizeabWKbYhsQ",
-      "imgSrc": "Assets/Media/Images/Social_icons/Spotify.png",
+      "href": "https://open.spotify.com/user/yourprofile",
+      "imgSrc": "/images/social links/spotify-svgrepo-com.svg",
       "alt": "Spotify",
       "title": "Spotify"
     },
     {
-      "href": "https://www.snapchat.com/add/koam_03?share_id=zMX_9gO_l68&locale=en-US",
-      "imgSrc": "Assets/Media/Images/Social_icons/Snapchat.png",
+      "href": "https://www.snapchat.com/add/yourprofile",
+      "imgSrc": "/images/social links/snapchat-svgrepo-com.svg",
       "alt": "Snapchat",
       "title": "Snapchat"
     },
     {
-      "href": "https://www.pinterest.com/jo783750/",
-      "imgSrc": "Assets/Media/Images/Social_icons/Pinterest.png",
+      "href": "https://www.pinterest.com/yourprofile",
+      "imgSrc": "/images/social links/pinterest-svgrepo-com.svg",
       "alt": "Pinterest",
       "title": "Pinterest"
     },
     {
       "href": "https://www.behance.net/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social_icons/Behance.png",
+      "imgSrc": "/images/social links/behance-svgrepo-com.svg",
       "alt": "Behance",
       "title": "Behance"
     },
     {
-      "href": "https://www.vimeo.com/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social_icons/Vimeo.png",
+      "href": "https://vimeo.com/yourprofile",
+      "imgSrc": "/images/social links/vimeo-svgrepo-com.svg",
       "alt": "Vimeo",
       "title": "Vimeo"
     },
     {
-      "href": "https://www.wechat.com/",
-      "imgSrc": "Assets/Media/Images/Social_icons/WeChat.png",
-      "alt": "WeChat",
-      "title": "WeChat"
+      "href": "https://www.instagram.com/yourprofile",
+      "imgSrc": "/images/social links/instagram-svgrepo-com.svg",
+      "alt": "Instagram",
+      "title": "Instagram"
     },
     {
-      "href": "https://www.qq.com/",
-      "imgSrc": "Assets/Media/Images/Social_icons/QQ.png",
-      "alt": "QQ",
-      "title": "QQ"
+      "href": "https://play.google.com/store/apps/developer?id=yourprofile",
+      "imgSrc": "/images/social links/google-play-svgrepo-com.svg",
+      "alt": "Google Play Store",
+      "title": "Google Play Store"
     },
     {
-      "href": "https://www.weibo.com/",
-      "imgSrc": "Assets/Media/Images/Social_icons/Weibo.png",
-      "alt": "Weibo",
-      "title": "Weibo"
+      "href": "https://developers.google.com/profile/yourprofile",
+      "imgSrc": "/images/social links/google-developers-svgrepo-com.svg",
+      "alt": "Google Developers",
+      "title": "Google Developers"
     },
     {
-      "href": "https://line.me/en/",
-      "imgSrc": "Assets/Media/Images/Social_icons/Line.png",
-      "alt": "Line",
-      "title": "Line"
+      "href": "https://github.com/yourprofile",
+      "imgSrc": "/images/social links/github-svgrepo-com.svg",
+      "alt": "GitHub",
+      "title": "GitHub"
     },
     {
-      "href": "https://www.kakaocorp.com/",
-      "imgSrc": "Assets/Media/Images/Social_icons/KakaoTalk.png",
-      "alt": "KakaoTalk",
-      "title": "KakaoTalk"
+      "href": "https://www.facebook.com/profile.php?id=61554807376438",
+      "imgSrc": "/images/social links/Facebook Link.svg",
+      "alt": "Facebook",
+      "title": "Facebook"
     },
     {
-      "href": "https://www.vk.com/",
-      "imgSrc": "Assets/Media/Images/Social_icons/VK.png",
-      "alt": "VK",
-      "title": "VK"
+      "href": "https://dribbble.com/OGLE2003",
+      "imgSrc": "/images/social links/dribbble-logo-bold-svgrepo-com.svg",
+      "alt": "Dribbble",
+      "title": "Dribbble"
     },
     {
-      "href": "https://www.douyin.com/",
-      "imgSrc": "Assets/Media/Images/Social_icons/Douyin.png",
-      "alt": "Douyin",
-      "title": "Douyin"
+      "href": "https://discord.com/invite/yourprofile",
+      "imgSrc": "/images/social links/discord-svgrepo-com.svg",
+      "alt": "Discord",
+      "title": "Discord"
     },
     {
-      "href": "https://meetup.com",
-      "imgSrc": "Assets/Media/Images/Social_icons/Meetup.png",
-      "alt": "Meetup",
-      "title": "Meetup"
+      "href": "https://www.canva.com/yourprofile",
+      "imgSrc": "/images/social links/canva-svgrepo-com.svg",
+      "alt": "Canva",
+      "title": "Canva"
     },
     {
-      "href": "https://www.myspace.com/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social_icons/Myspace.png",
-      "alt": "MySpace",
-      "title": "MySpace"
+      "href": "https://www.backstage.com/u/yourprofile",
+      "imgSrc": "/images/social links/backstage-svgrepo-com.svg",
+      "alt": "Backstage",
+      "title": "Backstage"
+    },
+    {
+      "href": "https://apps.apple.com/us/developer/yourprofile",
+      "imgSrc": "/images/social links/apple-appstore-svgrepo-com.svg",
+      "alt": "Apple App Store",
+      "title": "Apple App Store"
+    },
+    {
+      "href": "https://calendly.com/yourprofile",
+      "imgSrc": "/images/social links/calendly-svgrepo-com.svg",
+      "alt": "Calendly",
+      "title": "Calendly"
+    },
+    {
+      "href": "https://cash.app/$yourprofile",
+      "imgSrc": "/images/social links/cashapp-svgrepo-com.svg",
+      "alt": "Cashapp",
+      "title": "Cashapp"
+    },
+    {
+      "href": "https://www.paypal.com/paypalme/yourprofile",
+      "imgSrc": "/images/social links/paypal-svgrepo-com.svg",
+      "alt": "Paypal",
+      "title": "Paypal"
+    },
+    {
+      "href": "#",
+      "imgSrc": "/images/social links/dot-svgrepo-com.svg",
+      "alt": "Dot",
+      "title": "Dot"
+    },
+    {
+      "href": "tel:+1234567890",
+      "imgSrc": "/images/social links/phone-svgrepo-com.svg",
+      "alt": "Phone",
+      "title": "Phone"
+    },
+    {
+      "href": "mailto:yourprofile@example.com",
+      "imgSrc": "/images/social links/email-svgrepo-com.svg",
+      "alt": "Email",
+      "title": "Email"
     }
   ]
 }
