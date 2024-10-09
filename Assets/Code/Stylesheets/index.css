@@ -16,9 +16,9 @@
   --button-hover-bg: rgba(0, 234, 255, 0.4);
   --button-margin-top: 20px;
   --overlay-bg: rgba(0, 0, 0, 0.7);
-  --neon-color: #0ff;
-  --neon-glow: #0ff;
-  --hover-glow: #0ff;
+  --neon-color: #0ff; /* Added for neon footer */
+  --neon-glow: #0ff;  /* Added for neon footer */
+  --hover-glow: #0ff; /* Added for neon footer */
 }
 
 /* Body Styling */
@@ -99,7 +99,10 @@ body {
   padding-top: 20px;
   transition: left 0.3s ease-in-out;
   z-index: 1050;
-  box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+
+  box-shadow: 0 0 10px var(--neon-blue), 
+              0 0 20px var(--neon-blue), 
+              0 0 30px var(--neon-blue);
 }
 
 .neon-sidebar.active {
@@ -190,6 +193,57 @@ body {
 
 .dropdown .dropdown {
   padding-left: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 991px) {
+  /* Sidebar Hidden by Default on Mobile */
+  .neon-sidebar {
+    left: -250px;
+  }
+  
+  /* Show Sidebar when Active */
+  .neon-sidebar.active {
+    left: 0;
+  }
+
+  /* Show Hamburger Menu on Mobile */
+  .menu-toggle.neon-toggle {
+    display: flex;
+  }
+  
+  /* Overlay Effect when Sidebar is Active */
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Main Content Adjustment on Mobile */
+  main {
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Adjust Main Content to Account for Sidebar on the Left */
+  main {
+    margin-left: 250px;
+  }
+
+  /* Sidebar should be visible by default on larger screens */
+  .neon-sidebar {
+    left: 0;
+  }
+
+  /* Hide the menu toggle on larger screens */
+  .menu-toggle.neon-toggle {
+    display: none;
+  }
+
+  /* Overlay should not be visible on larger screens */
+  .overlay {
+    display: none;
+  }
 }
 
 /* Main Content Styling */
@@ -345,42 +399,34 @@ footer.neon-footer p {
     0 0 10px var(--neon-glow),
     0 0 20px var(--neon-glow),
     0 0 40px var(--neon-glow),
-    0 0 80px var (--neon-glow);
+    0 0 80px var(--neon-glow);
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-/* Social Icons Carousel Styling */
-footer.neon-footer .social-icons-carousel-wrapper {
-  width: 100%;
-  overflow: hidden;
+/* Social Icons Styling */
+footer.neon-footer .social-icons {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-footer.neon-footer .social-icons-carousel {
-  display: flex;
-  align-items: center;
   gap: 20px;
-  animation: scrollIcons 30s linear infinite;
 }
 
-footer.neon-footer .social-icons-carousel a {
-  flex: 0 0 auto;
+footer.neon-footer .social-icons a {
+  display: inline-block;
 }
 
-footer.neon-footer .social-icons-carousel img {
+footer.neon-footer .social-icons a img {
   width: 40px;
   height: 40px;
+  /* Colorful icons by default */
   transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
 }
 
-footer.neon-footer .social-icons-carousel a:hover img {
+footer.neon-footer .social-icons a:hover img {
   filter: brightness(1) drop-shadow(0 0 10px var(--neon-color));
   transform: scale(1.2);
 }
 
-/* Keyframes for Footer Animations */
+/* Keyframes for Animations */
 @keyframes glow {
   from {
     text-shadow:
@@ -400,15 +446,6 @@ footer.neon-footer .social-icons-carousel a:hover img {
   }
 }
 
-@keyframes scrollIcons {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg) translate(-50%, -50%);
@@ -424,7 +461,7 @@ footer.neon-footer .social-icons-carousel a:hover img {
     font-size: 1em;
   }
 
-  footer.neon-footer .social-icons-carousel img {
+  footer.neon-footer .social-icons a img {
     width: 30px;
     height: 30px;
   }
