@@ -16,9 +16,9 @@
   --button-hover-bg: rgba(0, 234, 255, 0.4);
   --button-margin-top: 20px;
   --overlay-bg: rgba(0, 0, 0, 0.7);
-  --neon-color: #0ff; /* Added for neon footer */
-  --neon-glow: #0ff;  /* Added for neon footer */
-  --hover-glow: #0ff; /* Added for neon footer */
+  --neon-color: #0ff;
+  --neon-glow: #0ff;
+  --hover-glow: #0ff;
 }
 
 /* Body Styling */
