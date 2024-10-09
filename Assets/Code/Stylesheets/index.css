@@ -34,14 +34,14 @@ body {
 .menu-toggle.neon-toggle {
   position: fixed;
   top: 20px;
-  left: 20px; /* Positioned on the left */
+  left: 20px;
   z-index: 1100;
   width: 50px;
   height: 50px;
   background-color: var(--dark-bg);
   border: 3px solid var(--neon-blue);
   border-radius: 50%;
-  display: none; /* Hidden on larger screens */
+  display: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -94,20 +94,19 @@ body {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: -250px; /* Hidden by default on the left */
+  left: -250px;
   overflow-y: auto;
   padding-top: 20px;
-  transition: left 0.3s ease-in-out; /* Transition from left */
+  transition: left 0.3s ease-in-out;
   z-index: 1050;
 
-  /* Neon Glow Effect */
   box-shadow: 0 0 10px var(--neon-blue), 
               0 0 20px var(--neon-blue), 
               0 0 30px var(--neon-blue);
 }
 
 .neon-sidebar.active {
-  left: 0; /* Slide in from the left */
+  left: 0;
 }
 
 /* Logo Styling */
@@ -200,7 +199,7 @@ body {
 @media (max-width: 991px) {
   /* Sidebar Hidden by Default on Mobile */
   .neon-sidebar {
-    left: -250px; /* Ensure it's hidden on the left */
+    left: -250px;
   }
   
   /* Show Sidebar when Active */
@@ -221,14 +220,14 @@ body {
 
   /* Main Content Adjustment on Mobile */
   main {
-    margin-left: 10px; /* Slight margin when sidebar is closed */
+    margin-left: 10px;
   }
 }
 
 @media (min-width: 992px) {
   /* Adjust Main Content to Account for Sidebar on the Left */
   main {
-    margin-left: 250px; /* Sidebar width */
+    margin-left: 250px;
   }
 
   /* Sidebar should be visible by default on larger screens */
@@ -249,13 +248,13 @@ body {
 
 /* Main Content Styling */
 main {
-  margin-left: 10px; /* Default margin when sidebar is closed */
+  margin-left: 10px;
   padding: 20px;
   transition: margin-left 0.3s ease-in-out;
 }
 
 body.active-sidebar main {
-  margin-left: 250px; /* Sidebar width when active */
+  margin-left: 250px;
 }
 
 /* Section Styling */
@@ -356,9 +355,9 @@ section hr {
 
 /* Neon Footer Styling */
 footer.neon-footer {
-  background-color: var(--dark-bg); /* Deep dark background */
-  color: var(--neon-color); /* Neon cyan color for text */
-  font-family: 'Raleway Dots', cursive; /* Neon-inspired font */
+  background-color: var(--dark-bg);
+  color: var(--neon-color);
+  font-family: 'Raleway Dots', cursive;
   text-align: center;
   padding: 40px 20px;
   position: relative;
@@ -418,12 +417,12 @@ footer.neon-footer .social-icons a {
 footer.neon-footer .social-icons a img {
   width: 40px;
   height: 40px;
-  filter: brightness(0) invert(1); /* Makes icons white */
+  /* Colorful icons by default */
   transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
 }
 
 footer.neon-footer .social-icons a:hover img {
-  filter: brightness(0) invert(0.7) drop-shadow(0 0 10px var(--neon-color));
+  filter: brightness(1) drop-shadow(0 0 10px var(--neon-color));
   transform: scale(1.2);
 }
 
