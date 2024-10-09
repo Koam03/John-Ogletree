@@ -1,0 +1,142 @@
+{
+  "socialIcons": [
+    {
+      "href": "https://www.youtube.com/@johnogletree187",
+      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "alt": "YouTube",
+      "title": "YouTube"
+    },
+    {
+      "href": "https://wa.me/+17064146157",
+      "imgSrc": "Assets/Media/Images/Social Icons/WhatsApp.png",
+      "alt": "WhatsApp",
+      "title": "WhatsApp"
+    },
+    {
+      "href": "https://x.com/john_ogletre",
+      "imgSrc": "Assets/Media/Images/Social Icons/X.png",
+      "alt": "Twitter (X)",
+      "title": "Twitter (X)"
+    },
+    {
+      "href": "https://www.tiktok.com/@therealkoam?lang=en",
+      "imgSrc": "Assets/Media/Images/Social Icons/Tiktok.png",
+      "alt": "TikTok",
+      "title": "TikTok"
+    },
+    {
+      "href": "https://www.threads.net/@the.real.john.ogletree",
+      "imgSrc": "Assets/Media/Images/Social Icons/Threads.png",
+      "alt": "Threads",
+      "title": "Threads"
+    },
+    {
+      "href": "https://open.spotify.com/artist/2zkt79WuEkzY4Pao6GKft5?si=0C1VjaCXQ1KGmxFguac59w",
+      "imgSrc": "Assets/Media/Images/Social Icons/Spotify.png",
+      "alt": "Spotify",
+      "title": "Spotify"
+    },
+    {
+      "href": "https://www.snapchat.com/add/koam_03?share_id=zMX_9gO_l68&locale=en-US",
+      "imgSrc": "Assets/Media/Images/Social Icons/Snapchat.png",
+      "alt": "Snapchat",
+      "title": "Snapchat"
+    },
+    {
+      "href": "https://www.pinterest.com/jo783750/",
+      "imgSrc": "Assets/Media/Images/Social Icons/Pinterest.png",
+      "alt": "Pinterest",
+      "title": "Pinterest"
+    },
+    {
+      "href": "https://www.behance.net/johnogletree",
+      "imgSrc": "Assets/Media/Images/Social Icons/Behance.png",
+      "alt": "Behance",
+      "title": "Behance"
+    },
+    {
+      "href": "https://vimeo.com/user111673083",
+      "imgSrc": "Assets/Media/Images/Social Icons/Vimeo.png",
+      "alt": "Vimeo",
+      "title": "Vimeo"
+    },
+    {
+      "href": "https://www.instagram.com/the.real.john.ogletree/",
+      "imgSrc": "Assets/Media/Images/Social Icons/Instagram.png",
+      "alt": "Instagram",
+      "title": "Instagram"
+    },
+    {
+      "href": "https://g.dev/koam03",
+      "imgSrc": "Assets/Media/Images/Social Icons/Google Developers.png",
+      "alt": "Google Developers",
+      "title": "Google Developers"
+    },
+    {
+      "href": "https://github.com/Koam03",
+      "imgSrc": "Assets/Media/Images/Social Icons/Github.png",
+      "alt": "GitHub",
+      "title": "GitHub"
+    },
+    {
+      "href": "https://www.facebook.com/profile.php?id=61554807376438",
+      "imgSrc": "Assets/Media/Images/Social Icons/Facebook.png",
+      "alt": "Facebook",
+      "title": "Facebook"
+    },
+    {
+      "href": "https://dribbble.com/OGLE2003",
+      "imgSrc": "Assets/Media/Images/Social Icons/Dribble.png",
+      "alt": "Dribbble",
+      "title": "Dribbble"
+    },
+    {
+      "href": "https://discord.gg/CsaU6DgT7P",
+      "imgSrc": "Assets/Media/Images/Social Icons/Discord.png",
+      "alt": "Discord",
+      "title": "Discord"
+    },
+    {
+      "href": "https://www.backstage.com/u/yourprofile",
+      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "alt": "Backstage",
+      "title": "Backstage"
+    },
+    {
+      "href": "https://calendly.com/koam03",
+      "imgSrc": "Assets/Media/Images/Social Icons/Calendly.png",
+      "alt": "Calendly",
+      "title": "Calendly"
+    },
+    {
+      "href": "https://cash.app/$koam03",
+      "imgSrc": "Assets/Media/Images/Social Icons/CashApp.png",
+      "alt": "CashApp",
+      "title": "CashApp"
+    },
+    {
+      "href": "https://www.paypal.com/paypalme/OgletreeMartinezGA",
+      "imgSrc": "Assets/Media/Images/Social Icons/Paypal.png",
+      "alt": "Paypal",
+      "title": "Paypal"
+    },
+    {
+      "href": "https://dot.cards/koam",
+      "imgSrc": "Assets/Media/Images/Social Icons/Dot.png",
+      "alt": "Dot",
+      "title": "Dot"
+    },
+    {
+      "href": "tel:+7064146157",
+      "imgSrc": "Assets/Media/Images/Social Icons/Phone.png",
+      "alt": "Phone",
+      "title": "Phone"
+    },
+    {
+      "href": "mailto:jo783750@gmail.com",
+      "imgSrc": "Assets/Media/Images/Social Icons/Email.png",
+      "alt": "Email",
+      "title": "Email"
+    }
+  ]
+}
