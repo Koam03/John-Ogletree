@@ -86,21 +86,15 @@
     },
     {
       "href": "https://dribbble.com/OGLE2003",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "imgSrc": "Assets/Media/Images/Social Icons/Dribble.png",
       "alt": "Dribbble",
       "title": "Dribbble"
     },
     {
-      "href": "https://discord.com/invite/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "href": "https://discord.gg/CsaU6DgT7P",
+      "imgSrc": "Assets/Media/Images/Social Icons/Discord.png",
       "alt": "Discord",
       "title": "Discord"
-    },
-    {
-      "href": "https://www.canva.com/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
-      "alt": "Canva",
-      "title": "Canva"
     },
     {
       "href": "https://www.backstage.com/u/yourprofile",
@@ -109,44 +103,38 @@
       "title": "Backstage"
     },
     {
-      "href": "https://apps.apple.com/us/developer/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
-      "alt": "Apple App Store",
-      "title": "Apple App Store"
-    },
-    {
-      "href": "https://calendly.com/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "href": "https://calendly.com/koam03",
+      "imgSrc": "Assets/Media/Images/Social Icons/Calendly.png",
       "alt": "Calendly",
       "title": "Calendly"
     },
     {
-      "href": "https://cash.app/$yourprofile",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
-      "alt": "Cashapp",
-      "title": "Cashapp"
+      "href": "https://cash.app/$koam03",
+      "imgSrc": "Assets/Media/Images/Social Icons/CashApp.png",
+      "alt": "CashApp",
+      "title": "CashApp"
     },
     {
-      "href": "https://www.paypal.com/paypalme/yourprofile",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "href": "https://www.paypal.com/paypalme/OgletreeMartinezGA",
+      "imgSrc": "Assets/Media/Images/Social Icons/Paypal.png",
       "alt": "Paypal",
       "title": "Paypal"
     },
     {
-      "href": "#",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "href": "https://dot.cards/koam",
+      "imgSrc": "Assets/Media/Images/Social Icons/Dot.png",
       "alt": "Dot",
       "title": "Dot"
     },
     {
-      "href": "tel:+1234567890",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "href": "tel:+7064146157",
+      "imgSrc": "Assets/Media/Images/Social Icons/Phone.png",
       "alt": "Phone",
       "title": "Phone"
     },
     {
-      "href": "mailto:yourprofile@example.com",
-      "imgSrc": "Assets/Media/Images/Social Icons/Youtube.png",
+      "href": "mailto:jo783750@gmail.com",
+      "imgSrc": "Assets/Media/Images/Social Icons/Email.png",
       "alt": "Email",
       "title": "Email"
     }
