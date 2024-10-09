@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Path to your JSON file
-    const jsonPath = 'path/to/socialIcons.json'; // Update this path accordingly
+    const jsonPath = 'Assets/Code/Scripts/Social_Icons.json'; // Update this path accordingly
 
     // Fetch the JSON data
     fetch(jsonPath)
