@@ -433,16 +433,88 @@
       </section>
    </main>
    
-<!-- Footer HTML -->
-<footer class="neon-footer">
-   <div class="footer-content">
-     <p>© 2024 John Ogletree | Crafted with pixelated passion</p>
-     <div class="social-icons" id="social-icons">
-       <!-- Random social icons will be dynamically inserted here -->
-     </div>
-   </div>
- </footer> 
-   <script src="Assets/Code/Scripts/social-icons.js"></script>
+   <footer class="neon-footer">
+      <div class="footer-content">
+        <p>© 2024 John Ogletree | Crafted with pixelated passion</p>
+        <div class="social-icons" id="social-icons">
+          <!-- Social icons will be dynamically inserted here -->
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Path to your JSON file
+        const jsonPath = 'Assets/Code/Scripts/Social_Icons.json'; // Update this path accordingly
+    
+        // Fetch the JSON data
+        fetch(jsonPath)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            const allIcons = data.socialIcons || []; // Fallback in case of missing or wrong data structure
+            const selectedIcons = getRandomUniqueElements(allIcons, 6); // Select 6 random icons
+            displayIcons(selectedIcons);
+          })
+          .catch(error => {
+            console.error('Error fetching social icons:', error);
+            document.getElementById('social-icons').innerText = 'Unable to load social icons.';
+          });
+    
+        /**
+         * Selects n unique random elements from an array
+         * @param {Array} array - The array to select from
+         * @param {number} n - Number of elements to select
+         * @returns {Array} - Array of selected elements
+         */
+        function getRandomUniqueElements(array, n) {
+          const result = [];
+          const takenIndices = new Set();
+    
+          while (result.length < n && result.length < array.length) {
+            const randomIndex = Math.floor(Math.random() * array.length);
+            if (!takenIndices.has(randomIndex)) {
+              takenIndices.add(randomIndex);
+              result.push(array[randomIndex]);
+            }
+          }
+    
+          return result;
+        }
+    
+        /**
+         * Displays the selected social icons in the footer
+         * @param {Array} icons - Array of icon objects to display
+         */
+        function displayIcons(icons) {
+          const socialContainer = document.getElementById('social-icons');
+          socialContainer.innerHTML = ''; // Clear existing icons if any
+    
+          icons.forEach(icon => {
+            // Create anchor element
+            const a = document.createElement('a');
+            a.href = icon.href || '#'; // Fallback to '#' if href is missing
+            a.target = "_blank"; // Open in a new tab
+            a.setAttribute('aria-label', icon.title || icon.alt || 'Social icon');
+    
+            // Create image element
+            const img = document.createElement('img');
+            img.src = icon.imgSrc || 'Assets/Images/default-icon.png'; // Fallback if imgSrc is missing
+            img.alt = icon.alt || 'Social media icon'; // Fallback alt text
+            img.title = icon.title || icon.alt || 'Social media';
+    
+            // Append image to anchor, then anchor to container
+            a.appendChild(img);
+            socialContainer.appendChild(a);
+          });
+        }
+      });
+    </script>
+    
    <script src="/Assets/Code/Scripts/Navigation_Toggle.js"></script>
 </body>
 </html>
